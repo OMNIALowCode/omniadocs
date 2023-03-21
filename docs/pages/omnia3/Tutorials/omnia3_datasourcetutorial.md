@@ -202,7 +202,7 @@ NOTE: in this scenario, we are ignoring the query sent by the user when obtainin
     
 13. On left side menu, navigate to Configurations / Employee, and check that the list is filled with data retrieved from the external data source.
 
-    ![Application_List_DataSource](https://raw.githubusercontent.com/numbersbelieve/omnia3/master/docs/tutorialPics/modelingTutorial/Application-List-External-DataSource.PNG)
+    ![Application_List_DataSource](/images/tutorials/datasource/Application-List-External-DataSource.PNG)
     
     
 ## 4. Add Employee to Purchase Document

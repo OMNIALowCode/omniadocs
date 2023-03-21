@@ -25,7 +25,7 @@ This tutorial assumes that you have created a OMNIA tenant, and are logged in as
        
 3. Return to ***Agents / Add new***, and set its *Code* as **Employee**.
 
-    ![Modeler_Create_Agent](https://raw.githubusercontent.com/numbersbelieve/omnia3/master/docs/tutorialPics/modelingTutorial/Modeler-Agent-Employee.PNG)
+    ![Modeler_Create_Agent](/images/tutorials/workflowtutorial/Modeler-Agent-Employee.PNG)
 
 4. Create a new  **Resource**, and set its  *Code*  to  **Task**.
     
@@ -37,7 +37,7 @@ This tutorial assumes that you have created a OMNIA tenant, and are logged in as
 
 8. Go back to Modeling area and create a new **Event** with *Code* set as **Executedtask**, **Task** as the *resource* to be exchanged, **Employee** as provider agent, and **Company** as receiver agent.
 
-    ![Event_Executed task](https://raw.githubusercontent.com/numbersbelieve/omnia3/master/docs/tutorialPics/modelingTutorial/Event-TaskList.PNG)
+    ![Event_Executed task](/images/tutorials/workflowtutorial/Event-TaskList.PNG)
 
 9. Add a new **Generic Entity**, and set the code as *Project*.
 
@@ -47,15 +47,15 @@ This tutorial assumes that you have created a OMNIA tenant, and are logged in as
 
 12. Access ***Data Analytics / Lists*** and create a new list. Set **Executedtask_List** as *Code*, the query created on first step (**ExecutedtaskQuery**) as the *source* of the list and **Task** as *Label*.
 
-    ![Task List Query](https://raw.githubusercontent.com/numbersbelieve/omnia3/master/docs/tutorialPics/modelingTutorial/Queries-List-Executedtask.PNG)
+    ![Task List Query](/images/tutorials/workflowtutorial/Queries-List-Executedtask.PNG)
     
 13. Add new columns to **List**. Add a column for Query Property *Code*, with Label *Task*, and format as *Text*
 
-    ![Task List Query](https://raw.githubusercontent.com/numbersbelieve/omnia3/master/docs/tutorialPics/modelingTutorial/Code-QueryList.PNG)
+    ![Task List Query](/images/tutorials/workflowtutorial/Code-QueryList.PNG)
 
 14. On ***Data Analytics / Dashboards***, create a new dashboard and set **Home** as *Code*, so the dashboard will be visible on application’s homepage.
 
-    ![Modeler_Create_Dashboard](https://github.com/numbersbelieve/omnia3/raw/master/docs/tutorialPics/modelingTutorial/Modeler-Create-Dashboard.PNG)
+    ![Modeler_Create_Dashboard](/images/tutorials/workflowtutorial//Modeler-Create-Dashboard.PNG)
     
 15. Add lists to **Dashboard**. Set **Executedtask** as *Code*, its List as **Executedtask_List** (created previously) and position it in the first Row and Column, with Size six. Set its label as **Executed Tasks**.
 
@@ -74,7 +74,7 @@ This tutorial assumes that you have created a OMNIA tenant, and are logged in as
 
     - Add a new Attribute to your Document. Set its *Code* as **ReportLines** and Type as ***Event / ExecutedTask***.
 
-    ![Modeler_Create_Dashboard](https://raw.githubusercontent.com/numbersbelieve/omnia3/master/docs/tutorialPics/modelingTutorial/Attribute%20-%20EmployeeName.PNG)
+    ![Modeler_Create_Dashboard](/images/tutorials/workflowtutorial/Attribute-EmployeeName.PNG)
 
 18. Go back to **Generic Entity**, and add a new **Attribute** to **Project**. Set its *Code* as ***SheetID***, and its type as ***Primitive / Text***.
 
@@ -84,7 +84,7 @@ This tutorial assumes that you have created a OMNIA tenant, and are logged in as
 
 21. Go to **Google Sheets** and create a new file. [Generate an API key to access it](https://developers.google.com/sheets/api/guides/authorizing). Make a note of the file's ID, which you can obtain from the URL; for example, for the URL https://docs.google.com/spreadsheets/d/omniaID1234/edit#gid=0, the ID would be **omniaID1234**.
 
-Copy the data from [this file](https://github.com/numbersbelieve/omnia3/raw/master/docs/tutorialPics/modelingTutorial/Task%20Project%2001.xlsx) to the sheet you just created.
+Copy the data from [this file](/images/tutorials/workflowtutorial/Task-Project-01.xlsx) to the sheet you just created.
 
 23. In the **TaskReport** document, go to tab *Behaviours* and click on ***Add new / Action***. Set **GetReportData** as *Code*, **SheetID** as the attribute that triggers the behaviour, and paste the following code, taking care to replace the "INSERT YOUR KEY HERE" with the key obtained in the last step:
 
