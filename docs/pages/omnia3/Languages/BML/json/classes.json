@@ -1,0 +1,2380 @@
+[
+  {
+    "Name": "Agent",
+    "Description": "Entity representing individuals or groups of individuals, that hold economic resources and exchange them in financial transactions.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 24
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Attributes",
+        "Description": "A collection of entries that allows to define entity' structure.",
+        "TypeKind": "Class",
+        "TypeName": "Attribute",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "EntityBehaviours",
+        "Description": "A collection of entries representing how the entity behaves.",
+        "TypeKind": "Class",
+        "TypeName": "EntityBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "DataBehaviours",
+        "Description": "A collection of entries representing how the entity' data is stored and retrieved.",
+        "TypeKind": "Class",
+        "TypeName": "DataBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "BehaviourNamespaces",
+        "Description": "A collection of entries representing the coding namespaces to be included (as usings) on code generated with your data and entity behaviours.",
+        "TypeKind": "Class",
+        "TypeName": "BehaviourNamespace",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "DataSource",
+        "Description": "The Data Source in which the entities are computed and/or persisted.",
+        "TypeKind": "Class",
+        "TypeName": "DataSource",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Shared"
+      }
+    ]
+  },
+  {
+    "Name": "ApplicationBehaviour",
+    "Description": "Behaviour used to extend the application, which execution can be triggered from another behaviour (entity or data) or directly (using the API).",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Expression",
+        "Description": "The C# code that will be executed.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "BehaviourNamespaces",
+        "Description": "A collection of entries representing the coding namespaces to be included (as usings) on code generated.",
+        "TypeKind": "Class",
+        "TypeName": "BehaviourNamespace",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "DataSource",
+        "Description": "The Data Source where the behaviour is executed.",
+        "TypeKind": "Class",
+        "TypeName": "DataSource",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Shared"
+      },
+      {
+        "Name": "ExecutionLocation",
+        "Description": "The location where is executed.",
+        "TypeKind": "Enumeration",
+        "TypeName": "ExecutionLocation",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  },
+  {
+    "Name": "Attribute",
+    "Description": "Allow to define the structure of an entity and represents a property in the data you can read or write.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 64
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Type",
+        "Description": "The data type: can be a Primitive, an Enumeration or a reference to an Entity.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Multiplicity",
+        "Description": "The representation of the minimum and maximum number of records.",
+        "TypeKind": "Class",
+        "TypeName": "Multiplicity",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "IsSystem",
+        "Description": "Indicates if the attribute is generated by the platform or user-defined.",
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "IsReadOnly",
+        "Description": "Indicates if the attribute’s value can be changed by the user’s input",
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "AggregationKind",
+        "Description": "The nature of connection between the entity and the data type.",
+        "TypeKind": "Enumeration",
+        "TypeName": "AggregationKind",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "DependsOnAttribute",
+        "Description": "In Shared attributes whose Type is from a custom Data Source, indicates the attribute used to identify the Data Source.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "IsSensitiveData",
+        "Description": "Indicates  if contains sensitive data. If so, the information can be destroyed.",
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Length",
+        "Description": "Define minimum and maximum length of attribute value.",
+        "TypeKind": "Class",
+        "TypeName": "Length",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      }
+    ]
+  },
+  {
+    "Name": "BehaviourDependency",
+    "Description": "Assembly or Expression loaded to be used on behaviours.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Type",
+        "Description": "The dependency type.",
+        "TypeKind": "Enumeration",
+        "TypeName": "BehaviourDependencyType",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Version",
+        "Description": "The version of the dependency.",
+        "TypeKind": "Primitive",
+        "TypeName": "Integer",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "ExecutionLocation",
+        "Description": "The location where is loaded.",
+        "TypeKind": "Enumeration",
+        "TypeName": "ExecutionLocation",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Path",
+        "Description": "The path from where the dependency is loaded.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "AssemblyName",
+        "Description": "The assembly name of the dependency (when the Type is 'File')",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Expression",
+        "Description": "The C# code that will be executed (when the Type is 'Expression').",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  },
+  {
+    "Name": "BehaviourNamespace",
+    "Description": "Namespace to be included on code generated and used in behaviours.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "FullyQualifiedName",
+        "Description": "The full qualified name to be loaded when the namespace is used.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "ExecutionLocation",
+        "Description": "The location where is loaded.",
+        "TypeKind": "Enumeration",
+        "TypeName": "ExecutionLocation",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  },
+  {
+    "Name": "Commitment",
+    "Description": "Promise of a transaction to trade resources, between two agents. Is made because the transaction often only happens after the moment when it is set.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Attributes",
+        "Description": "A collection of entries that allows to define entity' structure.",
+        "TypeKind": "Class",
+        "TypeName": "Attribute",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "EntityBehaviours",
+        "Description": "A collection of entries representing how the entity behaves.",
+        "TypeKind": "Class",
+        "TypeName": "EntityBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "DataBehaviours",
+        "Description": "A collection of entries representing how the entity' data is stored and retrieved.",
+        "TypeKind": "Class",
+        "TypeName": "DataBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "BehaviourNamespaces",
+        "Description": "A collection of entries representing the coding namespaces to be included (as usings) on code generated with your data and entity behaviours.",
+        "TypeKind": "Class",
+        "TypeName": "BehaviourNamespace",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "DataSource",
+        "Description": "The Data Source in which the entities are computed and/or persisted.",
+        "TypeKind": "Class",
+        "TypeName": "DataSource",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Shared"
+      }
+    ]
+  },
+  {
+    "Name": "DataBehaviour",
+    "Description": "Behaviour representing how the entity is stored and retrieved from a Data Source.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Type",
+        "Description": "The execution moment of the behaviour.",
+        "TypeKind": "Enumeration",
+        "TypeName": "DataBehaviourType",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Expression",
+        "Description": "The C# code that will be executed.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  },
+  {
+    "Name": "DataSource",
+    "Description": "Representation of a system that allows to store entities and/or execute behaviours.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 24
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Attributes",
+        "Description": "A collection of entries that allows to define entity' structure.",
+        "TypeKind": "Class",
+        "TypeName": "Attribute",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "EntityBehaviours",
+        "Description": "A collection of entries representing how the entity behaves.",
+        "TypeKind": "Class",
+        "TypeName": "EntityBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "DataBehaviours",
+        "Description": "A collection of entries representing how the entity' data is stored and retrieved.",
+        "TypeKind": "Class",
+        "TypeName": "DataBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "BehaviourNamespaces",
+        "Description": "A collection of entries representing the coding namespaces to be included (as usings) on code generated with your data and entity behaviours.",
+        "TypeKind": "Class",
+        "TypeName": "BehaviourNamespace",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "BehaviourRuntime",
+        "Description": "The location where the entitys' behaviours are executed.",
+        "TypeKind": "Enumeration",
+        "TypeName": "RuntimeLocation",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "DataAccessRuntime",
+        "Description": "The location where the data behaviours are executed.",
+        "TypeKind": "Enumeration",
+        "TypeName": "RuntimeLocation",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "ExecutesInConnector",
+        "Description": "Indicates if the Data Source is executed using the platform's connector.",
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "BehaviourDependencies",
+        "Description": "A collection of entries that allows to define which dependencies are loaded in the Data Source.",
+        "TypeKind": "Class",
+        "TypeName": "BehaviourDependency",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      }
+    ]
+  },
+  {
+    "Name": "Document",
+    "Description": "Representation of a set of resource transactions (or promises of transactions) and all its relevant information.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 24
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Attributes",
+        "Description": "A collection of entries that allows to define entity' structure.",
+        "TypeKind": "Class",
+        "TypeName": "Attribute",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "EntityBehaviours",
+        "Description": "A collection of entries representing how the entity behaves.",
+        "TypeKind": "Class",
+        "TypeName": "EntityBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "DataBehaviours",
+        "Description": "A collection of entries representing how the entity' data is stored and retrieved.",
+        "TypeKind": "Class",
+        "TypeName": "DataBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "BehaviourNamespaces",
+        "Description": "A collection of entries representing the coding namespaces to be included (as usings) on code generated with your data and entity behaviours.",
+        "TypeKind": "Class",
+        "TypeName": "BehaviourNamespace",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "DataSource",
+        "Description": "The Data Source in which the entities are computed and/or persisted.",
+        "TypeKind": "Class",
+        "TypeName": "DataSource",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Shared"
+      }
+    ]
+  },
+  {
+    "Name": "EntityBehaviour",
+    "Description": "Behaviour representing how the entity behaves in a specific moment and is expressed in C#.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 64
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Attribute",
+        "Description": "The attribute the behaviour is related to.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Type",
+        "Description": "The execution moment of the behaviour.",
+        "TypeKind": "Enumeration",
+        "TypeName": "EntityBehaviourType",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Expression",
+        "Description": "The C# code that will be executed.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  },
+  {
+    "Name": "Event",
+    "Description": "Transaction of resources between two agents, one in the role of supplier and the other as recipient.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Attributes",
+        "Description": "A collection of entries that allows to define entity' structure.",
+        "TypeKind": "Class",
+        "TypeName": "Attribute",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "EntityBehaviours",
+        "Description": "A collection of entries representing how the entity behaves.",
+        "TypeKind": "Class",
+        "TypeName": "EntityBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "DataBehaviours",
+        "Description": "A collection of entries representing how the entity' data is stored and retrieved.",
+        "TypeKind": "Class",
+        "TypeName": "DataBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "BehaviourNamespaces",
+        "Description": "A collection of entries representing the coding namespaces to be included (as usings) on code generated with your data and entity behaviours.",
+        "TypeKind": "Class",
+        "TypeName": "BehaviourNamespace",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "DataSource",
+        "Description": "The Data Source in which the entities are computed and/or persisted.",
+        "TypeKind": "Class",
+        "TypeName": "DataSource",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Shared"
+      }
+    ]
+  },
+  {
+    "Name": "GenericEntity",
+    "Description": "Entity required for financial transactions, in order to complement the information about them.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 24
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Attributes",
+        "Description": "A collection of entries that allows to define entity' structure.",
+        "TypeKind": "Class",
+        "TypeName": "Attribute",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "EntityBehaviours",
+        "Description": "A collection of entries representing how the entity behaves.",
+        "TypeKind": "Class",
+        "TypeName": "EntityBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "DataBehaviours",
+        "Description": "A collection of entries representing how the entity' data is stored and retrieved.",
+        "TypeKind": "Class",
+        "TypeName": "DataBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "BehaviourNamespaces",
+        "Description": "A collection of entries representing the coding namespaces to be included (as usings) on code generated with your data and entity behaviours.",
+        "TypeKind": "Class",
+        "TypeName": "BehaviourNamespace",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "DataSource",
+        "Description": "The Data Source in which the entities are computed and/or persisted.",
+        "TypeKind": "Class",
+        "TypeName": "DataSource",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Shared"
+      },
+      {
+        "Name": "IsRoot",
+        "Description": "Indicates if the entity acts as a root entity or as a sub-entity.",
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  },
+  {
+    "Name": "Resource",
+    "Description": "Entity representing assets that can be quantified and with commercial value. Is held by the Agents, who exchange them in financial transactions.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 24
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Attributes",
+        "Description": "A collection of entries that allows to define entity' structure.",
+        "TypeKind": "Class",
+        "TypeName": "Attribute",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "EntityBehaviours",
+        "Description": "A collection of entries representing how the entity behaves.",
+        "TypeKind": "Class",
+        "TypeName": "EntityBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "DataBehaviours",
+        "Description": "A collection of entries representing how the entity' data is stored and retrieved.",
+        "TypeKind": "Class",
+        "TypeName": "DataBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "BehaviourNamespaces",
+        "Description": "A collection of entries representing the coding namespaces to be included (as usings) on code generated with your data and entity behaviours.",
+        "TypeKind": "Class",
+        "TypeName": "BehaviourNamespace",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "DataSource",
+        "Description": "The Data Source in which the entities are computed and/or persisted.",
+        "TypeKind": "Class",
+        "TypeName": "DataSource",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Shared"
+      }
+    ]
+  },
+  {
+    "Name": "Enumeration",
+    "Description": "Representation of a collection of values.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 80
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Values",
+        "Description": "A collection of entries representing an entry of an enumeration.",
+        "TypeKind": "Class",
+        "TypeName": "EnumerationValue",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      }
+    ]
+  },
+  {
+    "Name": "EnumerationValue",
+    "Description": "Represents an entry of an enumeration.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Order",
+        "Description": "The order of the value inside the enumeration.",
+        "TypeKind": "Primitive",
+        "TypeName": "Integer",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  },
+  {
+    "Name": "Serie",
+    "Description": "Representation of a sequence that allow to sequentially enumerate the documents.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Attributes",
+        "Description": "A collection of entries that allows to define entity' structure.",
+        "TypeKind": "Class",
+        "TypeName": "Attribute",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "EntityBehaviours",
+        "Description": "A collection of entries representing how the entity behaves.",
+        "TypeKind": "Class",
+        "TypeName": "EntityBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "DataBehaviours",
+        "Description": "A collection of entries representing how the entity' data is stored and retrieved.",
+        "TypeKind": "Class",
+        "TypeName": "DataBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "BehaviourNamespaces",
+        "Description": "A collection of entries representing the coding namespaces to be included (as usings) on code generated with your data and entity behaviours.",
+        "TypeKind": "Class",
+        "TypeName": "BehaviourNamespace",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "DataSource",
+        "Description": "The Data Source in which the entities are computed and/or persisted.",
+        "TypeKind": "Class",
+        "TypeName": "DataSource",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Shared"
+      }
+    ]
+  },
+  {
+    "Name": "StateMachine",
+    "Description": "State Machine related to a given Definition.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the state machine (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 48
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the state machine purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Definition",
+        "Description": "the entity that will be managed using the State Machine.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "States",
+        "Description": "A collection of states of the current State Machine.",
+        "TypeKind": "Class",
+        "TypeName": "State",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      }
+    ]
+  },
+  {
+    "Name": "State",
+    "Description": "Definition of an entity possible state.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 24
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "IsInitial",
+        "Description": "State machine first state. One state machine can only have one initial state.",
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "DisableOperations",
+        "Description": "Disable all operations when the entity is in the current state.",
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "DisableAttributes",
+        "Description": "Disable all attributes when the entity is in the current state.",
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "AssignToExpression",
+        "Description": "C# expression to define to whom will be assigned the record when it is in this state.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Transitions",
+        "Description": "Collection of transitions that can happen in the current state.",
+        "TypeKind": "Class",
+        "TypeName": "StateTransition",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "Decisions",
+        "Description": "Collection of decisions that the user can take in the current state.",
+        "TypeKind": "Class",
+        "TypeName": "StateDecision",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "EnabledOperations",
+        "Description": "Collection of operations to enable. This is an exception list when the DisableOperations configuration is active.",
+        "TypeKind": "Class",
+        "TypeName": "StateEnabledOperation",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "EnabledAttributes",
+        "Description": "Collection of attributes to enable. This is an exception list when the DisableAttributes configuration is active.",
+        "TypeKind": "Class",
+        "TypeName": "StateEnabledAttribute",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "Behaviours",
+        "Description": "A collection of entries representing how the state machine behaves.",
+        "TypeKind": "Class",
+        "TypeName": "StateBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      }
+    ]
+  },
+  {
+    "Name": "StateTransition",
+    "Description": "Possible transition between two states in a State Machine.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Order",
+        "Description": "The evaluation order of transitions.",
+        "TypeKind": "Primitive",
+        "TypeName": "Integer",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "To",
+        "Description": "Target state when the transition happens.",
+        "TypeKind": "Class",
+        "TypeName": "State",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Shared"
+      },
+      {
+        "Name": "Type",
+        "Description": "Type of transition.",
+        "TypeKind": "Enumeration",
+        "TypeName": "StateTransitionType",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Decision",
+        "Description": "User Decision that will trigger the transition in case of decision based transitions.",
+        "TypeKind": "Class",
+        "TypeName": "StateDecision",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Shared"
+      },
+      {
+        "Name": "Expression",
+        "Description": "The C# code that will be executed.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  },
+  {
+    "Name": "StateDecision",
+    "Description": "Decision that a user can take to condition a given state machine transition.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Order",
+        "Description": "Represent the relevance of the decision. Use the Order to sort the decisions.",
+        "TypeKind": "Primitive",
+        "TypeName": "Integer",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "CommentType",
+        "Description": "Define if a comment is required to take the decision.",
+        "TypeKind": "Enumeration",
+        "TypeName": "StateDecisionCommentType",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  },
+  {
+    "Name": "StateBehaviour",
+    "Description": "Behaviour representing how the entity should behave during a state change.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Type",
+        "Description": "The execution moment of the behaviour.",
+        "TypeKind": "Enumeration",
+        "TypeName": "StateBehaviourTypeEnum",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Expression",
+        "Description": "The C# code that will be executed.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  },
+  {
+    "Name": "StateEnabledOperation",
+    "Description": "Operation enabled in a given State.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Path",
+        "Description": "Path to the operation to enable. When accessing to a composite collection, use the '.' to navigate.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Type",
+        "Description": "The operation type to enable.",
+        "TypeKind": "Enumeration",
+        "TypeName": "StateEnabledOperationTypeEnum",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  },
+  {
+    "Name": "StateEnabledAttribute",
+    "Description": "Attribute enabled in a given state.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Path",
+        "Description": "Path to the attribute to enable. When accessing to a composite collection, use the '.' to navigate.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  }
+]

@@ -1,0 +1,611 @@
+[
+  {
+    "Name": "Query",
+    "Description": "Query over a given Data Source.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities’ purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "DataSource",
+        "Description": "The Data Source in which the entities are computed and / or persisted.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Table",
+        "Description": "Table to query data. Also used to define the this query is related to the definition stored in this Table.",
+        "TypeKind": "Class",
+        "TypeName": "QueryTable",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "Joins",
+        "Description": "List of the relations with other tables.",
+        "TypeKind": "Class",
+        "TypeName": "QueryJoin",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "Expression",
+        "Description": "Query based on expression. Content of the Advanced Query. When the expression has value, the rest of the Query definition will be ignored.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  },
+  {
+    "Name": "QueryProperty",
+    "Description": "Property to select in query.",
+    "Properties": [
+      {
+        "Name": "Path",
+        "Description": "Path to the select property.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Alias",
+        "Description": "Alias to the property to select (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 96
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Function",
+        "Description": "Function to apply over the selected path data.",
+        "TypeKind": "Enumeration",
+        "TypeName": "QueryFunction",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  },
+  {
+    "Name": "QueryOrderedProperty",
+    "Description": "Property to order/sort.",
+    "Properties": [
+      {
+        "Name": "Path",
+        "Description": "Path to the select property.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Alias",
+        "Description": "Alias to the property to select (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 96
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Function",
+        "Description": "Function to apply over the selected path data.",
+        "TypeKind": "Enumeration",
+        "TypeName": "QueryFunction",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Direction",
+        "Description": "Sorting direction.",
+        "TypeKind": "Enumeration",
+        "TypeName": "QuerySort",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  },
+  {
+    "Name": "QueryFilter",
+    "Description": "Query Filter condition.",
+    "Properties": []
+  },
+  {
+    "Name": "QueryFilterParameter",
+    "Description": "Filter parameter.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  },
+  {
+    "Name": "QueryFilterParameterWithValue",
+    "Description": "Filter parameter value.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Value",
+        "Description": "Value to apply to the filter parameter.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  },
+  {
+    "Name": "UnaryQueryFilter",
+    "Description": "Filter condition that compares a given value with a parameter.",
+    "Properties": [
+      {
+        "Name": "Path",
+        "Description": "Path to the property to filter.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Operator",
+        "Description": "Comparison operator to apply to the condition.",
+        "TypeKind": "Enumeration",
+        "TypeName": "QueryComparisonOperator",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Parameter",
+        "Description": "Parameter to receive the value to filter by.",
+        "TypeKind": "Class",
+        "TypeName": "QueryFilterParameter",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      }
+    ]
+  },
+  {
+    "Name": "BinaryQueryFilter",
+    "Description": "Binary condition that is composed by two logical conditions.",
+    "Properties": [
+      {
+        "Name": "Left",
+        "Description": "Left part of the condition.",
+        "TypeKind": "Class",
+        "TypeName": "QueryFilter",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "Operator",
+        "Description": "Logical operator over the left and right condition result.",
+        "TypeKind": "Enumeration",
+        "TypeName": "QueryLogicalOperator",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Right",
+        "Description": "Right part of the condition.",
+        "TypeKind": "Class",
+        "TypeName": "QueryFilter",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      }
+    ]
+  },
+  {
+    "Name": "QueryJoin",
+    "Description": "Defines the relation between to tables.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Table",
+        "Description": "Table with of the Definition to join with.",
+        "TypeKind": "Class",
+        "TypeName": "QueryTable",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "JoinType",
+        "Description": "Type of join/relation.",
+        "TypeKind": "Enumeration",
+        "TypeName": "QueryJoinType",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Predicate",
+        "Description": "Relationship condition.",
+        "TypeKind": "Class",
+        "TypeName": "QueryJoinPredicate",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      }
+    ]
+  },
+  {
+    "Name": "QueryJoinPredicate",
+    "Description": "Condition that defines the relation between to tables.",
+    "Properties": [
+      {
+        "Name": "InnerPath",
+        "Description": "Path to the property of the source table of the join.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "OuterPath",
+        "Description": "Path to the property of the target table of the join.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "OuterDefinition",
+        "Description": "Path to the target table of the join condition.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  },
+  {
+    "Name": "QueryTable",
+    "Description": "Table to query.",
+    "Properties": [
+      {
+        "Name": "Definition",
+        "Description": "Name of the Entity Definition.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Alias",
+        "Description": "Alias to the table selected.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Properties",
+        "Description": "Properties of the Table.",
+        "TypeKind": "Class",
+        "TypeName": "QueryProperty",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "OrderedProperties",
+        "Description": "Properties to order.",
+        "TypeKind": "Class",
+        "TypeName": "QueryOrderedProperty",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "Filter",
+        "Description": "Condition to apply.",
+        "TypeKind": "Class",
+        "TypeName": "QueryFilter",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      }
+    ]
+  }
+]

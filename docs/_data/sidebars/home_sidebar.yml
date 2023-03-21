@@ -1,0 +1,25 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Sidebar
+  levels: one
+  folders:
+
+  - title: Overview
+    output: web, pdf
+    folderitems:
+    
+    - title: Welcome
+      output: web
+      url: /index.html
+      type: homepage
+    
+  - title: Products
+    output: web
+    folderitems:
+    - title: News
+      url: /news.html
+      output: web
+    - title: OMNIA 3
+      url: /omnia3_welcometoomnia.html
+      output: web

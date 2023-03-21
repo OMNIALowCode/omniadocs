@@ -1,0 +1,49 @@
+[
+  {
+    "Name": "ElementType",
+    "Values": [
+      "Input",
+      "List",
+      "ListColumn",
+      "GroupContainer",
+      "Group",
+      "ReferenceSelector",
+      "Dashboard",
+      "Form",
+      "WebComponent",
+      "Menu",
+      "MenuEntry",
+      "Container",
+      "Calendar",
+      "Selector",
+      "SelectorEntry",
+      "Button",
+      "ButtonGroup",
+      "Label",
+      "Divider",
+      "Panel"
+    ]
+  },
+  {
+    "Name": "ElementBehaviourType",
+    "Values": [
+      "Initialize",
+      "BeforeChange",
+      "Change",
+      "AfterChange",
+      "BeforeSave",
+      "Select",
+      "BeforeCollectionEntityInitialize",
+      "OnClick"
+    ]
+  },
+  {
+    "Name": "ScreenSize",
+    "Values": [
+      "Mobile",
+      "Tablet",
+      "Desktop",
+      "Widescreen"
+    ]
+  }
+]

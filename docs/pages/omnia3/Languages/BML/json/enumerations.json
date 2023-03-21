@@ -1,0 +1,77 @@
+[
+  {
+    "Name": "BehaviourDependencyType",
+    "Values": [
+      "File",
+      "Nuget",
+      "Expression"
+    ]
+  },
+  {
+    "Name": "DataBehaviourType",
+    "Values": [
+      "Create",
+      "Delete",
+      "Read",
+      "ReadList",
+      "Update"
+    ]
+  },
+  {
+    "Name": "EntityBehaviourType",
+    "Values": [
+      "Action",
+      "AfterChange",
+      "BeforeChange",
+      "Formula",
+      "BeforeSave",
+      "AfterSave",
+      "Initialize",
+      "BeforeCollectionEntityInitialize"
+    ]
+  },
+  {
+    "Name": "ExecutionLocation",
+    "Values": [
+      "External",
+      "Internal"
+    ]
+  },
+  {
+    "Name": "RuntimeLocation",
+    "Values": [
+      "External",
+      "Internal"
+    ]
+  },
+  {
+    "Name": "StateBehaviourTypeEnum",
+    "Values": [
+      "In",
+      "Out"
+    ]
+  },
+  {
+    "Name": "StateEnabledOperationTypeEnum",
+    "Values": [
+      "Add",
+      "Update",
+      "Delete"
+    ]
+  },
+  {
+    "Name": "StateTransitionType",
+    "Values": [
+      "Auto",
+      "Decision"
+    ]
+  },
+  {
+    "Name": "StateDecisionCommentType",
+    "Values": [
+      "None",
+      "Optional",
+      "Required"
+    ]
+  }
+]

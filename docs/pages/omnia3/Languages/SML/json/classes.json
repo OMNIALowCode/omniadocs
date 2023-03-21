@@ -1,0 +1,218 @@
+[
+  {
+    "Name": "AuthorizationPolicy",
+    "Description": "Authorization Policy is a group of Permissions for that are required in a given context.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the policy (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the policy purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Permissions",
+        "Description": "List of permissions.",
+        "TypeKind": "Class",
+        "TypeName": "AuthorizationPolicyPermission",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      },
+      {
+        "Name": "Policies",
+        "Description": "Child authorization policies.",
+        "TypeKind": "Class",
+        "TypeName": "AuthorizationPolicy",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      }
+    ]
+  },
+  {
+    "Name": "AuthorizationPolicyPermission",
+    "Description": "Permission and the Roles that have that permission.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the permission (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the permission purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Roles",
+        "Description": "List of roles that have the permission.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Shared"
+      }
+    ]
+  },
+  {
+    "Name": "AuthorizationRole",
+    "Description": "Authorization Role.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the role (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities’ purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Subjects",
+        "Description": "List of subjects (users) that have the role assigned.",
+        "TypeKind": "Class",
+        "TypeName": "AuthorizationRoleSubject",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite"
+      }
+    ]
+  },
+  {
+    "Name": "AuthorizationRoleSubject",
+    "Description": "Subjects (users) that have the Role assigned.",
+    "Properties": [
+      {
+        "Name": "Id",
+        "Description": "User Id (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Uuid",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      },
+      {
+        "Name": "Username",
+        "Description": "Username of the user.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None"
+      }
+    ]
+  }
+]

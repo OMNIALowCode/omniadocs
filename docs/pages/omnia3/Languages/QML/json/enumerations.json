@@ -1,0 +1,52 @@
+[
+  {
+    "Name": "QueryFunction",
+    "Values": [
+      "None",
+      "Min",
+      "Max",
+      "Count",
+      "Average",
+      "Sum",
+      "Year",
+      "Month",
+      "Day"
+    ]
+  },
+  {
+    "Name": "QuerySort",
+    "Values": [
+      "Ascend",
+      "Descend"
+    ]
+  },
+  {
+    "Name": "QueryComparisonOperator",
+    "Values": [
+      "EqualTo",
+      "GreaterThan",
+      "LessThan",
+      "GreaterThanOrEqualTo",
+      "LessThanOrEqualTo",
+      "NotEqualTo",
+      "Like"
+    ]
+  },
+  {
+    "Name": "QueryLogicalOperator",
+    "Values": [
+      "And",
+      "Or"
+    ]
+  },
+  {
+    "Name": "QueryJoinType",
+    "Values": [
+      "Inner",
+      "Left",
+      "Right",
+      "Full",
+      "Cross"
+    ]
+  }
+]
