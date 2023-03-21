@@ -23,7 +23,7 @@ As our custom data source, we are going to use a CSV file with a list of compani
 
 This tutorial assumes that you have created a OMNIA tenant ([click here to see how](omnia3_tenantcreation.html)), and are logged in as a user with modeling privileges to this tenant. You must also have access to the management area to manage the connectors.
 
-Please download this [TransportationServices.csv](https://raw.githubusercontent.com/OMNIALowCode/omnia3/master/docs/images/tutorials/connector/TransportationServices.csv), we'll be using it as a data source in this tutorial.
+Please download this [TransportationServices.csv](/images/tutorials/connector/TransportationServices.csv), we'll be using it as a data source in this tutorial.
 
 ## 3. Create a new connector
 
@@ -33,7 +33,7 @@ Please download this [TransportationServices.csv](https://raw.githubusercontent.
 
 **3.** Select the connector, and a modal with connector data should be shown.
 
-![CSVConnector](https://raw.githubusercontent.com/OMNIALowCode/omnia3/master/docs/images/tutorials/connector/CSVConnector.jpg)
+![CSVConnector](/images/tutorials/connector/CSVConnector.jpg)
 
 **4.** Now we are going to grant the connector access privileges for the tenant. Access the option **_Security / Roles_**, and select Administration role for the tenant (the tenant code with prefix "Administration")
 
@@ -241,7 +241,7 @@ Element: "**Transportation**"
 - **Column**: 4
 - **Size**: 2
 
-![ConnectorTutorial_PurchaseDocumentEndOfTutorial](<https://raw.githubusercontent.com/OMNIALowCode/omnia3/master/docs/images/tutorials/connector/PurchaseDocument(endOfConnectorTutorial).jpg>) (if your UI doesn't match this one, don't worry, you've just skipped one or more tutorials along the way)
+![ConnectorTutorial_PurchaseDocumentEndOfTutorial](</images/tutorials/connector/PurchaseDocument(endOfConnectorTutorial).jpg>) (if your UI doesn't match this one, don't worry, you've just skipped one or more tutorials along the way)
 That's it! Your Purchase Document now reads directly from a specific Data Source, and simulates the integration of a delivery system selection option alongside your order.
 
 Go to [**Advanced Connector Tutorial**](omnia3_multisystemconnectortutorial.html).

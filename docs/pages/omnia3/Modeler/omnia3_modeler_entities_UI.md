@@ -116,7 +116,7 @@ Click [here](omnia3_modeler_uibehaviours.html), to know more about user interfac
 
 ### Accelerators
 
-![UI Accelerator](https://raw.githubusercontent.com/OMNIALowCode/omnia3/master/docs/images/modeler/UIaccelerator.png)
+![UI Accelerator](/images/modeler/UIaccelerator.png)
 
 - **Hide an Element**
   The accelerator will allow you to easily select an interface element you wish to hide and add the conditions (value or role) that will trigger that behaviour

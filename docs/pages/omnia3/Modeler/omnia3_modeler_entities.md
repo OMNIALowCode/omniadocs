@@ -120,7 +120,7 @@ Selecting the option **Add new** you need to choose the behaviour's type you wan
  
 The accelerator feature is a simple yet powerful tool that enables you to easily generate code for a multitude of actions. There are, currently, three entity behaviour accelerators available:
 
-![Accelerator_GetEntity](https://raw.githubusercontent.com/OMNIALowCode/omnia3/master/docs/images/modeler/accelerator.png)
+![Accelerator_GetEntity](/images/modeler/accelerator.png)
 
  * **Get Entity**
    This accelerator allows you to connect pre-existing attributes in a very simple manner, bridging the gap between them and allowing you assign an entity value to a different attribute, regardless of its context.

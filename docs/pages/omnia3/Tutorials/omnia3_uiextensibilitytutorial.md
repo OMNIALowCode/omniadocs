@@ -61,4 +61,4 @@ It is necessary to have completed the steps in the [Beginner tutorial](https://d
 
 4. Build the model and go to application, create a new **Purchase Order Document**, and check the "**_Order fulfilled?_**" option before submitting it. Now reopen it and verify that all fields are now _read only_.
 
-   ![PurchaseOrderDocument_readOnly](https://raw.githubusercontent.com/OMNIALowCode/omnia3/master/docs/images/tutorials/advanced/purchaseDocument_closed.jpg)
+   ![PurchaseOrderDocument_readOnly](/images/tutorials/advanced/purchaseDocument_closed.jpg)

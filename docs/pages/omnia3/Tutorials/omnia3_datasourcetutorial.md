@@ -229,7 +229,7 @@ NOTE: in this scenario, we are ignoring the query sent by the user when obtainin
 
 2. Now let's add an entity behaviour (OnChange - Employee) to our document, so that our employee selection fills the "EmployeeName" field automatically. Select the "Get Entity" acelerator and make sure you have the following configuration:
 
-	![Acelerator_GetEntity_ChangeEmployee](https://raw.githubusercontent.com/OMNIALowCode/omnia3/master/docs/images/tutorials/datasource/getentityDataSource_onChangeEmployee.jpg)
+	![Acelerator_GetEntity_ChangeEmployee](/images/tutorials/datasource/getentityDataSource_onChangeEmployee.jpg)
 	- **Entity Behaviour Name**: *"OnChange_Employee"*
 	- **Add Data Source to Acelerator Code**:
 	
@@ -262,6 +262,6 @@ NOTE: in this scenario, we are ignoring the query sent by the user when obtainin
 
 3. Build & Deploy and go to your application, create a new Purchase Order Document, select the available External API, and select one of the three available employees. Check that the "Ordered by employee:" field fills automatically, as demonstrated in the image bellow:
 
-	![DataSources_Tutorial_End](https://raw.githubusercontent.com/OMNIALowCode/omnia3/master/docs/images/tutorials/datasource/dataSources_ending.jpg)
+	![DataSources_Tutorial_End](/images/tutorials/datasource/dataSources_ending.jpg)
 
 Now that you know how to use Data Sources, we recommend you to take a look at [this tutorial](omnia3_primaveraconnectortutorial.html) where you will learn how to expose an on-premise Data Source to OMNIA.

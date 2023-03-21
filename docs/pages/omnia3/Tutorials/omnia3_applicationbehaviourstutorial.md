@@ -27,7 +27,7 @@ It is necessary to have completed the steps in the  [Beginner tutorial](omnia3_b
 
 1. Access your modeling area and create a new *Generic Entity*, by accessing the "Generic Entities" tab, and clicking "***Add New***". Set it's name as "***Currency***", and define it as a ***root entity***
 
-    ![Create_New_GenEntity_Currency](https://raw.githubusercontent.com/OMNIALowCode/omnia3/master/docs/images/tutorials/applicationbehaviours/add_generic_entity_currency.jpg)
+    ![Create_New_GenEntity_Currency](/images/tutorials/applicationbehaviours/add_generic_entity_currency.jpg)
 
 2. Now let's create references to your newly created *Generic Entity*. Go to "**Agents**" and select "**Company**", and add a new **reference attribute**:
     - Name: "**CompanyCurrency**"
@@ -70,7 +70,7 @@ It is necessary to have completed the steps in the  [Beginner tutorial](omnia3_b
         - **Column**: 3; 
         - **Size**: 2;
     
-    ![PurchaseOrderDocumentLayout](https://raw.githubusercontent.com/OMNIALowCode/omnia3/master/docs/images/tutorials/applicationbehaviours/document-layout.jpg)
+    ![PurchaseOrderDocumentLayout](/images/tutorials/applicationbehaviours/document-layout.jpg)
 
 4. Now that have all the elements created, let's add one new **Action/Change Entity Behaviour** and edit the pre-existing "GetSupplierName" behaviour, so that they'll fetch the currency value and add the rate calculation as an **After Change** *Entity Behaviour*:
     
@@ -198,7 +198,7 @@ It is necessary to have completed the steps in the  [Beginner tutorial](omnia3_b
     - **Name**: NewtonsoftLinq;
     - **Fully Qualified Name**: Newtonsoft.Json.Linq
     
-    ![App_Behaviour_Namespaces](https://raw.githubusercontent.com/OMNIALowCode/omnia3/master/docs/images/tutorials/applicationbehaviours/app_behaviour_namespaces.jpg)
+    ![App_Behaviour_Namespaces](/images/tutorials/applicationbehaviours/app_behaviour_namespaces.jpg)
 
 7. Build & Deploy model
 

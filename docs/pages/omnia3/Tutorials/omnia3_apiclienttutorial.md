@@ -49,9 +49,9 @@ If you do not have a tenant yet, please follow the steps of the [Tenant Creation
 
 3. Before creating a request to OMNIA API, configure OAuth 2.0 as the authentication type to be used on requests, and fill the required parameters, as in the following images:
 
-    ![Postman oAuth Config](https://raw.githubusercontent.com/OMNIALowCode/omnia3/master/docs/images/tutorials/apiclient/oauth-config.png)
+    ![Postman oAuth Config](/images/tutorials/apiclient/oauth-config.png)
 
-    ![Postman_Configure_AccessToken](https://raw.githubusercontent.com/OMNIALowCode/omnia3/master/docs/images/tutorials/apiclient/newAccessToken.jpg)
+    ![Postman_Configure_AccessToken](/images/tutorials/apiclient/newAccessToken.jpg)
 
     * Grant Type: Set as "Client Credentials"
     * Access token URL: The base url used to access OMNIA, adding "/identity/connect/token" at the end
@@ -73,17 +73,17 @@ If you do not have a tenant yet, please follow the steps of the [Tenant Creation
     ````
 
 
-    ![Postman POST Response](https://raw.githubusercontent.com/OMNIALowCode/omnia3/master/docs/images/tutorials/apiclient/POSTresponse.jpg)
+    ![Postman POST Response](/images/tutorials/apiclient/POSTresponse.jpg)
 
 5. Click on send and check the OMNIA API's response. If request was made successfully, a 201 Created status code is the expected result. Validate the response - it should return a JSON object showing what was created.
 
-    ![Postman 200 Response](https://raw.githubusercontent.com/OMNIALowCode/omnia3/master/docs/images/tutorials/apiclient/postman-response200.jpg)
+    ![Postman 200 Response](/images/tutorials/apiclient/postman-response200.jpg)
 
 6. Now change the request type to GET, and retrieve the Company record saved on the last step by setting the request url as the base url, with "api/v1/[TenantCode]/prd/Application/Company/default/AnalogSound" at the end. Replace "[TenantCode]" with your actual tenant code.
 
 7. Check that the response body has the data previously inserted on the POST request:
 
-    ![Postman_Configure_AccessToken](https://raw.githubusercontent.com/OMNIALowCode/omnia3/master/docs/images/tutorials/apiclient/postman_GETresponse.jpg)
+    ![Postman_Configure_AccessToken](/images/tutorials/apiclient/postman_GETresponse.jpg)
 
 Now that you have completed our API Client tutorial, feel free to explore our API by testing other requests. Remember that the Modeling area is also available via API, so that you can create and change your models programatically.
 

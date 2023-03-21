@@ -38,11 +38,11 @@ The structure of **Language Variables** works as follows:
 
 In the application's English language dictionary the developer inputs the following values:
 
-![EN_language_examples](https://raw.githubusercontent.com/OMNIALowCode/omnia3/master/docs/images/modeler/language-EN-examples.jpg)
+![EN_language_examples](/images/modeler/language-EN-examples.jpg)
 
 And does the same with the translated terms on the Portuguese language dictionary:
 
-![PT_language_examples](https://raw.githubusercontent.com/OMNIALowCode/omnia3/master/docs/images/modeler/language-PT-examples.jpg)
+![PT_language_examples](/images/modeler/language-PT-examples.jpg)
 
 After the Dictionaries have that variable defined and are assigned a value, the platform will output the value instead of the Language Variable.
 
