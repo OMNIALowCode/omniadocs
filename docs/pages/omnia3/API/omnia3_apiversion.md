@@ -13,7 +13,7 @@ OMNIA Platform has a version control system, that not only controls the versions
 
 The version can be consulted through the OMNIA API.
 
-## 2. How to view current version through API?
+## 2. How to view current version through API
 
 ### Platform Version
 
