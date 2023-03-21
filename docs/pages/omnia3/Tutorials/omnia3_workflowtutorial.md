@@ -19,7 +19,7 @@ This tutorial assumes that you have created a OMNIA tenant, and are logged in as
 
 1. Start by selecting the tenant where you are going to model, and you will be redirected to the modeling area.
  
-    ![Homepage_Dashboard](http://funkyimg.com/i/2DVGv.png)
+    ![Homepage_Dashboard](/images/tutorials/beginner/Modeler-Homepage.PNG)
  
 2. Create a new  **Agent**, and set its  *Code*  to  **Company**.
        
