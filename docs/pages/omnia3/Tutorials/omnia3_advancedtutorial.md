@@ -38,26 +38,26 @@ It is necessary to have completed the steps in the [Beginner tutorial](omnia3_be
 
 The output of the **_Get Entity C#_** acelerator should be as follow:
 
-    ```C#
-    if(string.IsNullOrEmpty(this.Supplier?.ToString()))
-        return;
+   ```C#
+   if(string.IsNullOrEmpty(this.Supplier?.ToString()))
+       return;
 
-    // In order to prevent to invoke the API if the values were sent by the user
-    if(
-        this._Dto.HasPropertyChanged(nameof(this.SupplierName))
-     )
-        return;
+   // In order to prevent to invoke the API if the values were sent by the user
+   if(
+       this._Dto.HasPropertyChanged(nameof(this.SupplierName))
+    )
+       return;
 
-    var httpClient = this._Context.CreateApplicationHttpClient();
-    var requestResult = httpClient.GetAsync($"Supplier/Default/{this.Supplier}").GetAwaiter().GetResult();
+   var httpClient = this._Context.CreateApplicationHttpClient();
+   var requestResult = httpClient.GetAsync($"Supplier/Default/{this.Supplier}").GetAwaiter().GetResult();
 
-    if (!requestResult.IsSuccessStatusCode)
-    throw new Exception($"Can't retrieve the entity '{this.Supplier}'");
+   if (!requestResult.IsSuccessStatusCode)
+       throw new Exception($"Can't retrieve the entity '{this.Supplier}'");
 
-    var entity = requestResult.Content.ReadAsAsync<SupplierDto>().GetAwaiter().GetResult();
+   var entity = requestResult.Content.ReadAsAsync<SupplierDto>().GetAwaiter().GetResult();
 
-    this.SupplierName = entity._name;
-    ```
+   this.SupplierName = entity._name;
+   ```
 
 3. Build & Deploy model
 
