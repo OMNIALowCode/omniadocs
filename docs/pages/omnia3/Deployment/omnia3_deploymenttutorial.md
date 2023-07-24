@@ -10,7 +10,7 @@ folder: omnia3
 
 ## 1. Prerequisites
 
-- Create a Linux server (Ubuntu 18.04 LTS), with an **omnia** user, who will be responsible for running the application.
+- Create a Linux server (Ubuntu 20.04 LTS), with an **omnia** user, who will be responsible for running the application.
 
     Ensure the firewall has its port 80 and 443 (HTTP and HTTPS) open to the exterior, so you will be able to access the application.
 
