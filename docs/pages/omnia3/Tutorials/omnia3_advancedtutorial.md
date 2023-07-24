@@ -32,9 +32,9 @@ It is necessary to have completed the steps in the [Beginner tutorial](omnia3_be
 2.  Create a new **_Action Behaviour_** to fill the new attribute (on the _PurchaseOrder_ document, go to tab **Entity Behaviours** and click on **_Add new / (Action / Change)_**). Now let's use one of our development "Acelerators" to get our **_SupplierName_** from the **Agent**s attribute "**\_name**".
     Set its name **GetSupplierName**, and **Supplier** as the attribute that triggers the behaviour:
 
-   ![Acelerator_SelectionScreen](/images/tutorials/advanced/acelerators-selection.jpg)
+    ![Acelerator_SelectionScreen](/images/tutorials/advanced/acelerators-selection.jpg)
 
-   ![Acelerator_FilledFields](/images/tutorials/advanced/acelerators-getEntity-example.jpg)
+    ![Acelerator_FilledFields](/images/tutorials/advanced/acelerators-getEntity-example.jpg)
 
 The output of the **_Get Entity C#_** acelerator should be as follow:
 
