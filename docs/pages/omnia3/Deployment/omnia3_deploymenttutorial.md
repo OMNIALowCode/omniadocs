@@ -33,7 +33,7 @@ For every version of the platform, two zip files are produced and distributed:
 This tutorial assumes we are using the **Full** zip, extracted to a local folder in our machine.
 
 ## 3. Configuring the database
-- Create a database with name **omnia**, with any username & password you want, in a PostgreSQL database server (version 9.6 or above supported).
+- Create a database with name **omnia**, with any username & password you want, in a PostgreSQL database server (version 14.5 or above supported).
 
     Ensure you can access the database server through the firewall, via a tool such as [pgAdmin](https://www.pgadmin.org/), so you can perform management operations, from the machine you are using.
 
