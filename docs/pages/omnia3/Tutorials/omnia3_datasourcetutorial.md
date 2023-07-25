@@ -28,168 +28,168 @@ If you do not have a tenant yet, please follow the steps of the [Tenant Creation
 
 1. Start by selecting the tenant where you are going to model, and you will be redirected to the modeling area (if you only have one tenant, redirection will be automatic).
 
-    ![Homepage_Dashboard](/images/tutorials/beginner/Modeler-Homepage.PNG)
+    ![Homepage_Dashboard](/images/tutorials/beginner/Modeler-Homepage.jpg)
 
-2. Through the left side menu, create a new Data Source by accessing the option ***Data Sources / Create new*** on the top right side. Set its *Name* as "ExternalAPI", Behaviour Runtime as Internal and its Data Access Runtime as External. Leave it as not requiring a connector.
+2. Through the left side menu, create a new Data Source by accessing the option **_Business / Data Sources_** on the top right button **Add new**. Set its *Name* as "ExternalAPI", Behaviour Runtime as Internal and its Data Access Runtime as External. Leave it as not requiring a connector.
 
-    ![Modeler_Create_DataSource](/images/tutorials/datasource/Modeler-Create-DataSource.PNG)
+    ![Modeler_Create_DataSource](/images/tutorials/datasource/datasource-add-new.jpg)
 
 3. Navigate to tab **Behaviour Dependencies** and add a new **File Dependency** reference to .NET assembly System.Net.Http
 
-    ![Modeler_Add_Dependency](/images/tutorials/datasource/DataSourceTutorial-3.jpg)
+    ![Modeler_Add_Dependency](/images/tutorials/datasource/datasource-add-file-dependency.jpg)
 
 4. Create a new Agent with *Name* "Employee", and set it as using the external data source "ExternalAPI" that you created earlier.
 
-    ![Modeler_Create_Agent](/images/tutorials/datasource/Modeler-Create-Agent-Employee.PNG)
+    ![Modeler_Create_Agent](/images/tutorials/datasource/create-agent-employee.jpg)
 
 5. Navigate to tab **Behaviour Namespaces** and add a reference to namespace System.Net.Http
 
-    ![Modeler_Add_Namespace](/images/tutorials/datasource/DataSourceTutorial-5.jpg)
+    ![Modeler_Add_Namespace](/images/tutorials/datasource/employee-add-behaviour-namespace.jpg)
     
-6. Still on *Agent* **Employee**, navigate to tab "Data Behaviours", and define a behaviour to be executed on "Create". This behaviour will be used to perform a POST request to the external Application when we create an instance of the Employee on the OMNIA platform. Copy and paste the following code:
+6. Still on *Agent* **Employee**, navigate to tab **_Data Behaviours_**, and define the C# code to be executed on **Create**. This behaviour will be used to perform a POST request to the external Application when we create an instance of the Employee on the OMNIA platform. Copy and paste the following code:
 
 
 	```C#
 
-		var client = new System.Net.Http.HttpClient();
+	var client = new System.Net.Http.HttpClient();
 
-		string apiEndpoint = $"https://reqres.in/api/users/";
+	string apiEndpoint = $"https://reqres.in/api/users/";
 
-		var body = new
-		{
-		code = dto._code,
-		name = dto._name
-		};
+	var body = new
+	{
+	code = dto._code,
+	name = dto._name
+	};
 
-		var jsonBody = JsonConvert.SerializeObject(body);
-		var httpContent = new System.Net.Http.StringContent(jsonBody, System.Text.Encoding.UTF8, "application/json");
+	var jsonBody = JsonConvert.SerializeObject(body);
+	var httpContent = new System.Net.Http.StringContent(jsonBody, System.Text.Encoding.UTF8, "application/json");
 
-		var requestResult = client.PostAsync(apiEndpoint, httpContent).GetAwaiter().GetResult();
+	var requestResult = client.PostAsync(apiEndpoint, httpContent).GetAwaiter().GetResult();
 
-		string responseBody = requestResult.Content.ReadAsStringAsync().Result;
+	string responseBody = requestResult.Content.ReadAsStringAsync().Result;
 
-		if (!requestResult.IsSuccessStatusCode)
+	if (!requestResult.IsSuccessStatusCode)
+	throw new Exception("Error on creating contact: " + responseBody);
+
+	var response = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
+
+	EmployeeDto employeeResponse = new EmployeeDto();
+	employeeResponse._code = response["code"].ToString();
+	employeeResponse._name = response["name"].ToString();
+	return employeeResponse;
+
+	```
+
+
+7. On "Data Behaviours" of Agent Employee, define the code to be executed on **Delete** (when a Employee is deleted on OMNIA). Copy and paste the following code:
+
+
+	```C#
+
+	var client = new System.Net.Http.HttpClient();
+
+	string apiEndpoint = $"https://reqres.in/api/users/{identifier}";
+
+	var requestResult = client.DeleteAsync(apiEndpoint).GetAwaiter().GetResult();
+
+	string responseBody = requestResult.Content.ReadAsStringAsync().Result;
+
+	if (!requestResult.IsSuccessStatusCode)
+		throw new Exception("Error on removing Employee: " + responseBody);
+
+	return true;
+
+	```
+
+
+8. Set the code for the operation **Read**, so that data is retrieved when a Employee is edited on OMNIA. Copy and paste the following code:
+
+
+	```C#
+
+	var client = new System.Net.Http.HttpClient();
+	string apiEndpoint = $"https://reqres.in/api/users/{identifier}";
+
+	var requestResult = client.GetAsync(apiEndpoint).GetAwaiter().GetResult();
+
+	string responseBody = requestResult.Content.ReadAsStringAsync().Result;
+	if (!requestResult.IsSuccessStatusCode)
 		throw new Exception("Error on creating contact: " + responseBody);
 
-		var response = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
+	var response = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
+	var responseData = JsonConvert.DeserializeObject<Dictionary<string, object>>(response["data"].ToString());
 
-		EmployeeDto employeeResponse = new EmployeeDto();
-		employeeResponse._code = response["code"].ToString();
-		employeeResponse._name = response["name"].ToString();
-		return employeeResponse;
+	EmployeeDto employeeResponse = new EmployeeDto();
+	employeeResponse._code = responseData["id"].ToString();
+	employeeResponse._name = $"{responseData["first_name"].ToString()} {responseData["last_name"].ToString()}";
 
-	```
-
-
-7. On "Data Behaviours" of Agent Employee, define a behaviour, to be executed on "Delete" (when a Employee is deleted on OMNIA). Copy and paste the following code:
-
-
-	```C#
-
-		var client = new System.Net.Http.HttpClient();
-
-		string apiEndpoint = $"https://reqres.in/api/users/{identifier}";
-
-		var requestResult = client.DeleteAsync(apiEndpoint).GetAwaiter().GetResult();
-
-		string responseBody = requestResult.Content.ReadAsStringAsync().Result;
-
-		if (!requestResult.IsSuccessStatusCode)
-			throw new Exception("Error on removing Employee: " + responseBody);
-
-		return true;
+	return employeeResponse;
 
 	```
 
 
-8. Create a new Data Behaviour for the operation "Read", so that data is retrieved when a Employee is edited on OMNIA. Copy and paste the following code:
-
-
-	```C#
-
-		var client = new System.Net.Http.HttpClient();
-		string apiEndpoint = $"https://reqres.in/api/users/{identifier}";
-
-		var requestResult = client.GetAsync(apiEndpoint).GetAwaiter().GetResult();
-
-		string responseBody = requestResult.Content.ReadAsStringAsync().Result;
-		if (!requestResult.IsSuccessStatusCode)
-			throw new Exception("Error on creating contact: " + responseBody);
-
-		var response = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
-		var responseData = JsonConvert.DeserializeObject<Dictionary<string, object>>(response["data"].ToString());
-
-		EmployeeDto employeeResponse = new EmployeeDto();
-		employeeResponse._code = responseData["id"].ToString();
-		employeeResponse._name = $"{responseData["first_name"].ToString()} {responseData["last_name"].ToString()}";
-
-		return employeeResponse;
-
-	```
-
-
-9. Create a new Data Behaviour for the operation "ReadList", so that data is retrieved when a list of Employees is requested. Copy and paste the following code:
+9. Set the code for the operation **ReadList**, so that data is retrieved when a list of Employees is requested. Copy and paste the following code:
 
 	```C#
 
-		var client = new System.Net.Http.HttpClient();
-		string apiEndpoint = $"https://reqres.in/api/users?page={page}";
+	var client = new System.Net.Http.HttpClient();
+	string apiEndpoint = $"https://reqres.in/api/users?page={page}";
 
-		var requestResult = client.GetAsync(apiEndpoint).GetAwaiter().GetResult();
+	var requestResult = client.GetAsync(apiEndpoint).GetAwaiter().GetResult();
 
-		string responseBody = requestResult.Content.ReadAsStringAsync().Result;
+	string responseBody = requestResult.Content.ReadAsStringAsync().Result;
 
-		if (!requestResult.IsSuccessStatusCode)
-			throw new Exception("Error on creating contact: " + responseBody);
+	if (!requestResult.IsSuccessStatusCode)
+		throw new Exception("Error on creating contact: " + responseBody);
 
-		var response = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
-		var responseData = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(response["data"].ToString());
+	var response = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
+	var responseData = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(response["data"].ToString());
 
-		List<IDictionary<string, object>> employeesList = new List<IDictionary<string, object>>();
+	List<IDictionary<string, object>> employeesList = new List<IDictionary<string, object>>();
 
-		foreach (var employee in responseData)
-		{
-		  var line = new Dictionary<string, object>(){
-			  {"_code", employee["id"]}, {"_name", employee["first_name"] + " " + employee["last_name"]}
-		  };
-		  employeesList.Add(line);
-		}
+	foreach (var employee in responseData)
+	{
+		var line = new Dictionary<string, object>(){
+			{"_code", employee["id"]}, {"_name", employee["first_name"] + " " + employee["last_name"]}
+		};
+		employeesList.Add(line);
+	}
 
-		return (responseData.Count, employeesList);
+	return (responseData.Count, employeesList);
 	```
 NOTE: in this scenario, we are ignoring the query sent by the user when obtaining the list. In real world scenarios, you will want to change the query to the external system and/or the returned response, according to the parameters sent by the user.
 
-10. Create a new Data Behaviour for the operation "Update", so that data is retrieved when an Employee is updated on OMNIA (i.e., edited and saved). Copy and paste the following code:
+10. At last, set the code for the operation **Update**, so that data is retrieved when an Employee is updated on OMNIA (i.e., edited and saved). Copy and paste the following code:
 
 
 	```C#
 
-		var client = new System.Net.Http.HttpClient();
-		string apiEndpoint = $"https://reqres.in/api/users/{dto._code}";
+	var client = new System.Net.Http.HttpClient();
+	string apiEndpoint = $"https://reqres.in/api/users/{dto._code}";
 
-		var body = new
-		{
-		code = dto._code,
-		name = dto._name
-		};
+	var body = new
+	{
+	code = dto._code,
+	name = dto._name
+	};
 
-		var jsonBody = JsonConvert.SerializeObject(body);
+	var jsonBody = JsonConvert.SerializeObject(body);
 
-		var httpContent = new System.Net.Http.StringContent(jsonBody, System.Text.Encoding.UTF8, "application/json");
+	var httpContent = new System.Net.Http.StringContent(jsonBody, System.Text.Encoding.UTF8, "application/json");
 
-		var requestResult = client.PutAsync(apiEndpoint, httpContent).GetAwaiter().GetResult();
-		string responseBody = requestResult.Content.ReadAsStringAsync().Result;
+	var requestResult = client.PutAsync(apiEndpoint, httpContent).GetAwaiter().GetResult();
+	string responseBody = requestResult.Content.ReadAsStringAsync().Result;
 
-		if (!requestResult.IsSuccessStatusCode)
-			throw new Exception("Error on creating contact: " + responseBody);
-		
-		var response = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
+	if (!requestResult.IsSuccessStatusCode)
+		throw new Exception("Error on creating contact: " + responseBody);
+	
+	var response = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
 
-		EmployeeDto employeeResponse = new EmployeeDto();
-		employeeResponse._code = response["code"].ToString();
-		employeeResponse._name = response["name"].ToString();
+	EmployeeDto employeeResponse = new EmployeeDto();
+	employeeResponse._code = response["code"].ToString();
+	employeeResponse._name = response["name"].ToString();
 
-		return employeeResponse;
+	return employeeResponse;
 
 	```
 
@@ -198,11 +198,11 @@ NOTE: in this scenario, we are ignoring the query sent by the user when obtainin
 
 12. On Application area, create a new instance of the ExternalAPI data source (Configurations > ExternalAPI), with code "ReqRes".
 
-    ![Application-Create-DataSource](/images/tutorials/datasource/Application-Create-DataSource-Instance.PNG)
+    ![Application-Create-DataSource](/images/tutorials/datasource/create-datasource-instance.jpg)
     
 13. On left side menu, navigate to Configurations / Employee, and check that the list is filled with data retrieved from the external data source.
 
-    ![Application_List_DataSource](/images/tutorials/datasource/Application-List-External-DataSource.PNG)
+    ![Application_List_DataSource](/images/tutorials/datasource/datasource-employee-list.jpg)
     
     
 ## 4. Add Employee to Purchase Document
@@ -217,19 +217,19 @@ NOTE: in this scenario, we are ignoring the query sent by the user when obtainin
 	*Reference Attribute* for "Employee"
 	- **Name**: *Employee*
 	- **Type**: *Agent > Employee*
-	- **Data Source**: *ExternalAPI*
+	- **Uses data source from attribute**: *ExternalAPI*
 	
 	
 	*Primitive Attribute* for Employee Name
 	- **Name**: *EmployeeName*
 	- **Type**: *Text*
 	- **is read only?**: *Yes*
-	- **Label**: *Ordered by employee:* (go to "User Interface" tab to change labels)
+	- **Label**: *Requested by employee:* (edit Form "PurchaseOrderForm" to change labels)
 
 
 2. Now let's add an entity behaviour (OnChange - Employee) to our document, so that our employee selection fills the "EmployeeName" field automatically. Select the "Get Entity" acelerator and make sure you have the following configuration:
 
-	![Acelerator_GetEntity_ChangeEmployee](/images/tutorials/datasource/getentityDataSource_onChangeEmployee.jpg)
+	![Acelerator_GetEntity_ChangeEmployee](/images/tutorials/datasource/accelerator-configuration.jpg)
 	- **Entity Behaviour Name**: *"OnChange_Employee"*
 	- **Add Data Source to Acelerator Code**:
 	
@@ -260,8 +260,8 @@ NOTE: in this scenario, we are ignoring the query sent by the user when obtainin
            this.EmployeeName = entity._name;
         ```
 
-3. Build & Deploy and go to your application, create a new Purchase Order Document, select the available External API, and select one of the three available employees. Check that the "Ordered by employee:" field fills automatically, as demonstrated in the image bellow:
+3. Build & Deploy and go to your application, create a new Purchase Order Document, select the available External API, and select one of the three available employees. Check that the "Requested by employee" field fills automatically, as demonstrated in the image bellow:
 
-	![DataSources_Tutorial_End](/images/tutorials/datasource/dataSources_ending.jpg)
+	![DataSources_Tutorial_End](/images/tutorials/datasource/tutorial-result.jpg)
 
 Now that you know how to use Data Sources, we recommend you to take a look at [this tutorial](omnia3_primaveraconnectortutorial.html) where you will learn how to expose an on-premise Data Source to OMNIA.

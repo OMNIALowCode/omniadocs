@@ -27,7 +27,7 @@ If you do not have a tenant yet, please follow the steps of the [Tenant Creation
 
 1. Start by selecting the tenant where you are going to model and you will be redirected to the modeling area (if you only have one tenant, redirection will be automatic).
 
-   ![Homepage_Dashboard](/images/tutorials/beginner/Modeler-Homepage.PNG)
+   ![Homepage_Dashboard](/images/tutorials/beginner/Modeler-Homepage.jpg)
 
 2. Through the left side menu, access the option **_Business / Agents_** and click on the top right side button **_Add new_**. Set its _Name_ as **Company**.
 
@@ -78,11 +78,13 @@ Add a new attribute by clicking the button **Add new / Reference**. Set its _Nam
 
 19. Add **_Attribute / Add new / Reference_**. Set its _Name_ as **Supplier**, _Type_ as **_Agent / Supplier_**, and as required by checking option "_Is required?_".
 
-20. Navigate to tab _Entity Behaviours_ and click the button **_Add new / Before collection entity is initialized_** to add a new **Before Collection Entity is Initialized** Behaviour to fill **\_provider** and **\_receiver** attributes. Define **_SetCommitmentAgents_** as Name, select **_OrderLines_** as collection and paste the following code:
+20. Navigate to tab _Entity Behaviours_ and click the button **_Add new / After Change_** to add a new **After Change** Behaviour to fill **\_provider** and **\_receiver** attributes. Define **_SetCommitmentAgents_** as Name and paste the following code:
 
     ```C#
-        entry._provider = Supplier;
-        entry._receiver = Company;
+    OrderLines.ForEach(line => {
+           line._provider = Supplier;
+           line._receiver = Company;
+    });
     ```
 
 21. Go to your **_PurchaseOrder_** **Document** form by accessing the menu option **_User Interface / Forms_** and edit the **PurchaseOrderForm**. Reorganize the attributes to simplify the interface (click on a element to edit/remove it or press and hold to drag and drop it). Remove the elements **Provider**, **Receiver** and **Code** from **OrderLines** element. At last, remove **Code** element UI from Document.
