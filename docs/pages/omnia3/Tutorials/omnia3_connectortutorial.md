@@ -233,7 +233,7 @@ Element: "**Transportation List**"
 - **Column**: 3
 - **Size**: 2
 
-![ConnectorTutorial_ElementUI_values](/images/tutorials/connector/ConnectorTutorial_Element_UI.png)
+![ConnectorTutorial_ElementUI_values](/images/tutorials/connector/ConnectorTutorial_Element_UI.PNG)
 
 Element: "**Transportation**"
 
