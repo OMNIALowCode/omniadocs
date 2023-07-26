@@ -27,15 +27,18 @@ If you do not have a tenant yet, please follow the steps of the [Tenant Creation
 
 1. Start by logging in with a user that has access to the manage area, and right side of top navbar, select option  "Management". You will be redirected to the Management area
 
-2. Through the left side menu, create a new API Client by accessing the option ***API Clients / Add new*** on the top right side. Set its Name as "Tutorial API Client"
+2. Through the left side menu, create a new API Client by accessing the option ***API Clients / Add new / API*** on the top right side. Set its Name as "Tutorial API Client"
 
-    ![Management_Create_APIClient](/images/tutorials/apiclient/Management-Create-ApiClient.PNG)
-    
+    ![Management_Create_APIClient](/images/tutorials/apiclient/Manangement-Create-ApiClient.jpg)
+
+Right after creating, a modal should be shown with the Client ID and Secret that you'll use to consume OMNIA API. Copy the Client ID and Secret to a safe location.
+    ![Management_Copy_ApiClientCredentials](/images/tutorials/apiclient/Management-ApiClient-Credentials.jpg)
+
 3. After creating, select the new API Client on the list, and check that you have now access to a Client Id and Secret to consume OMNIA API. Copy the Client Username to the clipboard
 
-    ![Management_Edit_ApiClient](/images/tutorials/apiclient/Management-Edit-ApiClient.PNG)
+    ![Management_Edit_ApiClient](/images/tutorials/apiclient/Management-Edit-ApiClient.jpg)
 
-4. Now its time to define the access privileges for the API Client. Through the left side menu, access option "Security > Roles". Locate the tenant Administration role (its name is a concatenation of "Administration" and the tenant code).
+4. Now its time to define the access privileges for the API Client. Through the left side menu, access option "Security > Roles". Locate the tenant Administration role (composed by the tenant code with prefix "Administration". E.g. AdministrationDemoTenant).
 
 5. Edit the role, and on tab "Users", click on button "Add new". Paste the Client Username copied on step 3 and click on Save
 
