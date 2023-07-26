@@ -53,7 +53,7 @@ If you do not have a tenant yet, please follow the steps of the [Tenant Creation
 
    ![Modeler_Create_Commitment](/images/tutorials/beginner/Modeler-Create-Commitment.PNG)
 
-10. Add a new attribute ([more info here](https://docs.omnialowcode.com/omnia3_modeler_entities.html)) by clicking on button **Add new / Primitive**. Set its _Name_ as **UnitPrice**, _Type_ as **_Decimal_**, and as required by checking option _Is required?_.
+10. Add a new attribute ([more info here](omnia3_modeler_entities.html)) by clicking on button **Add new / Primitive**. Set its _Name_ as **UnitPrice**, _Type_ as **_Decimal_**, and as required by checking option _Is required?_.
 
     ![Modeler_Create_Attribute](/images/tutorials/beginner/Modeler-Create-Commitment-Attribute.jpg)
 

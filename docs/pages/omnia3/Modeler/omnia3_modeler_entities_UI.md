@@ -441,7 +441,7 @@ _Note: This function is only available when the Calendar is mapped and located o
 
 ### **Web Components**
 
-The Web Component instance will be available to interact with in the JS object and is identified by the name of the element. Due to the array of [supported browsers](https://docs.omnialowcode.com/omnia3_webapprequirements.html), the Javascript should be written in ES6 format.
+The Web Component instance will be available to interact with in the JS object and is identified by the name of the element. Due to the array of [supported browsers](omnia3_webapprequirements.html), the Javascript should be written in ES6 format.
 
 ### How to set a value of a Web Component's property?
 
