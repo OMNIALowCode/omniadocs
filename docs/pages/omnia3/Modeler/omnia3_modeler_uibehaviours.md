@@ -39,7 +39,7 @@ There are currently three different execution moments for UI behaviours, which f
 - **On Select**: Executes when an Menu Entry is selected (only applies to menus);
 - **On Click**: Executes when a Button is clicked (only applies to buttons);
 
-Other than these, there are one special entity behaviours:
+Other than these, there is one special entity behaviour:
 
 - **Before Collection Entity Initialize**: Executes when a new entity is added to a collection, before its Initialize behaviour (only applies to forms);
 

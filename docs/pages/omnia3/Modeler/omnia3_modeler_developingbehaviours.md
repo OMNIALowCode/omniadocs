@@ -9,16 +9,19 @@ folder: omnia3
 
 ## 1. Introduction
 
-When developing behaviours in the OMNIA platform, writing C# with no context directly into the modeling area is not going to be enough for any other than the simplest scenarios. However, it is possible to download the exact C# classes that the platform will use for its execution of the behaviours, and both develop code and test it in Visual Studio.
+When developing behaviours in OMNIA platform, writing C# with no context directly into the modeling area is not going to be enough for any other than the simplest scenarios. However, it is possible to download the exact C# classes that the platform will use for its execution of the behaviours, and both develop code and test it in Visual Studio.
 
 ## 2. Obtaining the model
 
 - Access the modeling area for the tenant and environment you want to develop in;
-- Access **_Versioning > Builds_** and download the build you want, using the _Download build_ option;
+- Access **_Model info / Builds_** and download the build you want, using the _Download build_ option;
 
 ## 3. Structure of the downloaded build
 
 After extracting the downloaded build (a .zip file), you will have the following folders:
+* **BinaryData**
+  * **ApplicationAsset**: The files uploaded as model Assets;
+  * **ComponentsPackage**: The packages of components added to the model;
 * **Server**
   * **Behaviours**: The [C# classes](#4-c-behaviours) generated based on the modeled behaviours (Entity, Data, Application and Code Dependencies);
 * **Database**
@@ -27,6 +30,8 @@ After extracting the downloaded build (a .zip file), you will have the following
   * **Behaviours**: The JavaScript classes generated based on User Interface behaviours;
   * **WebComponents**: The JavaScript files representing the modeled Web Components.
   * **Themes**: The SASS files representing the modeled Themes.
+  * **CssStyles**: The modeled CSS Styles classes.
+  * **Scripts**: The modeled JavaScript global scripts.
 
 ## 4. C# Behaviours
 

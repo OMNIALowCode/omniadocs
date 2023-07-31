@@ -9,7 +9,7 @@ folder: omnia3
 
 ## 1. Introduction
 
-In order to reach the best User Interface experience possible there are some implementations to the Application side.
+In order to obtain the best User Interface experience possible there are some concerns to have when developing the Model.
 
 ## 2. User Interface
 

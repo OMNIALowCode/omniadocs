@@ -10,7 +10,7 @@ folder: omnia3
 
 ## 1. Introduction
 
-The platform's behaviours allow you to use write C# code to handle a series of scenarios (see [data](omnia3_modeler_datasources.html) and [entity](omnia3_modeler_behaviours.html) behaviours explained).
+The platform's behaviours allow you to write C# code to handle a series of scenarios (see [data](omnia3_modeler_datasources.html) and [entity](omnia3_modeler_behaviours.html) behaviours explained).
 
 One of the most important things about working in C# is the ability to use dependencies by referencing DLLs. 
 
@@ -126,7 +126,7 @@ namespace Omnia.Behaviours.MyTenant.Internal.System
 
 
 
-### 3.4  Recommended
+### 3.4  Recommendations
 
 - Use namespaces
 - Prefer multiple Code Dependencies to one huge Code Dependency

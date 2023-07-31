@@ -17,7 +17,7 @@ There are three different modelable entities that will be used for this purpose,
 
 ## 2. Queries
 
-**_Data Analytics / Queries_**
+**_Query / Queries_**
 
 A **query**, in OMNIA, represents a way to define a series of properties whose values you want to obtain, from an entity or a series of entities. If you have ever worked with a query-based languages such as SQL, you will be familiar with this concept - in fact, the queries we model in OMNIA are later turned into SQL, in the [build](omnia3_modeler_lifecycle) process.
 
@@ -166,7 +166,7 @@ You can access a SQL parameter (**@\_userLanguage**) with the active language of
 
 ### Access to created date and updated date
 
-You can access a to the created date using _\_created_at_ and updated date using _\_updated_at_.
+You can access the created date using _\_created_at_ and updated date using _\_updated_at_.
 These columns are only available on root entity views.
 
 ### Recommendations
@@ -191,7 +191,7 @@ These columns are only available on root entity views.
 
 ## 3. Lists
 
-**_Data Analytics / Lists_**
+**_User Interface / Lists_**
 
 In order to use the queries, we will need a place to show them. **Lists** are one of those places.
 
@@ -226,7 +226,7 @@ By editing a list in the menu, and selecting the option _Add new_, you can add t
 
 ## 4. Dashboards
 
-**_Data Analytics / Dashboards_**
+**_User Interface / Dashboards_**
 
 A dashboard is a collection of lists organized in a particular order.
 
@@ -241,7 +241,7 @@ Select the option _Add new_ when in the list of Dashboards, and fill in the foll
 - **Label**: what label should be displayed for the dashboard;
 - **Help Text**: Auxiliary texts that explain the dashboard's purpose to the users.
 
-**Special case:** A dashboard with a code of **Home** will be automatically displayed in the homepage of the application.
+**Special case:** A dashboard named **Home** will be automatically displayed in the homepage of the application.
 
 ### What elements can be added to dashboards?
 
@@ -262,34 +262,34 @@ To add a new element check the right sidebar in the **User Interface**, where yo
 **Lists** - Available lists in current model
 
 <p align="center">
-  <img src="/images/modeler/AddUIAvailableLists.png">
+  <img src="/images/modeler/AddUIAvailableLists.jpg">
 </p>
 
-**Add new Element** - Elements types available to add to the current entity
+**Add new Element** - Elements available to add to the current entity
 
 <p align="center">
-  <img src="/images/modeler/AddUINewElement.png">
+  <img src="/images/modeler/AddUINewElement.jpg">
 </p>
 
-Simply select the opinion you desire, and drag and drop the attribute or element type in the entity's User Interface Dashboard.
+Simply select the opinion you desire, and drag and drop the attribute or element type in the entities User Interface Dashboard.
 
 When adding a new element to the layout, you also may fill the following information:
 
-- **Name**: the name of the element (needs to be unique);
-- **Description**: the textual explanation of the element's purpose (can be used as development documentation);
-- **List**: which list should be displayed in this dashboard element;
-- **Label**: what label should be displayed for the element;
-- **Help Text**: Auxiliary texts that explain the element's purpose to the users.
-- **Row**: the layout row in which the element will be placed;
-- **Column**: the layout column in which the element will be placed;
-- **Size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_userinterface.html#lists-and-grid-columns), to know more about elements size and columns;
+- **name**: the name of the element (needs to be unique);
+- **label**: what label should be displayed for the element;
+- **helpText**: Auxiliary texts that explain the element's purpose to the users.
+- **description**: the textual explanation of the element's purpose (can be used as development documentation);
+- **listCode**: which list should be displayed in this dashboard element;
+- **row**: the layout row in which the element will be placed;
+- **column**: the layout column in which the element will be placed;
+- **size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_userinterface.html#lists-and-grid-columns), to know more about elements size and columns;
 
 Other information might be necessary when adding inputs:
 
-- **Type**: when input represents an Enumeration or Reference, indicate its base type;
-- **Is list of records?**: indicate if the input allows multiple values;
-- **Minimum/Maximum number of records**: indicate the minimum and maximum number of records allowed;
-- **Uses data source from attribute**: (on Reference inputs of external data source entities) Indicate another dashboard input where the datasource data is set;
+- **type**: when input represents an Enumeration or Reference, indicate its base type;
+- **min/max**: indicate the minimum and maximum number of records allowed;
+- **list**: (on Reference inputs) Indicate the list to open when searching for a record;
+- **dependsOnAttribute**: (on Reference inputs of external data source entities) Indicate another dashboard input where the datasource data is set;
 
   _Note: Data source data can also be set on UI behaviours. Example:_
 
@@ -299,14 +299,10 @@ Other information might be necessary when adding inputs:
 
 When adding a button, the following information can be specified:
 
-- **Icon**: Optionally it is possible to add an icon to the button (according to [Font Awesome 4.7](https://fontawesome.com/v4.7.0/icons/));
-- **Color**: The button color according to the theme (e.g.: Primary, Danger, etc.);
-- **Outline**: If the button only has a border instead of a background-color;
-- **Fill Size**: If the button occupies all the allocated horizontal space or if its width is limited to the minimum necessary size.
-
-When adding a button group, you can also specify:
-
-- **Align Content**: Specifies whether to align the buttons inside the group to the left, center or right. This is only visible when all the buttons inside the group are set to not occupy all the allocated space.
+- **text**: The button text.
+- **icon**: Optionally it is possible to add an icon to the button (according to [Font Awesome 4.7](https://fontawesome.com/v4.7.0/icons/));
+- **color**: The button color according to the theme (e.g.: Primary, Danger, etc.);
+- **outline**: If the button only has a border instead of a background-color;
 
 ### How to programmatically configure a list inside a dashboard?
 
@@ -410,9 +406,9 @@ _Note: The changes you make to the list query parameters, filters, sorting and d
 
 ## 5. User Interface Behaviours
 
-**_Dashboard / User Interface Behaviours_**
+**_User Interface / Dashboard / User Interface Behaviours_**
 
-In order to extend your application user interface you can add new behaviours to your dashboard' user interface.
+In order to extend your application user interface you can add new behaviours to your dashboard user interface.
 
 Click [here](omnia3_modeler_uibehaviours.html), to know more about user interface behaviours.
 

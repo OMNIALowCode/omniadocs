@@ -32,7 +32,7 @@ Usage guidelines:
 
 Our API requires authorization, so the first you need to do is register an API client in the platform ([see here how](omnia3_management_introduction.html#4-api-clients)).
 
-We choose [OAuth 2.0](https://www.oauth.com/) as our authorization protocol. OAuth 2.0 is the industry-standard protocol for authorization and securing access to APIs with focus on client developer simplicity.
+We chose [OAuth 2.0](https://www.oauth.com/) as our authorization protocol. OAuth 2.0 is the industry-standard protocol for authorization and securing access to APIs with focus on client developer simplicity.
 
 After the register, using the generated _Client ID_ and _Client Secret_, you are able to request an [access token](https://www.oauth.com/oauth2-servers/access-tokens/) to gain access to the API, through the OAuth 2.0 [Client Credentials](https://tools.ietf.org/html/rfc6749#section-1.3.4) flow, and start using the API.
 

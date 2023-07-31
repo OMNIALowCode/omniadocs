@@ -10,14 +10,14 @@ folder: omnia3
 
 ## 1. Introduction
 
-Here you'll find a list of recommendations that you should follow when modelling an application using OMNIA. It's a group of best practices based on our experience collected from application development.
+Here you'll find a list of recommendations that you should follow when modeling an application using OMNIA. It's a group of best practices based on our experience collected from application development.
 
 
 ## 2. Best Practices
 
 ### Descriptive naming
 
-Use meaningful names for modelled artifacts. The name should tell you why it exists and what it does.
+Use meaningful names for modeled artifacts. The name should tell you why it exists and what it does.
 
 ### Use ETag when consuming the API
 
@@ -30,7 +30,7 @@ Behaviours can be executed in the sequence of multiple actions. For example, an 
 
 **Example to only execute the code if the operation is Create or Update:**
 
-```
+```C#
     if (_Context.Operation.Action != Action.EntityCreate &&
         _Context.Operation.Action != Action.EntityUpdate)
     return await Task.FromResult(AfterSaveMessage.Empty);
@@ -58,7 +58,7 @@ Information like the current Role or Username can be accessed from the `Context`
 Decimal attributes that are calculated on C# behaviours should be rounded to match the number of decimal cases defined on UI.
 
 
-```
+```C#
     this.Average = Decimal.Round(this.Amount / this.Quantity, 2);
 ```
 

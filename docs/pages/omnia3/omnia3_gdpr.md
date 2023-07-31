@@ -7,7 +7,7 @@ permalink: omnia3_gdpr.html
 folder: omnia3
 ---
 
-GDPR compliance has been a priority for OMNIA since it's release and below is the list of topics and measures that were developed in order to comply with its regulation.
+GDPR compliance has been a priority for OMNIA since its release and below is the list of topics and measures that were developed in order to comply with its regulation.
 
 ## Sensitive Data
 

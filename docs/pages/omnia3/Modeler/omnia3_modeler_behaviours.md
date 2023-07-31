@@ -239,7 +239,7 @@ await cache.RemoveAsync("MyKeyName");
 
 You can access the behaviour server logger using:
 
-```
+```C#
 var logger = _Context.Services.GetService<ILogger<Customer>>();
 
 logger.LogInformation("My first log entry!");
