@@ -37,7 +37,7 @@ To remove ("_uninstall_") the Development Environment from the machine, you must
     docker-compose -p OmniaPlatform down --rmi all
 ```
 
-This will stop every running container from the `OmniaPlatform` project and then remove them all, including it's images.
+This will stop every running container from the `OmniaPlatform` project and then remove them all, including its images.
 
 **NOTE:** This command doesn't remove local storage data.
 
