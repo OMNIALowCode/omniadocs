@@ -140,6 +140,24 @@ It's possible to **drag** (hold the mouse click on) each _view_ or _column's_ _n
     FROM vw_company
 ```
 
+### _Output Structure_
+
+On Advanced Queries, it's possible to define the output structure. This structure can be used later when creating a new list, to define the columns.
+
+To set the query output structure, on the advanced query editor navigate to Columns tab and click on the _Auto-fill_ button:
+
+<p align="center">
+  <img src="/images/modeler/Modeler_Query_Autofill.jpg">
+</p>
+
+The query will be validated, executed and the structure will be suggested.
+
+<p align="center">
+  <img src="/images/modeler/Modeler_Query_Autofill_Result.jpg">
+</p>
+
+This suggestion can be edited and new columns can be added manually.
+
 ### Filtering data with the current user
 
 You can access a SQL parameter (**@\_username**) with the current username. You can use that to filter data.
@@ -213,16 +231,18 @@ To create a list manually, select the option _Add new_ when in the list of Lists
 - **Label**: what label should be displayed for the list;
 - **Help Text**: Auxiliary texts that explain the list's purpose to the users.
 
-### How to edit the columns in a list?
+### How to set the columns of a list?
 
 When the list is created manually, after its creation it will be empty, and you must select which columns from the query you want to show.
 
-By editing a list in the menu, and selecting the option _Add new_, you can add the following information:
+By editing a list in the menu, and selecting the option _Add new_, navigate to the _Related Query Properties_ tab and you can add the columns exposed by the query its based on. This is valid for simple queries or advanced queries whose output structure was defined.
 
-- **Query property**: The property of the query this column will represent. In case of advanced queries you will define the column alias;
-- **Label**: What the label of the column will say;
-- **Help Text**: Auxiliary text that explains this column to users;
-- **Format as**: Which formatting strategy should this column have. Similar to spreadsheet applications, i.e. a result of "5" can be shown normally, or formatted as a decimal.
+You can also add list columns manually, by dragging a new column and filling the following information:
+
+- **name**: The property of the query this column will represent. In case of advanced queries you will define the column alias;
+- **label**: What the label of the column will say;
+- **helpText**: Auxiliary text that explains this column to users;
+- **formattingType**: Which formatting strategy should this column have. Similar to spreadsheet applications, i.e. a result of "5" can be shown normally, or formatted as a decimal.
 
 ## 4. Dashboards
 
