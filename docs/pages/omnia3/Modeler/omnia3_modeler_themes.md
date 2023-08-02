@@ -19,7 +19,7 @@ OMNIA Themes are based on the [SCSS language](https://sass-lang.com/documentatio
 
 Themes are built using SCSS variables and, because OMNIA uses Bootstrap 4 as its framework, they will override the default Bootstrap variables.
 
-### How to add a new Themes?
+### How to add a new Theme?
 
 To add a new theme go to the Modeling area, find the **_User Interface / Themes_** option on the menu and access it. This will take you to your themes management dashboard.
 
