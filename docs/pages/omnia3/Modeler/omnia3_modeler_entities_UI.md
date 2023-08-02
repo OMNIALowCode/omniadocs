@@ -38,7 +38,7 @@ When adding a new element to the layout, you also may fill the following informa
 - **helpText**: the detailed description of the element;
 - **row**: the layout row in which the element will be placed;
 - **column**: the layout column in which the element will be placed;
-- **size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_userinterface.html#lists-and-grid-columns), to know more about elements size and columns;
+- **size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_entities_ui.html#lists-and-grid-columns), to know more about elements size and columns;
 - **isHidden**: the visibility of the element (hidden or visible);
 - **visibleFrom**: the visibility of the element, related to the user's device screen size (at sizes smaller than the one selected, the element will be hidden);
 
@@ -55,7 +55,7 @@ Now select and hold the **Container** option, drag and drop it in the entity's U
 - **helpText**: the detailed description of the element;
 - **row**: the layout row in which the element will be placed;
 - **column**: the layout column in which the element will be placed;
-- **size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_userinterface.html#lists-and-grid-columns), to know more about elements size and columns;
+- **size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_entities_ui.html#lists-and-grid-columns), to know more about elements size and columns;
 - **isHidden**: the visibility of the element (hidden or visible);
 - **visibleFrom**: the visibility of the element, related to the user's device screen size (at sizes smaller than the one selected, the element will be hidden);
 
@@ -68,7 +68,7 @@ In the Form page, select the **Drag to add / Add new Element** section, click on
 - **helpText**: the detailed description of the element;
 - **row**: the layout row in which the element will be placed;
 - **column**: the layout column in which the element will be placed;
-- **size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_userinterface.html#lists-and-grid-columns), to know more about elements size and columns;
+- **size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_entities_ui.html#lists-and-grid-columns), to know more about elements size and columns;
 - **isHidden**: the visibility of the element (hidden or visible);
 - **visibleFrom**: the visibility of the element, related to the user's device screen size (at sizes smaller than the one selected, the element will be hidden);
 
@@ -90,7 +90,7 @@ Now select and hold the **Calendar** option, drag and drop it in the entity's Us
 - **helpText**: the detailed description of the element;
 - **row**: the layout row in which the element will be placed;
 - **column**: the layout column in which the element will be placed;
-- **size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_userinterface.html#lists-and-grid-columns), to know more about elements size and columns;
+- **size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_entities_ui.html#lists-and-grid-columns), to know more about elements size and columns;
 - **isHidden**: the visibility of the element (hidden or visible);
 - **visibleFrom**: the visibility of the element, related to the user's device screen size (at sizes smaller than the one selected, the element will be hidden);
 
@@ -100,7 +100,7 @@ In the **Form** user interface, select the element you want to change and drag i
 
 ### How to change the size of an element?
 
-In the **Form** user interface, select the element you want to change and, in the _Size_ field, select the new size. Click [here](omnia3_modeler_userinterface.html#lists-and-grid-columns), to know more about elements size and columns.
+In the **Form** user interface, select the element you want to change and, in the _Size_ field, select the new size. Click [here](omnia3_modeler_entities_ui.html#lists-and-grid-columns), to know more about elements size and columns.
 
 ### How to remove an element?
 
@@ -178,7 +178,7 @@ In this sample, custom element _supplier_ size is changed:
     this._metadata.elements.supplier.size = 1;
 ```
 
-Click [here](omnia3_modeler_userinterface.html#lists-and-grid-columns), to know more about elements size and columns.
+Click [here](omnia3_modeler_entities_ui.html#lists-and-grid-columns), to know more about elements size and columns.
 
 ### How to set an element value?
 
@@ -693,3 +693,14 @@ In this sample, it's verified if an entity is a modal or not:
     // This property is a boolean
     this._metadata.isModal;
 ```
+
+## 3. Screen Layout
+
+### Lists and Grid columns
+
+The **size** of elements represents the number of columns it covers on Lists or Grids (for example, on collections).
+To respect user's desktop screen resolution, there's a limit on Lists and Grids to three resolutions that changes the maximum number of columns the user can see without scrolling:
+
+- Window width **smaller** than `1366 pixels` (720p has a width of `1280px`) displays a maximum of **12** columns;
+- Window width **smaller** than `1920 pixels` (1080p) displays a maximum of **16** columns;
+- Window width **greater** than `1920 pixels` (1080p) displays a maximum of **20** columns;
