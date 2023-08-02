@@ -166,59 +166,89 @@ entries:
 
       - title: Modeler
         output: web, pdf
+        
         folderitems:
           - title: Introduction
             url: /omnia3_modeler_introduction.html
             output: web, pdf
+        subfolders:
+              - title: Structure
+                output: web
+                subfolderitems:
+                  - title: Modeling Entities (Structure)
+                    url: /omnia3_modeler_entities.html
+                    output: web, pdf
+    
+                  - title: Modeling Lifecycle
+                    url: /omnia3_modeler_lifecycle.html
+                    output: web, pdf
+    
+                  - title: Modeling Enumerations
+                    url: /omnia3_modeler_enumerations.html
+                    output: web, pdf
+                    
+                  - title: Behaviours
+                    url: /omnia3_modeler_behaviours.html
+                    output: web, pdf
+        
+                  - title: State Machines
+                    url: /omnia3_modeler_statemachines.html
+                    output: web, pdf
 
-          - title: Modeling Entities (Structure)
-            url: /omnia3_modeler_entities.html
-            output: web, pdf
+                  - title: Data Sources and Data Behaviours
+                    url: /omnia3_modeler_datasources.html
+                    output: web, pdf
+        
+                  - title: Behaviour Dependencies
+                    url: /omnia3_modeler_dependencies.html
+                    output: web, pdf
 
-          - title: Modeling Lifecycle
-            url: /omnia3_modeler_lifecycle.html
-            output: web, pdf
+                  - title: Data Exploration
+                    url: /omnia3_modeler_datavisualization.html
+                    output: web, pdf
 
-          - title: Modeling Enumerations
-            url: /omnia3_modeler_enumerations.html
-            output: web, pdf
+              - title: User Interface
+                output: web
+                subfolderitems:
+                  - title: Modeling Entities (User Interface)
+                    url: /omnia3_modeler_entities_ui.html
+                    output: web, pdf
+        
+                  - title: User Interface Behaviours
+                    url: /omnia3_modeler_uibehaviours.html
+                    output: web, pdf
 
-          - title: Modeling Entities (User Interface)
-            url: /omnia3_modeler_entities_ui.html
-            output: web, pdf
+                  - title: Web Components
+                    url: /omnia3_modeler_webcomponents.html
+                    output: web, pdf
+        
+                  - title: Menu
+                    url: /omnia3_modeler_menu.html
+                    output: web, pdf
 
-          - title: Behaviours
-            url: /omnia3_modeler_behaviours.html
-            output: web, pdf
+                  - title: Themes
+                    url: /omnia3_modeler_themes.html
+                    output: web, pdf
 
-          - title: State Machines
-            url: /omnia3_modeler_statemachines.html
-            output: web, pdf
+                  - title: User Interface
+                    url: /omnia3_modeler_userinterface.html
+                    output: web, pdf
 
-          - title: Data Sources and Data Behaviours
-            url: /omnia3_modeler_datasources.html
-            output: web, pdf
-
-          - title: Behaviour Dependencies
-            url: /omnia3_modeler_dependencies.html
-            output: web, pdf
-
-          - title: User Interface Behaviours
-            url: /omnia3_modeler_uibehaviours.html
-            output: web, pdf
-
-          - title: Data Visualization
-            url: /omnia3_modeler_datavisualization.html
-            output: web, pdf
-
-          - title: Web Components
-            url: /omnia3_modeler_webcomponents.html
-            output: web, pdf
-
-          - title: Menu
-            url: /omnia3_modeler_menu.html
-            output: web, pdf
-
+              - title: Development
+                output: web
+                subfolderitems:
+                  - title: Best Practices
+                    url: /omnia3_modeler_bestpractices.html
+                    output: web, pdf
+        
+                  - title: Developing and Debugging
+                    url: /omnia3_modeler_developingbehaviours.html
+                    output: web, pdf
+        
+                  - title: Development Environment
+                    url: /omnia3_modeler_developmentenvironment.html
+                    output: web, pdf
+                
           - title: Languages
             url: /omnia3_modeler_languages.html
             output: web, pdf
@@ -229,26 +259,6 @@ entries:
 
           - title: Email Notifications
             url: /omnia3_modeler_emailnotifications.html
-            output: web, pdf
-
-          - title: Themes
-            url: /omnia3_modeler_themes.html
-            output: web, pdf
-
-          - title: Best Practices
-            url: /omnia3_modeler_bestpractices.html
-            output: web, pdf
-
-          - title: User Interface
-            url: /omnia3_modeler_userinterface.html
-            output: web, pdf
-
-          - title: Developing and Debugging
-            url: /omnia3_modeler_developingbehaviours.html
-            output: web, pdf
-
-          - title: Development Environment
-            url: /omnia3_modeler_developmentenvironment.html
             output: web, pdf
 
       - title: Application
