@@ -171,7 +171,8 @@ entries:
           - title: Introduction
             url: /omnia3_modeler_introduction.html
             output: web, pdf
-        subfolders:
+            
+            subfolders:
               - title: Structure
                 output: web
                 subfolderitems:
