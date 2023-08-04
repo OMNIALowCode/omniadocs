@@ -1,5 +1,5 @@
 ---
-title: Themes
+title: Assets
 keywords: lowcode user interface assets
 summary: "All the information regarding our User Interface assets. Include static visual elements in your applications."
 sidebar: omnia3_sidebar
@@ -22,7 +22,7 @@ To add a new asset go to the Modeling area, find the **_User Interface / Assets_
 Now select _Add new_ and fill in the following information:
 
 - **Name**: the name of the asset (needs to be unique within the model);
-- **Description**: the textual explanation of the theme's purpose (can be used as development documentation).
+- **Description**: the textual explanation of the asset (can be used as development documentation).
 - **Asset file**: the asset file to upload, limited to image files.
 
 
