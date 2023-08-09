@@ -1,5 +1,5 @@
 ---
-title: Themes
+title: Components
 keywords: lowcode user interface components
 summary: "All the information regarding our User Interface Components. Use your own Components on OMNIA Pages"
 sidebar: omnia3_sidebar
@@ -15,11 +15,11 @@ These components have the same purpose as the ones available on Forms and Dashbo
 
 Components can be visual (e.g. inputs) or functional. Users can interact with the visual components directly, while functional components are used to execute multiple processes behind the screen (e.g. fetch data, act as container to render other elements).
 
-OMNIA Platform contains a small number of base components, and new ones can be added to each model, according to its needs. Multiple packages with different components can be uploaded, and you can develop your own components. To start, we suggest using the package made available by the OMNIA Platform, that you can find [here](https://github.com/OMNIALowCode/omnia-base-components).
+OMNIA Platform contains a small number of internal components, and new ones can be added to each model, according to its needs. Multiple packages with different components can be uploaded, and you can develop your own components. To start, we suggest using the package made available by the OMNIA Platform, that you can find [here](https://github.com/OMNIALowCode/omnia-base-components).
 
-## 2. Base Components
+## 2. Internal Components
 
-OMNIA Platform has four base components:
+OMNIA Platform has four internal components:
 
 ### forEach
 
@@ -123,7 +123,7 @@ You can upload a new version of the components package.
 
 Components are available to be used on modeled Pages.
 
-After a Components Package is imported, components are listed on the Page _Drag to Add_ option, along with Base Components:
+After a Components Package is imported, components are listed on the Page _Drag to Add_ option, along with internals Components:
 
 <p align="center">
   <img src="/images/modeler/Modeler-Components-List.jpg">

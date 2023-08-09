@@ -1,5 +1,5 @@
 ---
-title: Themes
+title: Pages
 keywords: lowcode user interface pages
 summary: "All the information regarding OMNIA Platform Pages. Design your application screens as you want."
 sidebar: omnia3_sidebar

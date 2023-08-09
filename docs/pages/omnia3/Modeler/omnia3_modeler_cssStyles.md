@@ -1,5 +1,5 @@
 ---
-title: Themes
+title: CSS Styles
 keywords: lowcode user interface css
 summary: "All the information regarding the User Interface CSS Styles. Add your own CSS classes to your applications."
 sidebar: omnia3_sidebar
