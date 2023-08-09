@@ -243,6 +243,33 @@ entries:
                     url: /omnia3_modeler_datavisualization.html
                     output: web, pdf
 
+                  - title: Assets
+                    url: /omnia3_modeler_assets.html
+                    output: web, pdf
+
+                  - title: CSS Styles
+                    url: /omnia3_modeler_cssStyles.html
+                    output: web, pdf
+
+                  - title: Scripts
+                    url: /omnia3_modeler_scripts_UI.html
+                    output: web, pdf
+
+                  - title: Components
+                    url: /omnia3_modeler_components.html
+                    output: web, pdf
+
+                  - title: Pages
+                    url: /omnia3_modeler_pages.html
+                    output: web, pdf
+
+              - title: Queries
+                output: web
+                subfolderitems:
+                  - title: Queries
+                    url: /omnia3_modeler_queries.html
+                    output: web, pdf
+                    
               - title: Development
                 output: web
                 subfolderitems:
@@ -256,13 +283,6 @@ entries:
         
                   - title: Development Environment
                     url: /omnia3_modeler_developmentenvironment.html
-                    output: web, pdf
-
-              - title: Queries
-                output: web
-                subfolderitems:
-                  - title: Queries
-                    url: /omnia3_modeler_queries.html
                     output: web, pdf
 
       - title: Application

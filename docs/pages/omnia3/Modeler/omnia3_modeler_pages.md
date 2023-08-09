@@ -13,9 +13,28 @@ In OMNIA Platform Pages you can manage entity instances, list records, or do som
 
 This feature allows you to model as many pages as you want in your applications. Unlike Forms, Pages are not necessarily associated to an entity.
 
-The elements that compose a Page, from Inputs to Buttons, are named Components. Click [here](omnia3_modeler_components.html) to see more about them.
+The elements that compose a Page, from Inputs to Buttons, are named Components. [Click here](omnia3_modeler_components.html) to learn more about them.
 
 ## 2. Modeling Pages
+
+### How to add a new Page?
+
+To add a new page go to the Modeling area, find the **_User Interface / Pages_** option on the menu and access it. This will take you to your Pages management dashboard.
+
+Now select _Add new_ and fill in the following information:
+
+- **Name**: the name of the asset (needs to be unique within the model);
+- **Description**: the textual explanation of the theme's purpose (can be used as development documentation).
+- **Select a template**: the template to be used as base when generating the page. There are three possibilities:
+  - **Create an empty blank page**: generate a new empty Page;
+  - **Create or update an Entity**: generate a Page ready to create or update a given Entity. Can be used instead of the automatically generated Form;
+  - **List entities returned by a Query**: generate a Page that, based on a given query, is ready to show records on a list. Can be used instead of the automatically generated Dashboard.
+
+### How to edit a Page?
+
+By accessing **_User Interface / Pages_** in the sidebar and selecting one from the list.
+
+You can not only change your Page design, but also generate the page again, based on a template.
 
 ### Variables
 
@@ -27,31 +46,30 @@ When we create a new Page based on a template, the following Variables are creat
 
 - Create or Update an Entity:
 
-| Variable         | Type    | Description |
-|------------------|---------|-------------|
-| RedirectTo               | Text    | The OMNIA page address to redirect the user  |
-| ShowErrors               | Boolean | Boolean to indicate if page errors should be visible |
-| IsLoading                | Boolean | Boolean to indicate if the page is loading. A loader is shown if true |
-| openCodes                | Text    | A list of collection records whose details are opened |
-| decisions                | Object  | A list of state machine decisions to be rendered |
-| mainDecision             | Object  | The main state machine decision |
-| stateMachineDropDownOpen | Boolean | Boolean to control if the state machine dropdown is opened |
-| optionsDropDownOpen      | Boolean | Boolean to control if the options button dropdown is opened |
-| canDelete                | Boolean | Boolean to control if the user has privileges to request a entity deletion |
+| Variable                 | Type    | Description                                                                                  |
+| ------------------------ | ------- | -------------------------------------------------------------------------------------------- |
+| RedirectTo               | Text    | The OMNIA page address to redirect the user                                                  |
+| ShowErrors               | Boolean | Boolean to indicate if page errors should be visible                                         |
+| IsLoading                | Boolean | Boolean to indicate if the page is loading. A loader is shown if true                        |
+| openCodes                | Text    | A list of collection records whose details are opened                                        |
+| decisions                | Object  | A list of state machine decisions to be rendered                                             |
+| mainDecision             | Object  | The main state machine decision                                                              |
+| stateMachineDropDownOpen | Boolean | Boolean to control if the state machine dropdown is opened                                   |
+| optionsDropDownOpen      | Boolean | Boolean to control if the options button dropdown is opened                                  |
+| canDelete                | Boolean | Boolean to control if the user has privileges to request a entity deletion                   |
 | canDestroy               | Boolean | Boolean to control if the user has privileges to request a entity sensitive data destruction |
-
 
 - List entities returned by a Query:
 
-| Variable         | Type    | Description |
-|------------------|---------|-------------|
-| CurrentPage      | Integer | The number of the page being currently shown in the list |
-| PageSize         | Integer | The number of records being requested when executing the query  |
+| Variable         | Type    | Description                                                                          |
+| ---------------- | ------- | ------------------------------------------------------------------------------------ |
+| CurrentPage      | Integer | The number of the page being currently shown in the list                             |
+| PageSize         | Integer | The number of records being requested when executing the query                       |
 | detailsPage      | Text    | The code of the Page modeled to be opened when navigating to create or edit a record |
-| listSorting      | Object  | The list of columns where sorting are applied |
-| listFilters      | Object  | The list of columns where filters are applied |
+| listSorting      | Object  | The list of columns where sorting are applied                                        |
+| listFilters      | Object  | The list of columns where filters are applied                                        |
 | filterPanelState | Text    | The state of the list filter panel visibility. It can be either 'closed' or 'opened' |
-| listErrors       | Text    | The list of errors of the rendered data list |
+| listErrors       | Text    | The list of errors of the rendered data list                                         |
 
 #### How to add a variable?
 
@@ -94,8 +112,8 @@ When we create a new Page based on a template, the following Url Parameters are 
 
 - Create or Update an Entity:
 
-| Url Parameter | Type | Description |
-|---------------|------|-------------|
+| Url Parameter | Type | Description                                                                |
+| ------------- | ---- | -------------------------------------------------------------------------- |
 | code          | Text | The code of the entity to be edited. It's not used when creating an entity |
 
 - List entities returned by a Query:
@@ -129,7 +147,7 @@ OMNIA Platform Pages only have one behaviour available: Initialize.
 
 As on other modeling features like Forms or Dashboards, this Behaviour will be executed when accessing the page.
 
-Other Behaviours that are usually available (e.g. Formula, On Change, Before Save) are now part of each Component.
+Other Behaviours that are usually available (e.g. Formula, On Change, Before Save) should now be implemented on [Components](omnia3_modeler_components.md).
 
 ### Scripts
 
@@ -155,25 +173,26 @@ companyFormPage.showAlert("Hello World!");
 
 ### Styles
 
-### How to add a new Page?
+To add CSS Styles to a page, you can use the global CSS Styles described [here](omnia3_modeler_cssStyles.md), or add styles specific to the page being modeled.
 
-To add a new page go to the Modeling area, find the **_User Interface / Pages_** option on the menu and access it. This will take you to your Pages management dashboard.
+#### How to use a global style?
 
-Now select _Add new_ and fill in the following information:
+On modeler, navigate to a page and on the right side menu open option **_Properties_**, and _Styles_ area will be available.
 
-- **Name**: the name of the asset (needs to be unique within the model);
-- **Description**: the textual explanation of the theme's purpose (can be used as development documentation).
-- **Select a template**: the template to be used as base when generating the page. There are three possibilities:
-    - **Create an empty blank page**: generate a new empty Page;
-    - **Create or update an Entity**: generate a Page ready to create or update a given Entity. Can be used instead of the automatically generated Form;
-    - **List entities returned by a Query**: generate a Page that, based on a given query, is ready to show records on a list. Can be used instead of the automatically generated Dashboard.
+To use a global style, simply introduce the CSS classes on property _classesStyles_.
 
+#### How to add a page style?
 
-### How to edit a Page?
+On modeler, navigate to a page and on the right side menu open option **_Properties_**, and _Styles_ area will be available.
 
-By accessing **_User Interface / Pages_** in the sidebar and selecting one from the list.
+You can add page specific styles by introducing them on property _styles_.These styles can then be used in the page or page components.
 
-You can not only change your Page design, but also generate the page again, based on a template.
+### Components
 
-### How to add Components to a Page?
+#### How to add a component to a page?
 
+On modeler, navigate to a page and on the right side menu open option **_Drag to add_**.
+
+The list of components available on the model will be available, and you can drag them to the page preview area.
+
+After adding the component to the page, their Attributes, Behaviours and Styles should be defined.

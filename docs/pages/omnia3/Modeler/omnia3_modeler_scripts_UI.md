@@ -11,7 +11,7 @@ folder: omnia3
 
 This feature allows you to add Javascript code that can be used on other UI code expressions.
 
-On each model you can have multiple Scripts. Each script is composed by a class, whose name is the name given to the Script. 
+On each model you can have multiple Scripts. Each script is composed by a class, named after the script. 
 
 
 ```Javascript
@@ -43,7 +43,7 @@ Now select _Add new_ and fill in the following information:
 
 By accessing **_User Interface / Scripts_** in the sidebar and selecting one from the list.
 
-You can edit the Description, order or change the code expression.
+You can edit the Description, load order or change the code expression.
 
 ## 3. Scripts Usage
 

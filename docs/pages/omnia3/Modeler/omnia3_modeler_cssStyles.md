@@ -11,8 +11,6 @@ folder: omnia3
 
 This feature allows you to add your own CSS classes to your applications.
 
-Assets allow you to add elements that will improve the User Experience, by adding images and animations to your application.
-
 ## 2. Modeling CSS Styles
 
 ### How to add a new CSS Style?
@@ -35,5 +33,5 @@ You can edit the Description, change the load order or edit the CSS classes.
 
 ## 3. CSS Classes Usage
 
-CSS Classes can be used on any Page or Page Component, on their _classesStyles_ property.
+CSS Classes can be used on any [Page](omnia3_modeler_pages.md) or Page [Component](omnia3_modeler_components.md), on their _classesStyles_ property.
 

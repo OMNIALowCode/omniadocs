@@ -11,7 +11,7 @@ folder: omnia3
 
 This feature allows you to add static visual elements to your applications.
 
-Assets allow you to add elements that will improve the User Experience, by adding images and animations to your application.
+Using Assets you can add elements that will improve the User Experience, by showing images and animations to your application.
 
 ## 2. Modeling Assets
 
@@ -30,8 +30,8 @@ Now select _Add new_ and fill in the following information:
 
 By accessing **_User Interface / Assets_** in the sidebar and selecting one from the list.
 
-You can edit the Description or upload a new Asset file.
+You can edit the Description or replace the uploaded Asset file.
 
 ## 3. Assets Usage
 
-Assets are available to be used on modeled Pages. Click here to see more.
+Assets are available to be used on modeled Pages. [Click here](omnia3_modeler_pages.md) to see more.
