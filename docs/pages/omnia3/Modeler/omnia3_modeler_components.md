@@ -17,6 +17,30 @@ Components can be visual (e.g. inputs) or functional. Users can interact with th
 
 OMNIA Platform contains a small number of internal components, and new ones can be added to each model, according to its needs. Multiple packages with different components can be uploaded, and you can develop your own components. To start, we suggest using the package made available by the OMNIA Platform, that you can find [here](https://github.com/OMNIALowCode/omnia-base-components).
 
+## 2. Components Structure
+
+On the modeler perspective, a Component is composed by the following definitions:
+
+### Properties
+
+The component attributes contain data relevant to define the component and change how it renders and behaves on a page. A component can have multiple attributes, and they can be different between components.
+
+An attribute can be required, and have a default value to be suggested when modeling. Depending on the attribute _direction_ configuration, its value can be only read (Outbound direction) or changed (Inbound direction), or both (TwoWay direction).
+
+Some scenarios where attributes can be applied are setting/getting the component value or if it rendered as readOnly. An attribute value can be set in multiple ways.
+
+### Events
+
+Component Events are code expressions executed on different moments when interacting with the component.
+
+When the event is executed, it receives a list of parameters on object _params_. These parameters can be of multiple types, and contains the values of the _Outbound_ and _TwoWay_ properties.
+
+### Methods
+
+While events are executed automatically as a result of the user interaction with the component, Methods are executed as a explicit call on a code expression.
+
+The Methods have entry parameters, whose values should be sent when calling them. A component can have as many Methods as necessary.
+
 ## 2. Internal Components
 
 OMNIA Platform has four internal components:
@@ -27,9 +51,17 @@ The forEach Component iterates a collection, and renders other Components and da
 
 A common scenario for this component is to render lines of a _Collection_ attribute (Commitment, Event, or non-root Generic Entity).
 
-- Component Attributes:
+- Properties:
 
-This Component only has a configurable attribute, named _binding_. This attribute is used to define the collection that will be iterated.
+This Component only has a configurable property, named _binding_. This attribute is used to define the collection that will be iterated.
+
+| Property | Direction | Data Type | Description                                                          |
+| -------- | --------- | --------- | -------------------------------------------------------------------- |
+| query    | Inbound   | Object    | This property is used to define the collection that will be iterated |
+
+- Events:
+
+This Component does not has events.
 
 ### runQuery
 
@@ -37,25 +69,37 @@ The runQuery Component executes a previously modeled query and returns the resul
 
 A common scenario for this component is to execute a query that feeds a list.
 
-- Component Attributes:
+- Properties:
 
-| Attribute   | Description                                                     |
-| ----------- | --------------------------------------------------------------- |
-| query       | The modeled query to be executed                                |
-| dataSource  | The dataSource instance where the query is going to be executed |
-| parameters  | Parameters to be applied when executing the query               |
-| filters     | The filters to be applied to the query                          |
-| sorting     | The sorting criteria to be applied                              |
-| currentPage | The number of the page being retrieved                          |
-| pageSize    | The number of records to be returned                            |
+| Property     | Direction | Data Type       |                                                                                       | Description |
+| ------------ | --------- | --------------- | ------------------------------------------------------------------------------------- | ----------- |
+| query        | Inbound   | Reference/Query | The modeled query to be executed                                                      |
+| records      | Outbound  | Object          | The records obtained as the result of the query execution                             |
+| columns      | Outbound  | Object          | The structure of the columns returned on each record                                  |
+| dataSource   | Inbound   | Text            | The dataSource instance where the query is going to be executed                       |
+| parameters   | Inbound   | Object          | Parameters to be applied when executing the query                                     |
+| filters      | Inbound   | Object          | The filters to be applied to the query                                                |
+| sorting      | Inbound   | Object          | The sorting criteria to be applied                                                    |
+| currentPage  | Inbound   | Integer         | The number of the page being retrieved                                                |
+| pageSize     | Inbound   | Integer         | The number of records to be returned                                                  |
+| totalPages   | Outbound  | Integer         | The total number of pages that can be obtained for the current query and page size    |
+| totalRecords | Outbound  | Integer         | The total number of records that can be returned as the result of the query execution |
+| isLoading    | Outbound  | Boolean         | Boolean to indicate if the query is being executed and data is still loading          |
 
-- Component Behaviours:
+- Events:
 
-| Behaviour   | Description                                                          |
+| Event       | Description                                                          |
 | ----------- | -------------------------------------------------------------------- |
 | BeforeLoad  | Code executed before making the request to the API                   |
 | OnLoad      | Code executed when data is retrieved from API, before being rendered |
 | OnLoadError | Code executed when the request to retrieve data returns an error     |
+
+- Methods:
+
+| Method    | Description                                          |
+| --------- | ---------------------------------------------------- |
+| refresh   | Method that executes the query to retrieve new data  |
+| exportCSV | Method that requests to the API a data export to CSV |
 
 ### entityForm
 
@@ -63,18 +107,28 @@ The entityForm Component renders a Form composed by other Components inside a pa
 
 A common scenario for this component is to show a Form to create/edit records.
 
-Component Attributes:
+- Properties:
 
-| Attribute    | Description                                                           |
-| ------------ | --------------------------------------------------------------------- |
-| definition   | The modeled entity the Form is referencing                            |
-| dataSource   | The dataSource instance where the entity is being created/edited      |
-| code         | The instance of the definition being edited                           |
-| useTemporary | Boolean to indicate if the create/edit operation is using a Temporary |
+| Property         | Direction | Data Type | Description                                                                               |
+| ---------------- | --------- | --------- | ----------------------------------------------------------------------------------------- |
+| definition       | Inbound   | Reference | The modeled entity the Form is referencing                                                |
+| dataSource       | Inbound   | Text      | The dataSource instance where the entity is being created/edited                          |
+| code             | Inbound   | Text      | The instance of the definition being edited                                               |
+| data             | Outbound  | Object    | The instance data contained in the form component                                         |
+| hasChanges       | Outbound  | Boolean   | Flag to indicate if the data contained in the form has changed                            |
+| useTemporary     | Inbound   | Boolean   | Flag to indicate if the create/edit operation is using a Temporary                        |
+| hasErrors        | Outbound  | Boolean   | Flag to indicate if the form has errors                                                   |
+| state            | Outbound  | Object    | The state machine state of the entity                                                     |
+| newInstance      | Outbound  | Boolean   | Flag to indicate if a we're creating a new entity                                         |
+| hasAfterSave     | Outbound  | Boolean   | Flag to indicate if the entity type has an after save behaviour                           |
+| isProcessing     | Outbound  | Boolean   | Flag to indicate if a request is being processed                                          |
+| security         | Outbound  | Object    | Object that has a set of flags with the user privileges to read, write, delete or destroy |
+| attributes       | Outbound  | Object    | The set of the attributes of the entity type the form is referencing                      |
+| hasSensitiveData | Outbound  | Boolean   | Flag to indicate if the form contains sensitive data                                      |
 
-Component Behaviours:
+- Events:
 
-| Behaviour         | Description                                                                                                               |
+| Event             | Description                                                                                                               |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | OnSave            | Executed when the Save operation is finished with success. Can be used to show a success message and redirect the user    |
 | OnSaveError       | Executed when the Save operation is finished with error. Can be used to show the error to the user                        |
@@ -87,19 +141,30 @@ Component Behaviours:
 | OnUpdateData      | Executed when the Update operation is finished with success                                                               |
 | OnUpdateDataError | Executed when the Update operation is finished with error. Can be used to show the error to the user                      |
 
+- Methods:
+
+| Method | Description                                                                                                                                       |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| save   | Method that makes a request to the API to save the form data. It has 2 optional parameters related to the state machine: _decision_ and _comment_ |
+
 ### selector
 
 The Selector component retrieves an Enumerator keys and labels translated to the user current language.
 
 This component can be used to obtain Enumerator data to be used by another element or behaviour.
 
-Component Attributes:
+- Properties:
 
-This Component only has a configurable attribute, named _selector_. This attribute is used to define the Enumeration Selector whose configuration will be retrieved.
+| Property | Direction | Data Type | Description                                                                                     |
+| -------- | --------- | --------- | ----------------------------------------------------------------------------------------------- |
+| selector | Inbound   | Reference | This attribute is used to define the Enumeration Selector whose configuration will be retrieved |
+| entries  | Outbound  | Object    | A list containing the entries of the Enumeration                                                |
 
-Component Behaviours:
+- Events:
 
-This Component only has a Behaviour type, named _onLoad_. This behaviour is executed after Enumerator data was retrieved, and can be used to store that data to be rendered on a select Component.
+| Event  | Description                                                                                                                                          |
+| ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| OnLoad | Code executed when Enumerator data is retrieved from API, before being rendered. Can be used to store that data to be rendered on a select Component |
 
 ## 3. Modeling Components
 
@@ -121,24 +186,4 @@ You can upload a new version of the components package.
 
 ## 4. Components Usage
 
-Components are available to be used on modeled Pages.
-
-After a Components Package is imported, components are listed on the Page _Drag to Add_ option, along with internals Components:
-
-<p align="center">
-  <img src="/images/modeler/Modeler-Components-List.jpg">
-</p>
-
-You can drag them to the Page preview area and change their Attributes, Behaviours and Styles. Each Component exposes a different set of Attributes, Behaviours and Styles that you can configure while modeling.
-
-Focusing on Attributes and Styles, its value can be set in different ways:
-
-| Value Source | Description                                                      |
-| ------------ | ---------------------------------------------------------------- |
-| Direct       | Value is set directly, with a static value                       |
-| Binding      | The dataSource instance where the entity is being created/edited |
-| Expression   | Value is computed using a Javascript code expresion              |
-| Asset        | Value is selected from the list of model Assets                  |
-| Translation  | Value is selected from the list of model Translations            |
-
-As for Behaviours, its value is always a Javascript code expression.
+Components are available to be used on modeled Pages. See how its done [here](omnia3_modeler_pages.md).

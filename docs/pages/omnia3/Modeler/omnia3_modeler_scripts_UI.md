@@ -18,11 +18,11 @@ On each model you can have multiple Scripts. Each script is composed by a class,
   /** 
  * You can invoke these class methods in the expression and behaviours code. Use the 'helpers' object to do it.
  */
-class HelpersScripts {
+class MyLibScripts {
 
 }
 
-const helpers = new HelpersScripts();
+const myLib = new MyLibScripts();
 ```
 
 ## 2. Modeling Scripts
@@ -55,17 +55,17 @@ Considering a Script named _Helpers_, with a function named _showAlert_ that sho
 /** 
  * You can invoke these class methods in the expression and behaviours code. Use the 'helpers' object to do it.
  */
-class HelpersScripts {
+class MyLibScripts {
     showAlert(message) {
         alert(message);
     }
 }
 
-const helpers = new HelpersScripts();
+const myLib = new MyLibScripts();
 ```
 
 To use this function, we just need to call it:
 
 ```Javascript
-helpers.showAlert("Hello World!");
+myLib.showAlert("Hello World!");
 ```

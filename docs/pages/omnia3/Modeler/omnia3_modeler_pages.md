@@ -15,86 +15,17 @@ This feature allows you to model as many pages as you want in your applications.
 
 The elements that compose a Page, from Inputs to Buttons, are named Components. [Click here](omnia3_modeler_components.html) to learn more about them.
 
-## 2. Modeling Pages
+## 2. Pages Structure
 
-### How to add a new Page?
-
-To add a new page go to the Modeling area, find the **_User Interface / Pages_** option on the menu and access it. This will take you to your Pages management dashboard.
-
-Now select _Add new_ and fill in the following information:
-
-- **Name**: the name of the asset (needs to be unique within the model);
-- **Description**: the textual explanation of the theme's purpose (can be used as development documentation).
-- **Select a template**: the template to be used as base when generating the page. There are three possibilities:
-  - **Create an empty blank page**: generate a new empty Page;
-  - **Create or update an Entity**: generate a Page ready to create or update a given Entity. Can be used instead of the automatically generated Form;
-  - **List entities returned by a Query**: generate a Page that, based on a given query, is ready to show records on a list. Can be used instead of the automatically generated Dashboard.
-
-### How to edit a Page?
-
-By accessing **_User Interface / Pages_** in the sidebar and selecting one from the list.
-
-You can not only change your Page design, but also generate the page again, based on a template.
+On a modeler perspective, a Page is composed by the following definitions:
 
 ### Variables
 
-Each page can have its own set of Variables. The purpose of the Variables is to temporarily store data relevant to the page usage.
+Each page can have its own set of Variables. The purpose of the Variables is to temporarily store the page state (data relevant to the page usage).
+
+A Variable value can be read or set at anytime while interacting with the page.
 
 As an example, variables can be used to store the Url to redirect when exiting the page, or to set a flag that controls a loader to be shown when something is processing and users must wait for it to end.
-
-When we create a new Page based on a template, the following Variables are created:
-
-- Create or Update an Entity:
-
-| Variable                 | Type    | Description                                                                                  |
-| ------------------------ | ------- | -------------------------------------------------------------------------------------------- |
-| RedirectTo               | Text    | The OMNIA page address to redirect the user                                                  |
-| ShowErrors               | Boolean | Boolean to indicate if page errors should be visible                                         |
-| IsLoading                | Boolean | Boolean to indicate if the page is loading. A loader is shown if true                        |
-| openCodes                | Text    | A list of collection records whose details are opened                                        |
-| decisions                | Object  | A list of state machine decisions to be rendered                                             |
-| mainDecision             | Object  | The main state machine decision                                                              |
-| stateMachineDropDownOpen | Boolean | Boolean to control if the state machine dropdown is opened                                   |
-| optionsDropDownOpen      | Boolean | Boolean to control if the options button dropdown is opened                                  |
-| canDelete                | Boolean | Boolean to control if the user has privileges to request a entity deletion                   |
-| canDestroy               | Boolean | Boolean to control if the user has privileges to request a entity sensitive data destruction |
-
-- List entities returned by a Query:
-
-| Variable         | Type    | Description                                                                          |
-| ---------------- | ------- | ------------------------------------------------------------------------------------ |
-| CurrentPage      | Integer | The number of the page being currently shown in the list                             |
-| PageSize         | Integer | The number of records being requested when executing the query                       |
-| detailsPage      | Text    | The code of the Page modeled to be opened when navigating to create or edit a record |
-| listSorting      | Object  | The list of columns where sorting are applied                                        |
-| listFilters      | Object  | The list of columns where filters are applied                                        |
-| filterPanelState | Text    | The state of the list filter panel visibility. It can be either 'closed' or 'opened' |
-| listErrors       | Text    | The list of errors of the rendered data list                                         |
-
-#### How to add a variable?
-
-On modeler, navigate to a page and on the right side menu open option **_Variables / Add variable_**.
-
-Fill the following parameters:
-
-- **Name**: the name of the Variable (needs to be unique within the Page);
-- **Description**: the textual explanation of the Variable purpose (can be used as development documentation).
-- **Kind**: the kind of the variable. Can be of type Primitive, an OMNIA definition (Agent, Resource, ...) or a Component Type. These types are exposed by the component packages;
-- **Type**: the type of the variable
-- **Is required value?**: define if the variable must have a value;
-- **Is a list of records?**: define if the variable contains more than one record of the given type;
-- **The initial value of the variable**: the value the variable is initialized with.
-
-#### How to use a variable?
-
-Variables can be used on Code Expressions within the page. They are available on _variables_ object.
-
-```Javascript
-function companyFormPage_Initialize({ context, variables, urlParameters, refs }, params) {
-    variables.myFirstVariable = "My variable value";
-    alert(variables.myFirstVariable);
-}
-```
 
 ### Url Parameters
 
@@ -106,40 +37,15 @@ As an example, given the following Url:
     https://www.example.com/widgets?color=blue&size=large
 ```
 
-We have two URL parameters to define in our page: color and size.
+We have two Url parameters to define in our page: color and size.
 
-When we create a new Page based on a template, the following Url Parameters are created:
+Unlike Variables, a Url parameter value is automatically set from the Url used to access the page. The value can be read but not changed.
 
-- Create or Update an Entity:
+### Refs
 
-| Url Parameter | Type | Description                                                                |
-| ------------- | ---- | -------------------------------------------------------------------------- |
-| code          | Text | The code of the entity to be edited. It's not used when creating an entity |
+Refs are responsible by exposing _Outbound_ and _TwoWay_ Component attributes so their value can be used on a Page.
 
-- List entities returned by a Query:
-
-No Url parameters are created when executing this template.
-
-#### How to add a Url Parameter?
-
-On modeler, navigate to a page and on the right side menu open option **_Url Parameters / Add parameter_**.
-
-Fill the following parameters:
-
-- **Name**: the name of the Url Parameter (needs to be unique within the Page);
-- **Description**: the textual explanation of the Url Parameter purpose (can be used as development documentation);
-- **Type**: the type of the Url Parameter. It can be a Primitive type or an Object;
-- **Is a list of records?**: define if the Url Parameter contains more than one record of the given type;
-
-#### How to use a Url Parameter?
-
-Variables can be used on Code Expressions within the page. They are available on _variables_ object.
-
-```Javascript
-function companyFormPage_Initialize({ context, variables, urlParameters, refs }, params) {
-    const codevalue = urlParameters.code;
-}
-```
+They are available to be used on code expressions and on page attributes.
 
 ### Behaviours
 
@@ -148,6 +54,40 @@ OMNIA Platform Pages only have one behaviour available: Initialize.
 As on other modeling features like Forms or Dashboards, this Behaviour will be executed when accessing the page.
 
 Other Behaviours that are usually available (e.g. Formula, On Change, Before Save) should now be implemented on [Components](omnia3_modeler_components.md).
+
+A behaviour code expression is transformed into a Javascript function. These functions can have two possible signatures:
+
+- Page Behaviour
+
+```Javascript
+initialize({ context, variables, urlParameters, refs }) {
+    //add your code here
+}
+```
+
+| Property      | Description                                                                            |
+| ------------- | -------------------------------------------------------------------------------------- |
+| context       | This property contains information about the current user and the operation being made |
+| variables     | The values of the variables modeled on the page                                        |
+| urlParameters | The values of the Url parameters set when acessing the page                            |
+| refs          | The _Outbound_ attribute values for each Component located on the page                 |
+
+- Component Behaviour
+
+```Javascript
+_descriptionInput_OnChange({ context, variables, urlParameters, refs, indexes, currentElement, currentIndex }, params){
+    //add your code here
+ }
+```
+
+Component Behaviours contains the properties available on Page Behaviours and adds the following:
+
+| Property       | Description                                                                                                |
+| -------------- | ---------------------------------------------------------------------------------------------------------- |
+| indexes        | When the behaviour is in a nested collection, this property contains all indexes of the current element path |
+| currentElement | When the behaviour is in a collection, this property contains the current entry data                       |
+| currentIndex   | When the behaviour is in a collection, this property contains the index of the collection entry            |
+| params         | The values of the _Outbound_ and _TwoWay_ properties of the Component                                      |
 
 ### Scripts
 
@@ -173,26 +113,143 @@ companyFormPage.showAlert("Hello World!");
 
 ### Styles
 
+CSS Styles can be used on pages to change the way it looks and behaves.
+
 To add CSS Styles to a page, you can use the global CSS Styles described [here](omnia3_modeler_cssStyles.md), or add styles specific to the page being modeled.
 
-#### How to use a global style?
+### Components
+
+When we are creating a Page, all the elements a modeler can include on it are [Components](omnia3_modeler_components.md).
+
+If we compare pages with Forms or Dashboards, Components can grant an additional level of flexibility, since we are not limited to use Omnia internal list or input. We can create our own to ensure the best user experience.
+
+## 3. Modeling Pages
+
+When we are modeling a page, we'll be using our Page Editor.
+
+This is composed by two areas: a design/preview area, and a menu located on the right sidebar.
+
+Focusing on the menu, it is composed by five areas:
+
+- Properties: The properties of the page or the currently selected page element.
+- Elements Tree: The list of elements that compose the page, organized on a tree.
+- Drag to add: The list of Components that can be dragged to the design/preview area.
+- Variables: The list of page Variables. Includes options to add/remove variables
+- Url Parameters: The list of page Url Parameters. Includes options to add/remove Url Parameters
+- Configure view: Options to control the design/preview area. It is possible to show hidden elements, choose a Language to preview how its texts are applied, choose a [Theme](omnia3_modeler_themes.md) or activate _Live Preview_. When live preview is active, the modeling controls are removed from preview area.
+
+### How to add a new Page?
+
+To add a new page go to the Modeling area, find the **_User Interface / Pages_** option on the menu and access it. This will take you to your Pages management dashboard.
+
+Now select _Add new_ and fill in the following information:
+
+- **Name**: the name of the asset (needs to be unique within the model);
+- **Description**: the textual explanation of the theme's purpose (can be used as development documentation).
+- **Select a template**: the template to be used as base when generating the page. Click [here](omnia3_modeler_pages_generator.md) to see the available templates.
+
+### How to edit a Page?
+
+By accessing **_User Interface / Pages_** in the sidebar and selecting one from the list.
+
+You can not only change your Page design, but also generate the page again, based on a template.
+
+### How to add a variable?
+
+On modeler, navigate to a page and on the right side menu open option **_Variables / Add variable_**.
+
+Fill the following parameters:
+
+- **Name**: the name of the Variable (needs to be unique within the Page);
+- **Description**: the textual explanation of the Variable purpose (can be used as development documentation).
+- **Kind**: the kind of the variable. Can be of type Primitive, an OMNIA definition (Agent, Resource, ...) or a Component Type. These types are exposed by the component packages;
+- **Type**: the type of the variable
+- **Is required value?**: define if the variable must have a value;
+- **Is a list of records?**: define if the variable contains more than one record of the given type;
+- **The initial value of the variable**: the value the variable is initialized with.
+
+### How to use a variable?
+
+Variables can be used in a page in two different ways:
+
+- Code Expressions
+
+Variables can be accessed on Javascript code. They are available on _variables_ object, and its value can be read or set.
+
+```Javascript
+function companyFormPage_Initialize({ context, variables, urlParameters, refs }, params) {
+    variables.myFirstVariable = "My variable value";
+    alert(variables.myFirstVariable);
+}
+```
+
+- Binding
+
+Variables can be bound to a page or component property. When bound, the property value will be the same as the variable value.
+
+### How to add a Url Parameter?
+
+On modeler, navigate to a page and on the right side menu open option **_Url Parameters / Add parameter_**.
+
+Fill the following parameters:
+
+- **Name**: the name of the Url Parameter (needs to be unique within the Page);
+- **Description**: the textual explanation of the Url Parameter purpose (can be used as development documentation);
+- **Type**: the type of the Url Parameter. It can be a Primitive type or an Object;
+- **Is a list of records?**: define if the Url Parameter contains more than one record of the given type;
+
+### How to use a Url Parameter?
+
+Url Parameters can be used in a page in two different ways:
+
+- Code Expressions
+
+Url Parameters can be used on Code Expressions within the page. They are available on _urlParameters_ object.
+
+```Javascript
+function companyFormPage_Initialize({ context, variables, urlParameters, refs }, params) {
+    const codevalue = urlParameters.code;
+}
+```
+
+- Binding
+
+A Url Parameter can be bound to a page or component property. When bound, the property value will be the same as the parameter value.
+
+### How to use a global style?
 
 On modeler, navigate to a page and on the right side menu open option **_Properties_**, and _Styles_ area will be available.
 
 To use a global style, simply introduce the CSS classes on property _classesStyles_.
 
-#### How to add a page style?
+### How to add a page style?
 
 On modeler, navigate to a page and on the right side menu open option **_Properties_**, and _Styles_ area will be available.
 
 You can add page specific styles by introducing them on property _styles_.These styles can then be used in the page or page components.
 
-### Components
-
-#### How to add a component to a page?
+### How to add a component to a page?
 
 On modeler, navigate to a page and on the right side menu open option **_Drag to add_**.
 
 The list of components available on the model will be available, and you can drag them to the page preview area.
 
 After adding the component to the page, their Attributes, Behaviours and Styles should be defined.
+
+On this menu option, you can find all internal Components along with Components imported from a package:
+
+<p align="center">
+  <img src="/images/modeler/Modeler-Components-List.jpg">
+</p>
+
+You can drag them to the Page preview area and change their Attributes, Behaviours and Styles. Each Component exposes a different set of Attributes, Behaviours and Styles that you can configure while modeling.
+
+Focusing on Attributes and Styles, its value can be set in different ways:
+
+| Value Source | Description                                                                                                                                           |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Direct       | Value is set directly, with a static value                                                                                                            |
+| Binding      | Value is bound with a variable, urlParameter or ref                                                                                                   |
+| Expression   | Value is computed using a Javascript code expression. Since these expressions are executed on every render, the code must be simple and execute fast. |
+| Asset        | Value is selected from the list of model Assets                                                                                                       |
+| Translation  | Value is selected from the list of model Translations                                                                                                 |

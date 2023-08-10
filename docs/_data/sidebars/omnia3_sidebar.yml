@@ -263,6 +263,10 @@ entries:
                     url: /omnia3_modeler_pages.html
                     output: web, pdf
 
+                  - title: Page Generators
+                    url: /omnia3_modeler_page_generators.html
+                    output: web, pdf
+
               - title: Queries
                 output: web
                 subfolderitems:
