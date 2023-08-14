@@ -21,11 +21,14 @@ There are six different log levels:
 
 The pre-defined minimum log level on Omnia Connector is *Information*. This means that all messages of level *Information* and above will be logged.
 
- A different minimum log level can be defined on Connector configuration file(**config.json**). Example:
+ A different minimum log level can be defined on Connector configuration file(**config.json**), and it is also possible to change the path of the log files. Example:
 
 ```JavaScript
     "Logging": {
-        "MinimumLevel": "Debug"
+        "MinimumLevel": "Debug",
+        "File": {
+            "Path": "C:/users/myUser/Desktop"
+        }
     }
 ```
 
