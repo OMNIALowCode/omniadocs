@@ -20,9 +20,4 @@ Behaviour used to extend the application, which execution can be triggered from 
 | DataSource | DataSource | Shared | 1..1 | None | The Data Source where the behaviour is executed. |
 | ExecutionLocation | ExecutionLocation | None | 1..1 | None | The location where is executed. |
 
-## Operations
-
-| Name | Type | Description |
-| --------- | --------- | --------- |
-| Defaults | BeforeSave |  |
 

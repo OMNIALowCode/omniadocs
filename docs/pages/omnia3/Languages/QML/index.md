@@ -11,22 +11,25 @@ folder: omnia3
 
 ## Classes
 
+ - [Binary Query Filter](/BinaryQueryFilter.md)
+ - [Query Column](/QueryColumn.md)
  - [Query](/Query.md)
- - [Query Property](/QueryProperty.md)
- - [Query Ordered Property](/QueryOrderedProperty.md)
  - [Query Filter](/QueryFilter.md)
  - [Query Filter Parameter](/QueryFilterParameter.md)
  - [Query Filter Parameter With Value](/QueryFilterParameterWithValue.md)
- - [Unary Query Filter](/UnaryQueryFilter.md)
- - [Binary Query Filter](/BinaryQueryFilter.md)
  - [Query Join](/QueryJoin.md)
  - [Query Join Predicate](/QueryJoinPredicate.md)
+ - [Query Ordered Property](/QueryOrderedProperty.md)
+ - [Query Property](/QueryProperty.md)
  - [Query Table](/QueryTable.md)
+ - [Unary Query Filter](/UnaryQueryFilter.md)
 
 ## Enumerations
 
- - [Query Function](/QueryFunction.md)
- - [Query Sort](/QuerySort.md)
+ - [Query Column Data Type](/QueryColumnDataType.md)
+ - [Query Column Data Kind](/QueryColumnDataKind.md)
  - [Query Comparison Operator](/QueryComparisonOperator.md)
- - [Query Logical Operator](/QueryLogicalOperator.md)
+ - [Query Function](/QueryFunction.md)
  - [Query Join Type](/QueryJoinType.md)
+ - [Query Logical Operator](/QueryLogicalOperator.md)
+ - [Query Sort](/QuerySort.md)

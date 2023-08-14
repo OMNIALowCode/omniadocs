@@ -26,5 +26,4 @@ Entity representing assets that can be quantified and with commercial value. Is 
 | Name | Type | Description |
 | --------- | --------- | --------- |
 | Defaults | Initialize |  |
-| DefaultsFinalize | BeforeSave |  |
 

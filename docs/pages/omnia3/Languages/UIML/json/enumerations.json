@@ -1,5 +1,74 @@
 [
   {
+    "Name": "ComponentsPackageSource",
+    "Values": [
+      "Local"
+    ]
+  },
+  {
+    "Name": "ElementBehaviourType",
+    "Values": [
+      "Initialize",
+      "BeforeChange",
+      "Change",
+      "AfterChange",
+      "BeforeSave",
+      "Select",
+      "BeforeCollectionEntityInitialize",
+      "OnClick"
+    ]
+  },
+  {
+    "Name": "ElementNodeMethodParameterType",
+    "Values": [
+      "Integer",
+      "Decimal",
+      "Boolean",
+      "Date",
+      "Text",
+      "Object"
+    ]
+  },
+  {
+    "Name": "ElementNodePropertyDataType",
+    "Values": [
+      "ComplexOption",
+      "Integer",
+      "Object",
+      "Text",
+      "TextValue",
+      "Boolean",
+      "Image",
+      "Decimal",
+      "Date",
+      "Reference",
+      "Dynamic"
+    ]
+  },
+  {
+    "Name": "ElementNodePropertyDirection",
+    "Values": [
+      "Inbound",
+      "Outbound",
+      "TwoWay"
+    ]
+  },
+  {
+    "Name": "ElementNodePropertyFormattingType",
+    "Values": [
+      "TextArea"
+    ]
+  },
+  {
+    "Name": "ScreenSize",
+    "Values": [
+      "Mobile",
+      "Tablet",
+      "Desktop",
+      "Widescreen"
+    ]
+  },
+  {
     "Name": "ElementType",
     "Values": [
       "Input",
@@ -21,29 +90,75 @@
       "ButtonGroup",
       "Label",
       "Divider",
-      "Panel"
+      "Panel",
+      "Image",
+      "Page"
     ]
   },
   {
-    "Name": "ElementBehaviourType",
+    "Name": "TypePropertyType",
     "Values": [
-      "Initialize",
-      "BeforeChange",
-      "Change",
-      "AfterChange",
-      "BeforeSave",
-      "Select",
-      "BeforeCollectionEntityInitialize",
-      "OnClick"
+      "Boolean",
+      "Date",
+      "Decimal",
+      "Integer",
+      "Text",
+      "Object"
     ]
   },
   {
-    "Name": "ScreenSize",
+    "Name": "UiAttributeValueSource",
     "Values": [
-      "Mobile",
-      "Tablet",
-      "Desktop",
-      "Widescreen"
+      "Direct",
+      "Binding",
+      "Asset",
+      "Translation",
+      "Expression"
+    ]
+  },
+  {
+    "Name": "UiInternalComponents",
+    "Values": [
+      "_foreach",
+      "_runQuery",
+      "_entityForm",
+      "_selector"
+    ]
+  },
+  {
+    "Name": "UrlParameterType",
+    "Values": [
+      "Boolean",
+      "Date",
+      "Decimal",
+      "Integer",
+      "Text"
+    ]
+  },
+  {
+    "Name": "VariablePrimitiveType",
+    "Values": [
+      "Integer",
+      "Decimal",
+      "Boolean",
+      "Date",
+      "Text",
+      "Object"
+    ]
+  },
+  {
+    "Name": "VariableTypeKind",
+    "Values": [
+      "Agent",
+      "Commitment",
+      "DataSource",
+      "Document",
+      "Event",
+      "GenericEntity",
+      "Primitive",
+      "Resource",
+      "Serie",
+      "ComponentType"
     ]
   }
 ]

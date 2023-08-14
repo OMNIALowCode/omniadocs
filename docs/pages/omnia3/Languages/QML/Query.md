@@ -13,11 +13,12 @@ Query over a given Data Source.
 
 | Name | Type | Aggregation Kind | Multiplicity | Length | Description |
 | --------- | --------- | --------- | --------- | --------- | --------- |
-| Name | Text | None | 1..1 | None | The name of the entity (unique identifier). |
+| Name | Text | None | 1..1 | 1..32 | The name of the entity (unique identifier). |
 | Description | Text | None | 0..1 | None | The textual explanation of the entities’ purpose. |
 | DataSource | Text | None | 0..1 | None | The Data Source in which the entities are computed and / or persisted. |
 | Table | QueryTable | Composite | 1..1 | None | Table to query data. Also used to define the this query is related to the definition stored in this Table. |
 | Joins | QueryJoin | Composite | 0..* | None | List of the relations with other tables. |
 | Expression | Text | None | 0..1 | None | Query based on expression. Content of the Advanced Query. When the expression has value, the rest of the Query definition will be ignored. |
+| Columns | QueryColumn | Composite | 0..* | None | A list of the resultant columns of a Advanced Query execution. It will be ignored on non-Advanced Queries |
 
 

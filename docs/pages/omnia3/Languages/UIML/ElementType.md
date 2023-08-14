@@ -30,5 +30,7 @@ folder: omnia3
 - Label
 - Divider
 - Panel
+- Image
+- Page
 
 

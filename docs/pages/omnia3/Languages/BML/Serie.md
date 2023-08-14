@@ -26,5 +26,4 @@ Representation of a sequence that allow to sequentially enumerate the documents.
 | Name | Type | Description |
 | --------- | --------- | --------- |
 | Defaults | Initialize |  |
-| DefaultsFinalize | BeforeSave |  |
 
