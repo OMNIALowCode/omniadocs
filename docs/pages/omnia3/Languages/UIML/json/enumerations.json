@@ -87,11 +87,7 @@
       "Selector",
       "SelectorEntry",
       "Button",
-      "ButtonGroup",
-      "Label",
-      "Divider",
       "Panel",
-      "Image",
       "Page"
     ]
   },
