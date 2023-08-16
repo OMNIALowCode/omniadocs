@@ -13,7 +13,7 @@ In OMNIA Platform Pages you can manage entity instances, list records, or do som
 
 This feature allows you to model as many pages as you want in your applications. Unlike Forms, Pages are not necessarily associated to an entity.
 
-The elements that compose a Page, from Inputs to Buttons, are named Components. [Click here](omnia3_modeler_components.html) to learn more about them.
+Pages are composed by a set of _Elements_. Each element references a Component. [Click here](omnia3_modeler_components.html) to learn more about them.
 
 ## 2. Pages Structure
 
@@ -53,9 +53,9 @@ OMNIA Platform Pages only have one behaviour available: Initialize.
 
 As on other modeling features like Forms or Dashboards, this Behaviour will be executed when accessing the page.
 
-Other Behaviours that are usually available (e.g. Formula, On Change, Before Save) should now be implemented on [Components](omnia3_modeler_components.md).
+Other Behaviours that are usually available (e.g. Formula, On Change, Before Save) should now be implemented on each page _Element_. Each _Element_ references a [Component](omnia3_modeler_components.md) that itself makes available a set of [_Events_](omnia3_modeler_components.md/#events).
 
-A behaviour code expression is transformed into a Javascript function. These functions can have two possible signatures:
+A behaviour code expression is transformed into a JavaScript function. These functions can have two possible signatures:
 
 - Page Behaviour
 
@@ -82,12 +82,12 @@ _descriptionInput_OnChange({ context, variables, urlParameters, refs, indexes, c
 
 Element Behaviours contains the properties available on Page Behaviours and adds the following:
 
-| Property       | Description                                                                                                |
-| -------------- | ---------------------------------------------------------------------------------------------------------- |
-| indexes        | When the behaviour is in a nested collection, this property contains all indexes of the current element path |
-| currentElement | When the behaviour is in a collection, this property contains the current entry data                       |
-| currentIndex   | When the behaviour is in a collection, this property contains the index of the collection entry            |
-| params         | The values of the _Outbound_ and _TwoWay_ properties of the Component                                      |
+| Property       | Description                                                                                                                 |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| indexes        | When the behaviour is in a nested collection, this property contains all indexes of the current element path                |
+| currentElement | When the behaviour is in a collection, this property contains the current entry data                                        |
+| currentIndex   | When the behaviour is in a collection, this property contains the index of the collection entry                             |
+| params         | A list of parameters exposed by the Component. Each Component exposes a set of parameters of different types for each Event |
 
 ### Scripts
 
@@ -97,9 +97,9 @@ The script is composed by a class named after the page. The custom code must be 
 
 ```Javascript
 class CompanyFormPageScripts {
-
-//add your code here
-
+    showAlert(message) {
+        alert(message);
+    }
 }
 
 const companyFormPage = new CompanyFormPageScripts();
@@ -111,17 +111,19 @@ The developed functions can be called from any page code expression as follows:
 companyFormPage.showAlert("Hello World!");
 ```
 
+In addition to the page Scripts, it is also possible to use functions defined on the model [Scripts](omnia3_modeler_scripts_UI.md).
+
 ### Styles
 
 CSS Styles can be used on pages to change the way it looks and behaves.
 
 To add CSS Styles to a page, you can use the global CSS Styles described [here](omnia3_modeler_cssStyles.md), or add styles specific to the page being modeled.
 
-### Components
+### Elements
 
-When we are creating a Page, all the elements a modeler can include on it are [Components](omnia3_modeler_components.md).
+When we are creating a Page, all the _Elements_ a modeler can include on it reference a [Component](omnia3_modeler_components.md).
 
-If we compare pages with Forms or Dashboards, Components can grant an additional level of flexibility, since we are not limited to use Omnia internal list or input. We can create our own to ensure the best user experience.
+If we compare pages with Forms or Dashboards, our _Elements_ based on Components can grant an additional level of flexibility, since we are not limited to use Omnia internal lists or inputs. We can create our own to ensure the best user experience.
 
 ## 3. Modeling Pages
 
@@ -166,7 +168,7 @@ Fill the following parameters:
 - **Type**: the type of the variable
 - **Is required value?**: define if the variable must have a value;
 - **Is a list of records?**: define if the variable contains more than one record of the given type;
-- **The initial value of the variable**: the value the variable is initialized with.
+- **The initial value of the variable**: the value the variable is initialized with. This parameter is only available for variables of _Primitive_ kind. For variables of other Kinds, the initial value should be defined on _Initialize_ Behaviour.
 
 ### How to use a variable?
 
@@ -185,7 +187,7 @@ function companyFormPage_Initialize({ context, variables, urlParameters, refs },
 
 - Binding
 
-Variables can be bound to a page or component property. When bound, the property value will be the same as the variable value.
+Variables can be bound to a page or _ELement_ property. When bound, the property value will be the same as the variable value.
 
 ### How to add a Url Parameter?
 
@@ -214,7 +216,28 @@ function companyFormPage_Initialize({ context, variables, urlParameters, refs },
 
 - Binding
 
-A Url Parameter can be bound to a page or component property. When bound, the property value will be the same as the parameter value.
+A Url Parameter can be bound to a page or _Element_ property. When bound, the property value will be the same as the parameter value.
+
+### How to use a global script function?
+
+On modeler, navigate to a page and access a Behaviour:
+
+- Page: on the right side menu open option **Properties/Behaviours**;
+- Element: select the element and on the right side menu the **Behaviours** list is available.
+
+Given that we have a model Script with name _Notifications_ and a function _showAlert_, we can call this function using the following code:
+
+```Javascript
+notification.showAlert("Hello World!");
+```
+
+See more about global scripts [here](omnia3_modeler_scripts_UI.md).
+
+### How to add a page script?
+
+On modeler, navigate to a page on the right side menu open option _scripts_.
+
+A modal is opened with a code expression, where you can add your JavaScript code to be used inside the page.
 
 ### How to use a global style?
 
@@ -226,15 +249,11 @@ To use a global style, simply introduce the CSS classes on property _classesStyl
 
 On modeler, navigate to a page and on the right side menu open option **_Properties_**, and _Styles_ area will be available.
 
-You can add page specific styles by introducing them on property _styles_.These styles can then be used in the page or page components.
+You can add page specific styles by introducing them on property _styles_.These styles can then be used in the page or page elements.
 
-### How to add a component to a page?
+### How to add a Element to a page?
 
 On modeler, navigate to a page and on the right side menu open option **_Drag to add_**.
-
-The list of components available on the model will be available, and you can drag them to the page preview area.
-
-After adding the component to the page, their Attributes, Behaviours and Styles should be defined.
 
 On this menu option, you can find all internal Components along with Components imported from a package:
 
@@ -242,7 +261,7 @@ On this menu option, you can find all internal Components along with Components 
   <img src="/images/modeler/Modeler-Components-List.jpg">
 </p>
 
-You can drag them to the Page preview area and change their Attributes, Behaviours and Styles. Each Component exposes a different set of Attributes, Behaviours and Styles that you can configure while modeling.
+You can drag one to the Page preview area and drop it in the intended location. When the component is dropped, it is transformed into a page _Element_ that references said Component, and you can change its configuration. Each Component exposes a different set of Attributes, Events and Styles that you can configure while modeling.
 
 Focusing on Attributes and Styles, its value can be set in different ways:
 

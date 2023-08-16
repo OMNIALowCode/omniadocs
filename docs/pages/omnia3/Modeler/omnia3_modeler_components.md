@@ -25,15 +25,24 @@ On the modeler perspective, a Component is composed by the following definitions
 
 The component attributes contain data relevant to define the component and change how it renders and behaves on a page. A component can have multiple attributes, and they can be different between components.
 
-An attribute can be required, and have a default value to be suggested when modeling. Depending on the attribute _direction_ configuration, its value can be only read (Outbound direction) or changed (Inbound direction), or both (TwoWay direction).
+An attribute can be required, and have a default value to be suggested when modeling. An attribute can be defined with three different _direction_ types:
 
-Some scenarios where attributes can be applied are setting/getting the component value or if it rendered as readOnly. An attribute value can be set in multiple ways.
+- **Outbound**: An attribute that is read-only by default. Only the Component can change the value. It cannot be changed when interacting with the page;
+- **Inbound**: An attribute whose value can only be changed by page interaction;
+- **TwoWay**: An attribute whose value can be changed by the component or as a result of page interaction.
+
+Attributes can have multiple purposes. Let's see some common scenarios:
+
+- Handle a value: When the component is located in a page, it can be bound with a Entity Attribute. We can have an attribute where the value will be available to be rendered
+- Change the Component Behaviour: Attributes can change how the Component behaves on a page. As an example, we can have an attribute that sets the Component as readOnly or changes a internal label
+
+An attribute value can be set in multiple ways. See our [Pages](omnia3_modeler_pages.md/#how-to-add-a-element-to-a-page) documentation to learn more.
 
 ### Events
 
-Component Events are code expressions executed on different moments when interacting with the component.
+On a Component, Events are triggered by user actions. A key press, mouse click or value selection are common events that we execute everyday when interacting with a browser.
 
-When the event is executed, it receives a list of parameters on object _params_. These parameters can be of multiple types, and contains the values of the _Outbound_ and _TwoWay_ properties.
+When a Component is in a page, it can have a Behaviour associated with the Event. When that happens, the modeled code expression will be executed when the event is triggered.
 
 ### Methods
 
@@ -47,7 +56,7 @@ OMNIA Platform has four internal components:
 
 ### forEach
 
-The forEach Component iterates a collection, and renders other Components and data for each record of the collection.
+The forEach is a functional Component that iterates a collection, and renders child Components for each record of the collection.
 
 A common scenario for this component is to render lines of a _Collection_ attribute (Commitment, Event, or non-root Generic Entity).
 
@@ -103,9 +112,11 @@ A common scenario for this component is to execute a query that feeds a list.
 
 ### entityForm
 
-The entityForm Component renders a Form composed by other Components inside a page.
+The entityForm is a functional Component that can be used to handle a data of a modeled Entity.
 
-A common scenario for this component is to show a Form to create/edit records.
+It provides properties that handle the read, create, update, delete and destroy operations for a entity instance.
+
+Child components must be included to show data and execute operations.
 
 - Properties:
 
@@ -143,9 +154,11 @@ A common scenario for this component is to show a Form to create/edit records.
 
 - Methods:
 
-| Method | Description                                                                                                                                       |
-| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| save   | Method that makes a request to the API to save the form data. It has 2 optional parameters related to the state machine: _decision_ and _comment_ |
+| Method               | Description                                                                                                                                       |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| save                 | Method that makes a request to the API to save the form data. It has 2 optional parameters related to the state machine: _decision_ and _comment_ |
+| delete               | Method that makes a request to the API to delete the current entity intance                                                                       |
+| destroySensitiveData | Method that makes a request to the API to destroy sensitive data for the current entity instance                                                  |
 
 ### selector
 
@@ -187,3 +200,10 @@ You can upload a new version of the components package.
 ## 4. Components Usage
 
 Components are available to be used on modeled Pages. See how its done [here](omnia3_modeler_pages.md).
+
+## 5. Create new Components
+
+You can create your own components to ensure the best user experience.
+
+To start, we suggest cloning [OMNIA Base Components](https://github.com/OMNIALowCode/omnia3-samples){:target="_blank"} repository, check out how the components work and start creating your own Components. 
+

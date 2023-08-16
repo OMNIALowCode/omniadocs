@@ -31,7 +31,7 @@ When a page is generated using a template, the following variables are created:
 
 | Variable                 | Type    | Description                                                                                  |
 | ------------------------ | ------- | -------------------------------------------------------------------------------------------- |
-| redirectTo               | Text    | The OMNIA page address to redirect the user when entity is save, deleted or destroyed                                                  |
+| redirectTo               | Text    | The OMNIA page address to redirect the user when entity is save, deleted or destroyed        |
 | showErrors               | Boolean | Boolean to indicate if page errors should be visible                                         |
 | isLoading                | Boolean | Boolean to indicate if the page is loading. A loader is shown if true                        |
 | openCodes                | Text    | A list of collection records whose details are opened                                        |
@@ -44,15 +44,15 @@ When a page is generated using a template, the following variables are created:
 
 - List entities returned by a Query:
 
-| Variable         | Type    | Description                                                                          |
-| ---------------- | ------- | ------------------------------------------------------------------------------------ |
-| currentPage      | Integer | The number of the page being currently shown in the list                             |
-| pageSize         | Integer | The number of records being requested when executing the query                       |
-| detailsPage      | Text    | The code of the Page modeled to be opened when navigating to create or edit a record |
-| listSorting      | Object  | The list of columns where sorting are applied                                        |
-| listFilters      | Object  | The list of columns where filters are applied                                        |
-| filterPanelState | Text    | The state of the list filter panel visibility. It can be either 'closed' or 'opened' |
-| listErrors       | Text    | The list of errors of the rendered data list                                         |
+| Variable        | Type    | Description                                                                          |
+| --------------- | ------- | ------------------------------------------------------------------------------------ |
+| currentPage     | Integer | The number of the page being currently shown in the list                             |
+| pageSize        | Integer | The number of records being requested when executing the query                       |
+| detailsPage     | Text    | The code of the Page modeled to be opened when navigating to create or edit a record |
+| listSorting     | Object  | The list of columns where sorting are applied                                        |
+| listFilters     | Object  | The list of columns where filters are applied                                        |
+| hideFilterPanel | Boolean | Boolean that determines the list filter panel visibility.                            |
+| listErrors      | Text    | The list of errors of the rendered data list                                         |
 
 At last, the following Url Parameters are created when generating a page:
 
