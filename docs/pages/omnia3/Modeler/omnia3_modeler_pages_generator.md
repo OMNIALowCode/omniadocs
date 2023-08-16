@@ -1,5 +1,5 @@
 ---
-title: Pages
+title: Page Generators
 keywords: lowcode user interface page generator
 summary: "All the information regarding OMNIA Platform Page generators. Create new pages for your entities with a couple of clicks."
 sidebar: omnia3_sidebar
@@ -11,7 +11,7 @@ folder: omnia3
 
 You have full freedom to design your model [Pages](omnia3_modeler_pages.md) as you want.
 
-But sometimes we just need to quicky create a Page, to be used as a starting point or on a Demo.
+But sometimes we just need to quickly create a Page, to be used as a starting point or on a Demo.
 
 To ensure this scenario is covered, Omnia Platform includes a page generator. This generator has a couple of templates that can be used to create pages that cover specific use cases.
 
@@ -31,9 +31,9 @@ When a page is generated using a template, the following variables are created:
 
 | Variable                 | Type    | Description                                                                                  |
 | ------------------------ | ------- | -------------------------------------------------------------------------------------------- |
-| RedirectTo               | Text    | The OMNIA page address to redirect the user                                                  |
-| ShowErrors               | Boolean | Boolean to indicate if page errors should be visible                                         |
-| IsLoading                | Boolean | Boolean to indicate if the page is loading. A loader is shown if true                        |
+| redirectTo               | Text    | The OMNIA page address to redirect the user when entity is save, deleted or destroyed                                                  |
+| showErrors               | Boolean | Boolean to indicate if page errors should be visible                                         |
+| isLoading                | Boolean | Boolean to indicate if the page is loading. A loader is shown if true                        |
 | openCodes                | Text    | A list of collection records whose details are opened                                        |
 | decisions                | Object  | A list of state machine decisions to be rendered                                             |
 | mainDecision             | Object  | The main state machine decision                                                              |
@@ -46,8 +46,8 @@ When a page is generated using a template, the following variables are created:
 
 | Variable         | Type    | Description                                                                          |
 | ---------------- | ------- | ------------------------------------------------------------------------------------ |
-| CurrentPage      | Integer | The number of the page being currently shown in the list                             |
-| PageSize         | Integer | The number of records being requested when executing the query                       |
+| currentPage      | Integer | The number of the page being currently shown in the list                             |
+| pageSize         | Integer | The number of records being requested when executing the query                       |
 | detailsPage      | Text    | The code of the Page modeled to be opened when navigating to create or edit a record |
 | listSorting      | Object  | The list of columns where sorting are applied                                        |
 | listFilters      | Object  | The list of columns where filters are applied                                        |

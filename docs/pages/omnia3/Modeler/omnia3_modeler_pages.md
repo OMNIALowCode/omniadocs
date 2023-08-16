@@ -43,7 +43,7 @@ Unlike Variables, a Url parameter value is automatically set from the Url used t
 
 ### Refs
 
-Refs are responsible by exposing _Outbound_ and _TwoWay_ Component attributes so their value can be used on a Page.
+Refs are responsible by exposing _Outbound_ Component attributes so their value can be used on a Page.
 
 They are available to be used on code expressions and on page attributes.
 
@@ -72,7 +72,7 @@ initialize({ context, variables, urlParameters, refs }) {
 | urlParameters | The values of the Url parameters set when acessing the page                            |
 | refs          | The _Outbound_ attribute values for each Component located on the page                 |
 
-- Component Behaviour
+- Element Behaviour
 
 ```Javascript
 _descriptionInput_OnChange({ context, variables, urlParameters, refs, indexes, currentElement, currentIndex }, params){
@@ -80,7 +80,7 @@ _descriptionInput_OnChange({ context, variables, urlParameters, refs, indexes, c
  }
 ```
 
-Component Behaviours contains the properties available on Page Behaviours and adds the following:
+Element Behaviours contains the properties available on Page Behaviours and adds the following:
 
 | Property       | Description                                                                                                |
 | -------------- | ---------------------------------------------------------------------------------------------------------- |

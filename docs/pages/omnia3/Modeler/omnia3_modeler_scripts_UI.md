@@ -53,19 +53,19 @@ Considering a Script named _Helpers_, with a function named _showAlert_ that sho
 
 ```Javascript
 /** 
- * You can invoke these class methods in the expression and behaviours code. Use the 'helpers' object to do it.
+ * You can invoke these class methods in the expression and behaviours code. Use the 'notification' object to do it.
  */
-class MyLibScripts {
+class NotificationScripts {
     showAlert(message) {
         alert(message);
     }
 }
 
-const myLib = new MyLibScripts();
+const notification = new NotificationScripts();
 ```
 
 To use this function, we just need to call it:
 
 ```Javascript
-myLib.showAlert("Hello World!");
+notification.showAlert("Hello World!");
 ```

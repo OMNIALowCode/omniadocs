@@ -15,13 +15,13 @@ These components have the same purpose as the ones available on Forms and Dashbo
 
 Components can be visual (e.g. inputs) or functional. Users can interact with the visual components directly, while functional components are used to execute multiple processes behind the screen (e.g. fetch data, act as container to render other elements).
 
-OMNIA Platform contains a small number of internal components, and new ones can be added to each model, according to its needs. Multiple packages with different components can be uploaded, and you can develop your own components. To start, we suggest using the package made available by the OMNIA Platform, that you can find [here](https://github.com/OMNIALowCode/omnia-base-components).
+OMNIA Platform contains a small number of internal components, and new ones can be added to each model, according to its needs. Multiple packages with different components can be uploaded, and you can develop your own components. To start, we suggest using the package made available by the OMNIA Platform, that you can find <a href="https://github.com/OMNIALowCode/omnia-base-components" target="_blank">here</a>.
 
 ## 2. Components Structure
 
 On the modeler perspective, a Component is composed by the following definitions:
 
-### Properties
+### Attributes
 
 The component attributes contain data relevant to define the component and change how it renders and behaves on a page. A component can have multiple attributes, and they can be different between components.
 
