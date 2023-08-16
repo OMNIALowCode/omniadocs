@@ -125,6 +125,15 @@ When we are creating a Page, all the _Elements_ a modeler can include on it refe
 
 If we compare pages with Forms or Dashboards, our _Elements_ based on Components can grant an additional level of flexibility, since we are not limited to use Omnia internal lists or inputs. We can create our own to ensure the best user experience.
 
+Elements have a set of default properties that can be configured:
+
+| Property      | Description                                                                                                                                                                            |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| isHidden      | Boolean that determines if the element is visible. Its value can be static, bound to a variable/ref or the result of a expression                                                      |
+| groupElements | Boolean that determines if the element is grouped with its children. When elements are grouped, they behave as one in drag and drop operations.                                        |
+| classesStyles | The CSS Classes to be added to the rendered element. Available if configured o the component                                                                                           |
+| cssStyle      | The definition of CSS variable values of the selected element. Its value can be static, bound to a variable/ref or the result of a expression. Available if configured o the component |
+
 ## 3. Modeling Pages
 
 When we are modeling a page, we'll be using our Page Editor.
