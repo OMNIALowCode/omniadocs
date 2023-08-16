@@ -9,14 +9,18 @@ folder: omnia3
 
 ## 1. Introduction
 
-This feature allows you to add Javascript code that can be used on other UI code expressions.
+This feature allows you to add JavaScript code that can be used on other UI code expressions.
 
-On each model you can have multiple Scripts. Each script is composed by a class, named after the script. 
+The Scripts can be used to:
 
+- Improve code maintainability, by writing only once code that is reused on multiple features of your model;
+- Improve code organization, by creating multiple scripts with a clear name, each with its set of functions. 
+
+Each Script generates a class, where you can write your code. The class name is composed by the name you defined with the suffix _Scripts_. Below we can see a example of the class generated for _MyLib_ script: 
 
 ```Javascript
   /** 
- * You can invoke these class methods in the expression and behaviours code. Use the 'helpers' object to do it.
+ * You can invoke these class methods in the expression and behaviours code. Use the 'myLib' object to do it.
  */
 class MyLibScripts {
 
@@ -35,9 +39,7 @@ Now select _Add new_ and fill in the following information:
 
 - **Name**: the name of the script (needs to be unique within the model);
 - **Description**: the textual explanation of the script (can be used as development documentation);
-- **Order**: the order that the script class will be loaded;
 - **Execute the following code**: the code expression of the script.
-
 
 ### How to edit a Script?
 

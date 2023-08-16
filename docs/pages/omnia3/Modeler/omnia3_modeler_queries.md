@@ -25,7 +25,7 @@ Selecting the option _Add new_ in the list of queries, you need to fill the foll
 
 - **Name**: The name of the query (needs to be unique);
 - **Description**: The textual explanation of the query's purpose (can be used as development documentation);
-- **Type**: The type of the entity this query targets;
+- **Type**: The type of the entity targeted by this query;
 
 ### How to add properties to a query?
 
@@ -52,7 +52,7 @@ Each entity you add to the model have a SQL view to allow you to easily access t
 
 So, the name of the SQL views respects the following rules:
 
-- SQL views of entities (the name of the entity with the _vw\__ prefix): **vw_MyEntityName**
+- SQL views of entities (the name of the entity with the \_vw\_\_ prefix): **vw_MyEntityName**
 - SQL views of attributes with _Maximum number of records_ > 1: **vw_MyEntityName_MyAttributeName**
   - To join this views with the parent entity, you can use the column _identifier_ from both views.
 
@@ -138,9 +138,9 @@ It's possible to **drag** (hold the mouse click on) each _view_ or _column's_ _n
 
 ### _Output Structure_
 
-On Advanced Queries, it's possible to define the output structure. This structure can be used later when creating a new list, to define the columns.
+On Advanced Queries, it's possible to define the output structure. This structure is later used by internal Component [_runQuery_](omnia3_modeler_components.md/#runquery) to define the output columns.
 
-To set the query output structure, on the advanced query editor navigate to Columns tab and click on the _Auto-fill_ button:
+On queries for entities with _System_ data source, the query output structure can be filled automatically. To set the query output structure automatically, on the advanced query editor navigate to Columns tab and click on the _Auto-fill_ button:
 
 <p align="center">
   <img src="/images/modeler/Modeler_Query_Autofill.jpg">
@@ -153,6 +153,19 @@ The query will be validated, executed and the structure will be suggested.
 </p>
 
 This suggestion can be edited and new columns can be added manually.
+
+Each column contains the following properties:
+
+| Property | Description                                                             |
+| -------- | ----------------------------------------------------------------------- |
+| name     | The name of the column. Has to be equal to the query result column name |
+| label    | The label of the column                                                 |
+| kind     | The kind of the column. Possible values: Primitive or Enumeration       |
+| type     | The type of the column. It can be a primitive type or a enumeration     |
+
+On queries of entities based on other data sources, the structure must be defined manually.
+
+We recommend queries' output structure is always defined, to ease data visualization.
 
 ### Filtering data with the current user
 
