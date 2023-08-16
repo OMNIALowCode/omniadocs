@@ -491,23 +491,6 @@
         },
         "AggregationKind": "None",
         "IsIdentifier": false
-      },
-      {
-        "Name": "ScriptOrder",
-        "Description": "The order of the script in global script file.",
-        "TypeKind": "Primitive",
-        "TypeName": "Integer",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None",
-        "IsIdentifier": false
       }
     ]
   },
