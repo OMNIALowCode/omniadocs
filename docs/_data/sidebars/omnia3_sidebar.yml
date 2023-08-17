@@ -180,7 +180,7 @@ entries:
               - title: Business
                 output: web
                 subfolderitems:
-                  - title: Modeling Entities (Structure)
+                  - title: Modeling Entities Structure
                     url: /omnia3_modeler_entities.html
                     output: web, pdf
     
@@ -215,7 +215,7 @@ entries:
               - title: User Interface
                 output: web
                 subfolderitems:
-                  - title: Modeling Entities (User Interface)
+                  - title: Modeling Entities
                     url: /omnia3_modeler_entities_ui.html
                     output: web, pdf
         

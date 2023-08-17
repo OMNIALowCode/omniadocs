@@ -80,14 +80,26 @@ _descriptionInput_OnChange({ context, variables, urlParameters, refs, indexes, c
  }
 ```
 
-Element Behaviours contains the properties available on Page Behaviours and adds the following:
+Element Behaviours contains the properties available on Page Behaviours and adds four new properties.
 
-| Property       | Description                                                                                                                 |
-| -------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| indexes        | When the behaviour is in a nested collection, this property contains all indexes of the current element path                |
-| currentElement | When the behaviour is in a collection, this property contains the current entry data                                        |
-| currentIndex   | When the behaviour is in a collection, this property contains the index of the collection entry                             |
-| params         | A list of parameters exposed by the Component. Each Component exposes a set of parameters of different types for each Event |
+Before we look at these new properties, it is important to highlight that properties _indexes_, _currentElement_ and _currentIndex_ only have value when the Behaviour is part of an Element located inside a [forEach](omnia3_modeler_components.md/#foreach) Component. This happens because these properties expose data related to a record inside collection being iterated by the _forEach_.
+
+| Property       | Description                                                                                                                                                                             |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| indexes        | This property contains the index of collection iterated by the _forEach_ for the current element. If the collection is located within another, indexes of the parents are also included |
+| currentElement | This property contains the current entry data                                                                                                                                           |
+| currentIndex   | This property contains the index of the current element inside the collection being iterated                                                                                            |
+| params         | A list of parameters exposed by the Component. Each Component exposes a set of parameters of different types for each Event                                                             |
+
+Let's evaluate an example of these properties in action. The scenario we're using is composed by a document named _PurchaseOrder_, with a collection _OrderLines_. That collection itself has a nested collection, named _OrderWarehouse_.
+
+The properties _currentElement_ and _currentIndex_ will contain, respectively, an object with data and a integer with the index of the collection entry being iterated.
+
+In its turn, the _indexes_ property is composed by an object that has the indexes of the nested _forEach_ elements.
+If we are iterating a first level collection (collection _orderLines_), we have only one key in this object, named after the _forEach_ element (e.g. _orderLinesForEach_).
+If we are iterating a second level collection (collection _orderWarehouse_), we will have two keys, one for each _forEach_ element (e.g. key _orderLinesForEach_ and _orderLinesorderWarehouseForEach_).
+
+With this information we have all we need to access the parent of the current element if necessary.
 
 ### Scripts
 
@@ -138,9 +150,9 @@ Elements have a set of default properties that can be configured:
 
 When we are modeling a page, we'll be using our Page Editor.
 
-This is composed by two areas: a design/preview area, and a menu located on the right sidebar.
+The editor is composed by two areas: a design/preview area, and a menu located on the right sidebar.
 
-Focusing on the menu, it is composed by five areas:
+The menu is composed by five areas:
 
 - Properties: The properties of the page or the currently selected page element.
 - Elements Tree: The list of elements that compose the page, organized on a tree.
