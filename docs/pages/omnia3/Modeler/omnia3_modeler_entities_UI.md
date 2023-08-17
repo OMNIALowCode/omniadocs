@@ -120,11 +120,12 @@ Click [here](omnia3_modeler_uibehaviours.html), to know more about user interfac
 
 - **Change Element Configuration**
   Change the configuration of the Form being edited or of any element located inside it.
-  All the element attributes are available to be changed (e.g. isHidden, visibleFrom, label). Conditions may be applied (value or role). 
-  
-  Examples: 
-    - Depending on the user role, allow your Supplier to edit the field "Unit Price", while the custumer only sees it as read only.
-    - A user selects his payment option and that action will hide the unnecessary elements.
+  All the element attributes are available to be changed (e.g. isHidden, visibleFrom, label). Conditions may be applied (value or role).
+
+  Examples:
+
+  - Depending on the user role, allow your Supplier to edit the field "Unit Price", while the custumer only sees it as read only.
+  - A user selects his payment option and that action will hide the unnecessary elements.
 
 - **Add Validation Message**
   Quickly add validation messages to your interface elements, add the trigger conditions (value or role) and define the content of your message
@@ -439,7 +440,7 @@ In this sample, a function is added to the calendar metadata, in order to be exe
 
 ```JavaScript
     this._metadata.elements.calendar.onFormOpen = (line) => {
-        // your code here    
+        // your code here
     }
 ```
 
@@ -559,19 +560,24 @@ In order to open an already created entity in a modal you must add a new `User I
 
 The following properties are available when declaring a new modal instance:
 
-| Value                | Type     | Required | Description                                                                                                                                                               |
-| -------------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 'disableCloseButton' | boolean  | no       | Be cautious when declaring this property because the modal might not close if you don't add the necessary code for it (explained below).                                  |
-| 'hideFooter'         | boolean  | no       | Be cautious when declaring this property because the modal will not have the default option to close. You should add the necessary code for closing it (explained below). |
-| 'hideHeader'         | boolean  | no       | Declare it if you intend to hide the title of the modal.                                                                                                                  |
-| 'id'                 | string   | no       | The unique identifier necessary to close the modal.                                                                                                                       |
-| 'name'               | string   | yes      | The name of the entity to open inside the modal.                                                                                                                          |
-| 'onClose'            | function | no       | A callback function the triggers after the modal is closed. It receives a `result` (string) value and an `args` (object). The default value of `result` is `Close`.       |
-| 'parameters'         | object   | no       | Any other information you wish to save inside the modal to use later.                                                                                                     |
-| 'formConfiguration'         | object   | no       | Optional configuration when opening a modal with a form.              |
-| 'size'               | string   | no       | There are four possible sizes: `small`, `medium`, `large` and `extra-large`. The default value is `extra-large`.                                                          |
-| 'title'              | string   | no       | The text that appear in modal's header. The default is the entity's `name`.                                                                                               |
-| 'type'               | string   | yes      | Identify the type of the entity. There are two possible types: `Dashboard` or `Form`.                                                                                 |
+| Value                       | Type     | Required | Description                                                                                                                                                               |
+| --------------------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 'disableCloseButton'        | boolean  | no       | Be cautious when declaring this property because the modal might not close if you don't add the necessary code for it (explained below).                                  |
+| 'hideFooter'                | boolean  | no       | Be cautious when declaring this property because the modal will not have the default option to close. You should add the necessary code for closing it (explained below). |
+| 'hideHeader'                | boolean  | no       | Declare it if you intend to hide the title of the modal.                                                                                                                  |
+| 'id'                        | string   | no       | The unique identifier necessary to close the modal.                                                                                                                       |
+| 'name'                      | string   | yes      | The name of the entity to open inside the modal.                                                                                                                          |
+| 'onClose'                   | function | no       | A callback function the triggers after the modal is closed. It receives a `result` (string) value and an `args` (object). The default value of `result` is `Close`.       |
+| 'parameters'                | object   | no       | Any other information you wish to save inside the modal to use later.                                                                                                     |
+| 'formConfiguration'         | object   | no       | Optional configuration when opening a modal with a form.                                                                                                                  |
+| 'listConfiguration'         | object   | no       | Optional configuration when opening a modal with a list.                                                                                                                  |
+| 'confirmationConfiguration' | object   | no       | Optional configuration when opening a confirmation modal.                                                                                                                 |
+| 'inputMessageConfiguration' | object   | no       | Optional configuration when opening a modal to input a message.                                                                                                           |
+| 'exportCSVConfiguration'    | object   | no       | Optional configuration when opening a modal to export a CSV.                                                                                                              |
+| 'pageConfiguration'         | object   | no       | Optional configuration when opening a modal with a page.                                                                                                                  |
+| 'size'                      | string   | no       | There are four possible sizes: `small`, `medium`, `large` and `extra-large`. The default value is `extra-large`.                                                          |
+| 'title'                     | string   | no       | The text that appear in modal's header. The default is the entities `name`.                                                                                               |
+| 'type'                      | string   | yes      | Identify the type of the entity. The following types are available: `Dashboard`, `Form`, `Page`, `List`, `Confirmation`, `InputMessage`, `ExportCSV`.                     |
 
 How to declare a modal:
 
@@ -600,11 +606,137 @@ How to declare a modal:
     }
 ```
 
-Finally, to open the modal use the following code:
+```JavaScript
+    //Modal to open a list
+    const modal = {
+        name: "SuppliersByCountryList",
+        type: "List",
+        listConfiguration: {
+            //The dataSource where the query will be executed. If not defined, "Default" is assumed as value.
+            dataSource: "Default",
+            //Query parameters. Optional
+            parameters: {
+                country: "Portugal"
+            },
+            //Filters to be applied. Optional
+            filters: {
+                _code: {
+                    operator: "Like",
+                    value: "ALCAD"
+                },
+                _inactive: {
+                    operator: "NotEqualTo",
+                    value: true
+                }
+            }
+        }
+    }
+```
+
+```JavaScript
+    //Modal to open a page
+    const modal = {
+        name: "SupplierPage",
+        type: "Page",
+        //optional
+        pageConfiguration: {
+            //Parameters to be sent on page url. Optional
+            urlParameters: {
+                code: "SOFRIO"
+            }
+        }
+    }
+```
+
+```JavaScript
+    //Modal that requests a confirmation from the user
+    const modal = {
+        name: "DeleteConfirmationModal",
+        type: "Confirmation",
+        confirmationConfiguration: {
+            //Message to be shown on modal. Optional
+            message: "Are you sure you want to delete the current Entity?",
+            //Type of confirmation button. Possible values: 'ok' or 'Delete'
+            buttonType: 'delete'
+        }
+    }
+```
+
+```JavaScript
+    //Modal that allows the user to input a text
+    const modal = {
+        name: "CommentInputMessageModal",
+        type: "InputMessage",
+        inputMessageConfiguration: {
+            //Message to be shown on modal as the input label. Optional
+            label: "Decision Comment:",
+            //Boolean to define if the text is required. Optional
+            require: false,
+            // The maximum length of the text input. Optional
+            maximumLength: 256
+        }
+    }
+```
+
+```JavaScript
+    //Modal to export a query to CSV
+    const modal = {
+        name: "SuppliersByCountryExportModal",
+        type: "ExportCSV",
+        exportCSVConfiguration: {
+            //The query whose data will be exported
+            query: "SuppliersByCountryQuery",
+            //The dataSource where the query will be executed. Optional, if not defined "Default" is assumed
+            dataSource: "Default",
+            //List of columns to be exported
+            columns:[
+                {
+                    property: "_code", 
+                    label: "Code"
+                },
+                {
+                    property: "_name", 
+                    label: "Name"
+                }
+            ],
+            //Query sorting by column. Optional
+            sorting: [
+                {
+                    property: "_code",
+                    direction: "Ascend"
+                }
+            ],
+            //Query parameters. Optional
+            parameters: {
+                country: "Portugal"
+            },
+            //Filters to be applied. Optional
+            filters: {
+                _code: {
+                    operator: "Like",
+                    value: "ALCAD"
+                },
+                _inactive: {
+                    operator: "NotEqualTo",
+                    value: true
+                }
+            }
+        }
+    }
+```
+
+To open the modal on a `Dashboard` or `Form` use the following code:
 
 ```JavaScript
     // The 'modal' argument is the constant you created with the properties above
     this._context.openModal(modal);
+```
+
+Finally, to open a modal on a `Page` use the following code:
+
+```JavaScript
+    // The 'modal' argument is the constant you created with the properties above
+    context.uiTools.openModal(modal);
 ```
 
 In this sample, there's an example of the `onClose` callback:
