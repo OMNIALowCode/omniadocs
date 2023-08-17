@@ -60,17 +60,15 @@ The forEach is a functional Component that iterates a collection, and renders ch
 
 A common scenario for this component is to render lines of a _Collection_ attribute (Commitment, Event, or non-root Generic Entity).
 
-- Properties:
-
-This Component only has a configurable property, named _binding_. This attribute is used to define the collection that will be iterated.
+#### Properties
 
 | Property | Direction | Data Type | Description                                                          |
 | -------- | --------- | --------- | -------------------------------------------------------------------- |
-| query    | Inbound   | Object    | This property is used to define the collection that will be iterated |
+| binding  | Inbound   | Object    | This property is used to define the collection that will be iterated |
 
-- Events:
+#### Events
 
-This Component does not has events.
+This Component doesn't have events.
 
 ### runQuery
 
@@ -78,12 +76,12 @@ The runQuery Component executes a previously modeled query and returns the resul
 
 A common scenario for this component is to execute a query that feeds a list.
 
-- Properties:
+#### Properties
 
 | Property     | Direction | Data Type       |                                                                                       | Description |
 | ------------ | --------- | --------------- | ------------------------------------------------------------------------------------- | ----------- |
 | query        | Inbound   | Reference/Query | The modeled query to be executed                                                      |
-| records      | Outbound  | Object          | The records obtained as the result of the query execution                             |
+| records      | Outbound  | Object          | The list of records obtained as the result of the query execution                     |
 | columns      | Outbound  | Object          | The structure of the columns returned on each record                                  |
 | dataSource   | Inbound   | Text            | The dataSource instance where the query is going to be executed                       |
 | parameters   | Inbound   | Object          | Parameters to be applied when executing the query                                     |
@@ -95,7 +93,7 @@ A common scenario for this component is to execute a query that feeds a list.
 | totalRecords | Outbound  | Integer         | The total number of records that can be returned as the result of the query execution |
 | isLoading    | Outbound  | Boolean         | Boolean to indicate if the query is being executed and data is still loading          |
 
-- Events:
+#### Events
 
 | Event       | Description                                                          |
 | ----------- | -------------------------------------------------------------------- |
@@ -103,7 +101,7 @@ A common scenario for this component is to execute a query that feeds a list.
 | OnLoad      | Code executed when data is retrieved from API, before being rendered |
 | OnLoadError | Code executed when the request to retrieve data returns an error     |
 
-- Methods:
+#### Methods
 
 | Method    | Description                                          |
 | --------- | ---------------------------------------------------- |
@@ -118,26 +116,26 @@ It provides properties that handle the read, create, update, delete and destroy 
 
 Child components must be included to show data and execute operations.
 
-- Properties:
+#### Properties
 
-| Property         | Direction | Data Type | Description                                                                               |
-| ---------------- | --------- | --------- | ----------------------------------------------------------------------------------------- |
-| definition       | Inbound   | Reference | The modeled entity the Form is referencing                                                |
-| dataSource       | Inbound   | Text      | The dataSource instance where the entity is being created/edited                          |
-| code             | Inbound   | Text      | The instance of the definition being edited                                               |
-| data             | Outbound  | Object    | The instance data contained in the form component                                         |
-| hasChanges       | Outbound  | Boolean   | Flag to indicate if the data contained in the form has changed                            |
-| useTemporary     | Inbound   | Boolean   | Flag to indicate if the create/edit operation is using a Temporary                        |
-| hasErrors        | Outbound  | Boolean   | Flag to indicate if the form has errors                                                   |
-| state            | Outbound  | Object    | The state machine state of the entity                                                     |
-| newInstance      | Outbound  | Boolean   | Flag to indicate if a we're creating a new entity                                         |
-| hasAfterSave     | Outbound  | Boolean   | Flag to indicate if the entity type has an after save behaviour                           |
-| isProcessing     | Outbound  | Boolean   | Flag to indicate if a request is being processed                                          |
-| security         | Outbound  | Object    | Object that has a set of flags with the user privileges to read, write, delete or destroy |
-| attributes       | Outbound  | Object    | The set of the attributes of the entity type the form is referencing                      |
-| hasSensitiveData | Outbound  | Boolean   | Flag to indicate if the form contains sensitive data                                      |
+| Property         | Direction | Data Type             | Description                                                                               |
+| ---------------- | --------- | --------------------- | ----------------------------------------------------------------------------------------- |
+| definition       | Inbound   | Reference             | The modeled entity the Form is referencing                                                |
+| dataSource       | Inbound   | Text                  | The dataSource instance where the entity is being created/edited                          |
+| code             | Inbound   | Text                  | The instance of the definition being edited                                               |
+| data             | Outbound  | Object                | The instance data contained in the form component                                         |
+| hasChanges       | Outbound  | Boolean               | Flag to indicate if the data contained in the form has changed                            |
+| useTemporary     | Inbound   | Boolean               | Flag to indicate if the create/edit operation is using a Temporary                        |
+| hasErrors        | Outbound  | Boolean               | Flag to indicate if the form has errors                                                   |
+| state            | Outbound  | [State](#state)       | The state machine state of the entity                                                     |
+| newInstance      | Outbound  | Boolean               | Flag to indicate if a we're creating a new entity                                         |
+| hasAfterSave     | Outbound  | Boolean               | Flag to indicate if the entity type has an after save behaviour                           |
+| isProcessing     | Outbound  | Boolean               | Flag to indicate if a request is being processed                                          |
+| security         | Outbound  | [Security](#security) | Object that has a set of flags with the user privileges to read, write, delete or destroy |
+| attributes       | Outbound  | Object                | The set of the attributes of the entity type the form is referencing                      |
+| hasSensitiveData | Outbound  | Boolean               | Flag to indicate if the form contains sensitive data                                      |
 
-- Events:
+#### Events
 
 | Event             | Description                                                                                                               |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -152,7 +150,7 @@ Child components must be included to show data and execute operations.
 | OnUpdateData      | Executed when the Update operation is finished with success                                                               |
 | OnUpdateDataError | Executed when the Update operation is finished with error. Can be used to show the error to the user                      |
 
-- Methods:
+#### Methods
 
 | Method               | Description                                                                                                                                       |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -160,24 +158,71 @@ Child components must be included to show data and execute operations.
 | delete               | Method that makes a request to the API to delete the current entity intance                                                                       |
 | destroySensitiveData | Method that makes a request to the API to destroy sensitive data for the current entity instance                                                  |
 
+#### Types
+
+##### State
+
+| Property          | Data Type                         | Description                                     |
+| ----------------- | --------------------------------- | ----------------------------------------------- |
+| decisions         | [StateDecision](#statedecision)   | A list of decisions available on the state      |
+| disableAttributes | Boolean                           | Flag to indicate if all attributes are disabled |
+| disableOperations | Boolean                           | Flag to indicate if all operations are disabled |
+| enabledAttributes | String                            | A list of enabled attributes                    |
+| enabledOperations | [StateOperation](#stateoperation) | A list of enabled operations                    |
+| name              | String                            | The name of the state                           |
+
+##### StateDecision
+
+| Property    | Data Type | Description                                         |
+| ----------- | --------- | --------------------------------------------------- |
+| commentType | String    | The type of the comment: None, Optional or Required |
+| label       | String    | The label of the decision                           |
+| name        | String    | The name of the decision                            |
+| order       | Integer   | The order of the decision within the state          |
+
+##### StateOperation
+
+| Property | Data Type | Description                                                                 |
+| -------- | --------- | --------------------------------------------------------------------------- |
+| path     | String    | The path of the operation. Filled when the operation is inside a collection |
+| type     | String    | The type of the operation. Possible values are: Update, Add, Delete         |
+
+##### Security
+
+| Property   | Data Type | Description                                                                     |
+| ---------- | --------- | ------------------------------------------------------------------------------- |
+| canDelete  | Boolean   | Flag to indicate if the user can delete the current instance                    |
+| canDestroy | Boolean   | Flag to indicate if the user can destroy sensitive data of the current instance |
+| canRead    | Boolean   | Flag to indicate if the user can read the current instance                      |
+| canWrite   | Boolean   | Flag to indicate if the user can create a new instance or make changes          |
+
 ### selector
 
 The Selector component retrieves an Enumerator keys and labels translated to the user current language.
 
 This component can be used to obtain Enumerator data to be used by another element or behaviour.
 
-- Properties:
+#### Properties
 
-| Property | Direction | Data Type | Description                                                                                     |
-| -------- | --------- | --------- | ----------------------------------------------------------------------------------------------- |
-| selector | Inbound   | Reference | This attribute is used to define the Enumeration Selector whose configuration will be retrieved |
-| entries  | Outbound  | Object    | A list containing the entries of the Enumeration                                                |
+| Property | Direction | Data Type                   | Description                                                                                     |
+| -------- | --------- | --------------------------- | ----------------------------------------------------------------------------------------------- |
+| selector | Inbound   | Reference                   | This attribute is used to define the Enumeration Selector whose configuration will be retrieved |
+| entries  | Outbound  | [SelectorKey](#selectorkey) | A list containing the entries of the Enumeration                                                |
 
-- Events:
+#### Events
 
 | Event  | Description                                                                                                                                          |
 | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | OnLoad | Code executed when Enumerator data is retrieved from API, before being rendered. Can be used to store that data to be rendered on a select Component |
+
+#### Types
+
+##### SelectorKey
+
+| Property | Data Type | Description                     |
+| -------- | --------- | ------------------------------- |
+| key      | String    | The key of the selector entry   |
+| label    | String    | The label of the selector entry |
 
 ## 3. Modeling Components
 
@@ -191,8 +236,8 @@ Now select _Add new_ and fill in the following information:
 - **Description**: the textual explanation of the theme's purpose (can be used as development documentation);
 - **Component file**: the package file (\*.tgz) that contains a set of components.
 
-You can download our Base Components package from the GitHub repository as a source for the property _Component file_ above. In order to do that, click [here](https://github.com/OMNIALowCode/omnia-base-components){:target="_blank"} to access the repository. Then click on right side option **Releases**, 
-open the latest version and download the file named __omnia-base-components-vx.x.x.tgz__. 
+You can download our Base Components package from the GitHub repository as a source for the property _Component file_ above. In order to do that, click [here](https://github.com/OMNIALowCode/omnia-base-components){:target="\_blank"} to access the repository. Then click on right side option **Releases**,
+open the latest version and download the file named **omnia-base-components-vx.x.x.tgz**.
 
 ### How to edit a Components package?
 
@@ -208,5 +253,4 @@ Components are available to be used on modeled Pages. See how its done [here](om
 
 You can create your own components to ensure the best user experience.
 
-To start, we suggest cloning [OMNIA Base Components](https://github.com/OMNIALowCode/omnia3-samples){:target="_blank"} repository, check out how the components work and start creating your own Components. 
-
+To start, we suggest cloning [OMNIA Base Components](https://github.com/OMNIALowCode/omnia3-samples){:target="\_blank"} repository, check out how the components work and start creating your own Components.
