@@ -196,7 +196,9 @@ function companyFormPage_Initialize({ context, variables, urlParameters, refs },
 
 - Binding
 
-Variables can be bound to a page or _ELement_ property. When bound, the property value will be the same as the variable value.
+Variables can be bound to a page or _Element_ attribute. When bound, the property value will be the same as the variable value.
+
+To bind a variable with an element attribute, start by selecting the element on the preview area, and on the right side menu edit the intended attribute, set its value type to _Binding_ and select the previously created variable.
 
 ### How to add a Url Parameter?
 

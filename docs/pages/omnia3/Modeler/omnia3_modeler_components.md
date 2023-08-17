@@ -188,8 +188,11 @@ To add a new components package go to the Modeling area, find the **_User Interf
 Now select _Add new_ and fill in the following information:
 
 - **Name**: the name of the asset (needs to be unique within the model);
-- **Description**: the textual explanation of the theme's purpose (can be used as development documentation).
+- **Description**: the textual explanation of the theme's purpose (can be used as development documentation);
 - **Component file**: the package file (\*.tgz) that contains a set of components.
+
+You can download our Base Components package from the GitHub repository as a source for the property _Component file_ above. In order to do that, click [here](https://github.com/OMNIALowCode/omnia-base-components){:target="_blank"} to access the repository. Then click on right side option **Releases**, 
+open the latest version and download the file named __omnia-base-components-vx.x.x.tgz__. 
 
 ### How to edit a Components package?
 
