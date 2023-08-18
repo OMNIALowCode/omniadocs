@@ -128,7 +128,7 @@ Other information might be necessary when adding inputs:
 When adding a button, the following information can be specified:
 
 - **text**: The button text.
-- **icon**: Optionally it is possible to add an icon to the button (according to [Font Awesome 4.7](https://fontawesome.com/v4.7.0/icons/));
+- **icon**: Optionally it is possible to add an icon to the button (according to [Font Awesome 4.7](https://fontawesome.com/v4.7.0/icons/){:target="\_blank"});
 - **color**: The button color according to the theme (e.g.: Primary, Danger, etc.);
 - **outline**: If the button only has a border instead of a background-color;
 

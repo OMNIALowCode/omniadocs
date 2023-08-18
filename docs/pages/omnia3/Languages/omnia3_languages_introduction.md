@@ -10,7 +10,7 @@ folder: omnia3
 
 ## 1. Introduction
 
-The OMNIA platform was designed based on the theoretical principles of language design and model-driven engineering, following similar principles to the Object Management Group's standard of [Meta-Object Facility (MOF)](http://www.omg.org/mof/) and its related languages such as the [Eclipse Modeling Framework (EMF)](http://www.eclipse.org/modeling/emf/) and the [Unified Modeling Language (UML)](http://www.uml.org/).
+The OMNIA platform was designed based on the theoretical principles of language design and model-driven engineering, following similar principles to the Object Management Group's standard of [Meta-Object Facility (MOF)](https://www.omg.org/mof/){:target="\_blank"} and its related languages such as the [Eclipse Modeling Framework (EMF)](https://www.eclipse.org/modeling/emf/){:target="\_blank"} and the [Unified Modeling Language (UML)](https://www.uml.org/){:target="\_blank"}.
 
 Here we explain what the different languages that exist in the platform are, as well as introducing our analogue to MOF, the **Meta-Entity Framework (MEF)**.
 

@@ -15,13 +15,13 @@ This tutorial is an advanced implementation of the [data sources tutorial](omnia
 
 On the CRUD Operations tutorial area, we are going to evaluate how to interact with an external data source, by reading and manipulating its data.
 
-As our custom data source, we are going to use the [PRIMAVERA ERP V10](https://pt.primaverabss.com).
+As our custom data source, we are going to use the [PRIMAVERA ERP V10](https://pt.primaverabss.com){:target="\_blank"}.
 
 ## 2. Prerequisites
 
 This tutorial assumes that you have created a OMNIA tenant ([click here to see how](omnia3_tenantcreation.html)), and are logged in as a user with modeling privileges to this tenant. You must also have access to the management area to manage the connectors.
 
-This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss.com), on version 10. 
+This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss.com){:target="\_blank"}, on version 10. 
 
 ## 3. Create a new connector
 
@@ -29,15 +29,15 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
 
 2. Through the left side menu, create a new connector by accessing the option ***Connectors / Add new***. Set its Code and Name as "TutorialConnector"
 
-3. Right after creating the connector a modal with connector data should be shown.
+    Right after creating the connector, a modal with its data should be shown. Copy the **Client Username**, **Client ID** and **Client Secret** to use later when configuring the Connector.
 
-4. Now we are going to grant the connector access privileges for the tenant. Access the option ***Security / Roles***, and select Administration role for the tenant (composed by the tenant code with prefix "Administration". E.g. AdministrationDemoTenant)
+3. Now we are going to grant the connector access privileges for the tenant. Access the option ***Security / Roles***, and select Administration role for the tenant (composed by the tenant code with prefix "Administration". E.g. AdministrationDemoTenant)
 
-5. Click the button ***Add new*** to grant the connector user access to the tenant. The user can be retrieved by selecting the connector and copying the property "Client Username" value
+4. Click the button ***Add new*** to grant the connector user access to the tenant. The user can be retrieved by selecting the connector and copying the property "Client Username" value
 
-6. Now use these configurations to configure a connector in the machine with the Primavera ERP, following the [installation guide](omnia3_connector_install.html) and [configuration guide](omnia3_connector_configuration.html).
+5. Now use these configurations to configure a connector in the machine with the Primavera ERP, following the [installation guide](omnia3_connector_install.html) and [configuration guide](omnia3_connector_configuration.html).
 
-7. Start the configured connector.
+6. Start the configured connector.
 
 ## 4. CRUD operations
 
@@ -87,8 +87,7 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
         
         int numberOfRecords = Convert.ToInt32(queryResults.Valor("EmployeesCount").ToString());
         while (!queryResults.NoFim())
-        {
-        
+        {        
             var employee = new Dictionary<string, object>() {
                 { "_code", queryResults.Valor("Codigo").ToString()},
                 { "_name", queryResults.Valor("Nome").ToString()}
@@ -102,13 +101,13 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
     }
     catch (Exception e)
     {
-    	Console.WriteLine(e.Message);
-    	throw;
+        Console.WriteLine(e.Message);
+        throw;
     } 
     finally
     {
-      if (qbsERP.Contexto.EmpresaAberta)
-         qbsERP.FechaEmpresaTrabalho();
+        if (qbsERP.Contexto.EmpresaAberta)
+            qbsERP.FechaEmpresaTrabalho();
     }
     ```
 
@@ -142,13 +141,13 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
     }
     catch (Exception e)
     {
-    	Console.WriteLine(e.Message);
-    	throw;
+        Console.WriteLine(e.Message);
+        throw;
     } 
     finally
     {
-      if (qbsERP.Contexto.EmpresaAberta)
-         qbsERP.FechaEmpresaTrabalho();
+        if (qbsERP.Contexto.EmpresaAberta)
+            qbsERP.FechaEmpresaTrabalho();
     }
     ```
 
@@ -179,8 +178,8 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
     } 
     finally
     {
-      if (qbsERP.Contexto.EmpresaAberta)
-         qbsERP.FechaEmpresaTrabalho();
+        if (qbsERP.Contexto.EmpresaAberta)
+            qbsERP.FechaEmpresaTrabalho();
     }
     ```
 

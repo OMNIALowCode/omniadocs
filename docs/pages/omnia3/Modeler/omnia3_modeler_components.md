@@ -253,4 +253,4 @@ Components are available to be used on modeled Pages. See how its done [here](om
 
 You can create your own components to ensure the best user experience.
 
-To start, we suggest cloning [OMNIA Base Components](https://github.com/OMNIALowCode/omnia3-samples){:target="\_blank"} repository, check out how the components work and start creating your own Components.
+To start, we suggest cloning [OMNIA Base Components](https://github.com/OMNIALowCode/omnia-base-components){:target="\_blank"} repository, check out how the components work and start creating your own Components.

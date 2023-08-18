@@ -23,7 +23,7 @@ When adding a new page, modelers are prompted to choose a template. The followin
 - **Create or update an Entity**: generate a Page ready to create or update a given Entity. Can be used instead of the automatically generated Form;
 - **List entities returned by a Query**: generate a Page that, based on a given query, is ready to show records on a list. Can be used instead of the automatically generated Dashboard.
 
-When the template is executed, it generates a page that is ready to be used. The result includes a number of Components, Variables and Url Parameters. To generate a page the [Omnia Base Components](https://github.com/OMNIALowCode/omnia-base-components) package must be imported.
+When the template is executed, it generates a page that is ready to be used. The result includes a number of Components, Variables and Url Parameters. To generate a page the [Omnia Base Components](https://github.com/OMNIALowCode/omnia-base-components){:target="\_blank"} package must be imported.
 
 When a page is generated using a template, the following variables are created:
 

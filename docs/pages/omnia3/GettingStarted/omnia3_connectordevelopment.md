@@ -15,7 +15,7 @@ Behaviours executed on Omnia Connector can be developed and tested on a local en
 ## 2. Requisites
 
 - [Omnia Connector](omnia3_connector_introduction.html) must be installed and configured
-- For behaviour code development, [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) is suggested
+- For behaviour code development, [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/){:target="\_blank"} is suggested
 - The local environment where Omnia is running must be accessible from the machine where Omnia connector is installed
 - [Omnia-CLI](omnia3_clisetup.html) is recommended to import and export model
 

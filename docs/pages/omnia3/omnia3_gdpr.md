@@ -39,4 +39,4 @@ Logs can be accessed under _/var/logs/omnia_.
 
 ## Production Environment
 
-It's recomended the configuration of Secure Sockets Layer (SSL) and Hyper Text Transfer Protocol Secure (HTTPS) at the moment of instalation of OMNIA's production environment. Also recommended is the use of [SSL Mode](https://www.npgsql.org/doc/connection-string-parameters.html) in PostgreSQL Database connection string.
+It's recomended the configuration of Secure Sockets Layer (SSL) and Hyper Text Transfer Protocol Secure (HTTPS) at the moment of instalation of OMNIA's production environment. Also recommended is the use of [SSL Mode](https://www.npgsql.org/doc/connection-string-parameters.html){:target="\_blank"} in PostgreSQL Database connection string.

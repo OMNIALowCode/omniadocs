@@ -240,7 +240,7 @@ In this sample, the user will be redirected to another page of the application, 
 
 ### How to have asynchronous behaviours?
 
-In this sample, the behaviour returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), that will allow the behaviour to execute asynchronously:
+In this sample, the behaviour returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise){:target="\_blank"}, that will allow the behaviour to execute asynchronously:
 
 ```JavaScript
     return new Promise(
@@ -313,7 +313,7 @@ In this sample, custom element _createdDate_ value is changed:
     this.createdDate = this._context.createMoment('2023-12-31');
 ```
 
-_Note: For other ways of setting a date, please check [momentjs documentation](https://momentjs.com/docs/#/parsing/)_
+_Note: For other ways of setting a date, please check [momentjs documentation](https://momentjs.com/docs/#/parsing/){:target="\_blank"}_
 
 ### How to get a date on a specific format?
 

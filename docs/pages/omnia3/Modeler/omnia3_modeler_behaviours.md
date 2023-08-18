@@ -181,7 +181,7 @@ In case you want to force an attribute to change, you can do it in the **Before 
 
 ## 7. Invoking the OMNIA API
 
-To facilitate an API invocation, you have some methods in the context to setup the [HTTP Client](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?redirectedfrom=MSDN&view=netframework-4.7.2) with the required Headers and Tokens.
+To facilitate an API invocation, you have some methods in the context to setup the [HTTP Client](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?redirectedfrom=MSDN&view=netframework-4.7.2){:target="\_blank"} with the required Headers and Tokens.
 
 Methods:
 

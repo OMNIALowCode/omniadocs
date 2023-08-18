@@ -13,7 +13,7 @@ OMNIA Platform enables you to model Text Templates that can be rendered using a 
 
 These templates can be useful in case you need a way of formatting the data shown to a user. E.g. to send a notification or to present some information without using Form attributes.
 
-OMNIA Text Templates are based on the [Liquid Templating Language](https://shopify.github.io/liquid/).
+OMNIA Text Templates are based on the [Liquid Templating Language](https://shopify.github.io/liquid/){:target="\_blank"}.
 
 
 ## 2. Model Text Templates
@@ -30,7 +30,7 @@ Selecting the option _Add new_ in the list of text templates, you need to fill t
 By accessing **_User Interface / Text Templates_** in the sidebar, select one of the text templates of the list.
 
 In the **_Text Template_** page will you have four different sections:
-* **Template**: The place to write the Text Template's expression, using the [Liquid Templating Language](https://shopify.github.io/liquid/);
+* **Template**: The place to write the Text Template's expression, using the [Liquid Templating Language](https://shopify.github.io/liquid/){:target="\_blank"};
 * **Test parameters**: A JSON representation of test data, using the [available parameters](#which-are-the-available-parameters), in order to preview the template's result;
 * **Language Texts**: A JSON representation of the current user language texts;
 * **Result preview**: The result of the template transformation using the test parameters.

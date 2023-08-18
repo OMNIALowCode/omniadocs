@@ -13,14 +13,14 @@ Based on a simple Order Management sample application, this tutorial shows how e
 
 On the first tutorial area we are going to evaluate how an API client is defined on OMNIA Platform, and how it is configured on OMNIAs security system. On the second area we are going to see a simple example of how OMNIA API can be consumed.
 
-As a tool to consume OMNIA API, we are going to use [Postman](https://www.getpostman.com/), a tool that simplifies interaction with APIs. It is worth noting that the API could be consumed as easily with other tools or your own developments using your preferred programming language. [Download Postman](https://www.getpostman.com/downloads/)
+As a tool to consume OMNIA API, we are going to use [Postman](https://www.getpostman.com/){:target="\_blank"}, a tool that simplifies interaction with APIs. It is worth noting that the API could be consumed as easily with other tools or your own developments using your preferred programming language. [Download Postman](https://www.getpostman.com/downloads/){:target="\_blank"}
 
 
 ## 2. Prerequisites
 
 This tutorial assumes that you have created a OMNIA tenant, and have completed the beginner tutorial. You must also have access to a user with privileges to Modeling and Management areas
 
-If you do not have a tenant yet, please follow the steps of the [Tenant Creation tutorial](omnia3_tenantcreation.html). If you have a tenant, but have not completed the beginner tutorial, follow the steps on [Beginner tutorial](omnia3_beginnertutorial.html)
+If you do not have a tenant yet, please follow the steps of the [Tenant Creation tutorial](omnia3_tenantcreation.html). If you have a tenant, but have not completed the beginner tutorial, follow the steps on [Beginner tutorial](omnia3_beginnertutorial.html).
 
 
 ## 3. Define an API Client
@@ -31,16 +31,15 @@ If you do not have a tenant yet, please follow the steps of the [Tenant Creation
 
     ![Management_Create_APIClient](/images/tutorials/apiclient/Manangement-Create-ApiClient.jpg)
 
-Right after creating, a modal should be shown with the Client ID and Secret that you'll use to consume OMNIA API. Copy the Client ID and Secret to a safe location.
-    ![Management_Copy_ApiClientCredentials](/images/tutorials/apiclient/Management-ApiClient-Credentials.jpg)
+    Right after creating, a modal should be shown with the Client Username, ID and Secret that you'll use to consume OMNIA API. Copy the Client Username, ID and Secret to a safe location.
 
-3. After creating, select the new API Client on the list, and check that you have now access to a Client Id and Secret to consume OMNIA API. Copy the Client Username to the clipboard
+    <p align="center">
+        <img src="/images/tutorials/apiclient/Management-ApiClient-Credentials.jpg">
+    </p>
 
-    ![Management_Edit_ApiClient](/images/tutorials/apiclient/Management-Edit-ApiClient.jpg)
+3. Now its time to define the access privileges for the API Client. Through the left side menu, access option "Security > Roles". Locate the tenant Administration role (composed by the tenant code with prefix "Administration". E.g. AdministrationDemoTenant).
 
-4. Now its time to define the access privileges for the API Client. Through the left side menu, access option "Security > Roles". Locate the tenant Administration role (composed by the tenant code with prefix "Administration". E.g. AdministrationDemoTenant).
-
-5. Edit the role, and on tab "Users", click on button "Add new". Paste the Client Username copied on step 3 and click on Save
+4. Edit the role, and on tab "Users", click on button "Add new". Paste the Client Username copied on step 2 and click on Save
 
 ## 4. Consume OMNIA API 
 
@@ -54,13 +53,15 @@ Right after creating, a modal should be shown with the Client ID and Secret that
 
     ![Postman oAuth Config](/images/tutorials/apiclient/oauth-config.png)
 
-    ![Postman_Configure_AccessToken](/images/tutorials/apiclient/newAccessToken.jpg)
+    <p align="center">
+        <img src="/images/tutorials/apiclient/newAccessToken.jpg">
+    </p>
 
     * Grant Type: Set as "Client Credentials"
     * Access token URL: The base url used to access OMNIA, adding "/identity/connect/token" at the end
     * Client ID: client ID generated previously
     * Client Secret: secret generated previously. 
-    * **NOTE: Postman doesn't support Client Id and Secret urlencoded when using Basic Auth header. To workaround this issue, you can urlencode the required fields (Client ID and Client Secret in this case) manually by right-clicking on the field and selecting EncodeURIComponent option.** [Click here](https://github.com/postmanlabs/postman-app-support/issues/7138) to follow up the state of this issue.
+    * **NOTE: Postman doesn't support Client Id and Secret urlencoded when using Basic Auth header. To workaround this issue, you can urlencode the required fields (Client ID and Client Secret in this case) manually by right-clicking on the field and selecting EncodeURIComponent option.** [Click here](https://github.com/postmanlabs/postman-app-support/issues/7138){:target="\_blank"} to follow up the state of this issue.
     * Scope: set as "api"
     * Client Authentication: set as "Send as Basic Auth header"
 
@@ -75,8 +76,9 @@ Right after creating, a modal should be shown with the Client ID and Secret that
 {% endraw %}
     ````
 
-
-    ![Postman POST Response](/images/tutorials/apiclient/POSTresponse.jpg)
+    <p align="center">
+        <img src="/images/tutorials/apiclient/POSTresponse.jpg">
+    </p>
 
 5. Click on send and check the OMNIA API's response. If request was made successfully, a 201 Created status code is the expected result. Validate the response - it should return a JSON object showing what was created.
 

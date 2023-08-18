@@ -111,7 +111,7 @@ Once you have the _OMNIA Connector_ running:
 
 Using the _Visual Studio_ debbuging features, start the debbuger and from now on, all the requests made in the _OMNIA Platform_ to this _Data Source_ will be forwarded to this debug session.
 
-NOTE: If breakpoints are not loaded, it might be necessary to change _Debugging Information_ setting. Click [here](https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-set-debug-and-release-configurations?view=vs-2019#generate-symbol-files-for-a-c-aspnet-or-visual-basic-project) to see how.
+NOTE: If breakpoints are not loaded, it might be necessary to change _Debugging Information_ setting. Click [here](https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-set-debug-and-release-configurations?view=vs-2019#generate-symbol-files-for-a-c-aspnet-or-visual-basic-project){:target="\_blank"} to see how.
 
 ## 6. Remote UI Development
 
@@ -119,7 +119,7 @@ NOTE: If breakpoints are not loaded, it might be necessary to change _Debugging 
 
 To develop OMNIA UI Behaviours and WebComponents you will need to:
 
-- Install node.js. [Click here to download](https://nodejs.org/);
+- Install node.js. [Click here to download](https://nodejs.org/){:target="\_blank"};
 - [Download the build](#2-obtaining-the-model) you want to debug and unzip to a new folder.
 - Using the command line, go to the extracted UI folder and install the npm packages running the command "`npm install`";
 

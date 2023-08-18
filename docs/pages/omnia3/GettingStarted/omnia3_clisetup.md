@@ -18,7 +18,7 @@ Omnia-CLI is already installed on Development container, but it can also be inst
 
 ## 2. Install
 
-Installation process is described [here](https://github.com/OMNIALowCode/omnia-cli#installation)
+Installation process is described [here](https://github.com/OMNIALowCode/omnia-cli#installation){:target="\_blank"}
 
 To use Omnia-CLI for syncronizing behaviours code with a tenant, a new [Api Client](omnia3_management_introduction.html#4-api-clients) must be created and associated to a tenant.
 

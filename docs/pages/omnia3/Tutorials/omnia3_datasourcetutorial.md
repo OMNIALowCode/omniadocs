@@ -13,7 +13,7 @@ As a continuation of our [Application Behaviours Tutorial](omnia3_applicationbeh
 
 On the first tutorial area (CRUD Operations), we are going to evaluate how to interact with an external data source, by reading and manipulating its data. On the second area (Add Employee Selection to Purchase Document), we are going to focus on the application of the new developed elements to our existing document, to mimic a real world scenario of attribution of a document to an employee.
 
-As our custom data source, we are going to use a free API named [ReqRes](https://reqres.in/), that simulates real time CRUD operations, based on a user management scenario.
+As our custom data source, we are going to use a free API named [ReqRes](https://reqres.in/){:target="\_blank"}, that simulates real time CRUD operations, based on a user management scenario.
 
 Please notice that, since this is only a simulation, no actual data is manipulated (written, updated or removed) on REQRES's system. However, the code shown will be easily convertible to real-world scenarios.
 
@@ -27,23 +27,33 @@ If you do not have a tenant yet, please follow the steps of the [Tenant Creation
 
 1.  Start by selecting the tenant where you are going to model, and you will be redirected to the modeling area (if you only have one tenant, redirection will be automatic).
 
-    ![Homepage_Dashboard](/images/tutorials/beginner/Modeler-Homepage.jpg)
+    <p align="center">
+        <img src="/images/tutorials/beginner/Modeler-Homepage.jpg">
+    </p>
 
 2.  Through the left side menu, create a new Data Source by accessing the option **_Business / Data Sources_** on the top right button **Add new**. Set its _Name_ as "ExternalAPI", Behaviour Runtime as Internal and its Data Access Runtime as External. Leave it as not requiring a connector.
 
-    ![Modeler_Create_DataSource](/images/tutorials/datasource/datasource-add-new.jpg)
+    <p align="center">
+        <img src="/images/tutorials/datasource/datasource-add-new.jpg">
+    </p>
 
 3.  Navigate to tab **Behaviour Dependencies** and add a new **File Dependency** reference to .NET assembly System.Net.Http
 
-    ![Modeler_Add_Dependency](/images/tutorials/datasource/datasource-add-file-dependency.jpg)
+    <p align="center">
+        <img src="/images/tutorials/datasource/datasource-add-file-dependency.jpg">
+    </p>
 
 4.  Create a new Agent with _Name_ "Employee", and set it as using the external data source "ExternalAPI" that you created earlier.
 
-    ![Modeler_Create_Agent](/images/tutorials/datasource/create-agent-employee.jpg)
+    <p align="center">
+        <img src="/images/tutorials/datasource/create-agent-employee.jpg">
+    </p>
 
 5.  Navigate to tab **Behaviour Namespaces** and add a reference to namespace System.Net.Http
 
-    ![Modeler_Add_Namespace](/images/tutorials/datasource/employee-add-behaviour-namespace.jpg)
+    <p align="center">
+        <img src="/images/tutorials/datasource/employee-add-behaviour-namespace.jpg">
+    </p>
 
 6.  Still on _Agent_ **Employee**, navigate to tab **_Data Behaviours_**, and define the C# code to be executed on **Create**. This behaviour will be used to perform a POST request to the external Application when we create an instance of the Employee on the OMNIA platform. Copy and paste the following code:
 
@@ -55,8 +65,8 @@ If you do not have a tenant yet, please follow the steps of the [Tenant Creation
 
     var body = new
     {
-    code = dto._code,
-    name = dto._name
+        code = dto._code,
+        name = dto._name
     };
 
     var jsonBody = JsonConvert.SerializeObject(body);
@@ -67,13 +77,14 @@ If you do not have a tenant yet, please follow the steps of the [Tenant Creation
     string responseBody = await requestResult.Content.ReadAsStringAsync();
 
     if (!requestResult.IsSuccessStatusCode)
-    throw new Exception("Error on creating contact: " + responseBody);
+        throw new Exception($"Error on creating Employee: {responseBody}");
 
     var response = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
 
     EmployeeDto employeeResponse = new EmployeeDto();
     employeeResponse._code = response["code"].ToString();
     employeeResponse._name = response["name"].ToString();
+    
     return employeeResponse;
 
     ```
@@ -91,7 +102,7 @@ If you do not have a tenant yet, please follow the steps of the [Tenant Creation
     string responseBody = await requestResult.Content.ReadAsStringAsync();
 
     if (!requestResult.IsSuccessStatusCode)
-    	throw new Exception("Error on removing Employee: " + responseBody);
+    	throw new Exception($"Error on removing Employee: {responseBody}");
 
     return true;
 
@@ -109,7 +120,7 @@ If you do not have a tenant yet, please follow the steps of the [Tenant Creation
     string responseBody = await requestResult.Content.ReadAsStringAsync();
 
     if (!requestResult.IsSuccessStatusCode)
-    	throw new Exception("Error on creating contact: " + responseBody);
+    	throw new Exception($"Error on reading Employee {identifier}: {responseBody}");
 
     var response = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
     var responseData = JsonConvert.DeserializeObject<Dictionary<string, object>>(response["data"].ToString());
@@ -124,33 +135,34 @@ If you do not have a tenant yet, please follow the steps of the [Tenant Creation
 
 9.  Set the code for the operation **ReadList**, so that data is retrieved when a list of Employees is requested. Copy and paste the following code:
 
-        ```C#
+    ```C#
 
-        var client = new System.Net.Http.HttpClient();
-        string apiEndpoint = $"https://reqres.in/api/users?page={page}";
+    var client = new System.Net.Http.HttpClient();
+    string apiEndpoint = $"https://reqres.in/api/users?page={page}";
 
-        var requestResult = await client.GetAsync(apiEndpoint);
+    var requestResult = await client.GetAsync(apiEndpoint);
 
-        string responseBody = await requestResult.Content.ReadAsStringAsync();
+    string responseBody = await requestResult.Content.ReadAsStringAsync();
 
-        if (!requestResult.IsSuccessStatusCode)
-        	throw new Exception("Error on creating contact: " + responseBody);
+    if (!requestResult.IsSuccessStatusCode)
+        throw new Exception($"Error on creating Employee: {responseBody}");
 
-        var response = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
-        var responseData = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(response["data"].ToString());
+    var response = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
+    var responseData = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(response["data"].ToString());
 
-        List<IDictionary<string, object>> employeesList = new List<IDictionary<string, object>>();
+    List<IDictionary<string, object>> employeesList = new List<IDictionary<string, object>>();
 
-        foreach (var employee in responseData)
-        {
-        	var line = new Dictionary<string, object>(){
-        		{"_code", employee["id"]}, {"_name", $"{employee["first_name"]} {employee["last_name"]}"}
-        	};
-        	employeesList.Add(line);
-        }
+    foreach (var employee in responseData)
+    {
+        var line = new Dictionary<string, object>(){
+            {"_code", employee["id"]}, 
+            {"_name", $"{employee["first_name"]} {employee["last_name"]}"}
+        };
+        employeesList.Add(line);
+    }
 
-        return (responseData.Count, employeesList);
-        ```
+    return (responseData.Count, employeesList);
+    ```
 
     NOTE: in this scenario, we are ignoring the query sent by the user when obtaining the list. In real world scenarios, you will want to change the query to the external system and/or the returned response, according to the parameters sent by the user.
 
@@ -163,8 +175,8 @@ If you do not have a tenant yet, please follow the steps of the [Tenant Creation
 
     var body = new
     {
-    code = dto._code,
-    name = dto._name
+        code = dto._code,
+        name = dto._name
     };
 
     var jsonBody = JsonConvert.SerializeObject(body);
@@ -176,7 +188,7 @@ If you do not have a tenant yet, please follow the steps of the [Tenant Creation
     string responseBody = await requestResult.Content.ReadAsStringAsync();
 
     if (!requestResult.IsSuccessStatusCode)
-    	throw new Exception("Error on creating contact: " + responseBody);
+    	throw new Exception($"Error on updating Employee {dto._code}: {responseBody}");
 
     var response = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
 
@@ -229,29 +241,29 @@ If you do not have a tenant yet, please follow the steps of the [Tenant Creation
 
      ```C#
      // Code generated by an accelerator (you can change it if you need)
-        // The following code invokes the API to retrieve the data of an entity and set the values in the current entity
-        if(string.IsNullOrEmpty(this.Employee?.ToString()))
+     // The following code invokes the API to retrieve the data of an entity and set the values in the current entity
+     if(string.IsNullOrEmpty(this.Employee?.ToString()))
         return;
 
-        // In order to prevent to invoke the API if the values were sent by the user
-        if(
-        this._Dto.HasPropertyChanged(nameof(this.EmployeeName))
-        )
+     // In order to prevent to invoke the API if the values were sent by the user
+     if(
+     this._Dto.HasPropertyChanged(nameof(this.EmployeeName))
+     )
         return;
 
-        var httpClient = this._Context.CreateApplicationHttpClient();
+     var httpClient = this._Context.CreateApplicationHttpClient();
 
      //EXTERNAL DATA SOURCE
-        var dataSource = this.ExternalAPI; // Replace with the data source instance you want to query
+     var dataSource = this.ExternalAPI; // Replace with the data source instance you want to query
 
      var requestResult = httpClient.GetAsync($"Employee/{dataSource}/{this.Employee}").GetAwaiter().GetResult();
 
-        if (!requestResult.IsSuccessStatusCode)
+     if (!requestResult.IsSuccessStatusCode)
         throw new Exception($"Can't retrieve the entity '{this.Employee}'");
 
-        var entity = requestResult.Content.ReadAsAsync<EmployeeDto>().GetAwaiter().GetResult();
+     var entity = requestResult.Content.ReadAsAsync<EmployeeDto>().GetAwaiter().GetResult();
 
-        this.EmployeeName = entity._name;
+     this.EmployeeName = entity._name;
      ```
 
 3. Build & Deploy and go to your application, create a new Purchase Order Document, select the available External API, and select one of the three available employees. Check that the "Requested by employee" field fills automatically, as demonstrated in the image bellow:

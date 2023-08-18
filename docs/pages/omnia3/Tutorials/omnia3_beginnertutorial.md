@@ -91,11 +91,11 @@ Add a new attribute by clicking the button **Add new / Reference**. Set its _Nam
 
 22. Reorganize Rows and Columns, re-establishing the **size** and **position** of their elements:
 
-- **_Serie_**: Row 1, Column 1 and Size 4;
-- **_Number_**: Row 1, Column 5 and Size 4;
-- **_Date_**: Row 1, Column 9 and Size 4;
-- **_Company_**: Row 2, Column 1 and Size 4;
-- **_Supplier_**: Row 2, Column 5 and Size 4.
+    - **_Serie_**: Row 1, Column 1 and Size 4;
+    - **_Number_**: Row 1, Column 5 and Size 4;
+    - **_Date_**: Row 1, Column 9 and Size 4;
+    - **_Company_**: Row 2, Column 1 and Size 4;
+    - **_Supplier_**: Row 2, Column 5 and Size 4.
 
 23. Build & Deploy model
 

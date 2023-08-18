@@ -35,7 +35,7 @@ Each Menu Entry is defined by:
 * **column**: the layout column in which the element will be placed;
 * **size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size);
 * **actionType/actionLocation**: the menu entry type. The type defines which action should happen when the user clicks;
-* **Icon**: You can consult the available icons at [Font Awesome version 4.7.0](https://fontawesome.com/v4.7.0/);
+* **Icon**: You can consult the available icons at [Font Awesome version 4.7.0](https://fontawesome.com/v4.7.0/){:target="\_blank"};
 * **color**: color to display when hovering the menu entry;
 * **isHidden**: the visibility of the element (hidden or visible);
 

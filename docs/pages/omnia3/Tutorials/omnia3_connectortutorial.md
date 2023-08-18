@@ -29,19 +29,21 @@ Please download this [TransportationServices.csv](/images/tutorials/connector/Tr
 
 1. Start by accessing the management area, by clicking the option "Go to Tenants management" on the tenant selection page or, by selecting the "Management" option on the right side of a tenant top bar.
 
-2. Through the left side menu, create a new connector by accessing the option **_Connectors / Add new_**. Set its Code and Name as "CSVConnector". Copy the **Client ID** and **Client Secret** to use later when configuring the Connector.
+2. Through the left side menu, create a new connector by accessing the option **_Connectors / Add new_**. Set its Code and Name as "CSVConnector".
 
-3. Select the connector, and a modal with connector data should be shown.
+    Right after creating the connector, a modal with its data should be shown. Copy the **Client Username**, **Client ID** and **Client Secret** to use later when configuring the Connector.
 
-   ![CSVConnector](/images/tutorials/connector/CSVConnector.jpg)
+    <p align="center">
+        <img src="/images/tutorials/connector/CSVConnector.jpg">
+    </p>
 
-4. Now we are going to grant the connector access privileges for the tenant. Access the option **_Security / Roles_**, and select Administration role for the tenant (composed by the tenant code with prefix "Administration". E.g. AdministrationDemoTenant)
+3. Now we are going to grant the connector access privileges for the tenant. Access the option **_Security / Roles_**, and select Administration role for the tenant (composed by the tenant code with prefix "Administration". E.g. AdministrationDemoTenant)
 
-5. Click the button **_Add new_** to grant the connector user access to the tenant. The user can be retrieved on step 3, property "Client Username"
+4. Click the button **_Add new_** to grant the connector user access to the tenant. The user can be retrieved on step 2, property "Client Username". If you didn't copy the username in that moment, select the connector on the list to access that information. 
 
-6. Now use these configurations to configure a connector on your local machine (or a Windows VM), following the [installation guide](omnia3_connector_install.html) and [configuration guide](omnia3_connector_configuration.html).
+5. Now use these configurations to configure a connector on your local machine (or a Windows VM), following the [installation guide](omnia3_connector_install.html) and [configuration guide](omnia3_connector_configuration.html).
 
-7. Start the configured connector.
+6. Start the configured connector.
 
 ## 4. CRUD operations
 
@@ -57,9 +59,9 @@ Please download this [TransportationServices.csv](/images/tutorials/connector/Tr
 
 4. Navigate to tab _"[Data Behaviours](omnia3_modeler_datasources.html)"_, and define the behaviour code to be executed on _"ReadList"_. This behaviour will be used for Query and List requests for this entity.
 
-Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
+    Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
 
-Copy and paste the following code:
+    Copy and paste the following code:
 
     ```C#
 
@@ -91,9 +93,9 @@ Copy and paste the following code:
 
 5. Set the code for the _"Read"_ **Data Behaviour**, so that data is retrieved when you wish to select a Transportation Service for your order.
 
-Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
+    Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
 
-Copy and paste the following code:
+    Copy and paste the following code:
 
     ```C#
     string filePath = @"filePath\TransportationServices.csv";
@@ -120,9 +122,9 @@ Copy and paste the following code:
 
 6. Set the code for the _"Update"_ **Data Behaviour** (when a Transportation Service is updated on OMNIA).
 
-Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
+    Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
 
-Copy and paste the following code:
+    Copy and paste the following code:
 
     ```C#
     TransportationDto transportation = new TransportationDto();
@@ -152,9 +154,9 @@ Copy and paste the following code:
 
 7. Set the code for the _"Create"_ **Data Behaviour** (when a new Transportation Service is created on OMNIA).
 
-Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
+    Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
 
-Copy and paste the following code:
+    Copy and paste the following code:
 
     ```C#
     string filePath = @"filePath\TransportationServices.csv";
@@ -169,9 +171,9 @@ Copy and paste the following code:
 
 8. Set the code for the _"Delete"_ **Data Behaviour** (when a Transportation Service is deleted on OMNIA).
 
-Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
+    Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
 
-Copy and paste the following code:
+    Copy and paste the following code:
 
     ```C#
     TransportationDto transportation = new TransportationDto();
@@ -228,7 +230,9 @@ Element: "**Transportation List**"
 - **Column**: 9
 - **Size**: 2
 
-  ![ConnectorTutorial_ElementUI_values](/images/tutorials/connector/ConnectorTutorial_Element_UI.PNG)
+    <p align="center">
+        <img src="/images/tutorials/connector/ConnectorTutorial_Element_UI.PNG">
+    </p>
 
 Element: "**Transportation**"
 

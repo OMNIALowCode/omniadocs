@@ -16,29 +16,29 @@ This tutorial is an advanced implementation of the [data sources tutorial](omnia
 The tutorial is divided in 4 different areas. On the first area, Create a new connector, we are going to check how a new connector is created and associated to a tenant. Next, on Modeling entities area, we are going to evaluate how to model the core entities for this solution from scratch.
 On the third area, we are going to focus on Purchase Order modeling, combining all previously modeled entities and integrating information on ERP Primavera. To end, we will evaluate how to communicate with an external API.
 
-As our custom data source, we are going to use the [PRIMAVERA ERP V10](https://pt.primaverabss.com). The chosen external API is [Last FM](https://www.last.fm/api), which provides data related to music.
+As our custom data source, we are going to use the [PRIMAVERA ERP V10](https://pt.primaverabss.com){:target="\_blank"}. The chosen external API is [Last FM](https://www.last.fm/api){:target="\_blank"}, which provides data related to music.
 
 ## 2. Prerequisites
 
 This tutorial assumes that you have created a OMNIA tenant ([click here to see how](omnia3_tenantcreation.html)), and are logged in as a user with modeling privileges to this tenant. You must also have access to the management area to manage the connectors.
 
-This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss.com), on version 10.
+This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss.com){:target="\_blank"}, on version 10.
 
 ## 3. Create a new connector
 
 1. Start by accessing the management area, by clicking the option "Go to Tenants management".
 
-2. Through the left side menu, create a new connector by accessing the option **_Connectors / Add new_**. Set its Code and Name as "AnalogSoundConnector"
+2. Through the left side menu, create a new connector by accessing the option **_Connectors / Add new_**. Set its Code and Name as "AnalogSoundConnector". 
 
-3. On connectors list, select the previously created connector, and a modal with its data should be shown.
+   Right after creating the connector, a modal with its data should be shown. Copy the **Client Username**, **Client ID** and **Client Secret** to use later when configuring the Connector.
 
-4. Now we are going to grant the connector access privileges for the tenant. Access the option **_Security / Roles_**, and select Administration role for the tenant (composed by the tenant code with prefix "Administration". E.g. AdministrationDemoTenant)
+3. Now we are going to grant the connector access privileges for the tenant. Access the option **_Security / Roles_**, and select Administration role for the tenant (composed by the tenant code with prefix "Administration". E.g. AdministrationDemoTenant)
 
-5. Click the button **_Add new_** to grant the connector user access to the tenant. The user can be retrieved on step 3, property "Client Username"
+4. Click the button **_Add new_** to grant the connector user access to the tenant. The user can be retrieved on step 2, property "Client Username". If you didn't copy the username in that moment, select the connector on the list to access that information. 
 
-6. Now use these configurations to configure a connector in the machine with the Primavera ERP, following the [installation guide](omnia3_connector_install.html) and [configuration guide](omnia3_connector_configuration.html).
+5. Now use these configurations to configure a connector in the machine with the Primavera ERP, following the [installation guide](omnia3_connector_install.html) and [configuration guide](omnia3_connector_configuration.html).
 
-7. Start the configured connector.
+6. Start the configured connector.
 
 ## 4. Modeling Entities
 
@@ -93,33 +93,33 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
     ErpBS bsERP = new ErpBS();
     try
     {
-    	List<IDictionary<string, object>> suppliersList = new List<IDictionary<string, object>>();
+      List<IDictionary<string, object>> suppliersList = new List<IDictionary<string, object>>();
 
       string username = "";
       string password = "";
 
-    	bsERP.AbreEmpresaTrabalho(StdBETipos.EnumTipoPlataforma.tpEmpresarial, "DEMO", username, password);
-    	StdBELista queryResults = bsERP.Consulta($"SELECT Suppliers.SuppliersCount, Fornecedor, Nome from Fornecedores CROSS JOIN (SELECT Count(*) AS SuppliersCount FROM Fornecedores) AS Suppliers ORDER BY Fornecedor ASC OFFSET {(page - 1)*pageSize} ROWS FETCH NEXT {pageSize} ROWS ONLY");
+      bsERP.AbreEmpresaTrabalho(StdBETipos.EnumTipoPlataforma.tpEmpresarial, "DEMO", username, password);
 
-    	int numberOfRecords = Convert.ToInt32(queryResults.Valor("SuppliersCount").ToString());
-    	while (!queryResults.NoFim())
-    	{
+      StdBELista queryResults = bsERP.Consulta($"SELECT Suppliers.SuppliersCount, Fornecedor, Nome from Fornecedores CROSS JOIN (SELECT Count(*) AS SuppliersCount FROM Fornecedores) AS Suppliers ORDER BY Fornecedor ASC OFFSET {(page - 1)*pageSize} ROWS FETCH NEXT {pageSize} ROWS ONLY");
 
-    		var supplier = new Dictionary<string, object>() {
-    			{ "_code", queryResults.Valor("Fornecedor").ToString()},
-    			{ "_name", queryResults.Valor("Nome").ToString()}
-    		};
+      int numberOfRecords = Convert.ToInt32(queryResults.Valor("SuppliersCount").ToString());
+      while (!queryResults.NoFim())
+      {
+         var supplier = new Dictionary<string, object>() {
+            { "_code", queryResults.Valor("Fornecedor").ToString()},
+            { "_name", queryResults.Valor("Nome").ToString()}
+         };
 
-    		suppliersList.Add(supplier);
-    		queryResults.Seguinte();
-    	}
+         suppliersList.Add(supplier);
+         queryResults.Seguinte();
+      }
 
-    	return (numberOfRecords, suppliersList);
+      return (numberOfRecords, suppliersList);
     }
     catch (Exception e)
     {
-    	Console.WriteLine(e.Message);
-    	throw;
+      Console.WriteLine(e.Message);
+      throw;
     }
     finally
     {
@@ -145,19 +145,19 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
 
       if (!queryResults.Vazia())
       {
-            dto._code = queryResults.Valor("Fornecedor").ToString();
-            dto._name = queryResults.Valor("Nome").ToString();
+         dto._code = queryResults.Valor("Fornecedor").ToString();
+         dto._name = queryResults.Valor("Nome").ToString();
       }
       else
       {
-            throw new Exception($"Could not retrieve Supplier with code '{identifier}'");
+         throw new Exception($"Could not retrieve Supplier with code '{identifier}'");
       }
       return dto;
     }
     catch (Exception e)
     {
-    	Console.WriteLine(e.Message);
-    	throw;
+      Console.WriteLine(e.Message);
+      throw;
     }
     finally
     {
@@ -192,8 +192,8 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
     }
     catch (Exception e)
     {
-    	Console.WriteLine(e.Message);
-    	throw;
+      Console.WriteLine(e.Message);
+      throw;
     }
     finally
     {
@@ -229,30 +229,33 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
     ErpBS bsERP = new ErpBS();
     try
     {
-    	List<IDictionary<string, object>> productsList = new List<IDictionary<string, object>>();
-
+      List<IDictionary<string, object>> productsList = new List<IDictionary<string, object>>();
+    	
       string username = "";
       string password = "";
+
       bsERP.AbreEmpresaTrabalho(StdBETipos.EnumTipoPlataforma.tpEmpresarial, "DEMO", username, password);
-    	StdBELista queryResults = bsERP.Consulta($"SELECT Products.ProductsCount, Artigo, Descricao from Artigo CROSS JOIN (SELECT Count(*) AS ProductsCount FROM Artigo) AS Products ORDER BY Artigo ASC OFFSET {(page - 1)*pageSize} ROWS FETCH NEXT {pageSize} ROWS ONLY");
+    	
+      StdBELista queryResults = bsERP.Consulta($"SELECT Products.ProductsCount, Artigo, Descricao from Artigo CROSS JOIN (SELECT Count(*) AS ProductsCount FROM Artigo) AS Products ORDER BY Artigo ASC OFFSET {(page - 1)*pageSize} ROWS FETCH NEXT {pageSize} ROWS ONLY");
 
-    	int numberOfRecords = Convert.ToInt32(queryResults.Valor("ProductsCount").ToString());
-    	while (!queryResults.NoFim())
-    	{
-    		var product = new Dictionary<string, object>() {
-    			{ "_code", queryResults.Valor("Artigo").ToString()},
-    			{ "_name", queryResults.Valor("Descricao").ToString()}
-    		};
+      int numberOfRecords = Convert.ToInt32(queryResults.Valor("ProductsCount").ToString());
+    	
+      while (!queryResults.NoFim())
+      {
+         var product = new Dictionary<string, object>() {
+            { "_code", queryResults.Valor("Artigo").ToString()},
+            { "_name", queryResults.Valor("Descricao").ToString()}
+         };
 
-    		productsList.Add(product);
-    		queryResults.Seguinte();
-    	}
-    	return (numberOfRecords, productsList);
+         productsList.Add(product);
+         queryResults.Seguinte();
+      }
+      return (numberOfRecords, productsList);
     }
     catch (Exception e)
     {
-    	Console.WriteLine(e.Message);
-    	throw;
+      Console.WriteLine(e.Message);
+      throw;
     }
     finally
     {
@@ -309,34 +312,36 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
    ErpBS bsERP = new ErpBS();
    try
    {
-   	List<IDictionary<string, object>> ordersList = new List<IDictionary<string, object>>();
+      List<IDictionary<string, object>> ordersList = new List<IDictionary<string, object>>();
 
       string username = "";
       string password = "";
-   	bsERP.AbreEmpresaTrabalho(StdBETipos.EnumTipoPlataforma.tpEmpresarial, "DEMO", username, password);
+   	
+      bsERP.AbreEmpresaTrabalho(StdBETipos.EnumTipoPlataforma.tpEmpresarial, "DEMO", username, password);
 
-   	StdBELista queryResults = bsERP.Consulta($"SELECT Orders.OrderCount, Serie, TipoDoc, NumDoc, Entidade, CONVERT (NVARCHAR(10), DataDoc, 120) AS DataDoc from CabecCompras  CROSS JOIN (SELECT Count(*) AS OrderCount FROM CabecCompras where TipoDoc = 'ECF') AS Orders where TipoDoc = 'ECF' ORDER BY DataDoc DESC OFFSET {(page - 1)*pageSize} ROWS FETCH NEXT {pageSize} ROWS ONLY");
+      StdBELista queryResults = bsERP.Consulta($"SELECT Orders.OrderCount, Serie, TipoDoc, NumDoc, Entidade, CONVERT (NVARCHAR(10), DataDoc, 120) AS DataDoc from CabecCompras  CROSS JOIN (SELECT Count(*) AS OrderCount FROM CabecCompras where TipoDoc = 'ECF') AS Orders where TipoDoc = 'ECF' ORDER BY DataDoc DESC OFFSET {(page - 1)*pageSize} ROWS FETCH NEXT {pageSize} ROWS ONLY");
 
-   	int numberOfRecords = Convert.ToInt32(queryResults.Valor("OrderCount").ToString());
-   	while (!queryResults.NoFim())
-   	{
-   		var order = new Dictionary<string, object>() {
-   			{ "_code", queryResults.Valor("Serie").ToString()+"/"+queryResults.Valor("NumDoc").ToString()},
-   			{ "_serie", queryResults.Valor("Serie").ToString()},
-   			{ "_number", queryResults.Valor("NumDoc").ToString()},
-   			{ "_date", queryResults.Valor("DataDoc").ToString()}
-   		};
+      int numberOfRecords = Convert.ToInt32(queryResults.Valor("OrderCount").ToString());
+   	
+      while (!queryResults.NoFim())
+      {
+         var order = new Dictionary<string, object>() {
+            { "_code", queryResults.Valor("Serie").ToString()+"/"+queryResults.Valor("NumDoc").ToString()},
+            { "_serie", queryResults.Valor("Serie").ToString()},
+            { "_number", queryResults.Valor("NumDoc").ToString()},
+            { "_date", queryResults.Valor("DataDoc").ToString()}
+         };
 
-   		ordersList.Add(order);
-   		queryResults.Seguinte();
-   	}
+         ordersList.Add(order);
+         queryResults.Seguinte();
+      }
 
-   	return (numberOfRecords, ordersList);
+      return (numberOfRecords, ordersList);
     }
     catch (Exception e)
     {
-    	Console.WriteLine(e.Message);
-    	throw;
+      Console.WriteLine(e.Message);
+      throw;
     }
     finally
     {
@@ -383,8 +388,8 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
     }
     catch (Exception e)
     {
-    	Console.WriteLine(e.Message);
-    	throw;
+      Console.WriteLine(e.Message);
+      throw;
     }
     finally
     {
@@ -426,7 +431,7 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
 
 1. Go to the **Modeler** and click on option **Business / Data sources / System** to add references to this data source. Click on button **Add new** to add a new **Behaviour Dependency** for .NET assembly System.Net.Http. Set _Execution Location_ as Internal.
 
-   ![Modeler Add_Dependency](/images/tutorials/advanced/Modeler-Add-BehaviourDependency.jpg)
+   ![Modeler Add_Dependency](/images/tutorials/advanced/Modeler-Add-Behaviour-Dependency.jpg)
 
 2. On Commitment "_GoodsPurchaseRequest_", navigate to tab _Behaviour Namespaces_, and define a reference to namespace System.Net.Http
 
@@ -439,16 +444,21 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
    ```C#
    if (!string.IsNullOrEmpty(newValue) && !string.IsNullOrEmpty(this.Artist))
    {
-   	var client = new HttpClient();
-   	string apiEndpoint = $"http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=API_KEY&artist={this.Artist}&album={newValue}&format=json";
-   	var requestResult = client.GetAsync(apiEndpoint).GetAwaiter().GetResult();
-   	string responseBody = requestResult.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-   	if (!requestResult.IsSuccessStatusCode)
-   		throw new Exception("Error on retrieving album: " + responseBody);
-   	var response = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
-   	var albumData = JsonConvert.DeserializeObject<Dictionary<string, object>>(response["album"].ToString());
+      var client = new HttpClient();
 
-   	this.AlbumMBid = albumData["mbid"].ToString();
+      string apiEndpoint = $"http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=API_KEY&artist={this.Artist}&album={newValue}&format=json";
+   	
+      var requestResult = client.GetAsync(apiEndpoint).GetAwaiter().GetResult();
+   	
+      string responseBody = requestResult.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+      if (!requestResult.IsSuccessStatusCode)
+         throw new Exception($"Error on retrieving album: {responseBody}");
+   	
+      var response = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
+   	
+      var albumData = JsonConvert.DeserializeObject<Dictionary<string, object>>(response["album"].ToString());
+
+      this.AlbumMBid = albumData["mbid"].ToString();
    }
    ```
 

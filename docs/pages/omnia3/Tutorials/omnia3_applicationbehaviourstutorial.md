@@ -13,7 +13,7 @@ After you have completed the [Advanced Tutorial](omnia3_advancedtutorial.html), 
 
 In this example, we'll be adding an external API that will fetch the current currency values and exchange rates, and we'll add that valuable decision making information directly into the purchase order process.
 
-As our external API, to get exchange rate and currency values, we are going to use the [Exchange Rate API](https://exchangeratesapi.io/).
+As our external API, to get exchange rate and currency values, we are going to use the [Exchange Rate API](https://exchangeratesapi.io/){:target="\_blank"}.
 
 ## 2. Prerequisites
 
@@ -25,7 +25,9 @@ It is necessary to have completed the steps in the [Advanced Tutorial](omnia3_ad
 
 1. Access your modeling area and create a new _Generic Entity_, by accessing the **_Business / Generic Entities_** menu option, and clicking "**_Add New_**". Set its name as "**_Currency_**", and define it as a **_root entity_**
 
-   ![Create_New_GenEntity_Currency](/images/tutorials/applicationbehaviours/create-generic-currency.jpg)
+    <p align="center">
+        <img src="/images/tutorials/applicationbehaviours/create-generic-currency.jpg">
+    </p>
 
 2. Now let's create references to your newly created _Generic Entity_. Go to **_Business / Agents_** and select "**Company**", and add a new **reference attribute**:
 
@@ -70,7 +72,9 @@ It is necessary to have completed the steps in the [Advanced Tutorial](omnia3_ad
      - **Column**: 3;
      - **Size**: 2;
 
-   ![PurchaseOrderDocumentLayout](/images/tutorials/applicationbehaviours/purchase-order-layout.jpg)
+    <p align="center">
+        <img src="/images/tutorials/applicationbehaviours/purchase-order-layout.jpg">
+    </p>
 
 4. Now that we have all the elements created, let's review our **Entity Behaviours** to fetch the **_Company_** and **_Supplier_** currencies and retrieve the rate between them.
 
@@ -140,16 +144,14 @@ It is necessary to have completed the steps in the [Advanced Tutorial](omnia3_ad
    ```C#
    if(!string.IsNullOrEmpty(this.Company) && !string.IsNullOrEmpty(this.Supplier))
    {
-   var rateArgs = new Dictionary<string, object>() {
+      var rateArgs = new Dictionary<string, object>() {
+        { "from", this.CompanyCurrency }, 
+        { "to", this.SupplierCurrency }
+      };
 
-     { "from", this.CompanyCurrency }, { "to", this.SupplierCurrency }
+      var result = SystemApplicationBehaviours.GetExchangeRate(rateArgs);
 
-   };
-
-   var result = SystemApplicationBehaviours.GetExchangeRate(rateArgs);
-
-   this.ExchangeRate = (decimal)result["Rate"];
-
+      this.ExchangeRate = (decimal)result["Rate"];
    } else {
        this.ExchangeRate = 0;
    }
@@ -162,11 +164,10 @@ It is necessary to have completed the steps in the [Advanced Tutorial](omnia3_ad
    var toCurrency = (args.ContainsKey("to") ? args["to"].ToString() : "").ToUpperInvariant();
 
    if(string.IsNullOrEmpty(fromCurrency) || string.IsNullOrEmpty(toCurrency))
-   throw new Exception($"Both currencies must be sended to calculate the rate.");
+      throw new Exception($"Both currencies must be sended to calculate the rate.");
 
    if(string.Equals(fromCurrency, toCurrency))
-
-   return new Dictionary<string, object>() { { "Rate", 1m } };
+      return new Dictionary<string, object>() { { "Rate", 1m } };
 
    HttpClient httpClient = new HttpClient();
 
@@ -175,11 +176,11 @@ It is necessary to have completed the steps in the [Advanced Tutorial](omnia3_ad
        .GetResult();
 
    if (!response.IsSuccessStatusCode)
-   throw new Exception($"Can't retrieve the rate between {fromCurrency} and {toCurrency}");
+      throw new Exception($"Can't retrieve the rate between {fromCurrency} and {toCurrency}");
 
    var responseData = response.Content.ReadAsAsync<Dictionary<string, object>>().GetAwaiter().GetResult();
    if(!responseData.ContainsKey("rates"))
-        throw new Exception($"Can't retrieve the rate between {fromCurrency} and {toCurrency}");
+      throw new Exception($"Can't retrieve the rate between {fromCurrency} and {toCurrency}");
 
    var rate = (responseData["rates"] as JObject)[toCurrency].ToObject<decimal>();
 
@@ -198,7 +199,9 @@ It is necessary to have completed the steps in the [Advanced Tutorial](omnia3_ad
    - **Name**: NewtonsoftLinq;
    - **Fully Qualified Name**: Newtonsoft.Json.Linq
 
-   ![App_Behaviour_Namespaces](/images/tutorials/applicationbehaviours/application-behaviour-namespaces.jpg)
+    <p align="center">
+        <img src="/images/tutorials/applicationbehaviours/application-behaviour-namespaces.jpg">
+    </p>
 
 7. Build & Deploy model
 
@@ -211,6 +214,8 @@ It is necessary to have completed the steps in the [Advanced Tutorial](omnia3_ad
 
 10. Create a new Purchase Order and select a "_Company_" and a "_Supplier_" to verify that the "_Rate_" is automatically calculated when you **change the "Supplier"**, and that's it, your first Application Behaviour is complete!
 
-![AppBehaviourFinalResult](/images/tutorials/applicationbehaviours/tutorial-result.jpg)
+    <p align="center">
+        <img src="/images/tutorials/applicationbehaviours/tutorial-result.jpg">
+    </p>
 
 Our next tutorial is about Data Sources, [click here](omnia3_datasourcetutorial.md) to get started right away.

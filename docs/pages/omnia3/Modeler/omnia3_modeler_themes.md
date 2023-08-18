@@ -13,7 +13,7 @@ This feature allows you to add, edit or develop new user interface (UI) themes f
 
 UI Themes allow you to make your applications unique and improve their User Experience. As a modeler, you can define a single theme theme your users will use, or you can provide them with a range of choices.
 
-OMNIA Themes are based on the [SCSS language](https://sass-lang.com/documentation) and [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/theming/), we recommend that you become familiar with SCSS before trying to dive into this feature.
+OMNIA Themes are based on the [SCSS language](https://sass-lang.com/documentation){:target="\_blank"} and [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/theming/){:target="\_blank"}, we recommend that you become familiar with SCSS before trying to dive into this feature.
 
 ## 2. Modeling Themes
 
@@ -37,7 +37,7 @@ Themes are generated in build time, therefore you need to build the model in ord
 
 By accessing **_User Interface / Themes_** in the sidebar and selecting one from the list.
 
-In the **_Theme_** page will you have theme's **Template**. Here's where you add/edit the Theme's expression, using [SCSS language](https://sass-lang.com/documentation).
+In the **_Theme_** page will you have theme's **Template**. Here's where you add/edit the Theme's expression, using [SCSS language](https://sass-lang.com/documentation){:target="\_blank"}.
 
 A theme does not require a minimum amount of variables to work. You can change only one variable, or you can change them all. Every variable not edited in a theme will assume the default OMNIA theme's value.
 
@@ -45,7 +45,7 @@ Because themes are generated in build time, if a platform update performs change
 
 ### Which are the available variables?
 
-OMNIA Themes are based in Bootstrap 4 variables and, for that reason, we recommend modellers to become familiar with them. To find more information about Bootstrap 4 variables [click here](https://getbootstrap.com/docs/4.0/getting-started/theming/).
+OMNIA Themes are based in Bootstrap 4 variables and, for that reason, we recommend modellers to become familiar with them. To find more information about Bootstrap 4 variables [click here](https://getbootstrap.com/docs/4.0/getting-started/theming/){:target="\_blank"}.
 
 Alongside Bootstrap variables and elements, OMNIA features a few Custom Variables, designed to allow the styling of the following custom OMNIA elements:
 
@@ -100,4 +100,4 @@ Themes are used to customize the look and feel of your applications and it's up 
 
 ## 4. Samples
 
-Click [here](https://omnialowcode.github.io/omnia3-samples/) to access our collection of Themes and you'll find a set of templates ready to use in your applications. Just copy and paste its SCSS variables, build your model and your application will immediately have a new theme available for its users.
+Click [here](https://omnialowcode.github.io/omnia3-samples/){:target="\_blank"} to access our collection of Themes and you'll find a set of templates ready to use in your applications. Just copy and paste its SCSS variables, build your model and your application will immediately have a new theme available for its users.

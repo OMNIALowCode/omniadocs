@@ -9,7 +9,7 @@ folder: omnia3
 
 ## 1. Introduction
 
-OMNIA Platform enables you to model a [finite-state machine (FSM)](https://en.wikipedia.org/wiki/Finite-state_machine) to describe the states and transitions that occur during the entity lifetime.
+OMNIA Platform enables you to model a [finite-state machine (FSM)](https://en.wikipedia.org/wiki/Finite-state_machine){:target="\_blank"} to describe the states and transitions that occur during the entity lifetime.
 
 The State Machine can change from one state to another in response to some external inputs. The change from one state to another is called a transition. A State Machine is defined by a list of its states and transitions.
 
