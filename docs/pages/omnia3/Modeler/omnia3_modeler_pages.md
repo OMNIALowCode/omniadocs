@@ -45,7 +45,7 @@ Unlike Variables, a Url parameter value is automatically set from the Url used t
 
 Refs are responsible by exposing _Outbound_ Component attributes so their value can be used on a Page.
 
-They are available to be used on code expressions and on page attributes.
+They are available to be used on code expressions and on Page/Page Elements configuration, by binding the _Ref_ as the source of the value for that attribute.
 
 ### Behaviours
 
@@ -87,17 +87,43 @@ Before we look at these new properties, it is important to highlight that proper
 | Property       | Description                                                                                                                                                                             |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | indexes        | This property contains the index of collection iterated by the _forEach_ for the current element. If the collection is located within another, indexes of the parents are also included |
-| currentElement | This property contains the current entry data                                                                                                                                           |
+| currentElement | This property contains the data of the current entry inside the collection being iterated                                                                                                                                           |
 | currentIndex   | This property contains the index of the current element inside the collection being iterated                                                                                            |
 | params         | A list of parameters exposed by the Component. Each Component exposes a set of parameters of different types for each Event                                                             |
 
 Let's evaluate an example of these properties in action. The scenario we're using is composed by a document named _PurchaseOrder_, with a collection _OrderLines_. That collection itself has a nested collection, named _OrderWarehouse_.
 
-The properties _currentElement_ and _currentIndex_ will contain, respectively, an object with data and a integer with the index of the collection entry being iterated.
+- First level collection (_OrderLines_)
 
-In its turn, the _indexes_ property is composed by an object that has the indexes of the nested _forEach_ elements.
-If we are iterating a first level collection (collection _orderLines_), we have only one key in this object, named after the _forEach_ element (e.g. _orderLinesForEach_).
-If we are iterating a second level collection (collection _orderWarehouse_), we will have two keys, one for each _forEach_ element (e.g. key _orderLinesForEach_ and _orderLinesorderWarehouseForEach_).
+When we're on a behaviour of a first level collection, the _indexes_ property contains only one key named after the _forEach_ element, _orderLinesForEach_:
+
+<p align="center">
+  <img src="/images/modeler/Modeler-Behaviour-Indexes.jpg">
+</p>
+
+The property _currentElement_ will contain the properties and the data of the _orderLines_ element being iterated:
+
+<p align="center">
+  <img src="/images/modeler/Modeler-Behaviour-CurrentElement.jpg">
+</p>
+
+At last, the _currentIndex_ is a integer that represents the position of the current element in the collection.
+
+- Nested collection (_OrderWarehouse_)
+
+When we're on a behaviour of a nested collection, the _indexes_ property contains multiple keys, one for each _forEach_ element. In this scenario we'll have two keys, _orderLinesForEach_ and _orderLinesorderWarehouseForEach_:
+
+<p align="center">
+  <img src="/images/modeler/Modeler-Nested-Behaviour-Indexes.jpg">
+</p>
+
+The property _currentElement_ will contain the properties and the data of the _orderWarehouse_ element being iterated:
+
+<p align="center">
+  <img src="/images/modeler/Modeler-Nested-Behaviour-CurrentElement.jpg">
+</p>
+
+At last, the _currentIndex_ has the same behaviour as in a first level collection.
 
 With this information we have all we need to access the parent of the current element if necessary.
 
