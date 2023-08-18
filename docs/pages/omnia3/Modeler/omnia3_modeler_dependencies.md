@@ -106,6 +106,11 @@ To use a code dependency you can simply invoke the code from your behaviours.
 In .NET you can declare an _using_ inside of a namespace, so you accomplish it by declaring the using on the top of the code expression.
 
 ```csharp
+using Omnia.Behaviours.MyTenant.Dtos;
+using Omnia.Behaviours.MyTenant.Internal.System;
+
+namespace Omnia.Behaviours.MyTenant.Internal.System
+{
     using System.Net.Http;
     namespace MyNameSpace {
         public static class Helpers
@@ -115,6 +120,7 @@ In .NET you can declare an _using_ inside of a namespace, so you accomplish it b
             }
         }
     }
+}
 ```
 
 ### 3.4 Recommendations
