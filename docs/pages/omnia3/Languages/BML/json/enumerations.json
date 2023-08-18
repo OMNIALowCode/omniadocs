@@ -1,5 +1,24 @@
 [
   {
+    "Name": "AggregationKind",
+    "Values": [
+      "None",
+      "Shared",
+      "Composite"
+    ]
+  },
+  {
+    "Name": "AttributePrimitiveType",
+    "Values": [
+      "Integer",
+      "Decimal",
+      "Boolean",
+      "Date",
+      "Text",
+      "Uuid"
+    ]
+  },
+  {
     "Name": "BehaviourDependencyType",
     "Values": [
       "File",
@@ -52,6 +71,14 @@
     ]
   },
   {
+    "Name": "StateDecisionCommentType",
+    "Values": [
+      "None",
+      "Optional",
+      "Required"
+    ]
+  },
+  {
     "Name": "StateEnabledOperationTypeEnum",
     "Values": [
       "Add",
@@ -64,14 +91,6 @@
     "Values": [
       "Auto",
       "Decision"
-    ]
-  },
-  {
-    "Name": "StateDecisionCommentType",
-    "Values": [
-      "None",
-      "Optional",
-      "Required"
     ]
   }
 ]

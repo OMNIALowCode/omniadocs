@@ -13,7 +13,7 @@ Themes allow the modeler to change the look and feel of applications.
 
 | Name | Type | Aggregation Kind | Multiplicity | Length | Description |
 | --------- | --------- | --------- | --------- | --------- | --------- |
-| Name | Text | None | 1..1 | 1..64 | The name of the entity (unique identifier). |
+| Name | Text | None | 1..1 | 1..32 | The name of the entity (unique identifier). |
 | Description | Text | None | 0..1 | None | The textual explanation of the entities’ purpose. |
 | Label | Text | None | 1..1 | None | Label to display in the application. |
 | HelpText | Text | None | 0..1 | None | Text/annotation to help the user. |

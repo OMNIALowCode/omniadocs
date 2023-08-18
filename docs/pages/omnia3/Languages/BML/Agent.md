@@ -26,5 +26,4 @@ Entity representing individuals or groups of individuals, that hold economic res
 | Name | Type | Description |
 | --------- | --------- | --------- |
 | Defaults | Initialize |  |
-| DefaultsFinalize | BeforeSave |  |
 

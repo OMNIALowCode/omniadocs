@@ -26,5 +26,4 @@ Representation of a set of resource transactions (or promises of transactions) a
 | Name | Type | Description |
 | --------- | --------- | --------- |
 | Defaults | Initialize |  |
-| DefaultsFinalize | BeforeSave |  |
 

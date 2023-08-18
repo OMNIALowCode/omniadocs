@@ -27,5 +27,4 @@ Entity required for financial transactions, in order to complement the informati
 | Name | Type | Description |
 | --------- | --------- | --------- |
 | Defaults | Initialize |  |
-| DefaultsFinalize | BeforeSave |  |
 

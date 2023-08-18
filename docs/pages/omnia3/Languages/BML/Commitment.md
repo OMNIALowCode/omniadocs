@@ -26,5 +26,4 @@ Promise of a transaction to trade resources, between two agents. Is made because
 | Name | Type | Description |
 | --------- | --------- | --------- |
 | Defaults | Initialize |  |
-| DefaultsFinalize | BeforeSave |  |
 

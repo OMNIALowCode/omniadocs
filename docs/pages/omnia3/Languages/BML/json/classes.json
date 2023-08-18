@@ -17,7 +17,8 @@
           "Minimum": 1,
           "Maximum": 24
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -33,7 +34,8 @@
           "Minimum": 0,
           "Maximum": 1024
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Attributes",
@@ -49,7 +51,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "EntityBehaviours",
@@ -65,7 +68,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "DataBehaviours",
@@ -81,7 +85,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "BehaviourNamespaces",
@@ -97,7 +102,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "DataSource",
@@ -113,7 +119,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Shared"
+        "AggregationKind": "Shared",
+        "IsIdentifier": false
       }
     ]
   },
@@ -135,7 +142,8 @@
           "Minimum": 1,
           "Maximum": 32
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -151,7 +159,8 @@
           "Minimum": 0,
           "Maximum": 1024
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Expression",
@@ -167,7 +176,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "BehaviourNamespaces",
@@ -183,7 +193,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "DataSource",
@@ -199,7 +210,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Shared"
+        "AggregationKind": "Shared",
+        "IsIdentifier": false
       },
       {
         "Name": "ExecutionLocation",
@@ -215,7 +227,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   },
@@ -237,7 +250,8 @@
           "Minimum": 1,
           "Maximum": 64
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -253,7 +267,8 @@
           "Minimum": 0,
           "Maximum": 1024
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Type",
@@ -269,7 +284,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Multiplicity",
@@ -285,7 +301,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "IsSystem",
@@ -301,7 +318,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "IsReadOnly",
@@ -317,7 +335,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "AggregationKind",
@@ -333,7 +352,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "DependsOnAttribute",
@@ -349,7 +369,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "IsSensitiveData",
@@ -365,7 +386,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Length",
@@ -381,7 +403,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       }
     ]
   },
@@ -403,7 +426,8 @@
           "Minimum": 1,
           "Maximum": 32
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -419,7 +443,8 @@
           "Minimum": 0,
           "Maximum": 1024
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Type",
@@ -435,7 +460,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Version",
@@ -451,7 +477,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "ExecutionLocation",
@@ -467,7 +494,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Path",
@@ -483,7 +511,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "AssemblyName",
@@ -499,7 +528,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Expression",
@@ -515,7 +545,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   },
@@ -537,7 +568,8 @@
           "Minimum": 1,
           "Maximum": 32
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -553,7 +585,8 @@
           "Minimum": 0,
           "Maximum": 1024
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "FullyQualifiedName",
@@ -569,7 +602,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "ExecutionLocation",
@@ -585,7 +619,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   },
@@ -607,7 +642,8 @@
           "Minimum": 1,
           "Maximum": 32
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -623,7 +659,8 @@
           "Minimum": 0,
           "Maximum": 1024
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Attributes",
@@ -639,7 +676,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "EntityBehaviours",
@@ -655,7 +693,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "DataBehaviours",
@@ -671,7 +710,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "BehaviourNamespaces",
@@ -687,7 +727,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "DataSource",
@@ -703,7 +744,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Shared"
+        "AggregationKind": "Shared",
+        "IsIdentifier": false
       }
     ]
   },
@@ -725,7 +767,8 @@
           "Minimum": 1,
           "Maximum": 32
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -741,7 +784,8 @@
           "Minimum": 0,
           "Maximum": 1024
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Type",
@@ -757,7 +801,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Expression",
@@ -773,7 +818,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   },
@@ -795,7 +841,8 @@
           "Minimum": 1,
           "Maximum": 24
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -811,7 +858,8 @@
           "Minimum": 0,
           "Maximum": 1024
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Attributes",
@@ -827,7 +875,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "EntityBehaviours",
@@ -843,7 +892,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "DataBehaviours",
@@ -859,7 +909,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "BehaviourNamespaces",
@@ -875,7 +926,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "BehaviourRuntime",
@@ -891,7 +943,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "DataAccessRuntime",
@@ -907,7 +960,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "ExecutesInConnector",
@@ -923,7 +977,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "BehaviourDependencies",
@@ -939,7 +994,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       }
     ]
   },
@@ -961,7 +1017,8 @@
           "Minimum": 1,
           "Maximum": 24
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -977,7 +1034,8 @@
           "Minimum": 0,
           "Maximum": 1024
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Attributes",
@@ -993,7 +1051,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "EntityBehaviours",
@@ -1009,7 +1068,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "DataBehaviours",
@@ -1025,7 +1085,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "BehaviourNamespaces",
@@ -1041,7 +1102,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "DataSource",
@@ -1057,7 +1119,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Shared"
+        "AggregationKind": "Shared",
+        "IsIdentifier": false
       }
     ]
   },
@@ -1079,7 +1142,8 @@
           "Minimum": 1,
           "Maximum": 64
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -1095,7 +1159,8 @@
           "Minimum": 0,
           "Maximum": 1024
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Attribute",
@@ -1111,7 +1176,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Type",
@@ -1127,7 +1193,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Expression",
@@ -1143,377 +1210,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
-      }
-    ]
-  },
-  {
-    "Name": "Event",
-    "Description": "Transaction of resources between two agents, one in the role of supplier and the other as recipient.",
-    "Properties": [
-      {
-        "Name": "Name",
-        "Description": "The name of the entity (unique identifier).",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": 1,
-          "Maximum": 32
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Description",
-        "Description": "The textual explanation of the entities' purpose.",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": 0,
-          "Maximum": 1024
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Attributes",
-        "Description": "A collection of entries that allows to define entity' structure.",
-        "TypeKind": "Class",
-        "TypeName": "Attribute",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "EntityBehaviours",
-        "Description": "A collection of entries representing how the entity behaves.",
-        "TypeKind": "Class",
-        "TypeName": "EntityBehaviour",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "DataBehaviours",
-        "Description": "A collection of entries representing how the entity' data is stored and retrieved.",
-        "TypeKind": "Class",
-        "TypeName": "DataBehaviour",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "BehaviourNamespaces",
-        "Description": "A collection of entries representing the coding namespaces to be included (as usings) on code generated with your data and entity behaviours.",
-        "TypeKind": "Class",
-        "TypeName": "BehaviourNamespace",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "DataSource",
-        "Description": "The Data Source in which the entities are computed and/or persisted.",
-        "TypeKind": "Class",
-        "TypeName": "DataSource",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Shared"
-      }
-    ]
-  },
-  {
-    "Name": "GenericEntity",
-    "Description": "Entity required for financial transactions, in order to complement the information about them.",
-    "Properties": [
-      {
-        "Name": "Name",
-        "Description": "The name of the entity (unique identifier).",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": 1,
-          "Maximum": 24
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Description",
-        "Description": "The textual explanation of the entities' purpose.",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": 0,
-          "Maximum": 1024
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Attributes",
-        "Description": "A collection of entries that allows to define entity' structure.",
-        "TypeKind": "Class",
-        "TypeName": "Attribute",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "EntityBehaviours",
-        "Description": "A collection of entries representing how the entity behaves.",
-        "TypeKind": "Class",
-        "TypeName": "EntityBehaviour",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "DataBehaviours",
-        "Description": "A collection of entries representing how the entity' data is stored and retrieved.",
-        "TypeKind": "Class",
-        "TypeName": "DataBehaviour",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "BehaviourNamespaces",
-        "Description": "A collection of entries representing the coding namespaces to be included (as usings) on code generated with your data and entity behaviours.",
-        "TypeKind": "Class",
-        "TypeName": "BehaviourNamespace",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "DataSource",
-        "Description": "The Data Source in which the entities are computed and/or persisted.",
-        "TypeKind": "Class",
-        "TypeName": "DataSource",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Shared"
-      },
-      {
-        "Name": "IsRoot",
-        "Description": "Indicates if the entity acts as a root entity or as a sub-entity.",
-        "TypeKind": "Primitive",
-        "TypeName": "Boolean",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      }
-    ]
-  },
-  {
-    "Name": "Resource",
-    "Description": "Entity representing assets that can be quantified and with commercial value. Is held by the Agents, who exchange them in financial transactions.",
-    "Properties": [
-      {
-        "Name": "Name",
-        "Description": "The name of the entity (unique identifier).",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": 1,
-          "Maximum": 24
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Description",
-        "Description": "The textual explanation of the entities' purpose.",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": 0,
-          "Maximum": 1024
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Attributes",
-        "Description": "A collection of entries that allows to define entity' structure.",
-        "TypeKind": "Class",
-        "TypeName": "Attribute",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "EntityBehaviours",
-        "Description": "A collection of entries representing how the entity behaves.",
-        "TypeKind": "Class",
-        "TypeName": "EntityBehaviour",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "DataBehaviours",
-        "Description": "A collection of entries representing how the entity' data is stored and retrieved.",
-        "TypeKind": "Class",
-        "TypeName": "DataBehaviour",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "BehaviourNamespaces",
-        "Description": "A collection of entries representing the coding namespaces to be included (as usings) on code generated with your data and entity behaviours.",
-        "TypeKind": "Class",
-        "TypeName": "BehaviourNamespace",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "DataSource",
-        "Description": "The Data Source in which the entities are computed and/or persisted.",
-        "TypeKind": "Class",
-        "TypeName": "DataSource",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Shared"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   },
@@ -1535,7 +1233,8 @@
           "Minimum": 1,
           "Maximum": 80
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -1551,7 +1250,8 @@
           "Minimum": 0,
           "Maximum": 1024
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Values",
@@ -1567,7 +1267,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       }
     ]
   },
@@ -1589,7 +1290,8 @@
           "Minimum": 1,
           "Maximum": 32
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -1605,7 +1307,8 @@
           "Minimum": 0,
           "Maximum": 1024
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Order",
@@ -1621,7 +1324,480 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "Event",
+    "Description": "Transaction of resources between two agents, one in the role of supplier and the other as recipient.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Attributes",
+        "Description": "A collection of entries that allows to define entity' structure.",
+        "TypeKind": "Class",
+        "TypeName": "Attribute",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "EntityBehaviours",
+        "Description": "A collection of entries representing how the entity behaves.",
+        "TypeKind": "Class",
+        "TypeName": "EntityBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "DataBehaviours",
+        "Description": "A collection of entries representing how the entity' data is stored and retrieved.",
+        "TypeKind": "Class",
+        "TypeName": "DataBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "BehaviourNamespaces",
+        "Description": "A collection of entries representing the coding namespaces to be included (as usings) on code generated with your data and entity behaviours.",
+        "TypeKind": "Class",
+        "TypeName": "BehaviourNamespace",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "DataSource",
+        "Description": "The Data Source in which the entities are computed and/or persisted.",
+        "TypeKind": "Class",
+        "TypeName": "DataSource",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Shared",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "GenericEntity",
+    "Description": "Entity required for financial transactions, in order to complement the information about them.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 24
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Attributes",
+        "Description": "A collection of entries that allows to define entity' structure.",
+        "TypeKind": "Class",
+        "TypeName": "Attribute",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "EntityBehaviours",
+        "Description": "A collection of entries representing how the entity behaves.",
+        "TypeKind": "Class",
+        "TypeName": "EntityBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "DataBehaviours",
+        "Description": "A collection of entries representing how the entity' data is stored and retrieved.",
+        "TypeKind": "Class",
+        "TypeName": "DataBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "BehaviourNamespaces",
+        "Description": "A collection of entries representing the coding namespaces to be included (as usings) on code generated with your data and entity behaviours.",
+        "TypeKind": "Class",
+        "TypeName": "BehaviourNamespace",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "DataSource",
+        "Description": "The Data Source in which the entities are computed and/or persisted.",
+        "TypeKind": "Class",
+        "TypeName": "DataSource",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Shared",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "IsRoot",
+        "Description": "Indicates if the entity acts as a root entity or as a sub-entity.",
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "Length",
+    "Description": null,
+    "Properties": [
+      {
+        "Name": "Minimum",
+        "Description": null,
+        "TypeKind": "Primitive",
+        "TypeName": "Integer",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Maximum",
+        "Description": null,
+        "TypeKind": "Primitive",
+        "TypeName": "Integer",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "Multiplicity",
+    "Description": null,
+    "Properties": [
+      {
+        "Name": "Lower",
+        "Description": null,
+        "TypeKind": "Primitive",
+        "TypeName": "Integer",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Upper",
+        "Description": null,
+        "TypeKind": "Primitive",
+        "TypeName": "Integer",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "Resource",
+    "Description": "Entity representing assets that can be quantified and with commercial value. Is held by the Agents, who exchange them in financial transactions.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 24
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Attributes",
+        "Description": "A collection of entries that allows to define entity' structure.",
+        "TypeKind": "Class",
+        "TypeName": "Attribute",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "EntityBehaviours",
+        "Description": "A collection of entries representing how the entity behaves.",
+        "TypeKind": "Class",
+        "TypeName": "EntityBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "DataBehaviours",
+        "Description": "A collection of entries representing how the entity' data is stored and retrieved.",
+        "TypeKind": "Class",
+        "TypeName": "DataBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "BehaviourNamespaces",
+        "Description": "A collection of entries representing the coding namespaces to be included (as usings) on code generated with your data and entity behaviours.",
+        "TypeKind": "Class",
+        "TypeName": "BehaviourNamespace",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "DataSource",
+        "Description": "The Data Source in which the entities are computed and/or persisted.",
+        "TypeKind": "Class",
+        "TypeName": "DataSource",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Shared",
+        "IsIdentifier": false
       }
     ]
   },
@@ -1643,7 +1819,8 @@
           "Minimum": 1,
           "Maximum": 32
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -1659,7 +1836,8 @@
           "Minimum": 0,
           "Maximum": 1024
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Attributes",
@@ -1675,7 +1853,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "EntityBehaviours",
@@ -1691,7 +1870,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "DataBehaviours",
@@ -1707,7 +1887,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "BehaviourNamespaces",
@@ -1723,7 +1904,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "DataSource",
@@ -1739,447 +1921,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Shared"
-      }
-    ]
-  },
-  {
-    "Name": "StateMachine",
-    "Description": "State Machine related to a given Definition.",
-    "Properties": [
-      {
-        "Name": "Name",
-        "Description": "The name of the state machine (unique identifier).",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": 1,
-          "Maximum": 48
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Description",
-        "Description": "The textual explanation of the state machine purpose.",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Definition",
-        "Description": "the entity that will be managed using the State Machine.",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "States",
-        "Description": "A collection of states of the current State Machine.",
-        "TypeKind": "Class",
-        "TypeName": "State",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      }
-    ]
-  },
-  {
-    "Name": "State",
-    "Description": "Definition of an entity possible state.",
-    "Properties": [
-      {
-        "Name": "Name",
-        "Description": "The name of the entity (unique identifier).",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": 1,
-          "Maximum": 24
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Description",
-        "Description": "The textual explanation of the entities' purpose.",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": 0,
-          "Maximum": 1024
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "IsInitial",
-        "Description": "State machine first state. One state machine can only have one initial state.",
-        "TypeKind": "Primitive",
-        "TypeName": "Boolean",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "DisableOperations",
-        "Description": "Disable all operations when the entity is in the current state.",
-        "TypeKind": "Primitive",
-        "TypeName": "Boolean",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "DisableAttributes",
-        "Description": "Disable all attributes when the entity is in the current state.",
-        "TypeKind": "Primitive",
-        "TypeName": "Boolean",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "AssignToExpression",
-        "Description": "C# expression to define to whom will be assigned the record when it is in this state.",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Transitions",
-        "Description": "Collection of transitions that can happen in the current state.",
-        "TypeKind": "Class",
-        "TypeName": "StateTransition",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "Decisions",
-        "Description": "Collection of decisions that the user can take in the current state.",
-        "TypeKind": "Class",
-        "TypeName": "StateDecision",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "EnabledOperations",
-        "Description": "Collection of operations to enable. This is an exception list when the DisableOperations configuration is active.",
-        "TypeKind": "Class",
-        "TypeName": "StateEnabledOperation",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "EnabledAttributes",
-        "Description": "Collection of attributes to enable. This is an exception list when the DisableAttributes configuration is active.",
-        "TypeKind": "Class",
-        "TypeName": "StateEnabledAttribute",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "Behaviours",
-        "Description": "A collection of entries representing how the state machine behaves.",
-        "TypeKind": "Class",
-        "TypeName": "StateBehaviour",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      }
-    ]
-  },
-  {
-    "Name": "StateTransition",
-    "Description": "Possible transition between two states in a State Machine.",
-    "Properties": [
-      {
-        "Name": "Name",
-        "Description": "The name of the entity (unique identifier).",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": 1,
-          "Maximum": 32
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Description",
-        "Description": "The textual explanation of the entities' purpose.",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": 0,
-          "Maximum": 1024
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Order",
-        "Description": "The evaluation order of transitions.",
-        "TypeKind": "Primitive",
-        "TypeName": "Integer",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "To",
-        "Description": "Target state when the transition happens.",
-        "TypeKind": "Class",
-        "TypeName": "State",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Shared"
-      },
-      {
-        "Name": "Type",
-        "Description": "Type of transition.",
-        "TypeKind": "Enumeration",
-        "TypeName": "StateTransitionType",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Decision",
-        "Description": "User Decision that will trigger the transition in case of decision based transitions.",
-        "TypeKind": "Class",
-        "TypeName": "StateDecision",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Shared"
-      },
-      {
-        "Name": "Expression",
-        "Description": "The C# code that will be executed.",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      }
-    ]
-  },
-  {
-    "Name": "StateDecision",
-    "Description": "Decision that a user can take to condition a given state machine transition.",
-    "Properties": [
-      {
-        "Name": "Name",
-        "Description": "The name of the entity (unique identifier).",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": 1,
-          "Maximum": 32
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Description",
-        "Description": "The textual explanation of the entities' purpose.",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": 0,
-          "Maximum": 1024
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Order",
-        "Description": "Represent the relevance of the decision. Use the Order to sort the decisions.",
-        "TypeKind": "Primitive",
-        "TypeName": "Integer",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "CommentType",
-        "Description": "Define if a comment is required to take the decision.",
-        "TypeKind": "Enumeration",
-        "TypeName": "StateDecisionCommentType",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
+        "AggregationKind": "Shared",
+        "IsIdentifier": false
       }
     ]
   },
@@ -2201,7 +1944,8 @@
           "Minimum": 1,
           "Maximum": 32
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -2217,7 +1961,8 @@
           "Minimum": 0,
           "Maximum": 1024
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Type",
@@ -2233,7 +1978,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Expression",
@@ -2249,13 +1995,14 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   },
   {
-    "Name": "StateEnabledOperation",
-    "Description": "Operation enabled in a given State.",
+    "Name": "StateDecision",
+    "Description": "Decision that a user can take to condition a given state machine transition.",
     "Properties": [
       {
         "Name": "Name",
@@ -2271,7 +2018,8 @@
           "Minimum": 1,
           "Maximum": 32
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -2287,11 +2035,137 @@
           "Minimum": 0,
           "Maximum": 1024
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
-        "Name": "Path",
-        "Description": "Path to the operation to enable. When accessing to a composite collection, use the '.' to navigate.",
+        "Name": "Order",
+        "Description": "Represent the relevance of the decision. Use the Order to sort the decisions.",
+        "TypeKind": "Primitive",
+        "TypeName": "Integer",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "CommentType",
+        "Description": "Define if a comment is required to take the decision.",
+        "TypeKind": "Enumeration",
+        "TypeName": "StateDecisionCommentType",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "State",
+    "Description": "Definition of an entity possible state.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 24
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "IsInitial",
+        "Description": "State machine first state. One state machine can only have one initial state.",
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "DisableOperations",
+        "Description": "Disable all operations when the entity is in the current state.",
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "DisableAttributes",
+        "Description": "Disable all attributes when the entity is in the current state.",
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "AssignToExpression",
+        "Description": "C# expression to define to whom will be assigned the record when it is in this state.",
         "TypeKind": "Primitive",
         "TypeName": "Text",
         "Multiplicity": {
@@ -2303,23 +2177,93 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
-        "Name": "Type",
-        "Description": "The operation type to enable.",
-        "TypeKind": "Enumeration",
-        "TypeName": "StateEnabledOperationTypeEnum",
+        "Name": "Transitions",
+        "Description": "Collection of transitions that can happen in the current state.",
+        "TypeKind": "Class",
+        "TypeName": "StateTransition",
         "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
+          "Lower": 0,
+          "Upper": 2147483647,
           "IsUnique": true
         },
         "Length": {
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Decisions",
+        "Description": "Collection of decisions that the user can take in the current state.",
+        "TypeKind": "Class",
+        "TypeName": "StateDecision",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "EnabledOperations",
+        "Description": "Collection of operations to enable. This is an exception list when the DisableOperations configuration is active.",
+        "TypeKind": "Class",
+        "TypeName": "StateEnabledOperation",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "EnabledAttributes",
+        "Description": "Collection of attributes to enable. This is an exception list when the DisableAttributes configuration is active.",
+        "TypeKind": "Class",
+        "TypeName": "StateEnabledAttribute",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Behaviours",
+        "Description": "A collection of entries representing how the state machine behaves.",
+        "TypeKind": "Class",
+        "TypeName": "StateBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       }
     ]
   },
@@ -2341,7 +2285,8 @@
           "Minimum": 1,
           "Maximum": 32
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -2357,7 +2302,8 @@
           "Minimum": 0,
           "Maximum": 1024
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Path",
@@ -2373,7 +2319,281 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "StateEnabledOperation",
+    "Description": "Operation enabled in a given State.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Path",
+        "Description": "Path to the operation to enable. When accessing to a composite collection, use the '.' to navigate.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Type",
+        "Description": "The operation type to enable.",
+        "TypeKind": "Enumeration",
+        "TypeName": "StateEnabledOperationTypeEnum",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "StateMachine",
+    "Description": "State Machine related to a given Definition.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the state machine (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 48
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the state machine purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Definition",
+        "Description": "the entity that will be managed using the State Machine.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "States",
+        "Description": "A collection of states of the current State Machine.",
+        "TypeKind": "Class",
+        "TypeName": "State",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "StateTransition",
+    "Description": "Possible transition between two states in a State Machine.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities' purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 0,
+          "Maximum": 1024
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Order",
+        "Description": "The evaluation order of transitions.",
+        "TypeKind": "Primitive",
+        "TypeName": "Integer",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "To",
+        "Description": "Target state when the transition happens.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Type",
+        "Description": "Type of transition.",
+        "TypeKind": "Enumeration",
+        "TypeName": "StateTransitionType",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Decision",
+        "Description": "User Decision that will trigger the transition in case of decision based transitions.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Expression",
+        "Description": "The C# code that will be executed.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   }

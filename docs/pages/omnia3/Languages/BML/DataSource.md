@@ -29,5 +29,4 @@ Representation of a system that allows to store entities and/or execute behaviou
 | Name | Type | Description |
 | --------- | --------- | --------- |
 | Defaults | Initialize |  |
-| DefaultsFinalize | BeforeSave |  |
 

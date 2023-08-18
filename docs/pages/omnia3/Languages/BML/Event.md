@@ -26,5 +26,4 @@ Transaction of resources between two agents, one in the role of supplier and the
 | Name | Type | Description |
 | --------- | --------- | --------- |
 | Defaults | Initialize |  |
-| DefaultsFinalize | BeforeSave |  |
 

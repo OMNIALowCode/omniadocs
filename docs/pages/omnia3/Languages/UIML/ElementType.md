@@ -26,9 +26,7 @@ folder: omnia3
 - Selector
 - SelectorEntry
 - Button
-- ButtonGroup
-- Label
-- Divider
 - Panel
+- Page
 
 

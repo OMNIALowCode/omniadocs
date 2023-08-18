@@ -13,7 +13,7 @@ Authorization Role.
 
 | Name | Type | Aggregation Kind | Multiplicity | Length | Description |
 | --------- | --------- | --------- | --------- | --------- | --------- |
-| Name | Text | None | 1..1 | None | The name of the role (unique identifier). |
+| Name | Text | None | 1..1 | 1..32 | The name of the role (unique identifier). |
 | Description | Text | None | 0..1 | None | The textual explanation of the entities’ purpose. |
 | Subjects | AuthorizationRoleSubject | Composite | 0..* | None | List of subjects (users) that have the role assigned. |
 
