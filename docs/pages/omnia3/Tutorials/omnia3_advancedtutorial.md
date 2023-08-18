@@ -88,7 +88,7 @@ this.SupplierName = entity._name;
    string apiEndpoint = $"https://api.discogs.com/masters/{_code}";
    var requestResult = client.GetAsync(apiEndpoint).GetAwaiter().GetResult();
 
-   string responseBody = requestResult.Content.ReadAsStringAsync().Result;
+   string responseBody = requestResult.Content.ReadAsStringAsync().GetAwaiter().GetResult();
 
    Dictionary<string, object> responseDictionary = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
 

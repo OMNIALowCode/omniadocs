@@ -1,7 +1,7 @@
 ---
 title: Multi System Connector Tutorial
 keywords: omnia3
-summary: 'OMNIA Low-Code Development Platform - Multi System Connector Tutorial'
+summary: "OMNIA Low-Code Development Platform - Multi System Connector Tutorial"
 sidebar: omnia3_sidebar
 permalink: omnia3_multisystemconnectortutorial.html
 folder: omnia3
@@ -81,7 +81,7 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
 
     1. StdBE100
     2. ErpBS100
-    4. BasBE100
+    3. BasBE100
 
     ![Modeler_Supplier_Add_Namespace](/images/tutorials/multisystemconnector/Modeler-Supplier-Add-ERP-Namespace.jpg)
 
@@ -120,7 +120,7 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
     {
     	Console.WriteLine(e.Message);
     	throw;
-    } 
+    }
     finally
     {
       if (bsERP.Contexto.EmpresaAberta)
@@ -158,7 +158,7 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
     {
     	Console.WriteLine(e.Message);
     	throw;
-    } 
+    }
     finally
     {
       if (bsERP.Contexto.EmpresaAberta)
@@ -194,7 +194,7 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
     {
     	Console.WriteLine(e.Message);
     	throw;
-    } 
+    }
     finally
     {
       if (bsERP.Contexto.EmpresaAberta)
@@ -253,7 +253,7 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
     {
     	Console.WriteLine(e.Message);
     	throw;
-    } 
+    }
     finally
     {
       if (bsERP.Contexto.EmpresaAberta)
@@ -299,7 +299,7 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
 
    1. StdBE100
    2. ErpBS100
-   4. CmpBE100
+   3. CmpBE100
 
 9. Navigate to tab _"[Data Behaviours](omnia3_modeler_datasources.html)"_, and set the code expression to be executed on _"ReadList"_. This behaviour will be used for Query and List requests for this entity.
 
@@ -337,7 +337,7 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
     {
     	Console.WriteLine(e.Message);
     	throw;
-    } 
+    }
     finally
     {
       if (bsERP.Contexto.EmpresaAberta)
@@ -370,7 +370,7 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
       };
 
       bsERP.Compras.Documentos.PreencheDadosRelacionados(purchaseOrder);
-      
+
       foreach (var line in dto.OrderLines)
       {
          double quantity = Convert.ToDouble(line._quantity);
@@ -385,7 +385,7 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
     {
     	Console.WriteLine(e.Message);
     	throw;
-    } 
+    }
     finally
     {
       if (bsERP.Contexto.EmpresaAberta)
@@ -442,7 +442,7 @@ This tutorial also requires an access to [Primavera ERP](https://pt.primaverabss
    	var client = new HttpClient();
    	string apiEndpoint = $"http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=API_KEY&artist={this.Artist}&album={newValue}&format=json";
    	var requestResult = client.GetAsync(apiEndpoint).GetAwaiter().GetResult();
-   	string responseBody = requestResult.Content.ReadAsStringAsync().Result;
+   	string responseBody = requestResult.Content.ReadAsStringAsync().GetAwaiter().GetResult();
    	if (!requestResult.IsSuccessStatusCode)
    		throw new Exception("Error on retrieving album: " + responseBody);
    	var response = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
