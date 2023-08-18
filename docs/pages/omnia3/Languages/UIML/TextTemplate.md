@@ -13,7 +13,7 @@ Text Templates allows to define a template that will be transformed into text re
 
 | Name | Type | Aggregation Kind | Multiplicity | Length | Description |
 | --------- | --------- | --------- | --------- | --------- | --------- |
-| Name | Text | None | 1..1 | None | The name of the entity (unique identifier). |
+| Name | Text | None | 1..1 | 1..48 | The name of the entity (unique identifier). |
 | Description | Text | None | 0..1 | None | The textual explanation of the template's purpose. |
 | Expression | Text | None | 1..1 | None | The Text Template expression. |
 

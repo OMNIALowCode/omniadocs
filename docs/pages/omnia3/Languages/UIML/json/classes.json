@@ -1,27 +1,28 @@
 [
   {
-    "Name": "ApplicationMenuEntryAction",
-    "Description": "Action that the entry will take.",
+    "Name": "ApplicationAsset",
+    "Description": "Application Assets.",
     "Properties": [
       {
-        "Name": "Type",
-        "Description": "Type of action to execute.",
+        "Name": "Name",
+        "Description": "The name of the asset (unique identifier).",
         "TypeKind": "Primitive",
         "TypeName": "Text",
         "Multiplicity": {
-          "Lower": 0,
+          "Lower": 1,
           "Upper": 1,
           "IsUnique": true
         },
         "Length": {
-          "Minimum": null,
-          "Maximum": null
+          "Minimum": 1,
+          "Maximum": 32
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
-        "Name": "Location",
-        "Description": "Target of location of the menu entry.",
+        "Name": "Description",
+        "Description": "The textual explanation of the assets’ purpose.",
         "TypeKind": "Primitive",
         "TypeName": "Text",
         "Multiplicity": {
@@ -33,7 +34,99 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "File",
+        "Description": "The asset file definition",
+        "TypeKind": "Class",
+        "TypeName": "BinaryData",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "ApplicationCssStyles",
+    "Description": "Application CSS Styles. Block to define CSS classes styles.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities’ purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Expression",
+        "Description": "The CSS styles.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "StylesOrder",
+        "Description": "The order of the styles in global styles file.",
+        "TypeKind": "Primitive",
+        "TypeName": "Integer",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   },
@@ -53,9 +146,10 @@
         },
         "Length": {
           "Minimum": 1,
-          "Maximum": 64
+          "Maximum": 32
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -71,7 +165,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Label",
@@ -87,7 +182,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "HelpText",
@@ -103,7 +199,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Type",
@@ -119,7 +216,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Attributes",
@@ -135,7 +233,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "Behaviours",
@@ -151,7 +250,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "Elements",
@@ -167,7 +267,48 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "ApplicationMenuEntryAction",
+    "Description": "Action that the entry will take.",
+    "Properties": [
+      {
+        "Name": "Type",
+        "Description": "Type of action to execute.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Location",
+        "Description": "Target of location of the menu entry.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   },
@@ -189,7 +330,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Label",
@@ -205,7 +347,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "IsFolder",
@@ -221,7 +364,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Icon",
@@ -237,7 +381,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Color",
@@ -253,7 +398,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Action",
@@ -269,7 +415,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "Entries",
@@ -285,13 +432,14 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       }
     ]
   },
   {
-    "Name": "Form",
-    "Description": "Form to manage a given Entity Definition.",
+    "Name": "ApplicationScript",
+    "Description": "Application Script. Block to define javascript code.",
     "Properties": [
       {
         "Name": "Name",
@@ -304,10 +452,11 @@
           "IsUnique": true
         },
         "Length": {
-          "Minimum": 1,
-          "Maximum": 64
+          "Minimum": null,
+          "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -323,11 +472,12 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
-        "Name": "Label",
-        "Description": "Label to display in the application.",
+        "Name": "Expression",
+        "Description": "The javascript code.",
         "TypeKind": "Primitive",
         "TypeName": "Text",
         "Multiplicity": {
@@ -339,125 +489,88 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "HelpText",
-        "Description": "Text/annotation to help the user.",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Type",
-        "Description": null,
-        "TypeKind": "Enumeration",
-        "TypeName": "ElementType",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Attributes",
-        "Description": null,
-        "TypeKind": "Class",
-        "TypeName": "ElementAttribute",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "Behaviours",
-        "Description": null,
-        "TypeKind": "Class",
-        "TypeName": "ElementBehaviour",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "Elements",
-        "Description": null,
-        "TypeKind": "Class",
-        "TypeName": "InnerElement",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "Entity",
-        "Description": "Entity to manage.",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "DataSource",
-        "Description": "The Data Source in which the entities are computed and/or persisted",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   },
   {
-    "Name": "InnerElement",
-    "Description": "Child Element",
+    "Name": "BinaryData",
+    "Description": "Binary data.",
+    "Properties": [
+      {
+        "Name": "OriginalName",
+        "Description": "The name of the asset.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Name",
+        "Description": "The name of the asset.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Path",
+        "Description": "The full path of the asset",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Extension",
+        "Description": "The textual explanation of the assets’ purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "ComponentConfiguration",
+    "Description": "Allow defining a component configuration.",
     "Properties": [
       {
         "Name": "Name",
@@ -473,11 +586,29 @@
           "Minimum": 1,
           "Maximum": 64
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
-        "Name": "Description",
-        "Description": "The textual explanation of the entities’ purpose.",
+        "Name": "Configuration",
+        "Description": "Indicates the component configuration.",
+        "TypeKind": "Class",
+        "TypeName": "ElementNodeConfiguration",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "ExtendTag",
+        "Description": "HTML tag extend by the component.",
         "TypeKind": "Primitive",
         "TypeName": "Text",
         "Multiplicity": {
@@ -489,193 +620,18 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Label",
-        "Description": "Label to display in the application.",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "HelpText",
-        "Description": "Text/annotation to help the user.",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Type",
-        "Description": null,
-        "TypeKind": "Enumeration",
-        "TypeName": "ElementType",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Attributes",
-        "Description": null,
-        "TypeKind": "Class",
-        "TypeName": "ElementAttribute",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "Behaviours",
-        "Description": null,
-        "TypeKind": "Class",
-        "TypeName": "ElementBehaviour",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "Elements",
-        "Description": null,
-        "TypeKind": "Class",
-        "TypeName": "InnerElement",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "Row",
-        "Description": "The layout row in which the element will be placed.",
-        "TypeKind": "Primitive",
-        "TypeName": "Integer",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Column",
-        "Description": "The  layout column in which the element will be placed.",
-        "TypeKind": "Primitive",
-        "TypeName": "Integer",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Size",
-        "Description": "The element size on a scale of 1 (the smaller size) to 12 (the bigger size).",
-        "TypeKind": "Primitive",
-        "TypeName": "Integer",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "IsHidden",
-        "Description": "The visibility of the element (hidden or visible).",
-        "TypeKind": "Primitive",
-        "TypeName": "Boolean",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "VisibleFrom",
-        "Description": "The visibility of the element, related to the user’s device screen size (at sizes smaller than the one selected, the element will be hidden).",
-        "TypeKind": "Enumeration",
-        "TypeName": "ScreenSize",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   },
   {
-    "Name": "List",
-    "Description": "Application list, used to present data from a given Query. A list is little more than a way to see a query displayed in the web app: you select a query, (part or all of) its columns, and how to display those columns.",
+    "Name": "ComponentsPackageConfiguration",
+    "Description": "Allow defining a component package configuration.",
     "Properties": [
       {
         "Name": "Name",
-        "Description": "The name of the entity (unique identifier).",
+        "Description": "The name given to the Component Package when added to the model.",
         "TypeKind": "Primitive",
         "TypeName": "Text",
         "Multiplicity": {
@@ -687,11 +643,154 @@
           "Minimum": 1,
           "Maximum": 64
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "PackageName",
+        "Description": "The name given to the package by its developer.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Version",
+        "Description": null,
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "ComponentsPackage",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "ComponentsPackage",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Shared",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "ContractVersion",
+        "Description": null,
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "ToolBoxEntries",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "ToolBoxEntryConfiguration",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Components",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "ComponentConfiguration",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Types",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "TypeConfiguration",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "ComponentsPackage",
+    "Description": "Components to be used on user interface.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the component (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
-        "Description": "The textual explanation of the entities’ purpose.",
+        "Description": "The textual explanation of the components’ purpose.",
         "TypeKind": "Primitive",
         "TypeName": "Text",
         "Multiplicity": {
@@ -703,45 +802,14 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
-        "Name": "Label",
-        "Description": "Label to display in the application.",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 1,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "HelpText",
-        "Description": "Text/annotation to help the user.",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
-      },
-      {
-        "Name": "Type",
-        "Description": null,
+        "Name": "Source",
+        "Description": "The source of the component.",
         "TypeKind": "Enumeration",
-        "TypeName": "ElementType",
+        "TypeName": "ComponentsPackageSource",
         "Multiplicity": {
           "Lower": 1,
           "Upper": 1,
@@ -751,61 +819,14 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
-        "Name": "Attributes",
-        "Description": null,
+        "Name": "File",
+        "Description": "The component file",
         "TypeKind": "Class",
-        "TypeName": "ElementAttribute",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "Behaviours",
-        "Description": null,
-        "TypeKind": "Class",
-        "TypeName": "ElementBehaviour",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "Elements",
-        "Description": null,
-        "TypeKind": "Class",
-        "TypeName": "InnerElement",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 2147483647,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "Composite"
-      },
-      {
-        "Name": "Query",
-        "Description": "Reference a previously created query to use.",
-        "TypeKind": "Class",
-        "TypeName": "Query",
+        "TypeName": "BinaryData",
         "Multiplicity": {
           "Lower": 1,
           "Upper": 1,
@@ -815,23 +836,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Shared"
-      },
-      {
-        "Name": "DataSource",
-        "Description": "The Data Source in which the entities are computed and/or persisted",
-        "TypeKind": "Primitive",
-        "TypeName": "Text",
-        "Multiplicity": {
-          "Lower": 0,
-          "Upper": 1,
-          "IsUnique": true
-        },
-        "Length": {
-          "Minimum": null,
-          "Maximum": null
-        },
-        "AggregationKind": "None"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       }
     ]
   },
@@ -853,7 +859,8 @@
           "Minimum": 1,
           "Maximum": 64
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -869,7 +876,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Label",
@@ -885,7 +893,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "HelpText",
@@ -901,7 +910,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Type",
@@ -917,7 +927,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Attributes",
@@ -933,7 +944,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "Behaviours",
@@ -949,7 +961,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "Elements",
@@ -965,7 +978,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       }
     ]
   },
@@ -987,7 +1001,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Value",
@@ -1003,7 +1018,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   },
@@ -1025,7 +1041,8 @@
           "Minimum": 1,
           "Maximum": 64
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -1041,7 +1058,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Type",
@@ -1057,7 +1075,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Expression",
@@ -1073,13 +1092,14 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   },
   {
-    "Name": "WebComponent",
-    "Description": "Web Components can extend the default layout, adding custom elements.",
+    "Name": "ElementNodeBehaviour",
+    "Description": "Element Node behaviour. In order to extend your application user interface you can add new behaviours to your entities’ user interface.",
     "Properties": [
       {
         "Name": "Name",
@@ -1092,10 +1112,688 @@
           "IsUnique": true
         },
         "Length": {
+          "Minimum": 1,
+          "Maximum": 64
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Expression",
+        "Description": "Behaviour expression related to the Element.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "ElementNodeConfiguration",
+    "Description": "Allow to define a element node configuration",
+    "Properties": [
+      {
+        "Name": "Type",
+        "Description": "The type of the element node.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Properties",
+        "Description": "The properties of the element node.",
+        "TypeKind": "Class",
+        "TypeName": "ElementNodePropertyConfiguration",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Events",
+        "Description": "The list of element node events.",
+        "TypeKind": "Class",
+        "TypeName": "ElementNodeEventConfiguration",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Methods",
+        "Description": "The list of elementnode methods.",
+        "TypeKind": "Class",
+        "TypeName": "ElementNodeMethodConfiguration",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "IsContainer",
+        "Description": "Indicates if the element node is a container.",
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "AllowedInnerElements",
+        "Description": "List of inner elements allowed by the element node.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "AllowedParentElements",
+        "Description": "List of parents elements allowed by the element node.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "ClassesStylesDefaultValue",
+        "Description": "The default element node classes styles.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "ElementNode",
+    "Description": "Element Node",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 128
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Type",
+        "Description": null,
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Package",
+        "Description": null,
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Attributes",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "UiAttribute",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Behaviours",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "ElementNodeBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "ClassesStyles",
+        "Description": "CSS classes styles",
+        "TypeKind": "Class",
+        "TypeName": "UiAttributeValue",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "CSSStyle",
+        "Description": "CSS style",
+        "TypeKind": "Class",
+        "TypeName": "UiAttributeValue",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "IsHidden",
+        "Description": "The visibility of the element (hidden or visible).",
+        "TypeKind": "Class",
+        "TypeName": "UiAttributeValue",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "GroupElements",
+        "Description": "Specify if the element group inner elements",
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Elements",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "ElementNode",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "ElementNodeEventConfiguration",
+    "Description": "Allow to define a elementnode event configuration",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the event (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      }
+    ]
+  },
+  {
+    "Name": "ElementNodeMethodConfiguration",
+    "Description": "Allow to define a elementnode method configuration",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the method (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Parameters",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "ElementNodeMethodParameterConfiguration",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "ElementNodeMethodParameterConfiguration",
+    "Description": "Allow to define a elementnode method parameter configuration",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the parameter (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Type",
+        "Description": null,
+        "TypeKind": "Enumeration",
+        "TypeName": "ElementNodeMethodParameterType",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "IsRequired",
+        "Description": null,
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "ElementNodePropertyComplexOption",
+    "Description": "Allow to define a elementnode property complex option",
+    "Properties": [
+      {
+        "Name": "Value",
+        "Description": "The value of option.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Text",
+        "Description": "The text of option.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "ElementNodePropertyConfiguration",
+    "Description": "Allow to define a elementnode property configuration",
+    "Properties": [
+      {
+        "Name": "Key",
+        "Description": "The key of the property (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "IsRequired",
+        "Description": "Indicates if the property is required.",
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "IsCollection",
+        "Description": "Indicates if the property value is a collection.",
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "DataType",
+        "Description": "The data type of the property.",
+        "TypeKind": "Enumeration",
+        "TypeName": "ElementNodePropertyDataType",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Direction",
+        "Description": "Indicates the property binding direction.",
+        "TypeKind": "Enumeration",
+        "TypeName": "ElementNodePropertyDirection",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "DefaultValue",
+        "Description": "The default value of the property.",
+        "TypeKind": "Primitive",
+        "TypeName": "Object",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Options",
+        "Description": "The list of option of the property when data type is 'ComplexOption'.",
+        "TypeKind": "Class",
+        "TypeName": "ElementNodePropertyComplexOption",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "EntityTypes",
+        "Description": "",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "TypeName",
+        "Description": "The name of the type when the DataType is an 'object'.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "Form",
+    "Description": "Form to manage a given Entity Definition.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -1111,11 +1809,12 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
-        "Name": "CustomElementName",
-        "Description": "Custom element name, or the name of the element that will be created to be attached to the page’s DOM.",
+        "Name": "Label",
+        "Description": "Label to display in the application.",
         "TypeKind": "Primitive",
         "TypeName": "Text",
         "Multiplicity": {
@@ -1127,11 +1826,97 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
-        "Name": "Expression",
-        "Description": "Web Component Javascript code.",
+        "Name": "HelpText",
+        "Description": "Text/annotation to help the user.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Type",
+        "Description": null,
+        "TypeKind": "Enumeration",
+        "TypeName": "ElementType",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Attributes",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "ElementAttribute",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Behaviours",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "ElementBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Elements",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "InnerElement",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Entity",
+        "Description": "Entity to manage.",
         "TypeKind": "Primitive",
         "TypeName": "Text",
         "Multiplicity": {
@@ -1143,17 +1928,35 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "DataSource",
+        "Description": "The Data Source in which the entities are computed and/or persisted",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   },
   {
-    "Name": "LanguageText",
-    "Description": null,
+    "Name": "InnerElement",
+    "Description": "Child Element",
     "Properties": [
       {
         "Name": "Name",
-        "Description": "The name of the text translation (unique identifier).",
+        "Description": "The name of the entity (unique identifier).",
         "TypeKind": "Primitive",
         "TypeName": "Text",
         "Multiplicity": {
@@ -1163,13 +1966,31 @@
         },
         "Length": {
           "Minimum": 1,
-          "Maximum": 96
+          "Maximum": 64
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
-        "Name": "Value",
-        "Description": "Translated value. Used to display on that language.",
+        "Name": "Description",
+        "Description": "The textual explanation of the entities’ purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Label",
+        "Description": "Label to display in the application.",
         "TypeKind": "Primitive",
         "TypeName": "Text",
         "Multiplicity": {
@@ -1181,7 +2002,178 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "HelpText",
+        "Description": "Text/annotation to help the user.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Type",
+        "Description": null,
+        "TypeKind": "Enumeration",
+        "TypeName": "ElementType",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Attributes",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "ElementAttribute",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Behaviours",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "ElementBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Elements",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "InnerElement",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Row",
+        "Description": "The layout row in which the element will be placed.",
+        "TypeKind": "Primitive",
+        "TypeName": "Integer",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Column",
+        "Description": "The  layout column in which the element will be placed.",
+        "TypeKind": "Primitive",
+        "TypeName": "Integer",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Size",
+        "Description": "The element size on a scale of 1 (the smaller size) to 12 (the bigger size).",
+        "TypeKind": "Primitive",
+        "TypeName": "Integer",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "IsHidden",
+        "Description": "The visibility of the element (hidden or visible).",
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "VisibleFrom",
+        "Description": "The visibility of the element, related to the user’s device screen size (at sizes smaller than the one selected, the element will be hidden).",
+        "TypeKind": "Enumeration",
+        "TypeName": "ScreenSize",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   },
@@ -1203,7 +2195,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -1219,7 +2212,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Culture",
@@ -1235,7 +2229,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Texts",
@@ -1251,7 +2246,400 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "LanguageText",
+    "Description": null,
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the text translation (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 96
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Value",
+        "Description": "Translated value. Used to display on that language.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "List",
+    "Description": "Application list, used to present data from a given Query. A list is little more than a way to see a query displayed in the web app: you select a query, (part or all of) its columns, and how to display those columns.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities’ purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Label",
+        "Description": "Label to display in the application.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "HelpText",
+        "Description": "Text/annotation to help the user.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Type",
+        "Description": null,
+        "TypeKind": "Enumeration",
+        "TypeName": "ElementType",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Attributes",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "ElementAttribute",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Behaviours",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "ElementBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Elements",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "InnerElement",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Query",
+        "Description": "Reference a previously created query to use.",
+        "TypeKind": "Class",
+        "TypeName": "Query",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Shared",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "DataSource",
+        "Description": "The Data Source in which the entities are computed and/or persisted",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "Page",
+    "Description": "Handsome web pages",
+    "Properties": [
+      {
+        "Name": "Type",
+        "Description": null,
+        "TypeKind": "Enumeration",
+        "TypeName": "ElementType",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 32
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Description",
+        "Description": "Page description.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Behaviours",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "ElementNodeBehaviour",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Elements",
+        "Description": null,
+        "TypeKind": "Class",
+        "TypeName": "ElementNode",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Styles",
+        "Description": "CSS styles.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "ClassesStyles",
+        "Description": "CSS classes styles.",
+        "TypeKind": "Class",
+        "TypeName": "UiAttributeValue",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Variables",
+        "Description": "A collection of entries that allows to define page variables.",
+        "TypeKind": "Class",
+        "TypeName": "Variable",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "UrlParameters",
+        "Description": "List of expected URL parameters.",
+        "TypeKind": "Class",
+        "TypeName": "UrlParameter",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Scripts",
+        "Description": null,
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   },
@@ -1273,7 +2661,8 @@
           "Minimum": 1,
           "Maximum": 96
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -1289,7 +2678,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Label",
@@ -1305,7 +2695,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "HelpText",
@@ -1321,7 +2712,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Type",
@@ -1337,7 +2729,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Attributes",
@@ -1353,7 +2746,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "Behaviours",
@@ -1369,7 +2763,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "Elements",
@@ -1385,7 +2780,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       }
     ]
   },
@@ -1404,10 +2800,11 @@
           "IsUnique": true
         },
         "Length": {
-          "Minimum": null,
-          "Maximum": null
+          "Minimum": 1,
+          "Maximum": 48
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -1423,7 +2820,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Expression",
@@ -1439,7 +2837,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   },
@@ -1459,9 +2858,10 @@
         },
         "Length": {
           "Minimum": 1,
-          "Maximum": 64
+          "Maximum": 32
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -1477,7 +2877,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Label",
@@ -1493,7 +2894,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "HelpText",
@@ -1509,7 +2911,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Expression",
@@ -1525,7 +2928,578 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "ToolBoxEntryConfiguration",
+    "Description": "Allow to define a element node configuration",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name show in toolbox.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Icon",
+        "Description": "The icon show in toolbox.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Element",
+        "Description": "Indicates the base element of tool box entry.",
+        "TypeKind": "Class",
+        "TypeName": "ElementNode",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "TypeConfiguration",
+    "Description": "Allow to define a type of an object",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the type.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Properties",
+        "Description": "The attributes list of the type.",
+        "TypeKind": "Class",
+        "TypeName": "TypePropertyConfiguration",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 2147483647,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "TypePropertyConfiguration",
+    "Description": "Allow to define an property of the Type.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the property",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "IsCollection",
+        "Description": "Indicates if the property is a collection.",
+        "TypeKind": "Primitive",
+        "TypeName": "Boolean",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Type",
+        "Description": "The type of the property",
+        "TypeKind": "Enumeration",
+        "TypeName": "TypePropertyType",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "ObjectName",
+        "Description": "The name of the type when the type is an 'object'",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "UiAttribute",
+    "Description": "Specific attribute of a ui definition.",
+    "Properties": [
+      {
+        "Name": "Key",
+        "Description": "Name of the Attribute (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Value",
+        "Description": "Value of the attribute.",
+        "TypeKind": "Class",
+        "TypeName": "UiAttributeValue",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "UiAttributeValue",
+    "Description": "Value of UiAttribute",
+    "Properties": [
+      {
+        "Name": "Source",
+        "Description": null,
+        "TypeKind": "Enumeration",
+        "TypeName": "UiAttributeValueSource",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Value",
+        "Description": null,
+        "TypeKind": "Primitive",
+        "TypeName": "Object",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "UiMultiplicity",
+    "Description": null,
+    "Properties": [
+      {
+        "Name": "Lower",
+        "Description": null,
+        "TypeKind": "Primitive",
+        "TypeName": "Integer",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Upper",
+        "Description": null,
+        "TypeKind": "Primitive",
+        "TypeName": "Integer",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "UrlParameter",
+    "Description": "Specific a URL parameter.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the parameter.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the url parameter purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Multiplicity",
+        "Description": "The representation of the minimum and maximum number of records.",
+        "TypeKind": "Class",
+        "TypeName": "UiMultiplicity",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Type",
+        "Description": "The primitive type of the parameter.",
+        "TypeKind": "Enumeration",
+        "TypeName": "UrlParameterType",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "Variable",
+    "Description": "Allow to define a variable",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": 1,
+          "Maximum": 64
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the variable purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Type",
+        "Description": "The data type: can be a Primitive, an Enumeration or a reference to class.",
+        "TypeKind": "Class",
+        "TypeName": "VariableType",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Multiplicity",
+        "Description": "The representation of the minimum and maximum number of records.",
+        "TypeKind": "Class",
+        "TypeName": "UiMultiplicity",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "InitialValue",
+        "Description": "The initial value of the variable",
+        "TypeKind": "Primitive",
+        "TypeName": "Object",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "VariableType",
+    "Description": null,
+    "Properties": [
+      {
+        "Name": "Kind",
+        "Description": null,
+        "TypeKind": "Enumeration",
+        "TypeName": "VariableTypeKind",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Value",
+        "Description": null,
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      }
+    ]
+  },
+  {
+    "Name": "WebComponent",
+    "Description": "Web Components can extend the default layout, adding custom elements.",
+    "Properties": [
+      {
+        "Name": "Name",
+        "Description": "The name of the entity (unique identifier).",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": true
+      },
+      {
+        "Name": "Description",
+        "Description": "The textual explanation of the entities’ purpose.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 0,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "CustomElementName",
+        "Description": "Custom element name, or the name of the element that will be created to be attached to the page’s DOM.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
+      },
+      {
+        "Name": "Expression",
+        "Description": "Web Component Javascript code.",
+        "TypeKind": "Primitive",
+        "TypeName": "Text",
+        "Multiplicity": {
+          "Lower": 1,
+          "Upper": 1,
+          "IsUnique": true
+        },
+        "Length": {
+          "Minimum": null,
+          "Maximum": null
+        },
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   }

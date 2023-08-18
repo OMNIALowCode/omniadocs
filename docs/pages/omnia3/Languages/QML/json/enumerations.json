@@ -1,23 +1,19 @@
 [
   {
-    "Name": "QueryFunction",
+    "Name": "QueryColumnDataType",
     "Values": [
-      "None",
-      "Min",
-      "Max",
-      "Count",
-      "Average",
-      "Sum",
-      "Year",
-      "Month",
-      "Day"
+      "Text",
+      "Date",
+      "Boolean",
+      "Decimal",
+      "Integer"
     ]
   },
   {
-    "Name": "QuerySort",
+    "Name": "QueryColumnDataKind",
     "Values": [
-      "Ascend",
-      "Descend"
+      "Primitive",
+      "Enumeration"
     ]
   },
   {
@@ -33,10 +29,17 @@
     ]
   },
   {
-    "Name": "QueryLogicalOperator",
+    "Name": "QueryFunction",
     "Values": [
-      "And",
-      "Or"
+      "None",
+      "Min",
+      "Max",
+      "Count",
+      "Average",
+      "Sum",
+      "Year",
+      "Month",
+      "Day"
     ]
   },
   {
@@ -47,6 +50,20 @@
       "Right",
       "Full",
       "Cross"
+    ]
+  },
+  {
+    "Name": "QueryLogicalOperator",
+    "Values": [
+      "And",
+      "Or"
+    ]
+  },
+  {
+    "Name": "QuerySort",
+    "Values": [
+      "Ascend",
+      "Descend"
     ]
   }
 ]

@@ -14,10 +14,11 @@
           "IsUnique": true
         },
         "Length": {
-          "Minimum": null,
-          "Maximum": null
+          "Minimum": 1,
+          "Maximum": 32
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -33,7 +34,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Permissions",
@@ -49,7 +51,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       },
       {
         "Name": "Policies",
@@ -65,7 +68,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       }
     ]
   },
@@ -87,7 +91,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -103,7 +108,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Roles",
@@ -119,7 +125,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Shared"
+        "AggregationKind": "Shared",
+        "IsIdentifier": false
       }
     ]
   },
@@ -138,10 +145,11 @@
           "IsUnique": true
         },
         "Length": {
-          "Minimum": null,
-          "Maximum": null
+          "Minimum": 1,
+          "Maximum": 32
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Description",
@@ -157,7 +165,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       },
       {
         "Name": "Subjects",
@@ -173,7 +182,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "Composite"
+        "AggregationKind": "Composite",
+        "IsIdentifier": false
       }
     ]
   },
@@ -195,7 +205,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": true
       },
       {
         "Name": "Username",
@@ -211,7 +222,8 @@
           "Minimum": null,
           "Maximum": null
         },
-        "AggregationKind": "None"
+        "AggregationKind": "None",
+        "IsIdentifier": false
       }
     ]
   }
