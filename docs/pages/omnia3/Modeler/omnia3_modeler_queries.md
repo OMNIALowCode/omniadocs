@@ -32,9 +32,7 @@ Selecting the option _Add new_ in the list of queries, you need to fill the foll
 Selecting the option _Add new_ when editing a query, you need to fill the following information:
 
 - **Alias**: The Alias of the property, i.e. the name you want to see it show up with;
-- **Path**: The Path to that property. If the attribute belongs to the entity, it can be selected. Else:
-  - If you want to get properties from a collection inside the entity, use '>', i.e. `OrderLines>_amount`;
-  - If you want to get properties from a reference inside the entity, use '.', i.e. `VATSummary._amount`;
+- **Path**: The Path to that property. If the attribute belongs to the entity, it can be selected.
 
 ### How to create an advanced query?
 
