@@ -12,14 +12,14 @@ $(document).ready(function () {
       "https://mymiswebdeploy.blob.core.windows.net/omnia3/connector/updateFeed.xml",
       "Download latest connector version",
       "Package",
-      "connector-x86"
+      "x86"
     );
 
     httpGetFeedAsync(
       "https://mymiswebdeploy.blob.core.windows.net/omnia3/connector_x64/updateFeed.xml",
       "Download latest connector version",
       "Package",
-      "connector-x64"
+      "x64"
     );
 
     httpGetFeedAsync(

@@ -13,4 +13,8 @@ folder: omnia3
 
 ## Connector x64
 
+### x86
+
+### x64
+
 ## Development Environment
