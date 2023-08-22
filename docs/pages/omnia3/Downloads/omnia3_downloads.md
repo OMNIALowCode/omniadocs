@@ -9,9 +9,7 @@ folder: omnia3
 
 ## Platform
 
-## Connector x86
-
-## Connector x64
+## Connector
 
 ### x86
 
