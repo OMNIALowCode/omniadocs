@@ -175,6 +175,10 @@ entries:
           - title: Introduction
             url: /omnia3_modeler_introduction.html
             output: web, pdf
+
+          - title: Modeling Lifecycle
+            url: /omnia3_modeler_lifecycle.html
+            output: web, pdf
             
             subfolders:
               - title: Business
@@ -182,10 +186,6 @@ entries:
                 subfolderitems:
                   - title: Modeling Entities Structure
                     url: /omnia3_modeler_entities.html
-                    output: web, pdf
-    
-                  - title: Modeling Lifecycle
-                    url: /omnia3_modeler_lifecycle.html
                     output: web, pdf
     
                   - title: Modeling Enumerations
