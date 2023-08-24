@@ -10,6 +10,21 @@ toc: false
 
 Visit our [Downloads](/omnia3_downloads.html#platform) page to get the latest version.
 
+## [3.5.xxx](#3.5.xxx)
+Release Date: 2023-08-25
+
+### Implemented enhancements:
+- New feature: Addition of [Pages](../Modeler/omnia3_modeler_pages.md) concept to the model
+- Introduction of the additional modeling concepts, to be used with Pages:
+    - [Assets](../Modeler/omnia3_modeler_assets.md)
+    - [Components](../Modeler/omnia3_modeler_components.md)
+    - [Scripts](../Modeler/omnia3_modeler_scripts_UI.md)
+    - [CSS Styles](../Modeler/omnia3_modeler_cssStyles.md)
+
+### Issues: 
+- On Swagger, the suggested RequestBody for Patch requests is not valid
+- Modeler: When external entity is created using API and has Data Behaviours, the expression is replaced with a default value
+
 ## [3.5.173](#3.5.173)
 Release Date: 2023-07-31
 
