@@ -9,7 +9,7 @@ folder: omnia3
 
 ## 1. Introduction
 
-OMNIA Development Environment runs in containers using Docker, allowing the user to manage it's instances using the `docker-compose` PowerShell commands and access to OMNIA Platform logs in Docker Desktop.
+OMNIA Development Environment runs in containers using Docker, allowing the user to manage its instances using the `docker-compose` PowerShell commands and access to OMNIA Platform logs in Docker Desktop.
 
 You can also choose what version of the Development Environment to install [here](/omnia3_downloads.html#development-environment).
 
@@ -37,7 +37,7 @@ To remove ("_uninstall_") the Development Environment from the machine, you must
     docker-compose -p OmniaPlatform down --rmi all
 ```
 
-This will stop every running container from the `OmniaPlatform` project and then remove them all, including it's images.
+This will stop every running container from the `OmniaPlatform` project and then remove them all, including its images.
 
 **NOTE:** This command doesn't remove local storage data.
 

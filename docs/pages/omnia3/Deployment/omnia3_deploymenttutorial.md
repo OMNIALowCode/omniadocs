@@ -14,9 +14,9 @@ folder: omnia3
 
     Ensure the firewall has its port 80 and 443 (HTTP and HTTPS) open to the exterior, so you will be able to access the application.
 
-- Have a way to access the server and copy files to it. We suggest [MobaXTerm](https://mobaxterm.mobatek.net/) if you are doing the setup from a Windows machine.
+- Have a way to access the server and copy files to it. We suggest [MobaXTerm](https://mobaxterm.mobatek.net/){:target="\_blank"} if you are doing the setup from a Windows machine.
 
-- Install .NET Core **3.1** SDK (current recommended version: SDK 3.1.201), by following the official Microsoft [instructions](https://docs.microsoft.com/en-us/dotnet/core/linux-prerequisites?tabs=netcore3x). Go to the Ubuntu section, and follow the instructions for your version of Ubuntu.
+- Install .NET Core **3.1** SDK (current recommended version: SDK 3.1.201), by following the official Microsoft [instructions](https://docs.microsoft.com/en-us/dotnet/core/linux-prerequisites?tabs=netcore3x){:target="\_blank"}. Go to the Ubuntu section, and follow the instructions for your version of Ubuntu.
 
 - Install NGINX on the server, by running ```sudo apt-get install nginx```.
 
@@ -35,7 +35,7 @@ This tutorial assumes we are using the **Full** zip, extracted to a local folder
 ## 3. Configuring the database
 - Create a database with name **omnia**, with any username & password you want, in a PostgreSQL database server (version 14.5 or above supported).
 
-    Ensure you can access the database server through the firewall, via a tool such as [pgAdmin](https://www.pgadmin.org/), so you can perform management operations, from the machine you are using.
+    Ensure you can access the database server through the firewall, via a tool such as [pgAdmin](https://www.pgadmin.org/){:target="\_blank"}, so you can perform management operations, from the machine you are using.
 
     Also ensure you can access the database server through the firewall, from the server you are installing the platform on.
 
@@ -112,7 +112,7 @@ In the nginx site configuration (`/etc/nginx/sites-enabled/default`), there is a
 If you have a valid SSL certificate, follow the instructions in the file to set the site to run in HTTPS-by-default mode, which is **the only supported mode** of running the platform.
 
 If you don't have a certificate, you can choose one of these alternatives:
-- If you have a valid DNS name for your site that you own (i.e., not aws, azure, etc.) , you can set up **Let's Encrypt** for a free certificate. See [this DigitalOcean tutorial](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04) for an example of setting it up.
+- If you have a valid DNS name for your site that you own (i.e., not aws, azure, etc.) , you can set up **Let's Encrypt** for a free certificate. See [this DigitalOcean tutorial](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04){:target="\_blank"} for an example of setting it up.
 
 - If you don't, you can use the platform via HTTP. This is **not supported** though, but it can be a solution for a quick trial.
 

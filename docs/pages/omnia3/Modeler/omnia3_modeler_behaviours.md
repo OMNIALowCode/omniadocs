@@ -69,9 +69,9 @@ Other than these, there are two special entity behaviours:
   return new AfterSaveMessage("Integration was successful, but could not send email to all users. Please check if their emails are valid.", AfterSaveMessageType.Warning);
   ```
 
-  There are two helpers in AfterSaveMessage, .Empty and .Default, which you should use when you aren't interested in the contents of the message. Empty shows no notification; default shows a success notification/operation.
+  There are two helpers in AfterSaveMessage, _.Empty_ and _.Default_, which you should use when you aren't interested in the contents of the message. Empty shows no notification; default shows a success notification/operation.
 
-  Valid AfterSaveMessageTypes are **Information**, **Success**, **Warning**, **Error** and **SuccessNoNotification**. Error will mark the after save as having failed, SuccessNoNotification sends no notification to the end-user, while the other three are used only to customize the look of the notification they send.
+  Valid AfterSaveMessageTypes are **Information**, **Success**, **Warning**, **Error** and **SuccessNoNotification**. _Error_ will mark the after save as having failed, _SuccessNoNotification_ sends no notification to the end-user, while the other three are used only to customize the look of the notification they send.
 
   **Note**: After Save behaviours are not called immediately after saving, but go into a queue. More information [here](omnia3_application_notifications_and_operations.html). _**No changes to the status of the entity will be saved! If you want to change an entity on an After Save, you must do it via our API.**_
 
@@ -79,7 +79,7 @@ Other than these, there are two special entity behaviours:
 
 ### 2.1. C# method naming
 
-| Type                                | Method                                   | Observation   |
+| Type                                | Method                                   | Observations  |
 |-------------------------------------|------------------------------------------|---------------|
 | Initialize                          | OnInitialize                             |               |
 | Before Change                       | OnBeforeUpdate                           |               |
@@ -181,7 +181,7 @@ In case you want to force an attribute to change, you can do it in the **Before 
 
 ## 7. Invoking the OMNIA API
 
-To facilitate an API invocation, you have some methods in the context to setup the [HTTP Client](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?redirectedfrom=MSDN&view=netframework-4.7.2) with the required Headers and Tokens.
+To facilitate an API invocation, you have some methods in the context to setup the [HTTP Client](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?redirectedfrom=MSDN&view=netframework-4.7.2){:target="\_blank"} with the required Headers and Tokens.
 
 Methods:
 
@@ -198,7 +198,9 @@ var httpClient = this._Context.CreateApplicationHttpClient();
 
 A cache can improve the performance of an OMNIA application, especially when your application is loading data from other systems.
 
-Depending on the setup of your OMNIA subscription, your cache can be at: - Redis: distributed cache that is shared by multiple app servers and survives server restarts and app deployments. - Memory: local memory of the server.
+Depending on the setup of your OMNIA subscription, your cache can be at: 
+- Redis: distributed cache that is shared by multiple app servers and survives server restarts and app deployments. 
+- Memory: local memory of the server.
 
 If the "RedisConnectionString" is defined in the subscription config, you will be using the Redis Cache.
 
@@ -231,13 +233,13 @@ await cache.RemoveAsync("MyKeyName");
 
 ### Notes:
 
-- All the keys in Cache, have a 24 hours lifetime, after the last access to the key.
+- All the keys in Cache have a 24 hours lifetime after the last access to the key.
 
 ## 9. Logging
 
 You can access the behaviour server logger using:
 
-```
+```C#
 var logger = _Context.Services.GetService<ILogger<Customer>>();
 
 logger.LogInformation("My first log entry!");

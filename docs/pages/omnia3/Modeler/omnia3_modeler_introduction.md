@@ -21,4 +21,8 @@ Accessing the _Modeler_ you will see three different groups of information:
  * **History**: the last model changes;
 
 ## 3. Understanding the menu
-The menu has entries to each one of the [entities](omnia3_modeler_entities.html), as well to the [data analytics](omnia3_modeler_datavisualization.html) and the [versioning](omnia3_modeler_lifecycle.html) mechanisms.
+The menu has entries is organized into four areas:
+ * **Business**: Definition of the [entities](omnia3_modeler_entities.html) that compose the model
+ * **User Interface**: Definition of all User Interface elements
+ * **Query**: Definition of queries for [data analytics](omnia3_modeler_datavisualization.html)
+ * **Model info**: Information about [Build versions](omnia3_modeler_lifecycle.html), changes to the model and statistics.

@@ -17,4 +17,4 @@ To **add** a new entry to your favorites you just need to mouse over that entry 
 
 On the other hand, if you want to **remove** an entry from your favorites, then mouse over that entry (on the favorites or menu panel) and click on the empty star icon.
 
-**IMPORTANT NOTE**: Favorites are applied per user, browser and device, which means p.e. users can have a set of favorites on its phone and a different one on its computer.
+**IMPORTANT NOTE**: Favorites are applied per user, browser and device, which means users can have a set of favorites on its phone and a different one on its computer.

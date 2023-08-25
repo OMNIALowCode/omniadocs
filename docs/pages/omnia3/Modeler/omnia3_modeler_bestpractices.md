@@ -10,19 +10,19 @@ folder: omnia3
 
 ## 1. Introduction
 
-Here you'll find a list of recommendations that you should follow when modelling an application using OMNIA. It's a group of best practices based on our experience collected from application development.
+Here you'll find a list of recommendations that you should follow when modeling an application using OMNIA. It's a group of best practices based on our experience collected from application development.
 
 
 ## 2. Best Practices
 
 ### Descriptive naming
 
-Use meaningful names for modelled artifacts. The name should tell you why it exists and what it does.
+Use meaningful names for modeled artifacts. The name should tell you why it exists and what it does.
 
 ### Use ETag when consuming the API
 
-OMNIA Web API uses Optimistic Concurrency handling. To take advantage of if it, you should handle the [ETag HTTP Header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag).
-Read here to know more: [Perform conditional operations using the Web API](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/webapi/perform-conditional-operations-using-web-api).
+OMNIA Web API uses Optimistic Concurrency handling. To take advantage of if it, you should handle the [ETag HTTP Header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag){:target="\_blank"}.
+Read here to know more: [Perform conditional operations using the Web API](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/webapi/perform-conditional-operations-using-web-api){:target="\_blank"}.
 
 ### Filter behaviour execution to the desired Action
 
@@ -30,7 +30,7 @@ Behaviours can be executed in the sequence of multiple actions. For example, an 
 
 **Example to only execute the code if the operation is Create or Update:**
 
-```
+```C#
     if (_Context.Operation.Action != Action.EntityCreate &&
         _Context.Operation.Action != Action.EntityUpdate)
     return await Task.FromResult(AfterSaveMessage.Empty);
@@ -58,13 +58,13 @@ Information like the current Role or Username can be accessed from the `Context`
 Decimal attributes that are calculated on C# behaviours should be rounded to match the number of decimal cases defined on UI.
 
 
-```
+```C#
     this.Average = Decimal.Round(this.Amount / this.Quantity, 2);
 ```
 
 ### C# - Use async/await when is possible
 
-When working with c# Tasks using ".GetAwaiter().GetResult()", ".Result" or ".Wait()" to get the result can cause [deadlocks or thread pool starvation](https://gsferreira.com/archive/2020/08/avoid-getawaiter-getresult-at-all-cost/). So, it's recommended to use async/await all way down.
+When working with c# Tasks using ".GetAwaiter().GetResult()", ".Result" or ".Wait()" to get the result can cause [deadlocks or thread pool starvation](https://gsferreira.com/archive/2020/08/avoid-getawaiter-getresult-at-all-cost/){:target="\_blank"}. So, it's recommended to use async/await all way down.
 
 In cases like Initialize behaviours or Action/Change behaviours, you can't use async/await. In these cases, you should extract async methods to Code Dependencies and use "GetAwaiter().GetResult()" just once to wait for that Code Dependency.
 
