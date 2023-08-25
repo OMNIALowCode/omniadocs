@@ -25,4 +25,4 @@ Behaviours executed on Omnia Connector can be developed and tested on a local en
 - Open the project file (.csproj) of the data source whose behaviours will be edited, on the folder *Server/Behaviours/External/DataSourceName*
 - Start Omnia Connector by opening *Omnia.Connector.Windows.exe*
 - After changing the behaviours code, use Visual Studio *Debug* to test your changes
-- When you are happy with your code, sync model changes using Omnia-CLI, as described [here](omnia3_serverdeployment.html#3-change-code-and-apply-changes-to-model)
+- When you are happy with your code, sync model changes using Omnia-CLI, as described [here](omnia3_serverdevelopment.html#3-change-code-and-apply-changes-to-model)

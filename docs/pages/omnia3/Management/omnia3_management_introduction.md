@@ -29,7 +29,7 @@ Upon creating a tenant, some security information will automatically be created:
 
 ## 3. Roles and Policies
 
-In the management section, it is possible to configure Roles and Policies. For more details on these, please see [the description of how authorization works](omnia3_authorization.html), as well as [the language definitions](omnia3_languages_sml.html).
+In the management section, it is possible to configure Roles and Policies. For more details on these, please see [the description of how authorization works](omnia3_authorization.html), as well as [the language definitions](omnia3_languages_SML.html).
 
 For users to be able to perform administration operations on a given tenant, they must be in the automatically created Administration[TenantCode] role.
 

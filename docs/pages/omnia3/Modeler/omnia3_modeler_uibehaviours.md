@@ -74,7 +74,7 @@ In a dashboard, the _On Change_ behaviours is executed after the list data is re
 
 ## 3. Usage
 
-There are many possible usage scenarios for these behaviours, as JavaScript coding will allow you to execute whatever you want. Usage examples are described in our [FAQ](omnia3_modeler_entities.ui.html#6-user-interface-behaviours).
+There are many possible usage scenarios for these behaviours, as JavaScript coding will allow you to execute whatever you want. Usage examples are described in our [FAQ](omnia3_modeler_entities_ui.html#2-user-interface-behaviours).
 
 ## 4. Structure of the class
 
