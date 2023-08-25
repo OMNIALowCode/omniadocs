@@ -12,9 +12,9 @@ toc: false
 
 - Operating System: Windows 10 Pro/Enterprise
 - Software:
-  - [Docker Desktop](https://www.docker.com/products/docker-desktop) (recommended version: 2.3.0.4)
-  - [Visual Studio Code](https://code.visualstudio.com/download)
-    - After VS Code is installed, install extension [Remote-Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+  - [Docker Desktop](https://www.docker.com/products/docker-desktop){:target="\_blank"} (recommended version: 2.3.0.4)
+  - [Visual Studio Code](https://code.visualstudio.com/download){:target="\_blank"}
+    - After VS Code is installed, install extension [Remote-Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers){:target="\_blank"}
 - Disk space to install Omnia Development Environment: 3GB
 
 ## 2. Install

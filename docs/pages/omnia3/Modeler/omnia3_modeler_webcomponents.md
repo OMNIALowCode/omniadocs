@@ -10,15 +10,15 @@ folder: omnia3
 ## 1. Introduction
 In the **OMNIA Platform**, in addition to being possible to customize how the application works (using the Behaviours), it's possible to define how it looks like.
 
-Using [**Web Components**](https://developer.mozilla.org/en-US/docs/Web/Web_Components), written in Javascript, you can extend the default layout, adding your own elements. Due to the array of [supported browsers](https://docs.omnialowcode.com/omnia3_webapprequirements.html), the Javascript should be written in ES6 format.
+Using [**Web Components**](https://developer.mozilla.org/en-US/docs/Web/Web_Components), written in Javascript, you can extend the default layout, adding your own elements. Due to the array of [supported browsers](omnia3_webapprequirements.html), the Javascript should be written in ES6 format.
 
-You can add Web Components to a **Form** or to a **Dashboard**.
-In both scenarios, you can have two different approaches:
+You can add Web Components to a **Form**, **Dashboard**, **List** and **Menu**.
+In all scenarios, you can have two different approaches:
 * Standalone Web Component: has all the logic to retrieve and process data;
 * Mapped Web Component: has the logic to process the data, which is passed as parameters based on the modeled mapping.
 
 A Web Component is defined by:
-* its **custom element name**, or the name of the element that will be created to be attached to the page's DOM;
+* its **custom element name**, the name of the element that will be created to be attached to the page's DOM;
 * its expression, the aforementioned JavaScript code.
 
 Web components are based on existing web standards. You can see the browser compatibility [here](https://developer.mozilla.org/en-US/docs/Web/API/Window/customElements#Browser_compatibility).
@@ -58,6 +58,10 @@ To do that, when you are adding the Web Component to the page you need:
 * If the page is a **Form**, set the mapping with the attribute of the entity;
 * If the page is a **Dashboard**, set the mapping with the list that has the required data. *When mapping to a list, the page size will also be imposed. Please make sure that you take the page size in consideration designing the feature.*
 
+For the remaining scenarios:
+* If the webcomponent is in a **List**, set the mapping with a column list;
+* If the webcomponent is in the **Menu**, mapping is not possible.
+
 After the mapping is configured, the Web Component will receive the data as a parameter. To know how to use it, check the [_Available parameters_](#5-available-parameters) section.
 
 ## 4. Available parameters
@@ -74,7 +78,7 @@ Each component can receive up to three parameters, depending on the mapping conf
 **_Note: None of these attributes must be used to update the state of the entity. They are only for reading purposes. To interact with the entity data, please see [5. Exchanging data with Web Components](omnia3_modeler_webcomponents.md#5-exchanging-data-with-web-components)_**
 
 ### 4.1. Using the parameters
-To use the parameters, it's necessary to know when they have his value changed.
+To use the parameters, it's necessary to know when their value has changed.
 
 The approach we recommend is to use the [setters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set) of the class to catch the updates.
 
@@ -175,4 +179,4 @@ apiClient
 | doPatch(address, requestBody, etag, preferHeader) | PATCH request  |
 
 ## 7. Samples
-Click [here](https://omnialowcode.github.io/omnia3-samples/webcomponents/docs/) to access to our collection of Web Components and find a set of components ready to use in your applications.
+Click [here](https://omnialowcode.github.io/omnia3-samples/webcomponents/docs/) to access our collection of Web Components and find a set of components ready to use in your applications.

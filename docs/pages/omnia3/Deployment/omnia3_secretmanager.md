@@ -27,7 +27,7 @@ Any configuration option used by OMNIA (`config/omnia.json`) can be overridden b
 
 ### 3.1. Azure Key Vault
 
-You can use the [Azure Key Vault with Managed Identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/tutorial-linux-vm-access-nonaad).
+You can use the [Azure Key Vault with Managed Identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/tutorial-linux-vm-access-nonaad){:target="\_blank"}.
 
 To configure OMNIA to use Key Vault, add the following section to the configuration file (`config/omnia.json`):
 
@@ -46,7 +46,7 @@ Example: ConnectionStrings--PostgreSQL.
 
 ### 3.2. AWS System Manager Parameter Store
 
-To configure OMNIA to use [Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html), add the following section to the configuration file (`config/omnia.json`):
+To configure OMNIA to use [Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html){:target="\_blank"}, add the following section to the configuration file (`config/omnia.json`):
 
 ```json
 "SecretManager":{
@@ -64,7 +64,7 @@ Example (for a configured path `/omnia/`): /omnia/ConnectionStrings/PostgreSQL.
 
 ### 3.3. HashiCorp Vault
 
-To configure OMNIA to use [Vault](https://www.vaultproject.io/docs/what-is-vault), add the following section to the configuration file (`config/omnia.json`):
+To configure OMNIA to use [Vault](https://www.vaultproject.io/docs/what-is-vault){:target="\_blank"}, add the following section to the configuration file (`config/omnia.json`):
 
 ```json
 "SecretManager":{

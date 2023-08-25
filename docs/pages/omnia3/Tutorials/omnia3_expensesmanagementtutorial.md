@@ -1,7 +1,7 @@
 ---
 title: OMNIA Expenses Management Tutorial
 keywords: omnia3
-summary: 'Expenses Management Tutorial'
+summary: "Expenses Management Tutorial"
 sidebar: omnia3_sidebar
 permalink: omnia3_expensemanagementtutorial.html
 folder: omnia3
@@ -93,7 +93,7 @@ This tutorial assumes that you have created a OMNIA tenant, and are logged in as
     string apiEndpoint = $"http://data.fixer.io/api/latest?access_key=13854a5cc70cff0901740c1a7ac3c5b3&symbols={Currency}";
     var requestResult = client.GetAsync(apiEndpoint).GetAwaiter().GetResult();
 
-    var responseBody = requestResult.Content.ReadAsStringAsync().Result;
+    var responseBody = requestResult.Content.ReadAsStringAsync().GetAwaiter().GetResult();
     var rateData = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
 
     if (!requestResult.IsSuccessStatusCode)

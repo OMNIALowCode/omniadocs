@@ -10,13 +10,13 @@ folder: omnia3
 
 ## 1. Introduction
 
-Business applications, in the OMNIA platform, are generated from the model. They can be used via the API directly or via the user interface.
+In OMNIA platform Business applications are generated from the model. They can be used via the API directly or via the user interface.
 
 ## 2. Understanding the menu
 
 Via the user interface, when you login and select a tenant, you will be shown a default menu in the sidebar that allows you to access the different options.
 
-The organization of the menu is:
+The default organization of the menu is:
 - **Homepage**: A shortcut back to the homepage.
 - **Documents**: Contains all of the modeled Documents.
 - **Configuration**: Contains all of the modeled non-document entities: Agents, Resources and Generic Entities.

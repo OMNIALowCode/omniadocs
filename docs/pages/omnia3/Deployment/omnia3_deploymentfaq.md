@@ -37,7 +37,7 @@ Download the `OmniaPlatform.Binaries.VersionNumber.zip`. Delete the contents of 
 ### How to increase the file size limit?
 
 By default, NGINX sets a max size to the body of each request, using the directive **client_max_body_size**, whose default value is 1MB.
-> Sets the maximum allowed size of the client request body, specified in the “Content-Length” request header field. If the size in a request exceeds the configured value, the 413 (Request Entity Too Large) error is returned to the client. *(from [NGINX documentation](http://nginx.org/en/docs/http/ngx_http_core_module.html))*
+> Sets the maximum allowed size of the client request body, specified in the “Content-Length” request header field. If the size in a request exceeds the configured value, the 413 (Request Entity Too Large) error is returned to the client. *(from [NGINX documentation](https://nginx.org/en/docs/http/ngx_http_core_module.html){:target="\_blank"})*
 
 In order to allow file uploads higher than 1MB, it's neccessary to replace the value of the directive:
 

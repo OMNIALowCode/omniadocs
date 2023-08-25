@@ -9,9 +9,9 @@ folder: omnia3
 
 ## 1. User Interface
 
-**_Entity / User Interface_**
+**_User Interface / Forms_**
 
-In **OMNIA Platform** you can customize how the fields are shown in the form to create or edit of your entity.
+In **OMNIA Platform** you can customize how the fields are shown in the form generated to create or edit your entity.
 
 Automatically, the platform adds and removes user interface elements when a new attribute is added or an existing one is deleted from an entity.
 
@@ -19,116 +19,123 @@ The form layout is organized with _Rows_ and _Columns_. Each row is divided hori
 
 ### How to add a new element?
 
-To add a new element check the right sidebar in the **User Interface**, where you'll find the **"Drag to add"** section with two options:
+To add a new UI element open the form by accessing the menu option **_User Interface / Forms_** and selecting the form in the list. Once the form is opened you'll find the **"Drag to add"** section with two options:
 
 **Related Entity Attributes** - Attributes of the current entity
 
-![Related Entity Attributes](/images/modeler/AddUIRelatedEntityAttribute.png)
+![Related Entity Attributes](/images/modeler/AddUIRelatedEntityAttribute.jpg)
 
 **Add new Element** - Elements types available to add to the current entity
 
-![Add new Element](/images/modeler/AddUINewElement.png)
+![Add new Element](/images/modeler/AddUINewElement.jpg)
 
-Simply select the opinion you desire, and drag and drop the attribute or element type in the entity's User Interface Dashboard.
+Simply select the option you desire and drag and drop the attribute or element type in the entity's Form previewer.
 
 When adding a new element to the layout, you also may fill the following information:
 
-- **Name**: the entity attribute this element will represent in the layout (will allow you to read and write in this attribute);
-- **Label**: the element caption;
-- **Help text**: the detailed description of the element;
-- **Row**: the layout row in which the element will be placed;
-- **Column**: the layout column in which the element will be placed;
-- **Size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_userinterface.html#lists-and-grid-columns), to know more about elements size and columns;
-- **Is the element hidden?**: the visibility of the element (hidden or visible);
-- **Minimal visible screen size**: the visibility of the element, related to the user's device screen size (at sizes smaller than the one selected, the element will be hidden);
+- **name**: the entity attribute this element will represent in the layout (will allow you to read and write in this attribute);
+- **label**: the element caption;
+- **helpText**: the detailed description of the element;
+- **row**: the layout row in which the element will be placed;
+- **column**: the layout column in which the element will be placed;
+- **size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_entities_ui.html#lists-and-grid-columns), to know more about elements size and columns;
+- **isHidden**: the visibility of the element (hidden or visible);
+- **visibleFrom**: the visibility of the element, related to the user's device screen size (at sizes smaller than the one selected, the element will be hidden);
 
 After the element configuration, it's important to save your changes to persist it.
 
 ### How to add a new container element?
 
-To add a new container check the right sidebar in the **User Interface**, where you'll find the **"Drag to add"** section. Select the **Add new Element** option.
+To add a new container check the right sidebar in the **Form**, where you'll find the **"Drag to add"** section. Select the **Add new Element** option.
 
-Now select and hold the **Container** option, drag and drop it in the entity's User Interface Dashboard. You also may fill the following information:
+Now select and hold the **Container** option, drag and drop it in the entity's User Interface previewer. You may also fill the following information:
 
-- **Name**: the element's unique identifier attribute;
-- **Label**: the element caption;
-- **Help text**: the detailed description of the element;
-- **Row**: the layout row in which the element will be placed;
-- **Column**: the layout column in which the element will be placed;
-- **Size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_userinterface.html#lists-and-grid-columns), to know more about elements size and columns;
-- **Is the element hidden?**: the visibility of the element (hidden or visible);
-- **Minimal visible screen size**: the visibility of the element, related to the user's device screen size (at sizes smaller than the one selected, the element will be hidden);
+- **name**: the element's unique identifier attribute;
+- **label**: the element caption;
+- **helpText**: the detailed description of the element;
+- **row**: the layout row in which the element will be placed;
+- **column**: the layout column in which the element will be placed;
+- **size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_entities_ui.html#lists-and-grid-columns), to know more about elements size and columns;
+- **isHidden**: the visibility of the element (hidden or visible);
+- **visibleFrom**: the visibility of the element, related to the user's device screen size (at sizes smaller than the one selected, the element will be hidden);
 
 ### How to add a new panel element?
 
-By selecting the option _Add new panel_ you will be able to add new panels to your layout, after filling the following information:
+In the Form page, select the **Drag to add / Add new Element** section, click on the panel element to drag it to your layout. Then, fill the following information:
 
-- **Name**: the element's unique identifier attribute;
-- **Label**: the element caption;
-- **Help text**: the detailed description of the element;
-- **Row**: the layout row in which the element will be placed;
-- **Column**: the layout column in which the element will be placed;
-- **Size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_userinterface.html#lists-and-grid-columns), to know more about elements size and columns;
-- **Is the element hidden?**: the visibility of the element (hidden or visible);
-- **Minimal visible screen size**: the visibility of the element, related to the user's device screen size (at sizes smaller than the one selected, the element will be hidden);
+- **name**: the element's unique identifier attribute;
+- **label**: the element caption;
+- **helpText**: the detailed description of the element;
+- **row**: the layout row in which the element will be placed;
+- **column**: the layout column in which the element will be placed;
+- **size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_entities_ui.html#lists-and-grid-columns), to know more about elements size and columns;
+- **isHidden**: the visibility of the element (hidden or visible);
+- **visibleFrom**: the visibility of the element, related to the user's device screen size (at sizes smaller than the one selected, the element will be hidden);
 
 ### How to add a new calendar element?
 
-To add a new calendar check the right sidebar in the **User Interface**, where you'll find the **"Drag to add"** section. Select the **Add new Element** option.
+To add a new calendar check the right sidebar in the **Form** user interface, where you'll find the **Drag to add / Add new Element** section.
 
 Now select and hold the **Calendar** option, drag and drop it in the entity's User Interface preview. You also need to fill the following information:
 
-- **Name**: the element's unique identifier attribute;
-- **Mapping**: the element, of type collection, that will be used as a data source;
+- **name**: the element's unique identifier attribute;
+- **mapping**: the element, of type collection, that will be used as a data source;
   (In case of a single date event, use the Date Mapping option, if you require a date interval, use Start and Finish Date Mapping instead)
-- **Date Mapping**: the collection element that will represent the calendar's event date;
-- **Start Date Mapping**: start date of the date mapping;
-- **Finish Date Mapping**: end date of the date mapping;
-- **Title Mapping**: the element that will be used to define the title property;
-- **Category Mapping**: the element that will be used to define the category property;
-- **Label**: the element caption;
-- **Help text**: the detailed description of the element;
-- **Row**: the layout row in which the element will be placed;
-- **Column**: the layout column in which the element will be placed;
-- **Size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_userinterface.html#lists-and-grid-columns), to know more about elements size and columns;
-- **Is the element hidden?**: the visibility of the element (hidden or visible);
-- **Minimal visible screen size**: the visibility of the element, related to the user's device screen size (at sizes smaller than the one selected, the element will be hidden);
+- **dateMapping**: the collection element that will represent the calendar's event date;
+- **startDateMapping**: start date of the date mapping;
+- **endDateMapping**: end date of the date mapping;
+- **titleMapping**: the element that will be used to define the title property;
+- **categoryMapping**: the element that will be used to define the category property;
+- **label**: the element caption;
+- **helpText**: the detailed description of the element;
+- **row**: the layout row in which the element will be placed;
+- **column**: the layout column in which the element will be placed;
+- **size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_entities_ui.html#lists-and-grid-columns), to know more about elements size and columns;
+- **isHidden**: the visibility of the element (hidden or visible);
+- **visibleFrom**: the visibility of the element, related to the user's device screen size (at sizes smaller than the one selected, the element will be hidden);
 
 ### How to change the positioning of an element?
 
-In the User Interface tab, select the element you want to change and, in the _Row_ and/or _Column_ fields, set the new positioning values.
+In the **Form** user interface, select the element you want to change and drag it to the new position. You can also adjust other elements position if necessary.
 
 ### How to change the size of an element?
 
-In the User Interface tab, select the element you want to change and, in the _Size_ field, select the new size. Click [here](omnia3_modeler_userinterface.html#lists-and-grid-columns), to know more about elements size and columns.
+In the **Form** user interface, select the element you want to change and, in the _Size_ field, select the new size. Click [here](omnia3_modeler_entities_ui.html#lists-and-grid-columns), to know more about elements size and columns.
 
 ### How to remove an element?
 
-Picking the element you want to remove, select the option _Delete_ and confirm your option in the confirmation window.
+In the **Form** user interface, select the element you want to remove, click on the _Delete_ button and confirm your option in the confirmation window.
 
 ## 2. User Interface Behaviours
 
-**_Entity / User Interface Behaviours_**
+**_User Interface / Forms_**
 
-In order to extend your application user interface you can add new behaviours to your entities' user interface.
+In order to extend your application user interface you can add new behaviours to your entities' **Form**.
 
 Click [here](omnia3_modeler_uibehaviours.html), to know more about user interface behaviours.
 
 ### Accelerators
 
-![UI Accelerator](/images/modeler/UIaccelerator.png)
+![UI Accelerator](/images/modeler/UIaccelerator.jpg)
 
-- **Hide an Element**
-  The accelerator will allow you to easily select an interface element you wish to hide and add the conditions (value or role) that will trigger that behaviour
-  Example: A user selects his payment option and that action will hide the unnecessary elements.
+- **Change Element Configuration**
+  Change the configuration of the Form being edited or of any element located inside it.
+  All the element attributes are available to be changed (e.g. isHidden, visibleFrom, label). Conditions may be applied (value or role).
 
-- **Set Element Read Only**
-  Easily select an interface element you wish to define as Read Only and add the conditions (value or role) that will trigger that behaviour
-  Example: Depending on the user role, allow your Supplier to edit the field "Unit Price", while the custumer only sees it as read only.
+  Examples:
+
+  - Depending on the user role, allow your Supplier to edit the field "Unit Price", while the custumer only sees it as read only.
+  - A user selects his payment option and that action will hide the unnecessary elements.
 
 - **Add Validation Message**
   Quickly add validation messages to your interface elements, add the trigger conditions (value or role) and define the content of your message
   Example: If a user tries to add an invalid email on a field, an error message is returned indicating that.
+
+- **Execute Application Behaviour**
+  Accelerator that generates code to make an HTTP request to the OMNIA API that calls a given Application Behaviour
+
+- **Execute Query**
+  Accelerator that generates code to make an HTTP request to the OMNIA API that executes a query and returns the results.
 
 ### Casing
 
@@ -172,7 +179,7 @@ In this sample, custom element _supplier_ size is changed:
     this._metadata.elements.supplier.size = 1;
 ```
 
-Click [here](omnia3_modeler_userinterface.html#lists-and-grid-columns), to know more about elements size and columns.
+Click [here](omnia3_modeler_entities_ui.html#lists-and-grid-columns), to know more about elements size and columns.
 
 ### How to set an element value?
 
@@ -233,7 +240,7 @@ In this sample, the user will be redirected to another page of the application, 
 
 ### How to have asynchronous behaviours?
 
-In this sample, the behaviour returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), that will allow the behaviour to execute asynchronously:
+In this sample, the behaviour returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise){:target="\_blank"}, that will allow the behaviour to execute asynchronously:
 
 ```JavaScript
     return new Promise(
@@ -303,10 +310,10 @@ _Note 2: This only changes the number of decimal places in the interface. In ord
 In this sample, custom element _createdDate_ value is changed:
 
 ```JavaScript
-    this.createdDate = this._context.createMoment('2022-12-31');
+    this.createdDate = this._context.createMoment('2023-12-31');
 ```
 
-_Note: For other ways of setting a date, please check [momentjs documentation](https://momentjs.com/docs/#/parsing/)_
+_Note: For other ways of setting a date, please check [momentjs documentation](https://momentjs.com/docs/#/parsing/){:target="\_blank"}_
 
 ### How to get a date on a specific format?
 
@@ -351,8 +358,8 @@ In this sample, the entries of the element _calendar_ are setted:
 
 ```JavaScript
     this._metadata.elements.calendar.attributes.entries = [
-        { date: '2022-12-25', title: 'Christmas', category: 'Holidays' },
-        { date: '2022-12-23', title: 'Vacations: Mary Smith', category: 'EmployeeVacations' },
+        { date: '2023-12-25', title: 'Christmas', category: 'Holidays' },
+        { date: '2023-12-23', title: 'Vacations: Mary Smith', category: 'EmployeeVacations' },
         ...
     ]
 ```
@@ -375,7 +382,7 @@ In this sample, the categories of the element _calendar_ are setted:
 In this sample, the date where the calendar will be positioned when is initialized is setted:
 
 ```JavaScript
-    this._metadata.elements.calendar.attributes.initialDate = '2020-01-06';
+    this._metadata.elements.calendar.attributes.initialDate = '2023-01-06';
 ```
 
 ### How to change the initial view of a calendar?
@@ -402,9 +409,9 @@ The following views are available:
 In this sample, the start and finish date is setted. Dates outside the range are blocked
 
 ```JavaScript
-    this._metadata.elements.calendar.attributes.startsAt = '2021-01-01';
+    this._metadata.elements.calendar.attributes.startsAt = '2023-01-01';
 
-    this._metadata.elements.calendar.attributes.finishesAt = '2021-12-31';
+    this._metadata.elements.calendar.attributes.finishesAt = '2023-12-31';
 ```
 
 ### How to execute an action when the view is changed?
@@ -433,7 +440,7 @@ In this sample, a function is added to the calendar metadata, in order to be exe
 
 ```JavaScript
     this._metadata.elements.calendar.onFormOpen = (line) => {
-        // your code here    
+        // your code here
     }
 ```
 
@@ -441,7 +448,7 @@ _Note: This function is only available when the Calendar is mapped and located o
 
 ### **Web Components**
 
-The Web Component instance will be available to interact with in the JS object and is identified by the name of the element. Due to the array of [supported browsers](https://docs.omnialowcode.com/omnia3_webapprequirements.html), the Javascript should be written in ES6 format.
+The Web Component instance will be available to interact with in the JS object and is identified by the name of the element. Due to the array of [supported browsers](omnia3_webapprequirements.html), the Javascript should be written in ES6 format.
 
 ### How to set a value of a Web Component's property?
 
@@ -553,19 +560,24 @@ In order to open an already created entity in a modal you must add a new `User I
 
 The following properties are available when declaring a new modal instance:
 
-| Value                | Type     | Required | Description                                                                                                                                                               |
-| -------------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 'disableCloseButton' | boolean  | no       | Be cautious when declaring this property because the modal might not close if you don't add the necessary code for it (explained below).                                  |
-| 'hideFooter'         | boolean  | no       | Be cautious when declaring this property because the modal will not have the default option to close. You should add the necessary code for closing it (explained below). |
-| 'hideHeader'         | boolean  | no       | Declare it if you intend to hide the title of the modal.                                                                                                                  |
-| 'id'                 | string   | no       | The unique identifier necessary to close the modal.                                                                                                                       |
-| 'name'               | string   | yes      | The name of the entity to open inside the modal.                                                                                                                          |
-| 'onClose'            | function | no       | A callback function the triggers after the modal is closed. It receives a `result` (string) value and an `args` (object). The default value of `result` is `Close`.       |
-| 'parameters'         | object   | no       | Any other information you wish to save inside the modal to use later.                                                                                                     |
-| 'formConfiguration'         | object   | no       | Optional configuration when opening a modal with a form.              |
-| 'size'               | string   | no       | There are four possible sizes: `small`, `medium`, `large` and `extra-large`. The default value is `extra-large`.                                                          |
-| 'title'              | string   | no       | The text that appear in modal's header. The default is the entity's `name`.                                                                                               |
-| 'type'               | string   | yes      | Identify the type of the entity. There are two possible types: `Dashboard` or `Form`.                                                                                 |
+| Value                       | Type     | Required | Description                                                                                                                                                               |
+| --------------------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 'disableCloseButton'        | boolean  | no       | Be cautious when declaring this property because the modal might not close if you don't add the necessary code for it (explained below).                                  |
+| 'hideFooter'                | boolean  | no       | Be cautious when declaring this property because the modal will not have the default option to close. You should add the necessary code for closing it (explained below). |
+| 'hideHeader'                | boolean  | no       | Declare it if you intend to hide the title of the modal.                                                                                                                  |
+| 'id'                        | string   | no       | The unique identifier necessary to close the modal.                                                                                                                       |
+| 'name'                      | string   | yes      | The name of the entity to open inside the modal.                                                                                                                          |
+| 'onClose'                   | function | no       | A callback function the triggers after the modal is closed. It receives a `result` (string) value and an `args` (object). The default value of `result` is `Close`.       |
+| 'parameters'                | object   | no       | Any other information you wish to save inside the modal to use later.                                                                                                     |
+| 'formConfiguration'         | object   | no       | Optional configuration when opening a modal with a form.                                                                                                                  |
+| 'listConfiguration'         | object   | no       | Optional configuration when opening a modal with a list.                                                                                                                  |
+| 'confirmationConfiguration' | object   | no       | Optional configuration when opening a confirmation modal.                                                                                                                 |
+| 'inputMessageConfiguration' | object   | no       | Optional configuration when opening a modal to input a message.                                                                                                           |
+| 'exportCSVConfiguration'    | object   | no       | Optional configuration when opening a modal to export a CSV.                                                                                                              |
+| 'pageConfiguration'         | object   | no       | Optional configuration when opening a modal with a page.                                                                                                                  |
+| 'size'                      | string   | no       | There are four possible sizes: `small`, `medium`, `large` and `extra-large`. The default value is `extra-large`.                                                          |
+| 'title'                     | string   | no       | The text that appear in modal's header. The default is the entities `name`.                                                                                               |
+| 'type'                      | string   | yes      | Identify the type of the entity. The following types are available: `Dashboard`, `Form`, `Page`, `List`, `Confirmation`, `InputMessage`, `ExportCSV`.                     |
 
 How to declare a modal:
 
@@ -594,11 +606,137 @@ How to declare a modal:
     }
 ```
 
-Finally, to open the modal use the following code:
+```JavaScript
+    //Modal to open a list
+    const modal = {
+        name: "SuppliersByCountryList",
+        type: "List",
+        listConfiguration: {
+            //The dataSource where the query will be executed. If not defined, "Default" is assumed as value.
+            dataSource: "Default",
+            //Query parameters. Optional
+            parameters: {
+                country: "Portugal"
+            },
+            //Filters to be applied. Optional
+            filters: {
+                _code: {
+                    operator: "Like",
+                    value: "ALCAD"
+                },
+                _inactive: {
+                    operator: "NotEqualTo",
+                    value: true
+                }
+            }
+        }
+    }
+```
+
+```JavaScript
+    //Modal to open a page
+    const modal = {
+        name: "SupplierPage",
+        type: "Page",
+        //optional
+        pageConfiguration: {
+            //Parameters to be sent on page url. Optional
+            urlParameters: {
+                code: "SOFRIO"
+            }
+        }
+    }
+```
+
+```JavaScript
+    //Modal that requests a confirmation from the user
+    const modal = {
+        name: "DeleteConfirmationModal",
+        type: "Confirmation",
+        confirmationConfiguration: {
+            //Message to be shown on modal. Optional
+            message: "Are you sure you want to delete the current Entity?",
+            //Type of confirmation button. Possible values: 'ok' or 'Delete'
+            buttonType: 'delete'
+        }
+    }
+```
+
+```JavaScript
+    //Modal that allows the user to input a text
+    const modal = {
+        name: "CommentInputMessageModal",
+        type: "InputMessage",
+        inputMessageConfiguration: {
+            //Message to be shown on modal as the input label. Optional
+            label: "Decision Comment:",
+            //Boolean to define if the text is required. Optional
+            require: false,
+            // The maximum length of the text input. Optional
+            maximumLength: 256
+        }
+    }
+```
+
+```JavaScript
+    //Modal to export a query to CSV
+    const modal = {
+        name: "SuppliersByCountryExportModal",
+        type: "ExportCSV",
+        exportCSVConfiguration: {
+            //The query whose data will be exported
+            query: "SuppliersByCountryQuery",
+            //The dataSource where the query will be executed. Optional, if not defined "Default" is assumed
+            dataSource: "Default",
+            //List of columns to be exported
+            columns:[
+                {
+                    property: "_code", 
+                    label: "Code"
+                },
+                {
+                    property: "_name", 
+                    label: "Name"
+                }
+            ],
+            //Query sorting by column. Optional
+            sorting: [
+                {
+                    property: "_code",
+                    direction: "Ascend"
+                }
+            ],
+            //Query parameters. Optional
+            parameters: {
+                country: "Portugal"
+            },
+            //Filters to be applied. Optional
+            filters: {
+                _code: {
+                    operator: "Like",
+                    value: "ALCAD"
+                },
+                _inactive: {
+                    operator: "NotEqualTo",
+                    value: true
+                }
+            }
+        }
+    }
+```
+
+To open the modal on a `Dashboard` or `Form` use the following code:
 
 ```JavaScript
     // The 'modal' argument is the constant you created with the properties above
     this._context.openModal(modal);
+```
+
+Finally, to open a modal on a `Page` use the following code:
+
+```JavaScript
+    // The 'modal' argument is the constant you created with the properties above
+    context.uiTools.openModal(modal);
 ```
 
 In this sample, there's an example of the `onClose` callback:
@@ -615,7 +753,7 @@ In this sample, there's an example of the `onClose` callback:
 
 ### How to close a Modal using its Identifier
 
-To close a modal on a specific behaviour you first need to declare the modal's `id` **during it's instantiation**. This way you're able to identify which modal you wish to close, because in the OMNIA Platform you can open multiple modals at once.
+To close a modal on a specific behaviour you first need to declare the modal's `id` **during its instantiation**. This way you're able to identify which modal you wish to close, because in the OMNIA Platform you can open multiple modals at once.
 
 So, before opening the modal on a `UI Behaviour`, we recommend to create a **Universally Unique Identifier (UUID)** to differ modals from each other and be _certain_ that identifier isn't used in another instance. For that, use the following Javascript code logic:
 
@@ -687,3 +825,14 @@ In this sample, it's verified if an entity is a modal or not:
     // This property is a boolean
     this._metadata.isModal;
 ```
+
+## 3. Screen Layout
+
+### Lists and Grid columns
+
+The **size** of elements represents the number of columns it covers on Lists or Grids (for example, on collections).
+To respect user's desktop screen resolution, there's a limit on Lists and Grids to three resolutions that changes the maximum number of columns the user can see without scrolling:
+
+- Window width **smaller** than `1366 pixels` (720p has a width of `1280px`) displays a maximum of **12** columns;
+- Window width **smaller** than `1920 pixels` (1080p) displays a maximum of **16** columns;
+- Window width **greater** than `1920 pixels` (1080p) displays a maximum of **20** columns;

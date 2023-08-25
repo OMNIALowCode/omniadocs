@@ -23,15 +23,21 @@ If you do not have a deployment yet, please view the instructions for [Deploying
 
 1. Start by opening your web browser, access your OMNIA Platform subscription with the url you've been given and ***sign in*** to your account, with your registration email and password, respectively.
 
-    ![OMNIA Sign in](/images/tutorials/tenantcreation/Application-Login.PNG)
+    <p align="center">
+        <img src="/images/tutorials/tenantcreation/Application-Login.PNG">
+    </p>
 
 2. Select the option ***Go to Tenants management*** on the inferior section of the menu.
 
-    ![Go To Tenants Management](/images/tutorials/tenantcreation/Application-Select-Tenant.PNG)
+    <p align="center">
+        <img src="/images/tutorials/tenantcreation/Application-Select-Tenant.PNG">
+    </p>
  
  3. Create a new ***Tenant***, by clicking the button ***Add new*** on the top right side, and setting its ***Code*** and ***Name***.
 
-    ![OMNIA Tenant Code](/images/tutorials/tenantcreation/Management-Create-Tenant.PNG)
+     <p align="center">
+        <img src="/images/tutorials/tenantcreation/Management-Create-Tenant.PNG">
+    </p>
     
     **Everything's ready** for your **first glimpse** into **OMNIA Platform**, with [**OMNIA's Beginner Tutorial**](omnia3_beginnertutorial.html).
 

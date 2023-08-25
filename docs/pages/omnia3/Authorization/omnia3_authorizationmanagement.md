@@ -21,7 +21,7 @@ By default, Omnia Platform has one role, named *Administration*. This role canno
 
 Additionally, when a tenant is created, two new roles are automatically created:
 
-- Administration[TenantCode]: administration role for the tenant. The user responsible for the tenant creation is automatically added to this role.
+- Administration[TenantCode]: administration role for the tenant. The user responsible for the tenant creation is automatically added to this role. Users with this role can access the Modeling area.
 - Users[TenantCode]: general users role for the tenant. Other tenant users should be added to this role, so that they have access to the tenant.
 
 If needed, new Roles can be created to grant a set of policies to a group of users.
@@ -72,9 +72,8 @@ If needed, new Roles can be created to grant a set of policies to a group of use
 
 ### Policies
 
-By default, each tenant has three policies:
+By default, each tenant has two policies:
 
-- **Model**: controls the access to the tenant modeling area;
 - **Security**: controls the access to the tenant security features (Users, Privileges and Roles);
 - **Application**: controls the access to the modeled entities CRUD operations.
 

@@ -15,11 +15,11 @@ The **OMNIA Connector** is the software that the OMNIA Platform uses to communic
 ![Connector architecture](images\connector.png){: .image-center}
 
 ## 2. Communication
-The Connector initiates a communication socket with the Platform servers. During the connection the connector is authenticated in the platform using the Id and Secret configured. 
+The Connector initiates a communication socket with the Platform servers. During the connection the connector is authenticated in the platform using the configured Id and Secret. 
 
 This way, the connector is treated by the security system as a user, enabling the platform administrator to manage the privileges to that connector user.
 
-Besides the authorization part, is highly recommended to configure the [OMNIA Platform to work with HTTPS](https://docs.omnialowcode.com/omnia3_deploymenttutorial.html#53-configure-https), in order to use a secure communication channel.
+Besides the authorization part, is highly recommended to configure the [OMNIA Platform to work with HTTPS](omnia3_deploymenttutorial.html#53-configure-https), in order to use a secure communication channel.
 
 ## 3. How behaviours works
 The **OMNIA Connector** shares the same behaviours engine as the **OMNIA Platform**. When the connector starts it'll launch a **Behaviours Manager** process. The manager is responsible for locating and launching the required **Behaviours Servers**. The server, aside from the execution of the desired behaviours, is also responsible for their compilation.

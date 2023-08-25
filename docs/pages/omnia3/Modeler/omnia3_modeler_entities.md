@@ -1,5 +1,5 @@
 ---
-title: Modeling Entities (Structure)
+title: Modeling Entities Structure
 keywords: modeler lowcode entities web applications
 summary: "Find out how to Structure your applications by Modeling its Entities using the OMNIA Platform's Modeler."
 sidebar: omnia3_sidebar
@@ -26,11 +26,11 @@ The base type adds some specifications to the modeled entity, such as:
 
 ### How to add a new entity?
 
-First, the base concept must be selected on the modeling area menu. Then, select the option _Add new_ and define the following properties:
+First, the base concept must be selected from inside the modeling area menu **Business** option. Then, select the option _Add new_ and define the following properties:
 
 * **Name**: the name of the entity (needs to be unique within the model);
 * **Description**: the textual explanation of the entities' purpose (can be used as development documentation);
-* **Uses a custom data source?**: indicates if the attribute is entirely managed on OMNIA, or resides on an external data source;
+* **Data source**: indicates if the attribute is entirely managed on OMNIA, or resides on an external data source. Its value defaults to _System_, the internal data source;
 
 On Commitments or Events, the following properties are required:
 
@@ -59,7 +59,7 @@ Selecting the option _Add new_ you need to first select one of four types of att
 * **Reference**: A reference to another entity on the platform;
 * **Collection**: Another entity that will act as a 'sub-entity' of this one. Must be of a compatible type: Events or Commitments in a Document, Commitment or Event, and Generic Entities (only those marked as non-root) in any entity type.
 
-Afterwards, you must fill the following information (not all the fields apply to all attribute types):
+Afterwards, you must fill the following information (not all fields apply to all attribute types):
 * **Name**: the name of the attribute (needs to be unique inside the entity);
 * **Description**: the textual explanation of the attribute's purpose (can be used as development documentation);
 * **Type**: the attribute's data type. Possible values depend on whether we are in a Primitive, an Enumeration, a Reference or a Collection;
@@ -85,12 +85,12 @@ Picking the attribute you want to remove, select the option **Delete** and confi
 
 Nested Collections are a simple feature that allow to add a collection as an attribute of another collections.
 
-There are three collection concepts that will now be able to be have other collections as an attribute:
+There are three collection types that can have other collections as an attribute:
 * Events;
 * Commitments;
 * Generic Entities.
 
-In the User Interface, these collection will be represented as Nested Grids.
+In the User Interface, these collections will be represented as Nested Grids.
 
 ### How many levels is possible to have?
 3 levels deep. 

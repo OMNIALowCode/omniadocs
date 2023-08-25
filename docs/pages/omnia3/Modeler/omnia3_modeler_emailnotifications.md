@@ -17,7 +17,7 @@ Besides that, the Platform lets you take advantage of modeled [Text Templates](/
 ## 2. Using Email Notifications
 
 To send email notifications in the context of your applications, OMNIA has an API endpoint available in the context of your application.
-This endpoint can be used in the context of your behaviours for example.
+This endpoint can be used in your behaviours for example.
 
 ### How to send an email using OMNIA?
 
@@ -33,7 +33,7 @@ The Subject and Body can be composed using a given text or using a Text Template
 The accelerator _"Send an e-mail using a Text Template"_ is available in After Save Behaviours. This accelerator helps you to easily compose a request to send an email using Text Templates. To render the Text Template, the accelerator will us the current Entity as input data to the Template.
 
 
-```c#
+```C#
 
 var httpClient = _Context.CreateApplicationHttpClient();
 

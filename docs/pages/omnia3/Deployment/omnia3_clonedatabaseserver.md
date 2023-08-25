@@ -9,7 +9,7 @@ folder: omnia3
 
 ## Prerequisites
 
-- PostgreSQL server must be installed on the machine where the process is being executed  ([PostgreSQL download page](https://www.postgresql.org/download))
+- PostgreSQL server must be installed on the machine where the process is being executed  ([PostgreSQL download page](https://www.postgresql.org/download){:target="\_blank"})
 
 - Access to origin and destination server must be granted
 
@@ -18,7 +18,7 @@ folder: omnia3
 
 The following steps must be executed on command line:
 
-- Use [pg_dumpall](https://www.postgresql.org/docs/10/app-pg-dumpall.html) utility to export origin server. The following command options must be considered:
+- Use [pg_dumpall](https://www.postgresql.org/docs/10/app-pg-dumpall.html){:target="\_blank"} utility to export origin server. The following command options must be considered:
   - -h: Server endpoint
   - -U: Server username
   - -f: Destination file
@@ -28,7 +28,7 @@ The following steps must be executed on command line:
 pg_dumpall.exe -h myOriginHostname -U myServerUser -f myDestinationFile.sql -W -v
 ```
 
-- To import to the destination server use [psql](https://www.postgresql.org/docs/10/app-psql.html) command. The following command options must be considered:
+- To import to the destination server use [psql](https://www.postgresql.org/docs/10/app-psql.html){:target="\_blank"} command. The following command options must be considered:
 
   - -f: Destination file
   - -h: Server endpoint
@@ -48,8 +48,10 @@ pg_dumpall.exe -h myOriginHostname -U myServerUser -f myDestinationFile.sql -W -
    ```sql
    UPDATE tenants.environments SET server = 'myDestinationHostname'
    ```
-  - (Optional) If your destination server is an Azure Postgres Server, to comply with Azure username requirements (user@servername):
+  - (Optional) If your destination server is an Azure Postgres Single Server, to comply with Azure username requirements (user@servername):
 
      ```sql
      UPDATE tenants.environments SET username = REPLACE(username, 'originServername', 'newServername'), business_read_username = REPLACE(business_read_username, 'originServername', 'newServername')
      ```
+
+     This step does not apply to Azure Postgres Flexible Server.

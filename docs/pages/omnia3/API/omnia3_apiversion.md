@@ -25,9 +25,10 @@ The Platform version is incremented in new releases, and it can be retrieved by 
 
 The response will be a JSON object with the following structure:
 
-```
+```JSON
 {
-  "version": "1.0.96"
+  "version":"3.5.173",
+  "connectorProtocolVersion":"3.0.243"
 }
 ```
 
@@ -41,7 +42,7 @@ Model version is incremented in each build, and can be retrieved by making an HT
 
 The response will be a JSON object with the following structure:
 
-```
+```JSON
 [
   {
     "date": "2018-07-01T14:00:01.9814483Z",

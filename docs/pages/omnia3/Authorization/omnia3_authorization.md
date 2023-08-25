@@ -22,4 +22,4 @@ The **OMNIA Platform** authorization uses a policy-based model. This policy-base
 
 ## 3. Authorization management in the **OMNIA Platform**
 
-Authorization management is explained on the [Authorization Management](https://docs.omnialowcode.com/omnia3_authorizationmanagement.html) article.
+Authorization management is explained on the [Authorization Management](omnia3_authorizationmanagement.html) article.

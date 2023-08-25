@@ -1,7 +1,7 @@
 ---
 title: Connector Tutorial
 keywords: omnia3
-summary: 'Create and configure a new connector to use an on-premise CSV File as a data source'
+summary: "Create and configure a new connector to use an on-premise CSV File as a data source"
 sidebar: omnia3_sidebar
 permalink: omnia3_connectortutorial.html
 folder: omnia3
@@ -27,213 +27,212 @@ Please download this [TransportationServices.csv](/images/tutorials/connector/Tr
 
 ## 3. Create a new connector
 
-**1.** Start by accessing the management area, by clicking the option "Go to Tenants management".
+1. Start by accessing the management area, by clicking the option "Go to Tenants management" on the tenant selection page or, by selecting the "Management" option on the right side of a tenant top bar.
 
-**2.** Through the left side menu, create a new connector by accessing the option **_Connectors / Add new_**. Set its Code and Name as "CSVConnector"
+2. Through the left side menu, create a new connector by accessing the option **_Connectors / Add new_**. Set its Code and Name as "CSVConnector".
 
-**3.** Select the connector, and a modal with connector data should be shown.
+    Right after creating the connector, a modal with its data should be shown. Copy the **Client Username**, **Client ID** and **Client Secret** to use later when configuring the Connector.
 
-![CSVConnector](/images/tutorials/connector/CSVConnector.jpg)
+    <p align="center">
+        <img src="/images/tutorials/connector/CSVConnector.jpg">
+    </p>
 
-**4.** Now we are going to grant the connector access privileges for the tenant. Access the option **_Security / Roles_**, and select Administration role for the tenant (the tenant code with prefix "Administration")
+3. Now we are going to grant the connector access privileges for the tenant. Access the option **_Security / Roles_**, and select Administration role for the tenant (composed by the tenant code with prefix "Administration". E.g. AdministrationDemoTenant)
 
-**5.** Click the button **_Add new_** to grant the connector user access to the tenant. The user can be retrieved on step 3, property "Client Username"
+4. Click the button **_Add new_** to grant the connector user access to the tenant. The user can be retrieved on step 2, property "Client Username". If you didn't copy the username in that moment, select the connector on the list to access that information. 
 
-**6.** Now use these configurations to configure a connector on your local machine (or a Windows VM), following the [installation guide](omnia3_connector_install.html) and [configuration guide](omnia3_connector_configuration.html).
+5. Now use these configurations to configure a connector on your local machine (or a Windows VM), following the [installation guide](omnia3_connector_install.html) and [configuration guide](omnia3_connector_configuration.html).
 
-**7.** Start the configured connector.
+6. Start the configured connector.
 
 ## 4. CRUD operations
 
-**1.** Access OMNIA homepage, select the tenant where you are going to model and you will be redirected to the modeling area.
+1. Access OMNIA homepage, select the tenant where you are going to model and you will be redirected to the modeling area.
 
-**2.** Through the left side menu, create a new Data Source by accessing the option **_Data Sources_** then, **_Add new_** (blue button, top right side). Set its Name as "_CSVSource_", Behaviour Runtime and Data Access Runtime as _"External"_.
+2. Through the left side menu, create a new Data Source by accessing the option **_Business / Data Sources_** then, **_Add new_** (button on the top right side). Set its Name as "_CSVSource_", Behaviour Runtime and Data Access Runtime as _"External"_.
 
-![Modeler create DataSource](/images/tutorials/connector/Modeler-Create-DataSource.PNG)
+   ![Modeler create DataSource](/images/tutorials/connector/modeler-create-datasource.jpg)
 
-**3.** Create a new **Agent** with name **_Transportation_**, and set it as using the external data source **_CSVSource_**, created on the previous.
+3. Create a new **Agent** with name **_Transportation_**, and set it as using the external data source **_CSVSource_**, created on the previous step.
 
-![Modeler create Agent](/images/tutorials/connector/Modeler-Create-Agent.PNG)
+   ![Modeler create Agent](/images/tutorials/connector/modeler-create-agent.jpg)
 
-**4.** Navigate to tab _"[Data Behaviours](omnia3_modeler_datasources.html)"_, and define a behaviour to be executed on _"ReadList"_. This behaviour will be used for Query and List requests for this entity.
+4. Navigate to tab _"[Data Behaviours](omnia3_modeler_datasources.html)"_, and define the behaviour code to be executed on _"ReadList"_. This behaviour will be used for Query and List requests for this entity.
 
-Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
+    Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
 
-Copy and paste the following code:
+    Copy and paste the following code:
 
-```C#
+    ```C#
 
-List<IDictionary<string, object>> listData = new List<IDictionary<string, object>>();
+    List<IDictionary<string, object>> listData = new List<IDictionary<string, object>>();
 
-string filePath = @"filePath\TransportationServices.csv";
-char csvSplitChar = ';';
+    string filePath = @"filePath\TransportationServices.csv";
+    char csvSplitChar = ';';
 
-int numberOfRecords = 0;
-using (var reader = new System.IO.StreamReader(filePath))
-{
-while (!reader.EndOfStream)
-	{
-	var line = reader.ReadLine();
-	var values = line.Split(csvSplitChar);
-	Dictionary<string, object> transportationData = new Dictionary<string, object>();
-		if (values.Length > 1)
-		{
-		transportationData.Add("_code", values[0]);
-		transportationData.Add("_name", values[1]);
-		numberOfRecords++;
-		listData.Add(transportationData);
-		}
-	}
-}
+    int numberOfRecords = 0;
+    using (var reader = new System.IO.StreamReader(filePath))
+    {
+    	while (!reader.EndOfStream)
+    	{
+    		var line = reader.ReadLine();
+    		var values = line.Split(csvSplitChar);
+    		Dictionary<string, object> transportationData = new Dictionary<string, object>();
+    		if (values.Length > 1)
+    		{
+    			transportationData.Add("_code", values[0]);
+    			transportationData.Add("_name", values[1]);
+    			numberOfRecords++;
+    			listData.Add(transportationData);
+    		}
+    	}
+    }
 
-return (numberOfRecords, listData);
-```
+    return (numberOfRecords, listData);
+    ```
 
-**5.** Create a new **Data Behaviour** for the operation _"Read"_, so that data is retrieved when you wish to select a Transportation Service for your order.
+5. Set the code for the _"Read"_ **Data Behaviour**, so that data is retrieved when you wish to select a Transportation Service for your order.
 
-Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
+    Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
 
-Copy and paste the following code:
+    Copy and paste the following code:
 
-```C#
-string filePath = @"filePath\TransportationServices.csv";
-char csvSplitChar = ';';
+    ```C#
+    string filePath = @"filePath\TransportationServices.csv";
+    char csvSplitChar = ';';
 
-TransportationDto transportation = new TransportationDto();
-using (var reader = new System.IO.StreamReader(filePath))
-{
-while (!reader.EndOfStream)
-{
-     	var line = reader.ReadLine();
-     	var values = line.Split(csvSplitChar);
-     	var valuesLen = values.Length;
-     	if (values[0].Equals(identifier, System.StringComparison.InvariantCultureIgnoreCase)) {
-       	transportation._code = values[0];
-        	transportation._name = values[1];
-     	}
-}
-}
+    TransportationDto transportation = new TransportationDto();
+    using (var reader = new System.IO.StreamReader(filePath))
+    {
+    	while (!reader.EndOfStream)
+    	{
+    		var line = reader.ReadLine();
+    		var values = line.Split(csvSplitChar);
+    		var valuesLen = values.Length;
+    		if (values[0].Equals(identifier, System.StringComparison.InvariantCultureIgnoreCase))
+    		{
+    			transportation._code = values[0];
+    			transportation._name = values[1];
+    		}
+    	}
+    }
 
-return transportation;
-```
+    return transportation;
+    ```
 
-**6.** On _"Data Behaviours"_ of Agent Transportation, define a behaviour, to be executed on _"Update"_ (when a Transportation Service is updated on OMNIA).
+6. Set the code for the _"Update"_ **Data Behaviour** (when a Transportation Service is updated on OMNIA).
 
-Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
+    Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
 
-Copy and paste the following code:
+    Copy and paste the following code:
 
-```C#
-TransportationDto transportation = new TransportationDto();
-string fileContent = "";
-string filePath = @"filePath\TransportationServices.csv";
-char csvSplitChar = ';';
-string transportationDetails = $"{dto._code}{csvSplitChar}{dto._name}{csvSplitChar}";
+    ```C#
+    TransportationDto transportation = new TransportationDto();
+    string fileContent = "";
+    string filePath = @"filePath\TransportationServices.csv";
+    char csvSplitChar = ';';
+    string transportationDetails = $"{dto._code}{csvSplitChar}{dto._name}{csvSplitChar}";
 
-using (var reader = new System.IO.StreamReader(filePath))
-{
- while (!reader.EndOfStream)
-{
-	 var line = reader.ReadLine();
-	 var values = line.Split(csvSplitChar);
-	 var valuesLen = values.Length;
-	 if (!values[0].Equals(identifier, System.StringComparison.InvariantCultureIgnoreCase)) {
-	     fileContent+= "\n"+line;
-	 }else{
-	     fileContent+= "\n"+transportationDetails;
-	 }
-   }
-}
+    using (var reader = new System.IO.StreamReader(filePath))
+    {
+    	while (!reader.EndOfStream)
+    	{
+    		var line = reader.ReadLine();
+    		var values = line.Split(csvSplitChar);
+    		var valuesLen = values.Length;
+    		if (!values[0].Equals(identifier, System.StringComparison.InvariantCultureIgnoreCase))
+    			fileContent+= "\n"+line;
+    		else
+    			fileContent+= "\n"+transportationDetails;
+    	}
+    }
 
-System.IO.File.WriteAllText(filePath, fileContent);
+    System.IO.File.WriteAllText(filePath, fileContent);
 
-return transportation;
-```
+    return transportation;
+    ```
 
-**7.** On _"Data Behaviours"_ of Agent Transportation, define a behaviour, to be executed on _"Create"_ (when a Transportation Service is updated on OMNIA).
+7. Set the code for the _"Create"_ **Data Behaviour** (when a new Transportation Service is created on OMNIA).
 
-Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
+    Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
 
-Copy and paste the following code:
+    Copy and paste the following code:
 
-```C#
-string filePath = @"filePath\TransportationServices.csv";
-char csvSplitChar = ';';
-string transportationDetails = $"\n{dto._code}{csvSplitChar}{dto._name}{csvSplitChar}";
+    ```C#
+    string filePath = @"filePath\TransportationServices.csv";
+    char csvSplitChar = ';';
+    string transportationDetails = $"\n{dto._code}{csvSplitChar}{dto._name}{csvSplitChar}";
 
-if (System.IO.File.Exists(filePath))
-{
-	System.IO.File.AppendAllText(filePath, transportationDetails);
-}
+    if (System.IO.File.Exists(filePath))
+    	System.IO.File.AppendAllText(filePath, transportationDetails);
 
-return dto;
-```
+    return dto;
+    ```
 
-**8.** On _"Data Behaviours"_ of Agent Transportation, define a behaviour, to be executed on _"Delete"_ (when a Transportation Service is deleted on OMNIA).
+8. Set the code for the _"Delete"_ **Data Behaviour** (when a Transportation Service is deleted on OMNIA).
 
-Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
+    Remember to **change** the variable **`filePath`** and **`csvSplitChar`** with your csv file full path and the character configured as the CSV column delimiter.
 
-Copy and paste the following code:
+    Copy and paste the following code:
 
-```C#
-TransportationDto transportation = new TransportationDto();
-string fileContent = "";
-string filePath = @"filePath\TransportationServices.csv";
-char csvSplitChar = ';';
+    ```C#
+    TransportationDto transportation = new TransportationDto();
+    string fileContent = "";
+    string filePath = @"filePath\TransportationServices.csv";
+    char csvSplitChar = ';';
 
-using (var reader = new System.IO.StreamReader(filePath))
-{
-  while (!reader.EndOfStream)
-  {
-  var line = reader.ReadLine();
-  var values = line.Split(csvSplitChar);
-  var valuesLen = values.Length;
-	 if (!values[0].Equals(identifier, System.StringComparison.InvariantCultureIgnoreCase)) {
-	     fileContent+= "\n"+line;
-	 }
-   }
-}
+    using (var reader = new System.IO.StreamReader(filePath))
+    {
+    	while (!reader.EndOfStream)
+    	{
+    		var line = reader.ReadLine();
+    		var values = line.Split(csvSplitChar);
+    		var valuesLen = values.Length;
+    		if (!values[0].Equals(identifier, System.StringComparison.InvariantCultureIgnoreCase))
+    			fileContent+= "\n"+line;
+    	}
+    }
 
-System.IO.File.WriteAllText(filePath, fileContent);
+    System.IO.File.WriteAllText(filePath, fileContent);
 
- return true;
-```
+    return true;
+    ```
 
-**9.** Build & Deploy model
+9. Build & Deploy model
 
-**10.** Go to the Application area.
+10. Go to the Application area.
 
-**11.** Create a new instance of the CSVSource data source, with code _"LOCAL"_ and with the Code of the Connector (CSVConnector) that you have created.
+11. Create a new instance of the CSVSource data source, with code _"LOCAL"_ and with the Code of the Connector (CSVConnector) that you have created.
 
-**12.** On left side menu, navigate to _Configurations / Transportation_, identify the CSVSource data source instance (LOCAL) and check that the list is filled with data retrieved from CSVSource.
+12. On left side menu, navigate to _Configurations / Transportation_, identify the CSVSource data source instance (LOCAL) and check that the list is filled with data retrieved from CSVSource.
 
-**13.** Now you can list and update your transportation services directly on your on-premise system, providing your connector is correctly configured and running.
+13. Now you can list and update your transportation services directly on your on-premise system, providing your connector is correctly configured and running.
 
 ## 5. Add Transportation option to Purchase Document
 
-**1.** Add a new _Agent_: - _Name_: "**Transportation**" - _Uses a custom data source?_: **Yes**. "CSVSource"
+1. Go to your Purchase Order Document and add two new **_Reference_** attributes:
+   1.1 One reference to which (transportation) list we are going to read from:
 
-**2.** Go to your Purchase Document and add two new **_Reference_** attributes:
-**2.1.** One reference to which (transportation) list we are going to read from:
+   - Name: "**TransportationList**"
+   - Type: _Data Source > CSVSource_
 
-- Name: "**TransportationList**"
-- Type: _Data Source > CSVSource_
+   1.2 One reference to the elements of the selected list:
 
-**2.2.** One reference to the elements of the selected list:
+   - Name: "**Transportation**"
+   - Type: "_Agent > Transportation_"
+   - _Uses data source from attribute_: TransportationList
 
-- Name: "**Transportation**"
-- Type: "_Agent > Transportation_"
-- _Uses data source from attribute_: TransportationList
-
-**3.** Let's adjust the UI of our newly created elements, so that they fit visually in our Purchase Document. Visit the "User Interface" tab, select the element and change it's UI values to:
+2. Let's adjust the UI of our newly created elements, so that they fit visually in our Purchase Order Document. Edit the **PurchaseOrderForm** using the option **_User Interface / Forms_**, select the element and change it's UI values to:
 
 Element: "**Transportation List**"
 
 - **Row**: 3
-- **Column**: 3
+- **Column**: 9
 - **Size**: 2
 
-![ConnectorTutorial_ElementUI_values](/images/tutorials/connector/ConnectorTutorial_Element_UI.PNG)
+    <p align="center">
+        <img src="/images/tutorials/connector/ConnectorTutorial_Element_UI.PNG">
+    </p>
 
 Element: "**Transportation**"
 
@@ -241,7 +240,8 @@ Element: "**Transportation**"
 - **Column**: 4
 - **Size**: 2
 
-![ConnectorTutorial_PurchaseDocumentEndOfTutorial](</images/tutorials/connector/PurchaseDocument(endOfConnectorTutorial).jpg>) (if your UI doesn't match this one, don't worry, you've just skipped one or more tutorials along the way)
+  ![ConnectorTutorial_PurchaseDocumentEndOfTutorial](/images/tutorials/connector/tutorial_result.jpg) (if your UI doesn't match this one, don't worry, you've just skipped one or more tutorials along the way)
+
 That's it! Your Purchase Document now reads directly from a specific Data Source, and simulates the integration of a delivery system selection option alongside your order.
 
 Go to [**Advanced Connector Tutorial**](omnia3_multisystemconnectortutorial.html).
