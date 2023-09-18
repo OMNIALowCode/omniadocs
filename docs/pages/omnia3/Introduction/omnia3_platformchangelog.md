@@ -10,6 +10,19 @@ toc: false
 
 Visit our [Downloads](/omnia3_downloads.html#platform) page to get the latest version.
 
+## [3.5.203](#3.5.203)
+Release Date: 2023-09-13
+
+### Implemented enhancements:
+- Calendars: Replaced mouse over text with a styled tooltip
+- Operation Results: Improve and translate toaster texts
+- Modeler: Menu entries are now sorted alphabetically
+
+### Issues: 
+- Calendar: Switching to another calendar view not working on first attempt
+- Javascript files syntax highlight not working on browser console
+- Query Modeling: Boolean values are not shown on query result preview
+
 ## [3.5.187](#3.5.187)
 Release Date: 2023-08-25
 
