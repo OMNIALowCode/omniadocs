@@ -47,6 +47,10 @@ A non-root entity contains data behaviours, that are expected only on root entit
 
 An attribute whose data is located on a external system must have, on its configuration, a reference to an attribute that contains the instance of the external system to be queried. 
 
+- Query with identifier "_MyQuery_" doesn't exist.
+
+The list is based on a query that no longer exists. The list must be edited to reference another query (or removed if not in use).
+
 #### Warnings
 
 - queryTableDefinition attribute is required
