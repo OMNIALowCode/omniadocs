@@ -10,7 +10,7 @@ folder: omnia3
 
 ## 1. Introduction
 
-OMNIA let's configure multiple authentication providers, allowing you to deliver a better authentication experience to the end-users.
+On OMNIA Platform we can configure multiple authentication providers, allowing you to deliver a better authentication experience to the end-users.
 
 This feature enables you to provide a single sign-on experience in organizations with AD FS and Authorization with external authorization providers like Google or Microsoft.
 

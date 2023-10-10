@@ -20,7 +20,11 @@ Tenants may be categorized as **production**, in which case they require fiscal 
 
 By accessing **_Tenants_** in the sidebar, you will have access to the tenant management screen.
 
-Here you can **Add new** tenants, identifying their **Code** (shown in URLs), a human-readable **Name**, and their production information.
+Here you can **Add new** tenants, manage the existing ones, and reset credentials for the default tenant database user.
+
+### 2.1. Add a new Tenant
+
+To add a new Tenant, we must identify their **Code** (shown in URLs), define a human-readable **Name**, and their production information.
 
 Upon creating a tenant, some security information will automatically be created:
 - An Administration[TenantCode] role, with your current user added to it;
