@@ -31,12 +31,6 @@ Upon creating a tenant, some security information will automatically be created:
 - A Tenant[TenantCode] policy, with a default permission of "ALL"; with the previous role associated.
 - Inside the tenant, the default application roles and policies.
 
-### 2.2. Reset the Tenant database user password
-
-To ensure an additional level of security, each tenant comunicates with the OMNIA Platform database using its own database user. These users are automatically managed by the platform.
-
-If needed, their credentials can be reset by accessing the option **Reset Passwords** on the Tenants list. This option will reset the passwords for all tenants, and requires by a Platform restart.
-
 ## 3. Roles and Policies
 
 In the management section, it is possible to configure Roles and Policies. For more details on these, please see [the description of how authorization works](omnia3_authorization.html), as well as [the language definitions](omnia3_languages_SML.html).
