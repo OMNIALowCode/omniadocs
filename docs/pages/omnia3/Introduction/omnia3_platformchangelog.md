@@ -16,7 +16,7 @@ Release Date: 2023-10-10
 ### Implemented enhancements:
 - Redesign Application Behaviours modeling page
 - Duplicate entities on Modeling
-      - It is now posible to duplicate Queries, Lists, Dashboards, Themes, Text Templates and Pages
+    - It is now posible to duplicate Queries, Lists, Dashboards, Themes, Text Templates and Pages
 - Query Editor: When generating a list automatically, the modeler can now set the new list name
 - Management: Reset all Tenant database users password
 - Runtime Logs accessible on Management area

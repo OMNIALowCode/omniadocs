@@ -20,12 +20,22 @@ Tenants may be categorized as **production**, in which case they require fiscal 
 
 By accessing **_Tenants_** in the sidebar, you will have access to the tenant management screen.
 
-Here you can **Add new** tenants, identifying their **Code** (shown in URLs), a human-readable **Name**, and their production information.
+Here you can **Add new** tenants, manage the existing ones, and reset credentials for the default tenant database user.
+
+### 2.1. Add a new Tenant
+
+To add a new Tenant, we must identify their **Code** (shown in URLs), define a human-readable **Name**, and their production information.
 
 Upon creating a tenant, some security information will automatically be created:
 - An Administration[TenantCode] role, with your current user added to it;
 - A Tenant[TenantCode] policy, with a default permission of "ALL"; with the previous role associated.
 - Inside the tenant, the default application roles and policies.
+
+### 2.2. Reset the Tenant database user password
+
+To ensure an additional level of security, each tenant comunicates with the OMNIA Platform database using its own database user. These users are automatically managed by the platform.
+
+If needed, their credentials can be reset by accessing the option **Reset Passwords** on the Tenants list. This option will reset the passwords for all tenants, and requires by a Platform restart.
 
 ## 3. Roles and Policies
 

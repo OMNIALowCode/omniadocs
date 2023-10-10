@@ -168,6 +168,10 @@ entries:
             url: /omnia3_management_api_clients.html
             output: web, pdf
 
+          - title: Runtime Logs
+            url: /omnia3_management_runtime_logs.html
+            output: web, pdf
+
       - title: Modeler
         output: web, pdf
         
