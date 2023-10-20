@@ -7,8 +7,6 @@ permalink: omnia3_downloads.html
 folder: omnia3
 ---
 
-## Platform
-
 ## Connector
 
 ### x86

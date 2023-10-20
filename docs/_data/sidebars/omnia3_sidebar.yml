@@ -36,7 +36,7 @@ entries:
           - title: Requirements
             url: /omnia3_webapprequirements.html
             output: web, pdf
-            
+
           - title: Platform Changelog
             url: /omnia3_platformchangelog.html
             output: web, pdf
@@ -74,25 +74,6 @@ entries:
 
           - title: Model Deployment
             url: /omnia3_modeldeployment.html
-            output: web, pdf
-
-      - title: Deployment
-        output: web, pdf
-        folderitems:
-          - title: Platform Deployment
-            url: /omnia3_deploymenttutorial.html
-            output: web, pdf
-
-          - title: Infrastructure Requirements
-            url: /omnia3_deploymentrequirements.html
-            output: web, pdf
-
-          - title: Secret Manager Setup
-            url: /omnia3_secretmanager.html
-            output: web, pdf
-
-          - title: FAQ
-            url: /omnia3_deploymentfaq.html
             output: web, pdf
 
       - title: Tutorials
@@ -174,7 +155,7 @@ entries:
 
       - title: Modeler
         output: web, pdf
-        
+
         folderitems:
           - title: Introduction
             url: /omnia3_modeler_introduction.html
@@ -183,7 +164,7 @@ entries:
           - title: Modeling Lifecycle
             url: /omnia3_modeler_lifecycle.html
             output: web, pdf
-            
+
             subfolders:
               - title: Business
                 output: web
@@ -191,15 +172,15 @@ entries:
                   - title: Modeling Entities Structure
                     url: /omnia3_modeler_entities.html
                     output: web, pdf
-    
+
                   - title: Modeling Enumerations
                     url: /omnia3_modeler_enumerations.html
                     output: web, pdf
-                    
+
                   - title: Behaviours
                     url: /omnia3_modeler_behaviours.html
                     output: web, pdf
-        
+
                   - title: State Machines
                     url: /omnia3_modeler_statemachines.html
                     output: web, pdf
@@ -207,7 +188,7 @@ entries:
                   - title: Data Sources and Data Behaviours
                     url: /omnia3_modeler_datasources.html
                     output: web, pdf
-        
+
                   - title: Behaviour Dependencies
                     url: /omnia3_modeler_dependencies.html
                     output: web, pdf
@@ -222,7 +203,7 @@ entries:
                   - title: Modeling Entities
                     url: /omnia3_modeler_entities_ui.html
                     output: web, pdf
-        
+
                   - title: User Interface Behaviours
                     url: /omnia3_modeler_uibehaviours.html
                     output: web, pdf
@@ -230,7 +211,7 @@ entries:
                   - title: Web Components
                     url: /omnia3_modeler_webcomponents.html
                     output: web, pdf
-        
+
                   - title: Menu
                     url: /omnia3_modeler_menu.html
                     output: web, pdf
@@ -242,7 +223,7 @@ entries:
                   - title: Languages
                     url: /omnia3_modeler_languages.html
                     output: web, pdf
-        
+
                   - title: Text Templates
                     url: /omnia3_modeler_texttemplates.html
                     output: web, pdf
@@ -281,18 +262,18 @@ entries:
                   - title: Queries
                     url: /omnia3_modeler_queries.html
                     output: web, pdf
-                    
+
               - title: Development
                 output: web
                 subfolderitems:
                   - title: Best Practices
                     url: /omnia3_modeler_bestpractices.html
                     output: web, pdf
-        
+
                   - title: Developing and Debugging
                     url: /omnia3_modeler_developingbehaviours.html
                     output: web, pdf
-        
+
                   - title: Development Environment
                     url: /omnia3_modeler_developmentenvironment.html
                     output: web, pdf
