@@ -41,6 +41,10 @@ entries:
             url: /omnia3_platformchangelog.html
             output: web, pdf
 
+          - title: Connector Changelog
+            url: /omnia3_connectorchangelog.html
+            output: web, pdf
+
       - title: Getting Started
         output: web, pdf
         folderitems:

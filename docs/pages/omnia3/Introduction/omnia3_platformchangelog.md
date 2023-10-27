@@ -8,6 +8,38 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.233](#3.5.233)
+
+Release Date: 2023-10-27
+
+### Implemented enhancements:
+
+- When there are new platform versions available, users are notified on Management and Modeling areas
+- Addition of links to navigate to reference entities on Modeling area lists
+- Queries/Lists: New filters on text columns (EndsWith, NotEndsWith, NotEqualTo, StartWith, NotStartsWith)
+- Read-only mode on forms: When user has _Read_ privileges only (no _Write_ privilege), the entity is now shown in read-only mode
+- Improve User Experience on Calendars:
+  - _See all_ label replaced with an icon
+  - Mobile devices
+    - When a day has events, it is possible to see the list of events on a modal
+    - When there are multiple events on a single day, a ellipsis is shown to indicate that there are events not visible
+    - On scheduler view, a tooltip is shown when category label is clicked
+
+### Issues:
+
+- UI: Occasionally icons are not loaded correctly
+- Error executing a Text Template when there are duplicated translations
+- Standardize toasts shown when duplicating a entity on Modeling area
+- Unused CRUD privileges are being generated for non-root entities
+- On a Dashboard Modeling, if a list does not have a value for _isEditable_ attribute, editable list properties are shown
+- Mobile Devices:
+  - When creating or editing an entity, the breadcrumb state machine title overlaps the first attribute label
+  - On Calendars, the label that contains the visible period changes position according to its size 
+
+**This version contains breaking changes.**
+**Upgrade to OMNIA Connector is required.**
+**Compatible with Connectors that use the Connector Protocol Version 3.1**
+
 ## [3.5.217](#3.5.217)
 
 Release Date: 2023-10-10
