@@ -14,7 +14,6 @@ Release Date: 2023-11-27
 
 ### Implemented enhancements:
 
-- Improve and standardize _tab_ behaviour on pages with password inputs (Login, Reset Password, Forgot Password)
 - Management: Add filters and sorting to Language and Tenant lists
 - Identity and Tenant selection pages can be translated to platform languages
 - UI: When a Exception is thrown on a Entity Behaviour, the temporary is recovered to its previous state
