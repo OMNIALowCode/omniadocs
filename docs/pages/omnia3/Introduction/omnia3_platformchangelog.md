@@ -16,7 +16,7 @@ Release Date: 2023-11-27
 
 - Management: Add filters and sorting to Language and Tenant lists
 - Identity and Tenant selection pages can be translated to platform languages
-- UI: When a Exception is thrown on a Entity Behaviour, the temporary is recovered to its previous state
+- UI: When an Exception is thrown on a Entity Behaviour, the temporary is recovered to its previous state
 - Platform Settings: new area to customize the platform Images (Background, Logo and Favicon) and page title
 
 ### Issues:
