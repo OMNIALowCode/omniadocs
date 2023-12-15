@@ -289,6 +289,53 @@ Example: enable it when a given element changes its value and a HTTP request is 
     this._metadata.attributes.isLoading = false;
 ```
 
+### How to show a toast message?
+
+A toast with the same look as the ones used by the platform can be launched with custom messages
+
+Example on how to show a toast with a custom message
+
+
+```JavaScript
+
+    /*Parameters:
+        Style. Possible values: INFO, SUCCESS, WARNING, ERROR 
+        Title
+        Message
+        [Optional] Auto Dismiss. true by default
+        [Optional] Time to dismiss (in ms)
+    */
+    this._context.showToast(this._context.toastStyle.ERROR, "Error Title", 'Error Message', true, 5000);
+
+```
+
+On a `Page` , the function must be called as the following example:
+
+```JavaScript
+
+    context.uiTools.showToast(this._context.toastStyle.ERROR, "Error Title", 'Error Message', true, 5000);
+
+```
+
+### How to force a new page render?
+
+_applyUIChanges_ function can be used to force a new page render that will apply all pending changes to the UI.
+
+
+```JavaScript
+
+    this._context.applyUIChanges();
+
+```
+
+On a `Page` , the function must be called as the following example:
+
+```JavaScript
+
+    context.uiTools.applyUIChanges();
+
+```
+
 ### **Decimal Attributes**
 
 ### How to change the number of decimal places of the element?

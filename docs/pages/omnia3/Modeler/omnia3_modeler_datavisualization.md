@@ -240,6 +240,14 @@ In order to extend your application user interface you can add new behaviours to
 
 Click [here](omnia3_modeler_uibehaviours.html), to know more about user interface behaviours.
 
+### How to refresh the entire dashboard?
+
+THe dashboard can be refreshed by calling its metadata _refresh_ function:
+
+```JavaScript
+    this._metadata.refresh();
+```
+
 ### How to define the auto refresh interval of the dashboard?
 
 In this sample, the auto refresh interval is set to 30 seconds:
