@@ -15,7 +15,7 @@ Release Date: 2024-01-03
 ### Implemented enhancements:
 
 - Improved performance on queries to OMNIA Database
-- Swagger: Regorganize endpoints into logical groups
+- Swagger: Reorganize endpoints into logical groups
 - Management: Add filters and sorting to _API Clients_, _Connectors_ and _Authentication Providers_ Lists
 - Modeling: Set a range of valid values (minimum and/or maximum values) on Integer, Decimal and Date attributes
 
