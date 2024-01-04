@@ -321,10 +321,23 @@ On a `Page` , the function must be called as the following example:
 
 _applyUIChanges_ function can be used to force a new page render that will apply all pending changes to the UI.
 
+This function is useful to render changes from the execution of a async behaviour.
 
 ```JavaScript
 
-    this._context.applyUIChanges();
+    //add a full page loader
+    this._metadata.attributes.isLoading = true;
+
+    apiClient.doPost(`/api/v1/${this._context.tenant.code}/${this._context.tenant.environmentCode}/application/behaviours/Default/GetData`, {})
+        .then(response => {
+                //process response...
+
+                //Remove loader
+                this._metadata.attributes.isLoading = false;
+                
+                //applyUIChanges to remove loader
+                this._context.applyUIChanges();
+        });
 
 ```
 
