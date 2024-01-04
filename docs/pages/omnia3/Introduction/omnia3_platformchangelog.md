@@ -8,6 +8,21 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.251](#3.5.251)
+
+Release Date: 2024-01-03
+
+### Implemented enhancements:
+
+- Improved performance on queries to OMNIA Database
+- Swagger: Reorganize endpoints into logical groups
+- Management: Add filters and sorting to _API Clients_, _Connectors_ and _Authentication Providers_ Lists
+- Modeling: Set a range of valid values (minimum and/or maximum values) on Integer, Decimal and Date attributes
+
+### Issues:
+
+- Language selector not visible on Tenant and Identity pages
+
 ## [3.5.243](#3.5.243)
 
 Release Date: 2023-11-27
