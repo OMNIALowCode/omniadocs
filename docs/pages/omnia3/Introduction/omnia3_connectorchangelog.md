@@ -15,7 +15,7 @@ Release Date: 2024-01-12
 
 ### Implemented enhancements:
 
-- Upgraded packages to support Behaviours Timeout configuration
+- THe execution of _Application Behaviours_ and _After Saves_ use the timeout value configured on the data source
 
 
 ## [3.5.10](#3.5.10)
