@@ -24,7 +24,7 @@ Release Date: 2024-01-12
   - Events can be triggered when clicking on any column
 - Forms:
   - New UI Behaviour: _After Save_
-  - Improvements on page navigation after submit
+  - Page navigation after submit is now configurable
 - Calendars:
   - New UI Behaviours: _On Form Open_, _On Form Close_ and _On Event Click_
 
