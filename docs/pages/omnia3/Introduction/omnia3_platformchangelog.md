@@ -15,7 +15,6 @@ Release Date: 2024-01-12
 ### Implemented enhancements:
 
 - DataSource: Timeout value for _Application Behaviours_ and _After Saves_ is now configurable
-- Execute Tasks periodically
 - UI Behaviours: Methods to use Browser storage now accessible on _Context_
 - Dashboards:
   - Create new Entities using modals
