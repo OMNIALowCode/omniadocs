@@ -10,6 +10,14 @@ toc: false
 
 Visit our [Downloads](/omnia3_downloads.html#connector) page to get the latest version.
 
+## [3.5.11](#3.5.11)
+Release Date: 2024-01-12
+
+### Implemented enhancements:
+
+- The execution of _Application Behaviours_ and _After Saves_ use the timeout value configured on the data source
+
+
 ## [3.5.10](#3.5.10)
 Release Date: 2023-10-27
 

@@ -8,6 +8,30 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.260](#3.5.260)
+
+Release Date: 2024-01-12
+
+### Implemented enhancements:
+
+- DataSource: Timeout value for _Application Behaviours_ and _After Saves_ is now configurable
+- UI Behaviours: Methods to use Browser storage now accessible on _Context_
+- Dashboards:
+  - Create new Entities using modals
+  - New UI Behaviours: _Create_ and _Refresh_
+- Lists:
+  - Edit Entities using modals
+  - Events can be triggered when clicking on any column
+- Forms:
+  - New UI Behaviour: _After Save_
+  - Page navigation after submit is now configurable
+- Calendars:
+  - New UI Behaviours: _On Form Open_, _On Form Close_ and _On Event Click_
+
+### Issues:
+
+- Calendar: Scheduler view not working when categories have non-alphanumeric characters
+
 ## [3.5.251](#3.5.251)
 
 Release Date: 2024-01-03
