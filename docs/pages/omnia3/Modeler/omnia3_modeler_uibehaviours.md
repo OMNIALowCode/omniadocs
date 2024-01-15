@@ -27,7 +27,7 @@ UI Behaviours are executed by the web app - when creating or editing an entity, 
 
 ## 2. Types of Behaviours
 
-It's possible to extend the user interface through custom behaviours in **Forms**, **Dashboards** and **Menu**.
+It's possible to extend the user interface through custom behaviours in **Forms**, **Dashboards** **Calendars** and **Menu**.
 
 There are currently three different execution moments for UI behaviours, which follow a logical flow:
 
@@ -36,20 +36,30 @@ There are currently three different execution moments for UI behaviours, which f
 - **Before Change**: Executes immediately before the update request is send to the API (only applies to forms);
 - **After Change**: Executes immediately after the API response to the update request (only applies to forms);
 - **Before Save**: Executes when an entity is saved (only applies to forms);
+- **After Save**: Executes after an entity is saved (only applies to forms);
 - **On Select**: Executes when an Menu Entry is selected (only applies to menus);
 - **On Click**: Executes when a Button is clicked (only applies to buttons);
 
-Other than these, there is one special entity behaviour:
+Other than these, there are some special behaviours:
 
 - **Before Collection Entity Initialize**: Executes when a new entity is added to a collection, before its Initialize behaviour (only applies to forms);
 
       - **_Example of usage_**: Allocate the value of a Parent's _(this)_ property to a collection's Child _(entry)_ property:
 
-      	```
+      	```Javascript
       	entry.company = this.name;
       	```
 
   ![The behaviour execution lifecycle](images\modeler\UIBehaviourLifecycle.png)
+
+- **Refresh**: Executes when a Dashboard is refreshed (only applies to dashboards);
+- **Create**: Executes when the Dashboard "Add new" button is clicked (only applies to dashboards);
+- **On Cell Click**: Executes when a column of a list within a Dashboard is clicked (only applies to dashboards);
+- **On Category Toggle**: Executes when the visibility of one or more categories is changed (only applies to calendars);
+- **On Date Range Change**: Executes when the visible date range changes, either by navigating to another period or changing view (only applies to calendars);
+- **On Form Open**: Executes when the form that details a mapped calendar entry opens (only applies to calendars inside forms);
+- **On Form Close**: Executes when the form that details a mapped calendar entry closes (only applies to calendars inside forms);
+- **On Event Click**: Executes when an event in a calendar is clicked (only applies to calendars inside dashboards);
 
 **Important**
 
@@ -71,6 +81,14 @@ In a dashboard, the _On Change_ behaviours is executed after the list data is re
 | Before Save                         | onBeforeSave                             | Available in Forms.      |
 | Before Collection Entity Initialize | OnBefore{ATTRIBUTE NAME}EntityInitialize | Available in Forms.      |
 | On Click                            | OnClick\_{ELEMENT NAME}                  | Available in Dashboards. |
+| Refresh                             | onRefresh                                | Available in Dashboards. |
+| Create                              | onCreate                                 | Available in Dashboards. |
+| On Cell Click                       | onCellClick\_{ELEMENT NAME}              | Available in Dashboards. |
+| On Category Toggle                  | onCategoryToggle\_{ELEMENT NAME}         | Available in Calendars.  |
+| On Date Range Change                | onDateRangeChange\_{ELEMENT NAME}        | Available in Calendars.  |
+| On Form Open                        | onFormOpen\_{ELEMENT NAME}               | Available in Calendars inside Forms.       |
+| On Form Close                       | onFormClose\_{ELEMENT NAME}              | Available in Calendars inside Forms.       |
+| On Event Click                      | OnEventClick\_{ELEMENT NAME}             | Available in Calendars inside Dashboards.  |
 
 ## 3. Usage
 

@@ -94,7 +94,7 @@ Now select and hold the **Calendar** option, drag and drop it in the entity's Us
 - **isHidden**: the visibility of the element (hidden or visible);
 - **visibleFrom**: the visibility of the element, related to the user's device screen size (at sizes smaller than the one selected, the element will be hidden);
 
-### How to change the positioning of an element?
+### How to change the position of an element?
 
 In the **Form** user interface, select the element you want to change and drag it to the new position. You can also adjust other elements position if necessary.
 
@@ -105,6 +105,16 @@ In the **Form** user interface, select the element you want to change and, in th
 ### How to remove an element?
 
 In the **Form** user interface, select the element you want to remove, click on the _Delete_ button and confirm your option in the confirmation window.
+
+### How to change the Form redirect behaviour?
+
+By default, when an operation is executed on a form (e.g. Save, Delete or a state machine decision), the user is redirected to the previous page.
+
+This behaviour can be changed by setting the attribute _Redirect Action_. The following options are available:
+
+- **Back Navigation**: returns to the previous page. Default behaviour;
+- **Back Entity Dashboard**: redirects to the Entity Dashboard;
+- **No Action**: no redirect occurs. When this option is selected, redirect logic must be implemented on _Form_ **After Save** behaviour;
 
 ## 2. User Interface Behaviours
 
@@ -484,6 +494,8 @@ In this sample, a function is added to the calendar metadata, in order to be exe
     }
 ```
 
+**Note:** Starting on platform version 3.5.260, this function should be modeled as a Calendar **On Date Range Change** Behaviour. If the Behaviour is modeled and the function exists on a Javascript expression, the modeled Behaviour will not be executed.
+
 ### How to execute an action when a category is toggled?
 
 In this sample, a function is added to the calendar metadata, in order to be executed every time a category is activated or deactivated:
@@ -493,6 +505,8 @@ In this sample, a function is added to the calendar metadata, in order to be exe
         // your code here
     }
 ```
+
+**Note:** Starting on platform version 3.5.260, this function should be modeled as a Calendar **On Category Toggle** Behaviour. If the Behaviour is modeled and the function exists on a Javascript expression, the modeled Behaviour will not be executed.
 
 ### How to execute an action when the calendar modal form is opened?
 
@@ -504,7 +518,20 @@ In this sample, a function is added to the calendar metadata, in order to be exe
     }
 ```
 
-_Note: This function is only available when the Calendar is mapped and located on a form._
+**Note:** This function is only available when the Calendar is mapped and located on a form.
+Starting on platform version 3.5.260, this function should be modeled as a Calendar **On Form Open** Behaviour. If the Behaviour is modeled and the function exists on a Javascript expression, the modeled Behaviour will not be executed.
+
+### How to execute an action when the calendar modal form is closed?
+
+To execute an action when the form is closed, the **On Form Close** Behaviour should be implemented.
+
+**Note:** This function is only available when the Calendar is mapped and located on a form.
+
+### How to execute an action when a calendar entry is clicked?
+
+To execute an action when a calendar entry is clicked (e.g. redirect, open in a modal), the **On Event Click** Behaviour should be implemented.
+
+**Note:** This function is only available when the Calendar is mapped and located on a dashboard.
 
 ### **Web Components**
 
@@ -884,6 +911,33 @@ In this sample, it's verified if an entity is a modal or not:
 ```JavaScript
     // This property is a boolean
     this._metadata.isModal;
+```
+
+### **Browser Storage**
+
+Using Javascript code, a large number of browser features can be used, including its storage.
+
+The following examples show an interaction with the browser storage, using the _Context_ functions:
+
+```JavaScript
+    // Add new data to the storage
+    var data = { key1: "ABC", key2: 2.0, key3: true };
+
+    this._context.storage.set("MyStorageKey", data);
+```
+
+```JavaScript
+    // Get data from the storage
+    return this._context.storage.get("MyStorageKey").then(response => {
+        if (response) {
+            //process the storage data
+        }
+    });
+```
+
+```JavaScript
+    // Remove data from the storage
+    this._context.storage.remove("MyStorageKey");
 ```
 
 ## 3. Screen Layout

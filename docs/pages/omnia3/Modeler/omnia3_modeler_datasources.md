@@ -14,6 +14,10 @@ The **OMNIA Platform** can use and combine information from different sources - 
 - **Behaviour runtime**: Where the [entity's behaviours](omnia3_modeler_behaviours.html) execute. **Internal** means they execute inside the platform, and **External** means they execute on the [connector](omnia3_connector_introduction.html).
 - **Data Access runtime**: Where the _data behaviours_ execute, i.e., where the Create, Read, Update and Delete (CRUD) operations execute. **Internal** means they are executed inside the platform and their information is stored on its database, and **External** means they are written by users and execute either on the connector or the platform, depending on the Behaviour runtime and the next option.
 - **Will be executed in a connector?**: Whether the behaviours execute on a connector or not. Automatically calculated for most cases, but if your **Behaviours** are internal to the platform and the **Data Access** is external, you may or may not want to execute behaviours on a connector.
+- **Application Behaviour Execution Timeout**: The maximum number of seconds given to execute a _Application Behaviour_. If the Behaviour takes a longer time to execute than the configured, a Timeout error will occur. 
+- **After Save Execution Timeout**: The maximum number of seconds given to execute a _After Save_. If the Behaviour takes a longer time to execute than the configured, a Timeout error will occur. 
+
+The range of valid Execution Timeout values are between 10 and 100 seconds.
 
 ## 2. Types of Data Behaviours
 
