@@ -22,8 +22,8 @@ For **previous** Development Environment versions, execute the following steps:
 
 1. Log in pgAdmin using the following credentials:
 
-| E-mail | omnia@omnia |
-| Password | omnia |
+| E-mail   | omnia@omnialowcode.com |
+| Password | omniaomnia             |
 
 2. Connect to the OMNIA Platform database:
 
