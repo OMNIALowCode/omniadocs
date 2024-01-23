@@ -50,7 +50,7 @@ While events are executed automatically as a result of the user interaction with
 
 The Methods have entry parameters, whose values should be sent when calling them. A component can have as many Methods as necessary.
 
-## 2. Internal Components
+## 3. Internal Components
 
 OMNIA Platform has four internal components:
 
@@ -224,7 +224,7 @@ This component can be used to obtain Enumerator data to be used by another eleme
 | key      | String    | The key of the selector entry   |
 | label    | String    | The label of the selector entry |
 
-## 3. Modeling Components
+## 4. Modeling Components
 
 ### How to add a new Components package?
 
@@ -245,11 +245,11 @@ By accessing **_User Interface / Components_** in the sidebar and selecting one 
 
 You can upload a new version of the components package.
 
-## 4. Components Usage
+## 5. Components Usage
 
 Components are available to be used on modeled Pages. See how its done [here](omnia3_modeler_pages.md).
 
-## 5. Create new Components
+## 6. Create new Components
 
 You can create your own components to ensure the best user experience.
 
