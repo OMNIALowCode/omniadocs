@@ -71,24 +71,25 @@ In a dashboard, the _On Change_ behaviours is executed after the list data is re
 
 ### 2.1. JavaScript method naming
 
-| Type                                | Method                                   | Observation              |
-| ----------------------------------- | ---------------------------------------- | ------------------------ |
-| Initialize                          | onInitialize                             |                          |
-| Before Change                       | onBeforeChange                           | Available in Forms.      |
-| On Change                           | onChange\_{ELEMENT NAME}                 |                          |
-| On Select                           | onSelect\_{ELEMENT NAME}                 |                          |
-| After Change                        | onAfterChange                            | Available in Forms.      |
-| Before Save                         | onBeforeSave                             | Available in Forms.      |
-| Before Collection Entity Initialize | OnBefore{ATTRIBUTE NAME}EntityInitialize | Available in Forms.      |
-| On Click                            | OnClick\_{ELEMENT NAME}                  | Available in Dashboards. |
-| Refresh                             | onRefresh                                | Available in Dashboards. |
-| Create                              | onCreate                                 | Available in Dashboards. |
-| On Cell Click                       | onCellClick\_{ELEMENT NAME}              | Available in Dashboards. |
-| On Category Toggle                  | onCategoryToggle\_{ELEMENT NAME}         | Available in Calendars.  |
-| On Date Range Change                | onDateRangeChange\_{ELEMENT NAME}        | Available in Calendars.  |
-| On Form Open                        | onFormOpen\_{ELEMENT NAME}               | Available in Calendars inside Forms.       |
-| On Form Close                       | onFormClose\_{ELEMENT NAME}              | Available in Calendars inside Forms.       |
-| On Event Click                      | OnEventClick\_{ELEMENT NAME}             | Available in Calendars inside Dashboards.  |
+| Type                                | Method                                                      | Observation              |
+| ----------------------------------- | ----------------------------------------------------------- | ------------------------ |
+| Initialize                          | onInitialize()                                              |                          |
+| Before Change                       | onBeforeChange()                                            | Available in Forms.      |
+| On Change                           | onChange\_{ELEMENT NAME}(oldValue, newValue)                |                          |
+| On Select                           | onSelect\_{ELEMENT NAME}()                                  | Available in Menus       |
+| After Change                        | onAfterChange()                                             | Available in Forms.      |
+| Before Save                         | onBeforeSave()                                              | Available in Forms.      |
+| After Save                          | onAfterSave(operation, identifier)                          | Available in Forms.      |
+| Before Collection Entity Initialize | OnBefore{ATTRIBUTE NAME}EntityInitialize(entry)             | Available in Forms.      |
+| On Click                            | OnClick\_{ELEMENT NAME}()                                   | Available in Dashboards. |
+| Refresh                             | onRefresh()                                                 | Available in Dashboards. |
+| Create                              | onCreate()                                                  | Available in Dashboards. |
+| On Cell Click                       | onCellClick\_{ELEMENT NAME}(column, line)                   | Available in Dashboards. |
+| On Category Toggle                  | onCategoryToggle\_{ELEMENT NAME}(categories)                | Available in Calendars.  |
+| On Date Range Change                | onDateRangeChange\_{ELEMENT NAME}(startDate, endDate, view) | Available in Calendars.  |
+| On Form Open                        | onFormOpen\_{ELEMENT NAME}(line, index)                     | Available in Calendars inside Forms.       |
+| On Form Close                       | onFormClose\_{ELEMENT NAME}(line, index, operation)         | Available in Calendars inside Forms.       |
+| On Event Click                      | OnEventClick\_{ELEMENT NAME}(event, isStatic)               | Available in Calendars inside Dashboards.  |
 
 ## 3. Usage
 
