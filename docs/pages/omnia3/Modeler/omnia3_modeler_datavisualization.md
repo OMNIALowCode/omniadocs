@@ -39,7 +39,15 @@ To create a list manually, select the option _Add new_ when in the list of Lists
 - **Label**: what label should be displayed for the list;
 - **Help Text**: Auxiliary texts that explain the list's purpose to the users.
 
-When editing a list, it is also possible to change the **Edit Action**, to configure the action to be taken when editing an entity from a list. See the possible values [here](#list-actions) 
+When editing a list, it is also possible to change the **Edit Action**, to configure the action to be taken when editing an entity from a list. Possible values:
+
+#### List Actions
+| Action                  | Description                              | Additional Parameters                                                  |
+| ----------------------- | ---------------------------------------- | ---------------------------------------------------------------------- |
+| Navigate                | Navigate to a entity. Default value      | Definition and origin of the dataSource.                               |
+| Open as Modal           | Open an entity on a modal                | Definition, origin of the dataSource and modal configuration           |
+| Raise onCellClick Event | Execute a code expression                | Raise a cell click event, to be handled by a Dashboard code expression |
+| No Action               | List does not have link to navigate      |                                                                        |
 
 ### How to set the columns of a list?
 
@@ -55,7 +63,7 @@ You can also add list columns manually, by dragging a new column and filling the
 - **formattingType**: Which formatting strategy should this column have. Similar to spreadsheet applications, i.e. a result of "5" can be shown normally, or formatted as a decimal.
 - **action**: The action to be executed when the column is clicked. Possible values: 
 
-#### List Actions
+#### Column Actions
 | Action                  | Description                              | Additional Parameters                                                  |
 | ----------------------- | ---------------------------------------- | ---------------------------------------------------------------------- |
 | No Action               | Default value                            |                                                                        |

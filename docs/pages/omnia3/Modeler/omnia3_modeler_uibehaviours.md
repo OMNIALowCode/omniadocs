@@ -29,7 +29,7 @@ UI Behaviours are executed by the web app - when creating or editing an entity, 
 
 It's possible to extend the user interface through custom behaviours in **Forms**, **Dashboards** **Calendars** and **Menu**.
 
-There are currently three different execution moments for UI behaviours, which follow a logical flow:
+There are multiple different execution moments for UI behaviours, which follow a logical flow:
 
 - **Initialize**: Executes when entering the page (form, dashboard or menu);
 - **On Change**: Executes during updates, requires an element, and, given the new value of the attribute associated to that element, performs an operation. Similar role to **Action** in the entity behaviours (only applies to forms and dashboards);
@@ -37,8 +37,8 @@ There are currently three different execution moments for UI behaviours, which f
 - **After Change**: Executes immediately after the API response to the update request (only applies to forms);
 - **Before Save**: Executes when an entity is saved (only applies to forms);
 - **After Save**: Executes after an entity is saved (only applies to forms);
-- **On Select**: Executes when an Menu Entry is selected (only applies to menus);
-- **On Click**: Executes when a Button is clicked (only applies to buttons);
+
+  ![The behaviour execution lifecycle](images\modeler\UIBehaviourLifecycle.png)
 
 Other than these, there are some special behaviours:
 
@@ -50,8 +50,8 @@ Other than these, there are some special behaviours:
       	entry.company = this.name;
       	```
 
-  ![The behaviour execution lifecycle](images\modeler\UIBehaviourLifecycle.png)
-
+- **On Select**: Executes when an Menu Entry is selected (only applies to menus);
+- **On Click**: Executes when a Button is clicked (only applies to buttons);
 - **Refresh**: Executes when a Dashboard is refreshed (only applies to dashboards);
 - **Create**: Executes when the Dashboard "Add new" button is clicked (only applies to dashboards);
 - **On Cell Click**: Executes when a column of a list within a Dashboard is clicked (only applies to dashboards);
