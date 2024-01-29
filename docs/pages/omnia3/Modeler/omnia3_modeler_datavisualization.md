@@ -39,6 +39,16 @@ To create a list manually, select the option _Add new_ when in the list of Lists
 - **Label**: what label should be displayed for the list;
 - **Help Text**: Auxiliary texts that explain the list's purpose to the users.
 
+When editing a list, it is also possible to change the **Edit Action**, to configure the action to be taken when editing an entity from a list. Possible values:
+
+#### List Actions
+| Action                  | Description                              | Additional Parameters                                                  |
+| ----------------------- | ---------------------------------------- | ---------------------------------------------------------------------- |
+| Navigate                | Navigate to a entity. Default value      | Definition and origin of the dataSource.                               |
+| Open as Modal           | Open an entity on a modal                | Definition, origin of the dataSource and modal configuration           |
+| Raise onCellClick Event | Execute a code expression                | Raise a cell click event, to be handled by a Dashboard code expression |
+| No Action               | List does not have link to navigate      |                                                                        |
+
 ### How to set the columns of a list?
 
 When the list is created manually, after its creation it will be empty, and you must select which columns from the query you want to show.
@@ -51,14 +61,23 @@ You can also add list columns manually, by dragging a new column and filling the
 - **label**: What the label of the column will say;
 - **helpText**: Auxiliary text that explains this column to users;
 - **formattingType**: Which formatting strategy should this column have. Similar to spreadsheet applications, i.e. a result of "5" can be shown normally, or formatted as a decimal.
+- **action**: The action to be executed when the column is clicked. Possible values: 
+
+#### Column Actions
+| Action                  | Description                              | Additional Parameters                                                  |
+| ----------------------- | ---------------------------------------- | ---------------------------------------------------------------------- |
+| No Action               | Default value                            |                                                                        |
+| Navigate                | Navigate to a entity                     | Definition and origin of the dataSource.                               |
+| Open as Modal           | Open an entity on a modal                | Definition, origin of the dataSource and modal configuration           |
+| Raise onCellClick Event | Execute a code expression                | Raise a cell click event, to be handled by a Dashboard code expression |
 
 ## 3. Dashboards
 
 **_User Interface / Dashboards_**
 
-A dashboard is a collection of lists organized in a particular order.
+A dashboard is a collection of elements (mainly lists) organized in a particular order.
 
-When a new entity is created, a dashboard is automatically generated. This dashboard is shown when user lists the entities, and contains only one element, the automatically generated list.
+When a new entity is created, a dashboard is automatically generated. This dashboard is shown when user lists the entities and contains only one element, the automatically generated list.
 
 ### How to create a dashboard?
 
@@ -70,6 +89,17 @@ Select the option _Add new_ when in the list of Dashboards, and fill in the foll
 - **Help Text**: Auxiliary texts that explain the dashboard's purpose to the users.
 
 **Special case:** A dashboard named **Home** will be automatically displayed in the homepage of the application.
+
+### How to change the dashboard Refresh and Add New behaviour?
+
+When editing a dashboard, the default Refresh and Add New options can be configured by setting the following attributes:
+
+- **Refresh Option**: set if the _Refresh_ button should be visible, hidden or disabled;
+- **Add New Option**: set if the _Add New_ button should be visible, hidden or disabled;
+- **Refresh Action**: set the action to be taken when the _Refresh_ button is clicked: refresh or no action;
+- **Create Action**: set the action to be taken when the _Add New_ button is clicked: navigate, open as modal or no action;
+
+When _Refresh_ or _Create_ actions are set to "No Action", a UI Behaviour can be set to respond to the button click. 
 
 ### What elements can be added to dashboards?
 
@@ -239,6 +269,14 @@ _Note: The changes you make to the list query parameters, filters, sorting and d
 In order to extend your application user interface you can add new behaviours to your dashboard user interface.
 
 Click [here](omnia3_modeler_uibehaviours.html), to know more about user interface behaviours.
+
+### How to refresh the entire dashboard?
+
+THe dashboard can be refreshed by calling its metadata _refresh_ function:
+
+```JavaScript
+    this._metadata.refresh();
+```
 
 ### How to define the auto refresh interval of the dashboard?
 

@@ -69,8 +69,10 @@ Afterwards, you must fill the following information (not all fields apply to all
 * **Minimum number of records**: the minimum number of records to the collection;
 * **Maximum number of records**: the maximum number of records to the collection;
 * **Uses data source from attribute**: in Reference fields, indicates the field used to identify what data source instance to look for the Reference in (optional).
-* **Minimum text length**: the minimum length of a text field;
-* **Maximum text length**: the maximum length of a text field (when not specified, the text length is unlimited);
+* **Minimum text length**: the minimum length of a _Text_ field;
+* **Maximum text length**: the maximum length of a _Text_ field (when not specified, the text length is unlimited);
+* **Minimum value**: the minimum valid value of a _Date_, _Decimal_ or _Integer_ field;
+* **Maximum value**: the maximum valid value of a _Date_, _Decimal_ or _Integer_ field;
 
 ### How to set an attribute as required?
 In the attributes list, select the attribute you want to change and check the ***Is required?*** property.

@@ -20,7 +20,7 @@ By accessing **API Clients**, you will have access to the API Clients management
 
 Here you can **Add new** Client and select the Type of the Client (i.e. API or Web App).
 
-### 2. API Clients
+## 2. API Clients
 To create an API Client it is necessary to identifying its Name.
 
 Upon creating a client, the *Client ID* and *Client Secret* are automatically created.
@@ -35,7 +35,7 @@ If you need to regenerate the Client Secret for some reason (e.g. your private s
 
 This action will generate another Client Secret and, from now on, you will need to use the new Secret.
 
-### 3. Web App Clients
+## 3. Web App Clients
 
 An Web App Client is defined by:
 * Name: Used to identiy the external application;

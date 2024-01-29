@@ -53,7 +53,7 @@ if (!requestResult.IsSuccessStatusCode)
 ```
 
 
-## 2. Customize Platform Notifications
+## 3. Customize Platform Notifications
 
 You can customize lists "Export as CSV" feature notifications.
 To do that, create a [Text Template](/omnia3_modeler_texttemplates.html) for the Subject and other to the Body.
@@ -66,13 +66,13 @@ You will be receiving the Link (as _DownloadLink_) in the Text Template Data par
 ### How to customize the Export CSV Notification subject?
 
  1. Create a new Text Template using the name:  _ExportCsvSuccessEmailSubject_
- 1. Change the Template with the desired text. Example: _OMNIA Platform - Your download is ready_
+ 2. Change the Template with the desired text. Example: _OMNIA Platform - Your download is ready_
 
 
 ### How to customize the Export CSV Notification body?
 
  1. Create a new Text Template using the name:  _ExportCsvSuccessEmailBody_
- 1. Change the Template with the desired text (HTML can be used). 
+ 2. Change the Template with the desired text (HTML can be used). 
  
 ```HTML
   <p>The data export you have requested has been processed.</p>
