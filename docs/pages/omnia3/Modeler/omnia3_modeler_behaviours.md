@@ -253,7 +253,7 @@ To use ILogger register the namespace `Microsoft.Extensions.Logging`.
 
 The compiled C# code, targets the following platforms:
 
-- **Behaviours that are executed in Connector:** Framework .net 4.7.2, Runtime x86
+- **Behaviours that are executed in Connector:** Framework .net 4.7.2
 - **Behaviours that are executed in OMNIA:** Framework .net standard 2.0
 
 ## 11. Developing and testing behaviours
