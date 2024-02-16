@@ -16,7 +16,6 @@ Release Date: 2024-02-16
 
 - Upgrade to .NET 8 runtime
 - [Identity Server: Token lifetime settings are now configurable on Platform Settings area](/docs/pages/omnia3/Management/omnia3_management_settings.md)
-- User can be automatically logged out from OMNIA WebApp after a configured idle time has passed
 
 ### Issues:
 
