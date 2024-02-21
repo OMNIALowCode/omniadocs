@@ -15,7 +15,7 @@ Release Date: 2024-02-21
 ### Implemented enhancements:
 
 - Upgrade to .NET 8 runtime
-- [Identity Server: Token lifetime settings are now configurable on Platform Settings area](/docs/pages/omnia3/Management/omnia3_management_settings.md)
+- [Identity Server: Token lifetime settings are now configurable on Platform Settings area](../Management/omnia3_management_settings.md)
 
 ### Issues:
 
