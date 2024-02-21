@@ -8,6 +8,32 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.265](#3.5.265)
+
+Release Date: 2024-02-21
+
+### Implemented enhancements:
+
+- Upgrade to .NET 8 runtime
+- [Identity Server: Token lifetime settings are now configurable on Platform Settings area](/docs/pages/omnia3/Management/omnia3_management_settings.md)
+
+### Issues:
+
+- Management Area: 
+  - User is unable to access a tenant when it is added to multiple tenants simultaneously
+  - When a Tenant is created as Inactive, user is asked for a Platform Restart
+  - Connector Management: Connector cannot be accessed if its APIClient is removed
+  - Runtime logs list is not ordered by Modified Date
+- Tenant Security: Entity Permissions are not removed when the Entity is deleted
+- Text Templates: _where_ condition from Liquid template language is not available
+- Mobile devices:
+  - Theme selection has no effect
+  - Cannot export list as CSV
+
+**This version contains breaking changes.**
+**Upgrade to OMNIA Connector is required.**
+**Compatible with Connectors that use the Connector Protocol Version 3.2**
+
 ## [3.5.260](#3.5.260)
 
 Release Date: 2024-01-12

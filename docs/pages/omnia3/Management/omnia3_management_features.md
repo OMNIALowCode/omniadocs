@@ -10,14 +10,14 @@ folder: omnia3
 
 ## 1. Introduction
 
-The platform's feature management allows to enabled and disabled some platform's features.
+The platform's feature management allows enabling and disabling some of the platform's features.
 
-After changing the state of a feature, a **platform restart is required for the operation take effect**.
+After changing a feature state a **platform restart is required for the operation to take effect**.
 
 
 ## 2. Supported Features
 
-The following features are currently supported:
+The following features are currently available:
 
 * **UserPasswordAuthentication**: Authentication using username and password.
     * When disabled, it will be not possible to login with a username and password. If there isn't any Authentication Provider configured, it will not be possible to authenticate in the platform;
