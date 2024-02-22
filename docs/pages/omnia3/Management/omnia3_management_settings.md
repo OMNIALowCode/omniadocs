@@ -1,5 +1,5 @@
 ---
-title: Features
+title: Settings
 keywords: omnia3
 summary: "How to manage Platform's settings"
 sidebar: omnia3_sidebar
