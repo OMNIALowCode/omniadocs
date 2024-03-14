@@ -8,6 +8,28 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.280](#3.5.280)
+
+Release Date: 2024-03-14
+
+### Implemented enhancements:
+
+- New Primitive attribute type: File
+- Open and close Containers on Javascript expressions
+- Open and close Grid Details area on Javascript expressions
+
+### Issues:
+
+- UI: When Menu is collapsed, on hover an empty area is shown between the menu and the option description
+- UI: Favicon is kept in cache after being replaced
+- State Machine: When a state is removed, the history panel breaks on entities that passed through it
+- API: An error occurs on create entity requests when the code is sent as _null_
+- Role Management: Privileges list is not ordered correctly and records are repeated pages
+- Lists: When user clicks to filter a column but does not insert data, filter is applied anyway
+- Grids: When editing a grid line on mobile devices, if an attribute visibility is changed it is not reflected on the UI
+- Calendar: Records are duplicated when added as a range and then edited
+- Languages: If a user has selected a language that is later deleted, the template expression is shown instead of the translated texts
+
 ## [3.5.265](#3.5.265)
 
 Release Date: 2024-02-21
