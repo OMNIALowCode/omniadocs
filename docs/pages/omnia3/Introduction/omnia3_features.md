@@ -38,6 +38,7 @@ folder: omnia3
     - Integer
     - Text
     - Uuid (Universally unique identifier)
+    - File (only on entities located on System Datasource)
     
 ###   1.3 Behaviours
 

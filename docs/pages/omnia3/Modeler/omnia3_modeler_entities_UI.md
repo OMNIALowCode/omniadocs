@@ -261,15 +261,14 @@ In this sample, the behaviour returns a [Promise](https://developer.mozilla.org/
     );
 ```
 
-### How to start with a container opened?
-
-Changing the default behaviour of a container can only be done on `Initialize`.
+### How to open or close a container?
 
 In this sample, the container _myContainer_ is set as opened:
 
 ```JavaScript
-    this._metadata.elements.myContainer.attributes.isOpen = true;
-```
+    //set isOpen as 'true' to open and as 'false' to close the container
+    this._metadata.elements.myContainer.attributes.isOpen = 'true';
+``` 
 
 ### How to inform the user that an element is loading data?
 
@@ -595,6 +594,15 @@ In this sample, the element _notes_ (which is an inner element of _collection_) 
     this._metadata.elements.collection.elements.notes.attributes.isDetails = true;
 ```
 
+### How to open or close a grid details area?
+
+In this sample, the details area of the first line of the collection _collection_ is set as opened:
+
+```JavaScript
+    //set isDetailsOpen as 'true' to open and as 'false' to close the collection details area
+    this.collection[0]._metadata.attributes.isDetailsOpen = 'true';
+```
+  
 ### How to enable multiple selection of references in a grid?
 
 This feature only applies to grids that contain at least one inner element of type reference.

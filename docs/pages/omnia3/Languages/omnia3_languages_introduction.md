@@ -76,6 +76,7 @@ It has the same properties as DataType.
 - Integer (i.e. int in C#)
 - Text (i.e. string in C#)
 - Uuid (i.e. Guid in C#)
+- File (i.e. DataFileInfo in C#)
 
 ### 2.1.6. Property
 
