@@ -8,9 +8,9 @@ folder: omnia3
 toc: false
 ---
 
-## [3.5.280](#3.5.280)
+## [3.5.281](#3.5.281)
 
-Release Date: 2024-03-14
+Release Date: 2024-03-15
 
 ### Implemented enhancements:
 
@@ -29,6 +29,10 @@ Release Date: 2024-03-14
 - Grids: When editing a grid line on mobile devices, if an attribute visibility is changed it is not reflected on the UI
 - Calendar: Records are duplicated when added as a range and then edited
 - Languages: If a user has selected a language that is later deleted, the template expression is shown instead of the translated texts
+
+**This version contains breaking changes.**
+**Upgrade to OMNIA Connector is required.**
+**Compatible with Connectors that use the Connector Protocol Version 3.3**
 
 ## [3.5.265](#3.5.265)
 
