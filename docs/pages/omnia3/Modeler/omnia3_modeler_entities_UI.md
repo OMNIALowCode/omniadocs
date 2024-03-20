@@ -268,7 +268,7 @@ In this sample, the container _myContainer_ is set as opened:
 ```JavaScript
     //set isOpen as 'true' to open and as 'false' to close the container
     this._metadata.elements.myContainer.attributes.isOpen = 'true';
-``` 
+```
 
 ### How to inform the user that an element is loading data?
 
@@ -304,11 +304,10 @@ A toast with the same look as the ones used by the platform can be launched with
 
 Example on how to show a toast with a custom message
 
-
 ```JavaScript
 
     /*Parameters:
-        Style. Possible values: INFO, SUCCESS, WARNING, ERROR 
+        Style. Possible values: INFO, SUCCESS, WARNING, ERROR
         Title
         Message
         [Optional] Auto Dismiss. true by default
@@ -343,7 +342,7 @@ This function is useful to render changes from the execution of a async behaviou
 
                 //Remove loader
                 this._metadata.attributes.isLoading = false;
-                
+
                 //applyUIChanges to remove loader
                 this._context.applyUIChanges();
         });
@@ -554,28 +553,23 @@ The ICS record can be customized using the calendar's event **On Event Export**.
 In this sample **DTSTART** and **DTEND** are been customized to include time get from the text attributes **start** and **end**:
 
 ```JavaScript
-    if(!isMapped)
-    return;
-    icsEvent["DESCRIPTION"] = event._description;
-     
-    if (!event.date) return;
-     
+    if (!isMapped || !event.date) return;
+
     delete icsEvent["DTSTART;VALUE=DATE"];
     delete icsEvent["DTEND;VALUE=DATE"];
-     
+
     const dtStart = event.date?.clone() ?? moment();
     const tStart = event?.start?.split(":") ?? [0, 0];
     dtStart.hour(tStart[0]);
     dtStart.minute(tStart[1]);
     icsEvent["DTSTART"] = `${dtStart.format('YYYYMMDDTHHmmss')}Z`;
-     
+
     const dtEnd = event?.date?.clone() ?? moment();
     const tEnd = event?.end?.split(":") ?? [0, 0];
     dtEnd.hour(tEnd[0]);
     dtEnd.minute(tEnd[1]);
     icsEvent["DTEND"] = `${dtEnd.format('YYYYMMDDTHHmmss')}Z`;
 ```
-
 
 ### **Web Components**
 
@@ -647,7 +641,7 @@ In this sample, the details area of the first line of the collection _collection
     //set isDetailsOpen as 'true' to open and as 'false' to close the collection details area
     this.collection[0]._metadata.attributes.isDetailsOpen = 'true';
 ```
-  
+
 ### How to enable multiple selection of references in a grid?
 
 This feature only applies to grids that contain at least one inner element of type reference.
@@ -831,11 +825,11 @@ How to declare a modal:
             //List of columns to be exported
             columns:[
                 {
-                    property: "_code", 
+                    property: "_code",
                     label: "Code"
                 },
                 {
-                    property: "_name", 
+                    property: "_name",
                     label: "Name"
                 }
             ],
