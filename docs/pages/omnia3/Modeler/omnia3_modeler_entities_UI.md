@@ -532,6 +532,51 @@ To execute an action when a calendar entry is clicked (e.g. redirect, open in a 
 
 **Note:** This function is only available when the Calendar is mapped and located on a dashboard.
 
+### How to customize ICS record when an event is exported?
+
+By default, when exporting an event to an ICS record, the following attributes are present:
+
+- **SUMMARY**: is set with the value of the data attribute configured in **Title** mapping
+- **DTSTART**: is set with the value of the data attribute configured in **Date** mapping or **Start Date** mapping when **Date** mapping is not set
+- **DTEND**: is set with the value of the data attribute configured in **Date** mapping or **End Date** mapping when **Date** mapping is not set
+- **CATEGORIES**: is set with the value of the data attribute configured in **Category** mapping
+- **UID**: is set with the generated UUID value;
+- **SEQUENCE**: is set with the value **0**;
+- **STATUS**: is set with the value **CONFIRMED**;
+- **TRANSP**: is set with the value **TRANSPARENT**;
+
+The ICS record can be customized using the calendar's event **On Event Export**. This event received the following parameters:
+
+- **event**: the event data
+- **isMapped**: flag to identify if the event source is from data mapping or the calendar attributes entries
+- **icsEvent**: the ICS record to be changed
+
+In this sample **DTSTART** and **DTEND** are been customized to include time get from the text attributes **start** and **end**:
+
+```JavaScript
+    if(!isMapped)
+    return;
+    icsEvent["DESCRIPTION"] = event._description;
+     
+    if (!event.date) return;
+     
+    delete icsEvent["DTSTART;VALUE=DATE"];
+    delete icsEvent["DTEND;VALUE=DATE"];
+     
+    const dtStart = event.date?.clone() ?? moment();
+    const tStart = event?.start?.split(":") ?? [0, 0];
+    dtStart.hour(tStart[0]);
+    dtStart.minute(tStart[1]);
+    icsEvent["DTSTART"] = `${dtStart.format('YYYYMMDDTHHmmss')}Z`;
+     
+    const dtEnd = event?.date?.clone() ?? moment();
+    const tEnd = event?.end?.split(":") ?? [0, 0];
+    dtEnd.hour(tEnd[0]);
+    dtEnd.minute(tEnd[1]);
+    icsEvent["DTEND"] = `${dtEnd.format('YYYYMMDDTHHmmss')}Z`;
+```
+
+
 ### **Web Components**
 
 The Web Component instance will be available to interact with in the JS object and is identified by the name of the element. Due to the array of [supported browsers](omnia3_webapprequirements.html), the Javascript should be written in ES6 format.
