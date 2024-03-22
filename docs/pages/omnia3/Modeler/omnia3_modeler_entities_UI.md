@@ -546,29 +546,31 @@ By default, when exporting an event to an ICS record, the following attributes a
 
 The ICS record can be customized using the calendar's event **On Event Export**. This event received the following parameters:
 
-- **event**: the event data
+- **dataEvent**: the event data
 - **isMapped**: flag to identify if the event source is from data mapping or the calendar attributes entries
-- **icsEvent**: the ICS record to be changed
+- **exportEvent**: the export event to be changed
+- **exportType**: the type of export event to be changed
 
 In this sample **DTSTART** and **DTEND** are been customized to include time get from the text attributes **start** and **end**:
 
 ```JavaScript
-    if (!isMapped || !event.date) return;
-
-    delete icsEvent["DTSTART;VALUE=DATE"];
-    delete icsEvent["DTEND;VALUE=DATE"];
-
-    const dtStart = event.date?.clone() ?? moment();
-    const tStart = event?.start?.split(":") ?? [0, 0];
-    dtStart.hour(tStart[0]);
-    dtStart.minute(tStart[1]);
-    icsEvent["DTSTART"] = `${dtStart.format('YYYYMMDDTHHmmss')}Z`;
-
-    const dtEnd = event?.date?.clone() ?? moment();
-    const tEnd = event?.end?.split(":") ?? [0, 0];
-    dtEnd.hour(tEnd[0]);
-    dtEnd.minute(tEnd[1]);
-    icsEvent["DTEND"] = `${dtEnd.format('YYYYMMDDTHHmmss')}Z`;
+    if (!isMapped || !dataEvent.date) return;
+    if(exportType === 'ics'){
+        delete exportEvent["DTSTART;VALUE=DATE"];
+        delete exportEvent["DTEND;VALUE=DATE"];
+    
+        const dtStart = dataEvent.date?.clone() ?? moment();
+        const tStart = dataEvent?.start?.split(":") ?? [0, 0];
+        dtStart.hour(tStart[0]);
+        dtStart.minute(tStart[1]);
+        exportEvent["DTSTART"] = `${dtStart.format('YYYYMMDDTHHmmss')}Z`;
+    
+        const dtEnd = dataEvent?.date?.clone() ?? moment();
+        const tEnd = dataEvent?.end?.split(":") ?? [0, 0];
+        dtEnd.hour(tEnd[0]);
+        dtEnd.minute(tEnd[1]);
+        exportEvent["DTEND"] = `${dtEnd.format('YYYYMMDDTHHmmss')}Z`;
+    }
 ```
 
 ### **Web Components**

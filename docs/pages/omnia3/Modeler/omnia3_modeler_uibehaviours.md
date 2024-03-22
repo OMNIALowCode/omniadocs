@@ -91,7 +91,7 @@ In a dashboard, the _On Change_ behaviours is executed after the list data is re
 | On Form Open                        | onFormOpen\_{ELEMENT NAME}(line, index)                     | Available in Calendars inside Forms.       |
 | On Form Close                       | onFormClose\_{ELEMENT NAME}(line, index, operation)         | Available in Calendars inside Forms.       |
 | On Event Click                      | OnEventClick\_{ELEMENT NAME}(event, isStatic)               | Available in Calendars inside Dashboards.  |
-| On Event Export                     | OnEventExport\_{ELEMENT NAME}(event, isMapped, icsEvent)     | Available in Calendars.  |
+| On Event Export                     | OnEventExport\_{ELEMENT NAME}(dataEvent, isMapped, exportEvent, exportType)     | Available in Calendars.  |
 
 ## 3. Usage
 
