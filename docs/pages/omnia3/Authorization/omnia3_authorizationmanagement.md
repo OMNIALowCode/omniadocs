@@ -19,10 +19,11 @@ In the platform authorization area (option **Management / Security**) you can ma
 
 By default, Omnia Platform has one role, named *Administration*. This role cannot be removed and it has, by default, associated the user identified on platform setup as the *Platform Administrator*. Other users can be added to this *Role*.
 
-Additionally, when a tenant is created, two new roles are automatically created:
+Additionally, when a tenant is created, three new roles are automatically created:
 
 - Administration[TenantCode]: administration role for the tenant. The user responsible for the tenant creation is automatically added to this role. Users with this role can access the Modeling area.
 - Users[TenantCode]: general users role for the tenant. Other tenant users should be added to this role, so that they have access to the tenant.
+- Connector[TenantCode]: connector users role for the tenant. The users associated with all Connectors used on the tenant must be associated to this role.
 
 If needed, new Roles can be created to grant a set of policies to a group of users.
 

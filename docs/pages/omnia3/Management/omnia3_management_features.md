@@ -19,6 +19,9 @@ After changing a feature state a **platform restart is required for the operatio
 
 The following features are currently available:
 
+* **Swagger**: Swagger documentation page.
+    * When disabled, the Swagger page is not available to any user;
+
 * **UserPasswordAuthentication**: Authentication using username and password.
     * When disabled, it will be not possible to login with a username and password. If there isn't any Authentication Provider configured, it will not be possible to authenticate in the platform;
     * Make sure you have an Authentication Provider connected to your accounts before disabling this feature.
