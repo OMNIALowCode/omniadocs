@@ -60,6 +60,7 @@ Other than these, there are some special behaviours:
 - **On Form Open**: Executes when the form that details a mapped calendar entry opens (only applies to calendars inside forms);
 - **On Form Close**: Executes when the form that details a mapped calendar entry closes (only applies to calendars inside forms);
 - **On Event Click**: Executes when an event in a calendar is clicked (only applies to calendars inside dashboards);
+- **On Event Export**: Executes when an event in a calendar is exported;
 
 **Important**
 
@@ -90,6 +91,7 @@ In a dashboard, the _On Change_ behaviours is executed after the list data is re
 | On Form Open                        | onFormOpen\_{ELEMENT NAME}(line, index)                     | Available in Calendars inside Forms.       |
 | On Form Close                       | onFormClose\_{ELEMENT NAME}(line, index, operation)         | Available in Calendars inside Forms.       |
 | On Event Click                      | OnEventClick\_{ELEMENT NAME}(event, isStatic)               | Available in Calendars inside Dashboards.  |
+| On Event Export                     | OnEventExport\_{ELEMENT NAME}(dataEvent, isMapped, exportEvent, exportType)     | Available in Calendars.  |
 
 ## 3. Usage
 

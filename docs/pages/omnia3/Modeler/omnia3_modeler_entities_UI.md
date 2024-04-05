@@ -268,7 +268,7 @@ In this sample, the container _myContainer_ is set as opened:
 ```JavaScript
     //set isOpen as 'true' to open and as 'false' to close the container
     this._metadata.elements.myContainer.attributes.isOpen = 'true';
-``` 
+```
 
 ### How to inform the user that an element is loading data?
 
@@ -304,11 +304,10 @@ A toast with the same look as the ones used by the platform can be launched with
 
 Example on how to show a toast with a custom message
 
-
 ```JavaScript
 
     /*Parameters:
-        Style. Possible values: INFO, SUCCESS, WARNING, ERROR 
+        Style. Possible values: INFO, SUCCESS, WARNING, ERROR
         Title
         Message
         [Optional] Auto Dismiss. true by default
@@ -343,7 +342,7 @@ This function is useful to render changes from the execution of a async behaviou
 
                 //Remove loader
                 this._metadata.attributes.isLoading = false;
-                
+
                 //applyUIChanges to remove loader
                 this._context.applyUIChanges();
         });
@@ -532,6 +531,48 @@ To execute an action when a calendar entry is clicked (e.g. redirect, open in a 
 
 **Note:** This function is only available when the Calendar is mapped and located on a dashboard.
 
+### How to customize ICS record when an event is exported?
+
+By default, when exporting an event to an ICS record, the following attributes are present:
+
+- **SUMMARY**: is set with the value of the data attribute configured in **Title** mapping
+- **DTSTART**: is set with the value of the data attribute configured in **Date** mapping or **Start Date** mapping when **Date** mapping is not set
+- **DTEND**: is set with the value of the data attribute configured in **Date** mapping or **End Date** mapping when **Date** mapping is not set
+- **CATEGORIES**: is set with the value of the data attribute configured in **Category** mapping
+- **UID**: is set with the generated UUID value;
+- **SEQUENCE**: is set with the value **0**;
+- **STATUS**: is set with the value **CONFIRMED**;
+- **TRANSP**: is set with the value **TRANSPARENT**;
+
+The ICS record can be customized using the calendar's event **On Event Export**. This event received the following parameters:
+
+- **dataEvent**: the event data
+- **isMapped**: flag to identify if the event source is from data mapping or the calendar attributes entries
+- **exportEvent**: the export event to be changed
+- **exportType**: the type of export event to be changed
+
+In this sample **DTSTART** and **DTEND** are been customized to include time get from the text attributes **start** and **end**:
+
+```JavaScript
+    if (!isMapped || !dataEvent.date) return;
+    if(exportType === 'ics'){
+        delete exportEvent["DTSTART;VALUE=DATE"];
+        delete exportEvent["DTEND;VALUE=DATE"];
+    
+        const dtStart = dataEvent.date?.clone() ?? moment();
+        const tStart = dataEvent?.start?.split(":") ?? [0, 0];
+        dtStart.hour(tStart[0]);
+        dtStart.minute(tStart[1]);
+        exportEvent["DTSTART"] = `${dtStart.format('YYYYMMDDTHHmmss')}Z`;
+    
+        const dtEnd = dataEvent?.date?.clone() ?? moment();
+        const tEnd = dataEvent?.end?.split(":") ?? [0, 0];
+        dtEnd.hour(tEnd[0]);
+        dtEnd.minute(tEnd[1]);
+        exportEvent["DTEND"] = `${dtEnd.format('YYYYMMDDTHHmmss')}Z`;
+    }
+```
+
 ### **Web Components**
 
 The Web Component instance will be available to interact with in the JS object and is identified by the name of the element. Due to the array of [supported browsers](omnia3_webapprequirements.html), the Javascript should be written in ES6 format.
@@ -602,7 +643,7 @@ In this sample, the details area of the first line of the collection _collection
     //set isDetailsOpen as 'true' to open and as 'false' to close the collection details area
     this.collection[0]._metadata.attributes.isDetailsOpen = 'true';
 ```
-  
+
 ### How to enable multiple selection of references in a grid?
 
 This feature only applies to grids that contain at least one inner element of type reference.
@@ -786,11 +827,11 @@ How to declare a modal:
             //List of columns to be exported
             columns:[
                 {
-                    property: "_code", 
+                    property: "_code",
                     label: "Code"
                 },
                 {
-                    property: "_name", 
+                    property: "_name",
                     label: "Name"
                 }
             ],
