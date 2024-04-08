@@ -8,6 +8,34 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.304](#3.5.304)
+
+Release Date: 2024-04-05
+
+### Implemented enhancements:
+
+- Assets are available to be used on Text Templates
+- Features Management: Swagger endpoint can now be disabled 
+- Tenants: New Role on Tenants to grant connectors adequate privileges
+- Modeling area: Alert modelers if they make a _Build & Deploy_ request with unsaved changes
+- UI Modeling: new option to navigate to attribute settings, on the attribute context menu
+- State Machines: _Enabled operations/attributes_ feature supported on nested collections
+- Calendar
+  - Performance improvements when adding multiple events on same request
+  - Export events to CSV and ICS
+
+### Issues:
+
+- WebApp: When users logs out in a tab, it doesn't reflect on other tabs
+- Forms/Dashboards: vertical scroll is always shown
+- Modals: _Close_ button label is not translated
+- Modeler: on new Tenants, homepage dashboard data is not loaded until the first build is deployed
+- Modeler: If user makes changes using _View Json_ option, it is not alerted of changes pending save when navigating
+- Queries are not properly executed if there is an attribute named _User_
+- Calendar: dates available on metadata and on _Date Range Change_ behaviour are sensitive to the computer timezone
+- Management area:  When user clicks to filter a column but does not insert data, filter is applied but not visible
+
+
 ## [3.5.282](#3.5.282)
 
 Release Date: 2024-03-15
