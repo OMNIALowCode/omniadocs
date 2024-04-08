@@ -16,7 +16,7 @@ Release Date: 2024-04-05
 
 - Assets are available to be used on Text Templates
 - Features Management: Swagger endpoint can now be disabled 
-- Tenants: New Role on Tenants to grant connectors the adequate privileges
+- Tenants: New Role on Tenants to grant connectors adequate privileges
 - Modeling area: Alert modelers if they make a _Build & Deploy_ request with unsaved changes
 - UI Modeling: new option to navigate to attribute settings, on the attribute context menu
 - State Machines: _Enabled operations/attributes_ feature supported on nested collections
