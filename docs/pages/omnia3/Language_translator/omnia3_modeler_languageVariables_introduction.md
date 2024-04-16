@@ -60,8 +60,8 @@ By using the "Update with JSON" funcionality, which requires only a JSON file (s
 
 JSON file for example provided in the previous point:
 
-    
-    {
+```JSON  
+{
 	"name": "PTPT",
 	"texts": [
 		{
@@ -80,3 +80,4 @@ JSON file for example provided in the previous point:
 	"culture": "pt-pt",
 	"description": "PT"
  }
+```
