@@ -8,9 +8,9 @@ folder: omnia3
 toc: false
 ---
 
-## [3.5.310](#3.5.310)
+## [3.5.311](#3.5.311)
 
-Release Date: 2024-04-16
+Release Date: 2024-04-17
 
 ### Implemented enhancements:
 
@@ -20,6 +20,7 @@ Release Date: 2024-04-16
 ### Issues:
 
 - Unable to recreate a deleted tenant
+- Modeling: Cannot select attributes to enable on a state
 
 
 ## [3.5.304](#3.5.304)
