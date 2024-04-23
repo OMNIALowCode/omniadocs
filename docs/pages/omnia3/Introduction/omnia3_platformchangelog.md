@@ -8,6 +8,21 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.312](#3.5.312)
+
+Release Date: 2024-04-23
+
+### Implemented enhancements:
+
+- Health Check: SMTP check now waits 15 seconds for a response from the SMTP server before returning a _Degraded_ state
+- Modeling: Language Translations can now be selected when defining a translated attribute
+
+### Issues:
+
+- Unable to recreate a deleted tenant
+- Modeling: Cannot select attributes to enable on a state
+
+
 ## [3.5.304](#3.5.304)
 
 Release Date: 2024-04-05
