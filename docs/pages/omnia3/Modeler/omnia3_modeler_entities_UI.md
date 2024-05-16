@@ -72,6 +72,20 @@ In the Form page, select the **Drag to add / Add new Element** section, click on
 - **isHidden**: the visibility of the element (hidden or visible);
 - **visibleFrom**: the visibility of the element, related to the user's device screen size (at sizes smaller than the one selected, the element will be hidden);
 
+### How to add a new tab control element?
+
+In the Form page, select the **Drag to add / Add new Element** section, click on the _Tab Control_ element to drag it to your layout. Then, fill the following information:
+
+- **name**: the element's unique identifier attribute;
+- **label**: the element caption;
+- **helpText**: the detailed description of the element;
+- **row**: the layout row in which the element will be placed;
+- **column**: the layout column in which the element will be placed;
+- **size**: the element size on a scale of 1 (the smaller size) to 12 (the bigger size). Click [here](omnia3_modeler_entities_ui.html#lists-and-grid-columns), to know more about elements size and columns;
+- **isHidden**: the visibility of the element (hidden or visible);
+- **visibleFrom**: the visibility of the element, related to the user's device screen size (at sizes smaller than the one selected, the element will be hidden);
+- **activeTab**: the _Tab Page_ that should be visible when the tab control is rendered. In order to set the active tab, it is required to drag and drop _Tab Pages_ into the _Tab Control_;
+
 ### How to add a new calendar element?
 
 To add a new calendar check the right sidebar in the **Form** user interface, where you'll find the **Drag to add / Add new Element** section.

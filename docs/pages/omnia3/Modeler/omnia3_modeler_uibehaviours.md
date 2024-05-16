@@ -27,7 +27,7 @@ UI Behaviours are executed by the web app - when creating or editing an entity, 
 
 ## 2. Types of Behaviours
 
-It's possible to extend the user interface through custom behaviours in **Forms**, **Dashboards** **Calendars** and **Menu**.
+It's possible to extend the user interface through custom behaviours in **Forms**, **Dashboards**, **Calendars** and **Menu**.
 
 There are multiple different execution moments for UI behaviours, which follow a logical flow:
 
@@ -82,7 +82,7 @@ In a dashboard, the _On Change_ behaviours is executed after the list data is re
 | Before Save                         | onBeforeSave()                                              | Available in Forms.      |
 | After Save                          | onAfterSave(operation, identifier)                          | Available in Forms.      |
 | Before Collection Entity Initialize | OnBefore{ATTRIBUTE NAME}EntityInitialize(entry)             | Available in Forms.      |
-| On Click                            | OnClick\_{ELEMENT NAME}()                                   | Available in Dashboards. |
+| On Click                            | OnClick\_{ELEMENT NAME}()                                   | Available in Buttons. |
 | Refresh                             | onRefresh()                                                 | Available in Dashboards. |
 | Create                              | onCreate()                                                  | Available in Dashboards. |
 | On Cell Click                       | onCellClick\_{ELEMENT NAME}(column, line)                   | Available in Dashboards. |
@@ -92,6 +92,7 @@ In a dashboard, the _On Change_ behaviours is executed after the list data is re
 | On Form Close                       | onFormClose\_{ELEMENT NAME}(line, index, operation)         | Available in Calendars inside Forms.       |
 | On Event Click                      | OnEventClick\_{ELEMENT NAME}(event, isStatic)               | Available in Calendars inside Dashboards.  |
 | On Event Export                     | OnEventExport\_{ELEMENT NAME}(dataEvent, isMapped, exportEvent, exportType)     | Available in Calendars.  |
+| On Tab Select                     | onTabSelect\_{ELEMENT NAME}(tabName)     | Available in Tab Control.  |
 
 ## 3. Usage
 

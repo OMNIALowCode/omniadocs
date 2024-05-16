@@ -8,6 +8,28 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.328](#3.5.328)
+
+Release Date: 2024-05-16
+
+### Implemented enhancements:
+
+- New Tab Component available on Forms and Dashboards
+- Code Editors now include the method signature
+- Upgraded packages
+- Stability improvements
+- Modeling: Build and Import process are now asynchronous and show the operation progress
+
+### Issues:
+
+- Management: Unable to recreate a deleted tenant
+- Modeling: Cannot select attributes to enable on a state
+- Modeling: After a successful build, on the homepage the builds tile still shows pending changes
+- Modeling/Management: Optimize the number of requests to the API
+- Fixed validations and error messages when an entity code is over the 32 characters max limit
+- Modeling: When an entity is deleted and recreated with the same identifier, the previous entity definition is shown
+
+
 ## [3.5.312](#3.5.312)
 
 Release Date: 2024-04-23
