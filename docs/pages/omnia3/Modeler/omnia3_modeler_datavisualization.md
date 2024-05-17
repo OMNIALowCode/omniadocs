@@ -112,6 +112,7 @@ Dashboards can have the following elements:
 - **Input**: an input of any of the supported types (e.g.: text, date, reference to an entity, ...);
 - **Button**: a button that triggers its OnClick behaviour after a user clicks it;
 - **Panel**: used for organization of other dashboard elements without adding any extra overhead.
+- **TabControl**: used for organization of dashboard elements into tabs.
 
 ### How to add elements to a dashboard?
 
