@@ -8,6 +8,23 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.338](#3.5.338)
+
+Release Date: 2024-06-04
+
+### Implemented enhancements:
+
+- Upgraded packages
+- Swagger: Improved description on Text Templates endpoint
+- Setup page is no longer available after initial setup is executed
+- Model Validators: Data Behaviours on non-root generic entities are shown as a warning instead of an error
+- Event Store: Snapshot events to improve performance
+
+### Issues:
+
+- Swagger: When there are two endpoints with same path but different HTTP verb, both endpoints are expanded when clicked
+
+
 ## [3.5.328](#3.5.328)
 
 Release Date: 2024-05-16
