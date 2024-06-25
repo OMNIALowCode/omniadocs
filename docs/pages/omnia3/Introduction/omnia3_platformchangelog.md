@@ -8,6 +8,19 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.342](#3.5.342)
+
+Release Date: 2024-06-25
+
+### Implemented enhancements:
+
+- Upgraded packages
+- Application Menu: new _isCollapsed_ attribute to control if the menu starts expanded or collapsed
+
+### Issues:
+
+- Calendars: When exporting events on _year_ view, an empty file is generated
+
 ## [3.5.338](#3.5.338)
 
 Release Date: 2024-06-04

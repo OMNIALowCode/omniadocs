@@ -27,8 +27,8 @@ It's only possible to have one menu in the Application.
 By accessing **_User Interface / Menu_** in the sidebar, you will have access to the Menu modeling screen.
 
 
-A Menu is a hierarchical structure defined by nested menu entries.
-Each Menu Entry is defined by:
+A Menu is a hierarchical structure composed by nested menu entries. Each Menu Entry is defined by:
+
 * **name**: the entry name (should be unique in a menu);
 * **label**: the element caption;
 * **row**: the layout row in which the element will be placed;
@@ -38,6 +38,8 @@ Each Menu Entry is defined by:
 * **Icon**: You can consult the available icons at [Font Awesome version 4.7.0](https://fontawesome.com/v4.7.0/){:target="\_blank"};
 * **color**: color to display when hovering the menu entry;
 * **isHidden**: the visibility of the element (hidden or visible);
+
+The menu can be configured to start collapsed or expanded, by changing the value of the _isCollapsed_ attribute. By default the menu starts expanded.
 
 
 ## 3. User Interface Behaviours
@@ -50,7 +52,7 @@ Click [here](omnia3_modeler_uibehaviours.html), to know more about user interfac
 
 ## 4. Breadcrumb
 
-The application will use the menu definition to calculate breadcrumb labels. Rules to find the label:
+The application will use the menu definition to calculate breadcrumb labels. The Rules to calculate the label are:
 
  1. Use the menu entry label if the definition is a member of the Menu.
  2. Use the Dashboard label if the definition is a Dashboard and not a member of the Menu.
