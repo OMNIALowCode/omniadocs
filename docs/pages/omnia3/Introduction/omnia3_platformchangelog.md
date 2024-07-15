@@ -8,6 +8,14 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.343](#3.5.343)
+
+Release Date: 2024-07-15
+
+### Issues:
+
+- State Machines: When enabling an operation related to a collection, an error is shown when selecting the collection attribute
+
 ## [3.5.342](#3.5.342)
 
 Release Date: 2024-06-25
