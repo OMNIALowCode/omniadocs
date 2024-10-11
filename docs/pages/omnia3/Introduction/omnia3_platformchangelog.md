@@ -8,6 +8,17 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.347](#3.5.347)
+
+Release Date: 2024-10-10
+
+### Issues:
+
+- Modeler: Loader does not disappear when user tries to download a build from a tenant without any build
+- Modeler: TabControl is removed from the entity form if a change to the entity that involves form recalculation 
+- Lists: _Navigate_ and _Open as Modal_ actions do not open the expected entity if the action is set on a column whose name is not on lowercase
+
+
 ## [3.5.343](#3.5.343)
 
 Release Date: 2024-07-15
