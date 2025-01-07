@@ -29,7 +29,7 @@ Release Date: 2025-01-08
 - Pages: When a page is opened on a modal and a second modal is opened, it runs the first page _Initialize_ behaviour
 - Pages Modeling: Error when editing date variables without default value
 - Queries Modeling: Cannot add column definition on some queries
-- Text templates Modeling: Improve screen usability
+- Text templates Modeling: Improved screen usability
 - State Machines Modeling: Entity not found when enabling operations in a collection
 
 ## [3.5.347](#3.5.347)

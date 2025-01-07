@@ -458,13 +458,17 @@ Each part of a breadcrumb can link a different location, and optionally the _go 
 To set a breadcrumb add the following code:
 
 ```JavaScript
+
+    //instantiate a translator. Required only if we want to translate the breadcrumb
+    const translator = this._context.getLanguageTranslator();
+
     this._context.setBreadcrumbText([{
-            text: "Home", //the text to show on the breadcrumb part. Can be translated
-            address: "/MyTenant/PRD" //the address to navigate
+            text: translator.translateToApplication('${Texts.Homepage}'), //the translated text to show on the breadcrumb part.
+            address: `/${this._context.tenant.code}/${this._context.tenant.environmentCode}` //the address to navigate
         },
         {
             text: "Dashboard",
-            address: "/MyTenant/PRD/PurchaseOrder/Default"
+            address: `/${this._context.tenant.code}/${this._context.tenant.environmentCode}/PurchaseOrder/Default`
         },
         {
             text: "View",
@@ -479,7 +483,7 @@ To set a breadcrumb that starts with an icon add the following code:
 ```JavaScript
     this._context.setBreadcrumbText([{
             text: "Home",
-            address: "/MyTenant/PRD"
+            address: `/${this._context.tenant.code}/${this._context.tenant.environmentCode}`
         }
     ], {
         value: "home", //the icon code
@@ -492,15 +496,15 @@ To set a breadcrumb with a custom _go back_ configuration add the following code
 ```JavaScript
     this._context.setBreadcrumbText([{
             text: "Home",
-            address: "/MyTenant/PRD"
+            address: `/${this._context.tenant.code}/${this._context.tenant.environmentCode}`
         }
     ], {
         value: "home",
         color: "Red"
     }, {
         isHidden: false, //set as true to hide the back button
-        address: "/MyTenant/PRD/BackDashboard", //the address to navigate
-        tooltip: "Go back" //the button tooltip. The text can be translated
+        address: `/${this._context.tenant.code}/${this._context.tenant.environmentCode}/Dashboard/BackDashboard`, //the address to navigate
+        tooltip: "Go back" //the button tooltip
     });
 ```
 
