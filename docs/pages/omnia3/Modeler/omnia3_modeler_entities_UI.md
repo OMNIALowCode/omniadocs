@@ -371,6 +371,14 @@ On a `Page` , the function must be called as the following example:
 
 ```
 
+### How to know if the form is on create or edit mode?
+
+The following expression returns the view mode value (_create_ or _edit_):
+
+```JavaScript
+    this._context.operation.viewModel
+```
+
 ### **Decimal Attributes**
 
 ### How to change the number of decimal places of the element?
@@ -429,11 +437,78 @@ In this sample, the lookup list of the attribute _employee_ is filtered using th
     };
 ```
 
+### **Title and Breadcrumb**
+
+### How to set a page title?
+
+The page title is shown on the top right side of a form or dashboard.
+
+To set a page title add the following code:
+
+```JavaScript
+    this._context.setPageTitle('My page Title');
+```
+
+### How to set a page breadcrumb?
+
+The breadcrumb for a form or dashboard is automatically suggested, but it can be redefined.
+
+Each part of a breadcrumb can link a different location, and optionally the _go back_ configuration can also be defined.
+
+To set a breadcrumb add the following code:
+
+```JavaScript
+    this._context.setBreadcrumbText([{
+            text: "Home", //the text to show on the breadcrumb part. Can be translated
+            address: "/MyTenant/PRD" //the address to navigate
+        },
+        {
+            text: "Dashboard",
+            address: "/MyTenant/PRD/PurchaseOrder/Default"
+        },
+        {
+            text: "View",
+        },
+    ]);
+```
+
+The code above sets a breadcrumb with three parts, where the first two have an address to redirect, and the last is static.
+
+To set a breadcrumb that starts with an icon add the following code:
+
+```JavaScript
+    this._context.setBreadcrumbText([{
+            text: "Home",
+            address: "/MyTenant/PRD"
+        }
+    ], {
+        value: "home", //the icon code
+        color: "Red" //the icon color
+    });
+```
+
+To set a breadcrumb with a custom _go back_ configuration add the following code:
+
+```JavaScript
+    this._context.setBreadcrumbText([{
+            text: "Home",
+            address: "/MyTenant/PRD"
+        }
+    ], {
+        value: "home",
+        color: "Red"
+    }, {
+        isHidden: false, //set as true to hide the back button
+        address: "/MyTenant/PRD/BackDashboard", //the address to navigate
+        tooltip: "Go back" //the button tooltip. The text can be translated
+    });
+```
+
 ### **Calendar**
 
 ### How to set the entries of a calendar?
 
-To each entry is neccessary to define the _date_ and the _title_.
+To each entry is necessary to define the _date_ and the _title_.
 The _category_ can also be defined, in order to group the entries.
 
 In this sample, the entries of the element _calendar_ are setted:
@@ -572,13 +647,13 @@ In this sample **DTSTART** and **DTEND** are been customized to include time get
     if(exportType === 'ics'){
         delete exportEvent["DTSTART;VALUE=DATE"];
         delete exportEvent["DTEND;VALUE=DATE"];
-    
+
         const dtStart = dataEvent.date?.clone() ?? moment();
         const tStart = dataEvent?.start?.split(":") ?? [0, 0];
         dtStart.hour(tStart[0]);
         dtStart.minute(tStart[1]);
         exportEvent["DTSTART"] = `${dtStart.format('YYYYMMDDTHHmmss')}Z`;
-    
+
         const dtEnd = dataEvent?.date?.clone() ?? moment();
         const tEnd = dataEvent?.end?.split(":") ?? [0, 0];
         dtEnd.hour(tEnd[0]);

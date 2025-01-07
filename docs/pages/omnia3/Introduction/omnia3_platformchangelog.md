@@ -8,6 +8,30 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.362](#3.5.362)
+
+Release Date: 2025-01-08
+
+### Implemented enhancements:
+
+- Modeling: Added filter to interface Elements Tree
+- Operations Center: Filter and Sort abilities added to operations list
+- Breadcrumb path and page title can be set on UI Behaviours
+- Temporaries are now removed immediately after an entity is saved
+
+### Issues:
+
+- Performance: Improvements on resource utilization
+- Menu: Changes to menu metadata on _onSelect_ behaviours are not applied
+- Menu: Entries without a defined type cannot be added as favorite
+- Lists: Duplicated requests to API when navigating between pages
+- Calendar: UI breaks when calendar entry form has a reference attribute that allows multiple records
+- Pages: When a page is opened on a modal and a second modal is opened, it runs the first page _Initialize_ behaviour
+- Pages Modeling: Error when editing date variables without default value
+- Queries Modeling: Cannot add column definition on some queries
+- Text templates Modeling: Improve screen usability
+- State Machines Modeling: Entity not found when enabling operations in a collection
+
 ## [3.5.347](#3.5.347)
 
 Release Date: 2024-10-10
@@ -15,9 +39,8 @@ Release Date: 2024-10-10
 ### Issues:
 
 - Modeler: Loader does not disappear when user tries to download a build from a tenant without any build
-- Modeler: TabControl is removed from the entity form if a change to the entity that involves form recalculation 
+- Modeler: TabControl is removed from the entity form if a change to the entity that involves form recalculation
 - Lists: _Navigate_ and _Open as Modal_ actions do not open the expected entity if the action is set on a column whose name is not on lowercase
-
 
 ## [3.5.343](#3.5.343)
 
@@ -56,7 +79,6 @@ Release Date: 2024-06-04
 
 - Swagger: When there are two endpoints with same path but different HTTP verb, both endpoints are expanded when clicked
 
-
 ## [3.5.328](#3.5.328)
 
 Release Date: 2024-05-16
@@ -78,7 +100,6 @@ Release Date: 2024-05-16
 - Fixed validations and error messages when an entity code is over the 32 characters max limit
 - Modeling: When an entity is deleted and recreated with the same identifier, the previous entity definition is shown
 
-
 ## [3.5.312](#3.5.312)
 
 Release Date: 2024-04-23
@@ -93,7 +114,6 @@ Release Date: 2024-04-23
 - Unable to recreate a deleted tenant
 - Modeling: Cannot select attributes to enable on a state
 
-
 ## [3.5.304](#3.5.304)
 
 Release Date: 2024-04-05
@@ -101,7 +121,7 @@ Release Date: 2024-04-05
 ### Implemented enhancements:
 
 - Assets are available to be used on Text Templates
-- Features Management: Swagger endpoint can now be disabled 
+- Features Management: Swagger endpoint can now be disabled
 - [Tenants: New Role on Tenants to grant connectors adequate privileges](../Authorization/omnia3_authorizationmanagement.md#roles)
 - Modeling area: Alert modelers if they make a _Build & Deploy_ request with unsaved changes
 - UI Modeling: new option to navigate to attribute settings, on the attribute context menu
@@ -119,8 +139,7 @@ Release Date: 2024-04-05
 - Modeler: If user makes changes using _View Json_ option, it is not alerted of changes pending save when navigating
 - Queries are not properly executed if there is an attribute named _User_
 - Calendar: dates available on metadata and on _Date Range Change_ behaviour are sensitive to the computer timezone
-- Management area:  When user clicks to filter a column but does not insert data, filter is applied but not visible
-
+- Management area: When user clicks to filter a column but does not insert data, filter is applied but not visible
 
 ## [3.5.282](#3.5.282)
 
@@ -159,7 +178,7 @@ Release Date: 2024-02-21
 
 ### Issues:
 
-- Management Area: 
+- Management Area:
   - User is unable to access a tenant when it is added to multiple tenants simultaneously
   - When a Tenant is created as Inactive, user is asked for a Platform Restart
   - Connector Management: Connector cannot be accessed if its APIClient is removed
@@ -256,7 +275,7 @@ Release Date: 2023-10-27
 - On a Dashboard Modeling, if a list does not have a value for _isEditable_ attribute, editable list properties are shown
 - Mobile Devices:
   - When creating or editing an entity, the breadcrumb state machine title overlaps the first attribute label
-  - On Calendars, the label that contains the visible period changes position according to its size 
+  - On Calendars, the label that contains the visible period changes position according to its size
 
 **This version contains breaking changes.**
 **Upgrade to OMNIA Connector is required.**
