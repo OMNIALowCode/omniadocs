@@ -69,7 +69,7 @@ initialize({ context, variables, urlParameters, refs }) {
 | ------------- | -------------------------------------------------------------------------------------- |
 | context       | This property contains information about the current user and the operation being made |
 | variables     | The values of the variables modeled on the page                                        |
-| urlParameters | The values of the Url parameters set when acessing the page                            |
+| urlParameters | The values of the Url parameters set when accessing the page                           |
 | refs          | The _Outbound_ attribute values for each Component located on the page                 |
 
 - Element Behaviour
@@ -87,7 +87,7 @@ Before we look at these new properties, it is important to highlight that proper
 | Property       | Description                                                                                                                                                                             |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | indexes        | This property contains the index of collection iterated by the _forEach_ for the current element. If the collection is located within another, indexes of the parents are also included |
-| currentElement | This property contains the data of the current entry inside the collection being iterated                                                                                                                                           |
+| currentElement | This property contains the data of the current entry inside the collection being iterated                                                                                               |
 | currentIndex   | This property contains the index of the current element inside the collection being iterated                                                                                            |
 | params         | A list of parameters exposed by the Component. Each Component exposes a set of parameters of different types for each Event                                                             |
 

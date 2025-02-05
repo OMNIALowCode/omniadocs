@@ -94,7 +94,7 @@ In order to add code/expression dependencies, access the modeler, edit a data so
 - **Description:** A human-readable description for the dependency;
 - **Generate the following C# code:** The code you want to add to the compiled assembly.
 - **Execution Location:** The location where the assembly is going to be used. Possible values:
-  - Other system (External): The assembly will be available to be used only on behaviours external to Omnia
+  - Other system (External): The assembly will be available to be used only on behaviours external to OMNIA
   - OMNIA (Internal): The assembly will be available to be used only on behaviours executed on OMNIA
 
 ### 3.2 Using code dependencies

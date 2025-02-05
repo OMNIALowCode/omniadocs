@@ -9,13 +9,13 @@ folder: omnia3
 
 ## 1. Introduction
 
-OMNIA's Worflow Tutorial enhances your experience on OMNIA Platform 3.0, combining advanced elements and features from previous Tutorials with your daily workflow tools.
+OMNIA's Workflow Tutorial enhances your experience on OMNIA Platform 3.0, combining advanced elements and features from previous Tutorials with your daily workflow tools.
 
 ## 2. Prerequisites
 
 This tutorial assumes that you have created a OMNIA tenant, and are logged in as a user with modeling privileges to this tenant.
 
-## 3. Modeling a Workflow apllication
+## 3. Modeling a Workflow application
 
 1. Start by selecting the tenant where you are going to model, and you will be redirected to the modeling area.
 

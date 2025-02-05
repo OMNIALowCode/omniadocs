@@ -1,7 +1,7 @@
 ---
 title: Developing and Debugging Behaviours
 keywords: lowcode visual studio remote development c# behaviours
-summary: 'All the information on how to develop and debug C# Behaviours with the help of Visual Studio as a remote development tool for your OMNIA Applications.'
+summary: "All the information on how to develop and debug C# Behaviours with the help of Visual Studio as a remote development tool for your OMNIA Applications."
 sidebar: omnia3_sidebar
 permalink: omnia3_modeler_developingbehaviours.html
 folder: omnia3
@@ -19,19 +19,20 @@ When developing behaviours in OMNIA platform, writing C# with no context directl
 ## 3. Structure of the downloaded build
 
 After extracting the downloaded build (a .zip file), you will have the following folders:
-* **BinaryData**
-  * **ApplicationAsset**: The files uploaded as model Assets;
-  * **ComponentsPackage**: The packages of components added to the model;
-* **Server**
-  * **Behaviours**: The [C# classes](#4-c-behaviours) generated based on the modeled behaviours (Entity, Data, Application and Code Dependencies);
-* **Database**
-  * **Queries**: The SQL queries (modeled in advanced mode or not);
-* **UI**
-  * **Behaviours**: The JavaScript classes generated based on User Interface behaviours;
-  * **WebComponents**: The JavaScript files representing the modeled Web Components.
-  * **Themes**: The SASS files representing the modeled Themes.
-  * **CssStyles**: The modeled CSS Styles classes.
-  * **Scripts**: The modeled JavaScript global scripts.
+
+- **BinaryData**
+  - **ApplicationAsset**: The files uploaded as model Assets;
+  - **ComponentsPackage**: The packages of components added to the model;
+- **Server**
+  - **Behaviours**: The [C# classes](#4-c-behaviours) generated based on the modeled behaviours (Entity, Data, Application and Code Dependencies);
+- **Database**
+  - **Queries**: The SQL queries (modeled in advanced mode or not);
+- **UI**
+  - **Behaviours**: The JavaScript classes generated based on User Interface behaviours;
+  - **WebComponents**: The JavaScript files representing the modeled Web Components.
+  - **Themes**: The SASS files representing the modeled Themes.
+  - **CssStyles**: The modeled CSS Styles classes.
+  - **Scripts**: The modeled JavaScript global scripts.
 
 ## 4. C# Behaviours
 
@@ -47,16 +48,15 @@ Each _Data Source_ will have a folder with a _Visual Studio_ C# Project, which c
 
 The project can have (depending of which behaviours are modeled) the following folders:
 
-* **Application**: Contains the [*Application Behaviours*](omnia3_modeler_behaviours.html#5-application-behaviours);
-  * Files under subfolder "Infrastructure" shouldn't be edited.
-* **Data**: Contains the *Data Access Objects (DAOs)* (one per entity), each one with the representation of the modeled [*Data Behaviours*](omnia3_modeler_datasources.html#2-types-of-data-behaviours);
-  * Files under subfolder "Infrastructure" shouldn't be edited.
-* **Entity**: Contains the classes (one per entity) that support the execution of the operations modeled through [*Entity Behaviours*](omnia3_modeler_behaviours.html#2-types-of-behaviours).
-  * A file will be generated for each entity and its name will respect the rule _MyEntityName.**Operations.cs**_.
-  * A file will be generated for each state machine and its name will respect the rule _MyEntityName.**StateMachine.cs**_.
-  * Files under subfolder "Domain" shouldn't be edited.
-* **CodeDependencies**: Contains the [*Code Dependencies*](omnia3_modeler_dependencies.html#3-code-dependencies);
-
+- **Application**: Contains the [_Application Behaviours_](omnia3_modeler_behaviours.html#5-application-behaviours);
+  - Files under subfolder "Infrastructure" shouldn't be edited.
+- **Data**: Contains the _Data Access Objects (DAOs)_ (one per entity), each one with the representation of the modeled [_Data Behaviours_](omnia3_modeler_datasources.html#2-types-of-data-behaviours);
+  - Files under subfolder "Infrastructure" shouldn't be edited.
+- **Entity**: Contains the classes (one per entity) that support the execution of the operations modeled through [_Entity Behaviours_](omnia3_modeler_behaviours.html#2-types-of-behaviours).
+  - A file will be generated for each entity and its name will respect the rule _MyEntityName.**Operations.cs**_.
+  - A file will be generated for each state machine and its name will respect the rule _MyEntityName.**StateMachine.cs**_.
+  - Files under subfolder "Domain" shouldn't be edited.
+- **CodeDependencies**: Contains the [_Code Dependencies_](omnia3_modeler_dependencies.html#3-code-dependencies);
 
 ## 5. C# Debugging
 
@@ -85,13 +85,13 @@ To do that, you need to execute the following command, using the _Command Line_,
 
 _Note: The parameters are case sensitive_
 
-Once you have runned the previous command:
+Once you have ran the previous command:
 
 - Open the build folder and navigate to the folder _classes_;
 - Open the folder of the _Data Source_ you have attached to debug in the previous command;
 - Open the C# project in _Visual Studio_, using the _.csproj_ file.
 
-Using the _Visual Studio_ debbuging features, start the debbuger and from now on, all the requests made in the _OMNIA Platform_ to this _Data Source_ will be forwarded to this debug session.
+Using the _Visual Studio_ debugging features, start the debugger and from now on, all the requests made in the _OMNIA Platform_ to this _Data Source_ will be forwarded to this debug session.
 
 ### 5.3 Debug Connector Behaviours
 
@@ -109,7 +109,7 @@ Once you have the _OMNIA Connector_ running:
 - Open the folder of the _Data Source_ you want to debug;
 - Open the C# project in _Visual Studio_, using the _.csproj_ file.
 
-Using the _Visual Studio_ debbuging features, start the debbuger and from now on, all the requests made in the _OMNIA Platform_ to this _Data Source_ will be forwarded to this debug session.
+Using the _Visual Studio_ debugging features, start the debugger and from now on, all the requests made in the _OMNIA Platform_ to this _Data Source_ will be forwarded to this debug session.
 
 NOTE: If breakpoints are not loaded, it might be necessary to change _Debugging Information_ setting. Click [here](https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-set-debug-and-release-configurations?view=vs-2019#generate-symbol-files-for-a-c-aspnet-or-visual-basic-project){:target="\_blank"} to see how.
 
