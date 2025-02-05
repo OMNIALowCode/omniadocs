@@ -12,7 +12,7 @@ Visit our [Downloads](/omnia3_downloads.html#connector) page to get the latest v
 
 ## [3.5.16](#3.5.16)
 
-Release Date: 2025-01-08
+Release Date: 2025-02-05
 
 ### Implemented enhancements:
 
