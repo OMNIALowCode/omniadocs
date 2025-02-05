@@ -13,7 +13,6 @@ OMNIA Platform enables you to send email notifications using the SMTP server con
 
 Besides that, the Platform lets you take advantage of modeled [Text Templates](/omnia3_modeler_texttemplates.html) to compose your emails.
 
-
 ## 2. Using Email Notifications
 
 To send email notifications in the context of your applications, OMNIA has an API endpoint available in the context of your application.
@@ -23,15 +22,14 @@ This endpoint can be used in your behaviours for example.
 
 To send emails, you can define:
 
- - Who will receive the notification; 
- - Subject; 
- - Body _(Email body is handled as HTML that is embeded in the global notification style used by the Platform.)_.
+- Who will receive the notification;
+- Subject;
+- Body _(Email body is handled as HTML that is embedded in the global notification style used by the Platform.)_.
 
 The Subject and Body can be composed using a given text or using a Text Template [(see here how to use Text Templates)](/omnia3_modeler_texttemplates.html).
 
 **Accelerator**
 The accelerator _"Send an e-mail using a Text Template"_ is available in After Save Behaviours. This accelerator helps you to easily compose a request to send an email using Text Templates. To render the Text Template, the accelerator will us the current Entity as input data to the Template.
-
 
 ```C#
 
@@ -52,31 +50,27 @@ if (!requestResult.IsSuccessStatusCode)
 
 ```
 
-
 ## 3. Customize Platform Notifications
 
 You can customize lists "Export as CSV" feature notifications.
 To do that, create a [Text Template](/omnia3_modeler_texttemplates.html) for the Subject and other to the Body.
 
-
 You will be receiving the Link (as _DownloadLink_) in the Text Template Data parameters.
 
-*Note: Use this feature to send emails in a user language. Create a Text Template and use the Language Texts.*
+_Note: Use this feature to send emails in a user language. Create a Text Template and use the Language Texts._
 
 ### How to customize the Export CSV Notification subject?
 
- 1. Create a new Text Template using the name:  _ExportCsvSuccessEmailSubject_
- 2. Change the Template with the desired text. Example: _OMNIA Platform - Your download is ready_
-
+1.  Create a new Text Template using the name: _ExportCsvSuccessEmailSubject_
+2.  Change the Template with the desired text. Example: _OMNIA Platform - Your download is ready_
 
 ### How to customize the Export CSV Notification body?
 
- 1. Create a new Text Template using the name:  _ExportCsvSuccessEmailBody_
- 2. Change the Template with the desired text (HTML can be used). 
- 
+1.  Create a new Text Template using the name: _ExportCsvSuccessEmailBody_
+2.  Change the Template with the desired text (HTML can be used).
+
 ```HTML
   <p>The data export you have requested has been processed.</p>
   <p>Click the "Download" link below to download the generated file:</p>
   <a href="{{Data.DownloadLink}}"><b>Download</b></a>
 ```
- 

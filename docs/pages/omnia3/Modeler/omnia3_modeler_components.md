@@ -155,7 +155,7 @@ Child components must be included to show data and execute operations.
 | Method               | Description                                                                                                                                       |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | save                 | Method that makes a request to the API to save the form data. It has 2 optional parameters related to the state machine: _decision_ and _comment_ |
-| delete               | Method that makes a request to the API to delete the current entity intance                                                                       |
+| delete               | Method that makes a request to the API to delete the current entity instance                                                                      |
 | destroySensitiveData | Method that makes a request to the API to destroy sensitive data for the current entity instance                                                  |
 
 #### Types

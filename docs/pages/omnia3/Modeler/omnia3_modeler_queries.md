@@ -90,7 +90,7 @@ The test is only available to queries that execute on the local _System_ datasou
 When a test executes successfully, the following information is returned:
 
 - Execution Time: The time the query takes to be executed on the database, in milliseconds
-- Total response time: The total execution time (in milliseconds), from the moment when the test request is sent to Omnia API until the response is received
+- Total response time: The total execution time (in milliseconds), from the moment when the test request is sent to OMNIA API until the response is received
 - Data: The first 50 records returned by the query execution
 
 When a test executes with error, the following information is returned:

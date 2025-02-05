@@ -1,7 +1,7 @@
 ---
 title: User Interface (UI) Behaviours Tutorial
 keywords: omnia3
-summary: 'Learn to apply behaviours to change interface elements'
+summary: "Learn to apply behaviours to change interface elements"
 sidebar: omnia3_sidebar
 permalink: omnia3_uiextensibilitytutorial.html
 folder: omnia3
@@ -30,7 +30,7 @@ It is necessary to have completed the steps in the [Beginner tutorial](omnia3_be
    - _Name_: **OrderReceived**
    - _Type_: **_Boolean_**
 
-3. Edit the _PurchaseOrderForm_ by acessing the option **_User Interface / Forms / PurchaseOrderForm_**, and change the _OrderReceived_ attribute position and size:
+3. Edit the _PurchaseOrderForm_ by accessing the option **_User Interface / Forms / PurchaseOrderForm_**, and change the _OrderReceived_ attribute position and size:
 
    - _Row_: **8**
    - _Column_: **10**

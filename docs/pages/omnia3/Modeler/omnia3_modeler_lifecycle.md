@@ -1,22 +1,25 @@
 ---
 title: Model Lifecycle
 keywords: lowcode web app development business model
-summary: "Get to know OMNIA's web application development lifecycle: Business Model definition. Build and compile; Reuse models at future web application developments."
+summary: "Get to know OMNIAs' web application development lifecycle: Business Model definition. Build and compile; Reuse models at future web application developments."
 sidebar: omnia3_sidebar
 permalink: omnia3_modeler_lifecycle.html
 folder: omnia3
 ---
 
 ## 1. Introduction
+
 The OMNIA Platform was designed around a development lifecycle with the following steps:
-* **Model**: create the model definitions;
-* **Build**: compile the model; 
-* **Test**: create records using the previously created model;
+
+- **Model**: create the model definitions;
+- **Build**: compile the model;
+- **Test**: create records using the previously created model;
 
 Each operation is recorded, creating this way a full log of everything was made in the platform.
 
 ## 2. History tracking
-__*Model info / History*__
+
+**_Model info / History_**
 
 It's possible to see all the operations made in the model by accessing the platform's log.
 
@@ -45,7 +48,7 @@ A non-root entity contains data behaviours, that are expected only on root entit
 
 - Depends on attribute must be filled when referencing the non-System entity "_ExternalType_"
 
-An attribute whose data is located on a external system must have, on its configuration, a reference to an attribute that contains the instance of the external system to be queried. 
+An attribute whose data is located on a external system must have, on its configuration, a reference to an attribute that contains the instance of the external system to be queried.
 
 - Query with identifier "_MyQuery_" doesn't exist.
 
@@ -58,17 +61,19 @@ The list is based on a query that no longer exists. The list must be edited to r
 Shown when a list does not have defined its entity type. The list must be edited to set the type, that has to be the same as the query that feeds the list.
 
 ## 4. Build the model
-__*Model info / Builds*__
+
+**_Model info / Builds_**
 
 After every change in the model it's necessary to create a new build in order to the apply the changes and, that way, the end-users can use the application in its last state.
 
 When you create a new build, all the _C#_ code added in the behaviours will be compiled. If any error occurs during the code compilation the build will fail and all the model changes will be maintained as pending.
 
-
 ### How to create a new build?
+
 In the Modeler environment, simply use the "Build & Deploy" button at the top right corner and wait a few moments until it's finished.
 
 ## 5. Download the behaviours code
-__*Model info / Builds*__
+
+**_Model info / Builds_**
 
 If you want to download the behaviours code the way it will be executed in the _OMNIA Platform_ (either to test it or to correct some problem), you can do it in the _Builds_ list choosing the option _Download build_ to the build version you want to get.

@@ -148,7 +148,7 @@ Click [here](omnia3_modeler_uibehaviours.html), to know more about user interfac
 
   Examples:
 
-  - Depending on the user role, allow your Supplier to edit the field "Unit Price", while the custumer only sees it as read only.
+  - Depending on the user role, allow your Supplier to edit the field "Unit Price", while the customer only sees it as read only.
   - A user selects his payment option and that action will hide the unnecessary elements.
 
 - **Add Validation Message**

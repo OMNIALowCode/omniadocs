@@ -15,11 +15,11 @@ OMNIA allows for attribute data classification as "sensitive" that, when combine
 
 Defining an attribute with Personal Identifiable Information (PII) as "sensitive" requires 2 steps:
 
- - Access the "Modeler" dashboard;
- - Find and access the attribute you need and activate the "Is sensitive?" option;
- 
+- Access the "Modeler" dashboard;
+- Find and access the attribute you need and activate the "Is sensitive?" option;
+
 The role in question should have unique access to the "Destroy Sensitive Data" option, that's located at the bottom left corner of every document, under the menu "More Options". Using this feature guarantees the immediate destruction of the document's sensitive data, immediately and irreversibly.
- 
+
 ## Encryption
 
 Data encryption is recommended for GDPR compliance and, to that effect, two elements should to be configured to be encrypted from the start:
@@ -27,7 +27,7 @@ Data encryption is recommended for GDPR compliance and, to that effect, two elem
 - Database(s);
 - Attachments Storage (File Storage, AWS S3 or Azure Blob Storage);
 
-By ensuring the encription of these elements you are ensuring GDPR compliance. 
+By ensuring the encryption of these elements you are ensuring GDPR compliance.
 
 ## Logging
 
@@ -39,4 +39,4 @@ Logs can be accessed under _/var/logs/omnia_.
 
 ## Production Environment
 
-It's recomended the configuration of Secure Sockets Layer (SSL) and Hyper Text Transfer Protocol Secure (HTTPS) at the moment of instalation of OMNIA's production environment. Also recommended is the use of [SSL Mode](https://www.npgsql.org/doc/connection-string-parameters.html){:target="\_blank"} in PostgreSQL Database connection string.
+It's recommended the configuration of Secure Sockets Layer (SSL) and Hyper Text Transfer Protocol Secure (HTTPS) at the moment of installation of OMNIA's production environment. Also recommended is the use of [SSL Mode](https://www.npgsql.org/doc/connection-string-parameters.html){:target="\_blank"} in PostgreSQL Database connection string.
