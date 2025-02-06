@@ -42,12 +42,13 @@ To create a list manually, select the option _Add new_ when in the list of Lists
 When editing a list, it is also possible to change the **Edit Action**, to configure the action to be taken when editing an entity from a list. Possible values:
 
 #### List Actions
+
 | Action                  | Description                              | Additional Parameters                                                  |
 |-------------------------|------------------------------------------|------------------------------------------------------------------------|
 | Navigate                | Navigate to a entity. Default value      | Definition and origin of the dataSource.                               |
 | Open as Modal           | Open an entity on a modal                | Definition, origin of the dataSource and modal configuration           |
 | Raise onCellClick Event | Execute a code expression                | Raise a cell click event, to be handled by a Dashboard code expression |
-| No Action               | List does not have link to navigate      | Not applicable                                                         |
+| No Action               | List does not have link to navigate      |                                                                        |
 
 ### How to set the columns of a list?
 
@@ -64,8 +65,9 @@ You can also add list columns manually, by dragging a new column and filling the
 - **action**: The action to be executed when the column is clicked. Possible values: 
 
 #### Column Actions
+
 | Action                  | Description                              | Additional Parameters                                                  |
-| ----------------------- | ---------------------------------------- | ---------------------------------------------------------------------- |
+|-------------------------|------------------------------------------|------------------------------------------------------------------------|
 | No Action               | Default value                            |                                                                        |
 | Navigate                | Navigate to a entity                     | Definition and origin of the dataSource.                               |
 | Open as Modal           | Open an entity on a modal                | Definition, origin of the dataSource and modal configuration           |
