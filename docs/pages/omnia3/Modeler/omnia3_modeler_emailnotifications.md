@@ -67,10 +67,11 @@ _Note: Use this feature to send emails in a user language. Create a Text Templat
 ### How to customize the Export CSV Notification body?
 
 1.  Create a new Text Template using the name: _ExportCsvSuccessEmailBody_
-2.  Change the Template with the desired text (HTML can be used).
+2.  Change the Template with the desired text (HTML and model translations can be used).
 
 ```HTML
-  <p>The data export you have requested has been processed.</p>
-  <p>Click the "Download" link below to download the generated file:</p>
-  <a href="{{Data.DownloadLink}}"><b>Download</b></a>
+    <p>The data export you have requested has been processed.</p>
+    <p>Click the "Download" link below to download the generated file:</p>
+    <p><a href="{{Data.DownloadLink}}"><b>Download</b></a></p>
+    <p><i>The file is only accessible to the export author.</i></p>
 ```
