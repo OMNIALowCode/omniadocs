@@ -12,7 +12,7 @@ toc: false
 
 When behaviours are developed locally, they must be synchronized with Omnia model, using Omnia-CLI.
 
-Omnia-CLI is a command line interface that simplifies the interaction with Omnia API when downloading, uploading and syncronizing models.
+Omnia-CLI is a command line interface that simplifies the interaction with Omnia API when downloading, uploading and synchronizing models.
 
 Omnia-CLI is already installed on Development container, but it can also be installed on local machines.
 
@@ -20,7 +20,7 @@ Omnia-CLI is already installed on Development container, but it can also be inst
 
 Installation process is described [here](https://github.com/OMNIALowCode/omnia-cli#installation){:target="\_blank"}
 
-To use Omnia-CLI for syncronizing behaviours code with a tenant, a new [Api Client](omnia3_management_introduction.html#4-api-clients) must be created and associated to a tenant.
+To use Omnia-CLI for synchronizing behaviours code with a tenant, a new [Api Client](omnia3_management_introduction.html#4-api-clients) must be created and associated to a tenant.
 
 ## 3. Setup
 
