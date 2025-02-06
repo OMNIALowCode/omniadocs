@@ -47,7 +47,7 @@ When editing a list, it is also possible to change the **Edit Action**, to confi
 | Navigate                | Navigate to a entity. Default value      | Definition and origin of the dataSource.                               |
 | Open as Modal           | Open an entity on a modal                | Definition, origin of the dataSource and modal configuration           |
 | Raise onCellClick Event | Execute a code expression                | Raise a cell click event, to be handled by a Dashboard code expression |
-| No Action               | List does not have link to navigate      |                                                                        |
+| No Action               | List does not have link to navigate      | Not applicable                                                         |
 
 ### How to set the columns of a list?
 
