@@ -72,6 +72,6 @@ _Note: Use this feature to send emails in a user language. Create a Text Templat
 ```HTML
     <p>The data export you have requested has been processed.</p>
     <p>Click the "Download" link below to download the generated file:</p>
-    <p><a href="{{Data.DownloadLink}}"><b>Download</b></a></p>
+    <p><a href="{{ Data.DownloadLink }}"><b>Download</b></a></p>
     <p><i>The file is only accessible to the export author.</i></p>
 ```
