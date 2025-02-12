@@ -8,6 +8,35 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.392](#3.5.392)
+
+Release Date: 2025-02-12
+
+### Implemented enhancements:
+
+- Lists: precision is now configurable on decimal columns
+- Authorization Roles: role description can now be configured
+- Improved error messages when disabled attributes are changed on a collection
+- Editable Grid: added a label when there are no records and they cannot be added
+- Validate required attributes and other rules when data is inserted on a modal (Grids on mobile devices and Calendars)
+- CSV Export settings are now configurable after selection
+
+### Issues:
+
+- Authorization Roles: it is possible to add users to roles without any privilege
+- Authentication providers: LinkedIn authentication provider not working
+- Authentication providers: Error on authenticating when there is more than one active OpenID Connect provider
+- Modeler: It is possible to define a collection with minimum and maximum as 1
+- Modeler: error when removing entries from an automatically generated menu
+- Modeler: when an entity is created with a different case of a removed one, an error occurs
+- Modeler: Events and Commitments should not be available to be added as a _reference_ attribute
+- Modeler: It is possible to drop unsupported attributes on a Tab Control
+- Asynchronous operations for a tenant are retried after the tenant is removed
+- State Machines: Attributes and operations can be enabled multiple times
+- Enumerations: Tooltip shows the value instead of the description
+- Calendar: When select range is active and a new entry is added, it changes existing records
+- UI: When a temporary fails to update, the user cannot proceed with data insertion
+
 ## [3.5.362](#3.5.362)
 
 Release Date: 2025-01-08

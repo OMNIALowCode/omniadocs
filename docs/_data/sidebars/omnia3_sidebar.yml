@@ -303,6 +303,10 @@ entries:
             url: /omnia3_application_menu_favorites.html
             output: web, pdf
 
+          - title: Export list data
+            url: /omnia3_application_data_export.html
+            output: web, pdf
+
       - title: Authorization
         output: web, pdf
         folderitems:
