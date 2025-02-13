@@ -8,9 +8,9 @@ folder: omnia3
 toc: false
 ---
 
-## [3.5.392](#3.5.392)
+## [3.5.393](#3.5.393)
 
-Release Date: 2025-02-12
+Release Date: 2025-02-17
 
 ### Implemented enhancements:
 
