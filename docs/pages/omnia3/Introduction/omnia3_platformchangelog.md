@@ -31,6 +31,8 @@ Release Date: 2025-02-12
 - Modeler: when an entity is created with a different case of a removed one, an error occurs
 - Modeler: Events and Commitments should not be available to be added as a _reference_ attribute
 - Modeler: It is possible to drop unsupported attributes on a Tab Control
+- Modeler: Filters by integer or boolean columns on lists not working
+- Modeler: On Query list, filter on _Definition Type_ column are case sensitive
 - Asynchronous operations for a tenant are retried after the tenant is removed
 - State Machines: Attributes and operations can be enabled multiple times
 - Enumerations: Tooltip shows the value instead of the description
