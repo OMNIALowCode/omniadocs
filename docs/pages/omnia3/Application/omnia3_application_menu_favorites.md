@@ -1,7 +1,7 @@
 ---
 title: OMNIA 3 Menu Favorites
 keywords: omnia3
-summary: 'OMNIA 3 Menu Favorites'
+summary: "OMNIA 3 Menu Favorites"
 sidebar: omnia3_sidebar
 permalink: omnia3_application_menu_favorites.html
 folder: omnia3
@@ -10,6 +10,8 @@ folder: omnia3
 ## 1. Introduction
 
 This feature allows you to select menu entries (not folders) and add them to a new "My Favorites" menu section.
+
+This feature might not be available, depending on the Tenant menu configuration.
 
 ## 2. How to change favorites?
 

@@ -8,6 +8,24 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.403](#3.5.403)
+
+Release Date: 2025-02-24
+
+### Implemented enhancements:
+
+- Upgraded packages
+- Modeler: Application Menu favorites feature availability is now configurable
+
+### Issues:
+
+- Modeler: Filters on queries list has case sensitive columns
+- Modeler: List filters not working on columns whose type is not text
+- Modeler: Default entity queries can be removed, and it breaks the models
+- Application UI: Unused space on the right side of the content area when menu is collapsed
+- Remote UI Development: Debug sessions do not terminate on tenant switch
+- Users Management: When inserting an user through the form, required properties are not validated
+
 ## [3.5.393](#3.5.393)
 
 Release Date: 2025-02-17
@@ -374,7 +392,7 @@ Release Date: 2023-07-31
 ### Implemented enhancements:
 
 - When creating a new Connector, the generated email address is now available on the credentials modal
-- Modeling: _Update with JSON_ modal no loger closes when clicking the ESC button
+- Modeling: _Update with JSON_ modal no longer closes when clicking the ESC button
 
 ### Issues:
 
