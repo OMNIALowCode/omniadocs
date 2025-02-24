@@ -11,7 +11,7 @@ folder: omnia3
 
 Now that you have completed our [beginner tutorial](omnia3_beginnertutorial.html), whose result is a functional order management application, we'll now focus on advanced behaviour modeling, using native and external APIs, and an introduction to data analysis elements **Lists**, **Queries** and **Dashboards**.
 
-In **3. Advanced Behaviours** area, we will explore how to comunicate with **OMNIA's native API**, in order to improve the user experience, and an **External API**. As a external API, [Discogs](https://www.discogs.com/developers/){:target="\_blank"} was chosen for this example.
+In **3. Advanced Behaviours** area, we will explore how to communicate with **OMNIA's native API**, in order to improve the user experience, and an **External API**. As a external API, [Discogs](https://www.discogs.com/developers/){:target="\_blank"} was chosen for this example.
 
 In point **4. Data analysis**, we will explore how to model new lists and how to create dashboards on OMNIA.
 
