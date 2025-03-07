@@ -10,6 +10,14 @@ toc: false
 
 Visit our [Downloads](/omnia3_downloads.html#connector) page to get the latest version.
 
+## [3.5.17](#3.5.17)
+
+Release Date: 2025-03-07
+
+### Implemented enhancements:
+
+- Upgraded packages
+
 ## [3.5.16](#3.5.16)
 
 Release Date: 2025-02-05
