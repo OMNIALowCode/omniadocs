@@ -8,6 +8,15 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.404](#3.5.404)
+
+Release Date: 2025-03-12
+
+### Implemented enhancements:
+
+- Infrastructure setup: Increase subscription base URLs maximum size to 128 characters
+- Security improvements
+  
 ## [3.5.402](#3.5.402)
 
 Release Date: 2025-02-24
