@@ -8,6 +8,20 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.411](#3.5.411)
+
+Release Date: 2025-04-07
+
+### Implemented enhancements:
+
+- UI Pages: _exportCSV_ on internal Component _runQuery_ accepts the name of the file to download as parameter
+- UI Pages: Columns to export to CSV on _runQuery_ component are now configurable, so that it doesn't export all query columns
+
+### Issues:
+
+- UI Pages modeling: Language is not available on _context_ object Intellisense
+- UI Pages modeling: Error when using components with attributes that share the same ending as another attribute
+
 ## [3.5.409](#3.5.409)
 
 Release Date: 2025-03-24

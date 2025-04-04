@@ -78,20 +78,21 @@ A common scenario for this component is to execute a query that feeds a list.
 
 #### Properties
 
-| Property     | Direction | Data Type       |                                                                                       | Description |
-| ------------ | --------- | --------------- | ------------------------------------------------------------------------------------- | ----------- |
-| query        | Inbound   | Reference/Query | The modeled query to be executed                                                      |
-| records      | Outbound  | Object          | The list of records obtained as the result of the query execution                     |
-| columns      | Outbound  | Object          | The structure of the columns returned on each record                                  |
-| dataSource   | Inbound   | Text            | The dataSource instance where the query is going to be executed                       |
-| parameters   | Inbound   | Object          | Parameters to be applied when executing the query                                     |
-| filters      | Inbound   | Object          | The filters to be applied to the query                                                |
-| sorting      | Inbound   | Object          | The sorting criteria to be applied                                                    |
-| currentPage  | Inbound   | Integer         | The number of the page being retrieved                                                |
-| pageSize     | Inbound   | Integer         | The number of records to be returned                                                  |
-| totalPages   | Outbound  | Integer         | The total number of pages that can be obtained for the current query and page size    |
-| totalRecords | Outbound  | Integer         | The total number of records that can be returned as the result of the query execution |
-| isLoading    | Outbound  | Boolean         | Boolean to indicate if the query is being executed and data is still loading          |
+| Property      | Direction | Data Type       |                                                                                       | Description |
+| ------------- | --------- | --------------- | ------------------------------------------------------------------------------------- | ----------- |
+| query         | Inbound   | Reference/Query | The modeled query to be executed                                                      |
+| records       | Outbound  | Object          | The list of records obtained as the result of the query execution                     |
+| columns       | Outbound  | Object          | The structure of the columns returned on each record                                  |
+| dataSource    | Inbound   | Text            | The dataSource instance where the query is going to be executed                       |
+| parameters    | Inbound   | Object          | Parameters to be applied when executing the query                                     |
+| filters       | Inbound   | Object          | The filters to be applied to the query                                                |
+| sorting       | Inbound   | Object          | The sorting criteria to be applied                                                    |
+| exportColumns | Inbound   | Object          | The columns to be included on the exported CSV file                                   |
+| currentPage   | Inbound   | Integer         | The number of the page being retrieved                                                |
+| pageSize      | Inbound   | Integer         | The number of records to be returned                                                  |
+| totalPages    | Outbound  | Integer         | The total number of pages that can be obtained for the current query and page size    |
+| totalRecords  | Outbound  | Integer         | The total number of records that can be returned as the result of the query execution |
+| isLoading     | Outbound  | Boolean         | Boolean to indicate if the query is being executed and data is still loading          |
 
 #### Events
 
@@ -103,10 +104,19 @@ A common scenario for this component is to execute a query that feeds a list.
 
 #### Methods
 
-| Method    | Description                                          |
-| --------- | ---------------------------------------------------- |
-| refresh   | Method that executes the query to retrieve new data  |
-| exportCSV | Method that requests to the API a data export to CSV |
+| Method    | Description                                                                                                      |
+| --------- | ---------------------------------------------------------------------------------------------------------------- |
+| refresh   | Method that executes the query to retrieve new data                                                              |
+| exportCSV | Method that requests to the API a data export to CSV. Has a optional parameter, the name of the file to download |
+
+#### Types
+
+##### ExportCSVColumn
+
+| Property | Data Type | Description                                       |
+| -------- | --------- | ------------------------------------------------- |
+| property | String    | The key of the column to export                   |
+| label    | String    | The label to be set on the exported column header |
 
 ### entityForm
 
