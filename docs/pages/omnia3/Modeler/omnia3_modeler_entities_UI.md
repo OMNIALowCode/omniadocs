@@ -400,7 +400,7 @@ _Note 2: This only changes the number of decimal places in the interface. In ord
 In this sample, custom element _createdDate_ value is changed:
 
 ```JavaScript
-    this.createdDate = this._context.createMoment('2023-12-31');
+    this.createdDate = this._context.createMoment('2025-12-31');
 ```
 
 _Note: For other ways of setting a date, please check [momentjs documentation](https://momentjs.com/docs/#/parsing/){:target="\_blank"}_
@@ -519,9 +519,8 @@ In this sample, the entries of the element _calendar_ are setted:
 
 ```JavaScript
     this._metadata.elements.calendar.attributes.entries = [
-        { date: '2023-12-25', title: 'Christmas', category: 'Holidays' },
-        { date: '2023-12-23', title: 'Vacations: Mary Smith', category: 'EmployeeVacations' },
-        ...
+        { date: '2025-12-25', title: 'Christmas', category: 'Holidays' },
+        { date: '2025-12-23', title: 'Vacations: Mary Smith', category: 'EmployeeVacations' }
     ]
 ```
 
@@ -543,7 +542,7 @@ In this sample, the categories of the element _calendar_ are setted:
 In this sample, the date where the calendar will be positioned when is initialized is setted:
 
 ```JavaScript
-    this._metadata.elements.calendar.attributes.initialDate = '2023-01-06';
+    this._metadata.elements.calendar.attributes.initialDate = '2025-01-06';
 ```
 
 ### How to change the initial view of a calendar?
@@ -570,9 +569,9 @@ The following views are available:
 In this sample, the start and finish date is setted. Dates outside the range are blocked
 
 ```JavaScript
-    this._metadata.elements.calendar.attributes.startsAt = '2023-01-01';
+    this._metadata.elements.calendar.attributes.startsAt = '2025-01-01';
 
-    this._metadata.elements.calendar.attributes.finishesAt = '2023-12-31';
+    this._metadata.elements.calendar.attributes.finishesAt = '2025-12-31';
 ```
 
 ### How to execute an action when the view is changed?
