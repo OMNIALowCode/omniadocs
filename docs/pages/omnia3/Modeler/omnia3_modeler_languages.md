@@ -27,3 +27,16 @@ By accessing **_Languages_** in the sidebar, you will have access to the languag
 Here you can **Add new** languages, identifying their **Name** and **Description**.
 
 After you create a new language ([see how](omnia3_modeler_languagetranslator.html)), you will be able to change the language's texts.
+
+## 2. Regional Preferences
+
+The regional preferences applied on the application _Numeric_ and _Date_ inputs are inferred from the language selected by the user.
+
+If the user does not select any language, the default platform language is used (the default can be changed on **Management** area).
+
+On the following cultures the expected formats are:
+
+| Language/Culture              | Date format | Decimal separator | Decimal separator |
+| ----------------------------- | ----------- | ----------------- | ----------------- |
+| English (US) / en-US          | M/d/yyyy    | Comma (,)         | Full stop (.)     |
+| Portuguese (Portugal) / pt-PT | dd/MM/yyyy  | Blank space       | Comma (,)         |

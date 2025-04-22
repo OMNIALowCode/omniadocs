@@ -19,7 +19,7 @@ To communicate with a connector it's necessary to work with a custom **Data Sour
 
 ### 2.1. How to configure the model
 
-If the Data Source is created with _Data Access runtime_ or _Behaviour runtime_ properties setted as _External_, it will be possible to execute the operations marked as External in a connector.
+If the Data Source is created with _Data Access runtime_ or _Behaviour runtime_ properties set as _External_, it will be possible to execute the operations marked as External in a connector.
 
 To allow that, an attribute with name **\_connector** is automatically added to the Data Source, which will determine whether or not that data source instance's operations will execute on a connector.
 
