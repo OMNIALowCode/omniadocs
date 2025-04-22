@@ -165,9 +165,6 @@ Release Date: 2024-06-25
 
 - Calendars: When exporting events on _year_ view, an empty file is generated
 
-<details>
-<summary>Show older versions</summary>
-
 ## [3.5.338](#3.5.338)
 
 Release Date: 2024-06-04
@@ -485,5 +482,3 @@ Release Date: 2023-03-31
 - Lists: On Modeling area and when a list does not have data, hidden columns still reserve space on header
 - Modeling/API: Error when creating a new entity with a Enum attribute
 - Modeling: Cannot change an attribute name
-
-</details>
