@@ -389,7 +389,7 @@ In this sample, the number of decimal places of the element _decimalField_ is se
     this._metadata.elements.decimalField.attributes.precision = 3;
 ```
 
-_Note 1: This is only possible in elements that represent decimal attributes. In the other data types, even this attribute is setted, the value will be ignored._
+_Note 1: This is only possible in elements that represent decimal attributes. In the other data types, even this attribute is set, the value will be ignored._
 
 _Note 2: This only changes the number of decimal places in the interface. In order to apply decimal places to the server-side data, you need to develop that logic using C# behaviours._
 
@@ -515,7 +515,7 @@ To set a breadcrumb with a custom _go back_ configuration add the following code
 To each entry is necessary to define the _date_ and the _title_.
 The _category_ can also be defined, in order to group the entries.
 
-In this sample, the entries of the element _calendar_ are setted:
+In this sample, the entries of the element _calendar_ are set:
 
 ```JavaScript
     this._metadata.elements.calendar.attributes.entries = [
@@ -528,7 +528,7 @@ In this sample, the entries of the element _calendar_ are setted:
 
 To each category is possible to define the _name_ (used as the unique identifier), a _title_ and a _color_. Is also possible to set the category as inactive by default.
 
-In this sample, the categories of the element _calendar_ are setted:
+In this sample, the categories of the element _calendar_ are set:
 
 ```JavaScript
     this._metadata.elements.calendar.attributes.categories = [
@@ -539,7 +539,7 @@ In this sample, the categories of the element _calendar_ are setted:
 
 ### How to change the initial date of a calendar?
 
-In this sample, the date where the calendar will be positioned when is initialized is setted:
+In this sample, the date where the calendar will be positioned when is initialized is set:
 
 ```JavaScript
     this._metadata.elements.calendar.attributes.initialDate = '2025-01-06';
@@ -547,7 +547,7 @@ In this sample, the date where the calendar will be positioned when is initializ
 
 ### How to change the initial view of a calendar?
 
-In this sample, the view in which the calendar is initialized is setted:
+In this sample, the view in which the calendar is initialized is set:
 
 ```JavaScript
     this._metadata.elements.calendar.attributes.initialView = 'year';
@@ -566,7 +566,7 @@ The following views are available:
 
 ### How to set the calendar start and finish date?
 
-In this sample, the start and finish date is setted. Dates outside the range are blocked
+In this sample, the start and finish date is set. Dates outside the range are blocked
 
 ```JavaScript
     this._metadata.elements.calendar.attributes.startsAt = '2025-01-01';
@@ -671,7 +671,7 @@ The Web Component instance will be available to interact with in the JS object a
 
 ### How to set a value of a Web Component's property?
 
-In this sample, a custom property's value of a Web Component is setted:
+In this sample, a custom property's value of a Web Component is set:
 
 ```JavaScript
     this.myWebComponent.theProperty = "The new value";

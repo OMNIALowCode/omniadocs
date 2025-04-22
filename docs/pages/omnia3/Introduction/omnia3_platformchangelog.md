@@ -8,6 +8,22 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.416](#3.5.416)
+
+Release Date: 2025-04-22
+
+### Implemented enhancements:
+
+- CSV Export: Toast notification parameters are now configurable
+- CSV Export: New UI behaviour _onCsvExport_
+- Dates on UI: The date format is defined according to the culture of the selected language
+- Numbers on UI: The group and decimal separators are defined according to the culture of the selected language
+
+### Issues:
+
+- UI: The language sent on API requests does not match the language selected by the user
+- UI: Menu Initialize behaviour not executing when security role is changed
+
 ## [3.5.411](#3.5.411)
 
 Release Date: 2025-04-07

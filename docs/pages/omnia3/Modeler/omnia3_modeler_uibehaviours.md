@@ -66,7 +66,7 @@ Other than these, there are some special behaviours:
 
 In a form, the _On Change_ behaviours are only executed when the user changes directly the input.
 
-If the value of an element is setted using other behaviour (User Interface or not), the _On Change_ code will not be executed.
+If the value of an element is set using other behaviour (User Interface or not), the _On Change_ code will not be executed.
 
 In a dashboard, the _On Change_ behaviours is executed after the list data is retrieved.
 
@@ -91,8 +91,9 @@ In a dashboard, the _On Change_ behaviours is executed after the list data is re
 | On Form Open                        | onFormOpen\_{ELEMENT NAME}(line, index)                                     | Available in Calendars inside Forms.      |
 | On Form Close                       | onFormClose\_{ELEMENT NAME}(line, index, operation)                         | Available in Calendars inside Forms.      |
 | On Event Click                      | OnEventClick\_{ELEMENT NAME}(event, isStatic)                               | Available in Calendars inside Dashboards. |
-| On Event Export                     | OnEventExport\_{ELEMENT NAME}(dataEvent, isMapped, exportEvent, exportType) | Available in Calendars.                   |
+| On Event Export                     | onEventExport\_{ELEMENT NAME}(dataEvent, isMapped, exportEvent, exportType) | Available in Calendars.                   |
 | On Tab Select                       | onTabSelect\_{ELEMENT NAME}(tabName)                                        | Available in Tab Control.                 |
+| On Csv Export                       | onCsvExport\_{ELEMENT NAME}(parameters)                                     | Available in Lists inside dashboards.     |
 
 ## 3. Usage
 

@@ -43,12 +43,12 @@ When editing a list, it is also possible to change the **Edit Action**, to confi
 
 #### List Actions
 
-| Action                  | Description                              | Additional Parameters                                                  |
-|-------------------------|------------------------------------------|------------------------------------------------------------------------|
-| Navigate                | Navigate to a entity. Default value      | Definition and origin of the dataSource.                               |
-| Open as Modal           | Open an entity on a modal                | Definition, origin of the dataSource and modal configuration           |
-| Raise onCellClick Event | Execute a code expression                | Raise a cell click event, to be handled by a Dashboard code expression |
-| No Action               | List does not have link to navigate      |                                                                        |
+| Action                  | Description                         | Additional Parameters                                                  |
+| ----------------------- | ----------------------------------- | ---------------------------------------------------------------------- |
+| Navigate                | Navigate to a entity. Default value | Definition and origin of the dataSource.                               |
+| Open as Modal           | Open an entity on a modal           | Definition, origin of the dataSource and modal configuration           |
+| Raise onCellClick Event | Execute a code expression           | Raise a cell click event, to be handled by a Dashboard code expression |
+| No Action               | List does not have link to navigate |                                                                        |
 
 ### How to set the columns of a list?
 
@@ -62,16 +62,16 @@ You can also add list columns manually, by dragging a new column and filling the
 - **label**: What the label of the column will say;
 - **helpText**: Auxiliary text that explains this column to users;
 - **formattingType**: Which formatting strategy should this column have. Similar to spreadsheet applications, i.e. a result of "5" can be shown normally, or formatted as a decimal.
-- **action**: The action to be executed when the column is clicked. Possible values: 
+- **action**: The action to be executed when the column is clicked. Possible values:
 
 #### Column Actions
 
-| Action                  | Description                              | Additional Parameters                                                  |
-|-------------------------|------------------------------------------|------------------------------------------------------------------------|
-| No Action               | Default value                            |                                                                        |
-| Navigate                | Navigate to a entity                     | Definition and origin of the dataSource.                               |
-| Open as Modal           | Open an entity on a modal                | Definition, origin of the dataSource and modal configuration           |
-| Raise onCellClick Event | Execute a code expression                | Raise a cell click event, to be handled by a Dashboard code expression |
+| Action                  | Description               | Additional Parameters                                                  |
+| ----------------------- | ------------------------- | ---------------------------------------------------------------------- |
+| No Action               | Default value             |                                                                        |
+| Navigate                | Navigate to a entity      | Definition and origin of the dataSource.                               |
+| Open as Modal           | Open an entity on a modal | Definition, origin of the dataSource and modal configuration           |
+| Raise onCellClick Event | Execute a code expression | Raise a cell click event, to be handled by a Dashboard code expression |
 
 ## 3. Dashboards
 
@@ -101,7 +101,7 @@ When editing a dashboard, the default Refresh and Add New options can be configu
 - **Refresh Action**: set the action to be taken when the _Refresh_ button is clicked: refresh or no action;
 - **Create Action**: set the action to be taken when the _Add New_ button is clicked: navigate, open as modal or no action;
 
-When _Refresh_ or _Create_ actions are set to "No Action", a UI Behaviour can be set to respond to the button click. 
+When _Refresh_ or _Create_ actions are set to "No Action", a UI Behaviour can be set to respond to the button click.
 
 ### What elements can be added to dashboards?
 
@@ -257,13 +257,39 @@ The Lists contained within a Dashboard can be programmatically modified in run-t
     this._metadata.elements.yourList.attributes.disableOptionMenu = true;
 ```
 
+- The **disableExportAutoDismiss** attribute can be used to disable the toast notification auto dismiss on _Export to CSV_.
+
+```Javascript
+    this._metadata.elements.yourList.attributes.disableExportAutoDismiss = true;
+```
+
+- The **exportTimeToDismiss** attribute can be used to change the default toast dismiss time (5000ms).The unit is milliseconds
+
+```Javascript
+    this._metadata.elements.yourList.attributes.exportTimeToDismiss = 10000;
+```
+
+- The **exportFileName** attribute can be used to change the name of the exported CSV file.
+
+```Javascript
+    this._metadata.elements.yourList.attributes.exportFileName = 'myNewFile.csv';
+```
+
 - The **load()** method forces the List to obtain and present the data:
 
 ```Javascript
     this._metadata.elements.yourList.load();
 ```
 
-_Note: The changes you make to the list query parameters, filters, sorting and data sources that you define programmatically (via metadata attributes) are only visible once the list loads and presents the data, therefore you can use the **load()** method to apply the changes._
+### How can I change the list export configuration on execution time?
+
+To set the list export configuration when the user clicks the _Export to CSV_ option, the following code can be added to the _onCsvExport_ event:
+
+```JavaScript
+    parameters.autoDismiss = false; //if set to true, the toast will only be dismissed by user action. If set, timeToDismiss parameter will be ignored
+    parameters.timeToDismiss = 1000; //time to dismiss the toast set to 10000ms
+    parameters.fileName = 'myExportedList.csv'; //the name of the exported file
+```
 
 ## 4. User Interface Behaviours
 
