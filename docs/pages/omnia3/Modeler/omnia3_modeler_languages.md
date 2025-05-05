@@ -36,7 +36,7 @@ If the user does not select any language, the default platform language is used 
 
 On the following cultures the expected formats are:
 
-| Language/Culture              | Date format | Decimal separator | Decimal separator |
-| ----------------------------- | ----------- | ----------------- | ----------------- |
-| English (US) / en-US          | M/d/yyyy    | Comma (,)         | Full stop (.)     |
-| Portuguese (Portugal) / pt-PT | dd/MM/yyyy  | Blank space       | Comma (,)         |
+| Language/Culture              | Date format | Group separator | Decimal separator |
+| ----------------------------- | ----------- | --------------- | ----------------- |
+| English (US) / en-US          | M/d/yyyy    | Comma (,)       | Full stop (.)     |
+| Portuguese (Portugal) / pt-PT | dd/MM/yyyy  | Blank space     | Comma (,)         |
