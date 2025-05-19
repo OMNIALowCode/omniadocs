@@ -8,6 +8,21 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.419](#3.5.419)
+
+Release Date: 2025-05-19
+
+### Implemented enhancements:
+
+- Security improvements
+- Support for Datetime attributes
+- Pages: New _startIndex_ and _take_ attributes on _foreach_ component
+- CSV Export Settings: Users now can define if email is sent when export request ends.
+
+### Issues:
+
+- Calendar Scheduler: Error when clicking on a static event
+
 ## [3.5.416](#3.5.416)
 
 Release Date: 2025-04-22

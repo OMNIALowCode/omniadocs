@@ -62,9 +62,11 @@ A common scenario for this component is to render lines of a _Collection_ attrib
 
 #### Properties
 
-| Property | Direction | Data Type | Description                                                          |
-| -------- | --------- | --------- | -------------------------------------------------------------------- |
-| binding  | Inbound   | Object    | This property is used to define the collection that will be iterated |
+| Property   | Direction | Data Type | Description                                                                                |
+| ---------- | --------- | --------- | ------------------------------------------------------------------------------------------ |
+| binding    | Inbound   | Object    | This property is used to define the collection that will be iterated                       |
+| startIndex | Inbound   | Integer   | This property is used to define the index of first record of the collection to be iterated |
+| take       | Inbound   | Integer   | This property is used to define the number of records of the collection to be iterated     |
 
 #### Events
 
@@ -78,8 +80,8 @@ A common scenario for this component is to execute a query that feeds a list.
 
 #### Properties
 
-| Property      | Direction | Data Type       |                                                                                       | Description |
-| ------------- | --------- | --------------- | ------------------------------------------------------------------------------------- | ----------- |
+| Property      | Direction | Data Type       | Description                                                                           |
+| ------------- | --------- | --------------- | ------------------------------------------------------------------------------------- |
 | query         | Inbound   | Reference/Query | The modeled query to be executed                                                      |
 | records       | Outbound  | Object          | The list of records obtained as the result of the query execution                     |
 | columns       | Outbound  | Object          | The structure of the columns returned on each record                                  |

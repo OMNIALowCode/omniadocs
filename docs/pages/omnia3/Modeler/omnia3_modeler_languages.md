@@ -30,13 +30,13 @@ After you create a new language ([see how](omnia3_modeler_languagetranslator.htm
 
 ## 2. Regional Preferences
 
-The regional preferences applied on the application _Numeric_ and _Date_ inputs are inferred from the language selected by the user.
+The regional preferences applied on the application _Numeric_, _Date_ and _Datetime_ inputs are inferred from the language selected by the user.
 
 If the user does not select any language, the default platform language is used (the default can be changed on **Management** area).
 
 On the following cultures the expected formats are:
 
-| Language/Culture              | Date format | Group separator | Decimal separator |
-| ----------------------------- | ----------- | --------------- | ----------------- |
-| English (US) / en-US          | M/d/yyyy    | Comma (,)       | Full stop (.)     |
-| Portuguese (Portugal) / pt-PT | dd/MM/yyyy  | Blank space     | Comma (,)         |
+| Language/Culture              | Date format | Datetime format   | Group separator | Decimal separator |
+| ----------------------------- | ----------- | ----------------- | --------------- | ----------------- |
+| English (US) / en-US          | M/d/yyyy    | M/d/yyyy hh:mm aa | Comma (,)       | Full stop (.)     |
+| Portuguese (Portugal) / pt-PT | dd/MM/yyyy  | dd/MM/yyyy HH:mm  | Blank space     | Comma (,)         |

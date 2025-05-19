@@ -73,6 +73,7 @@ It has the same properties as DataType.
 
 - Boolean (i.e. bool in C#)
 - Date (i.e. DateTime in C#)
+- Datetime (i.e. DateTimeOffset in C#)
 - Decimal (i.e. decimal in C#)
 - Integer (i.e. int in C#)
 - Text (i.e. string in C#)
