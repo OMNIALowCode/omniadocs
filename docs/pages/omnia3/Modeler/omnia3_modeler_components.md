@@ -106,10 +106,10 @@ A common scenario for this component is to execute a query that feeds a list.
 
 #### Methods
 
-| Method    | Description                                                                                                      |
-| --------- | ---------------------------------------------------------------------------------------------------------------- |
-| refresh   | Method that executes the query to retrieve new data                                                              |
-| exportCSV | Method that requests to the API a data export to CSV. Has a optional parameter, the name of the file to download |
+| Method    | Description                                           | Parameters                                                                                                                                                                                                                                                          |
+| --------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| refresh   | Method that executes the query to retrieve new data   |                                                                                                                                                                                                                                                                     |
+| exportCSV | Method that requests to the API a data export to CSV. | - the name of the file to download<br> - a boolean that indicates if the result modal auto dismisses (default: true)<br> - the time (in ms) to dismiss the result modal (default: 5000ms)<br> - the time (in ms) to dismiss the informative modal (default: 5000ms) |
 
 #### Types
 
