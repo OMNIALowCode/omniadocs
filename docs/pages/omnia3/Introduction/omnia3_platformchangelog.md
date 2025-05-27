@@ -8,6 +8,21 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.424](#3.5.424)
+
+Release Date: 2025-05-27
+
+### Implemented enhancements:
+
+- Security improvements
+- Calendar: Modal size is now configurable
+- Calendar: Grids can be added to create/edit modal, allowing the insertion of second level collection data
+- CSV Export: New toast indicating that the export may take a while
+
+### Issues:
+
+- CSV Export: On Pages, emails are sent even when configured not to
+
 ## [3.5.419](#3.5.419)
 
 Release Date: 2025-05-19

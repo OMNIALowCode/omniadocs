@@ -100,6 +100,8 @@ Now select and hold the **Calendar** option, drag and drop it in the entity's Us
 - **endDateMapping**: end date of the date mapping;
 - **titleMapping**: the element that will be used to define the title property;
 - **categoryMapping**: the element that will be used to define the category property;
+- **initialView**: the calendar view that is shown by default (default value: month);
+- **modalSize**: the size of the calendar modal (default value: medium);
 - **label**: the element caption;
 - **helpText**: the detailed description of the element;
 - **row**: the layout row in which the element will be placed;
