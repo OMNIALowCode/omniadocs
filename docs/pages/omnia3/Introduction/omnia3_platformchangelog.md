@@ -8,9 +8,9 @@ folder: omnia3
 toc: false
 ---
 
-## [3.5.425](#3.5.425)
+## [3.5.426](#3.5.426)
 
-Release Date: 2025-05-28
+Release Date: 2025-06-02
 
 ### Implemented enhancements:
 
@@ -22,6 +22,8 @@ Release Date: 2025-05-28
 ### Issues:
 
 - CSV Export: On Pages, emails are sent even when configured not to
+- Pages: Ranges are not validated on EntityForm for Numeric/Date attributes
+- UI Modeling: when saving changes to UI, no element is selected and properties pane is empty
 
 ## [3.5.419](#3.5.419)
 
