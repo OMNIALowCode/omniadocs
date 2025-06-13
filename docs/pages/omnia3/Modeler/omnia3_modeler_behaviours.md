@@ -80,7 +80,7 @@ Other than these, there are two special entity behaviours:
 ### 2.1. C# method naming
 
 | Type                                | Method                                   | Observations  |
-|-------------------------------------|------------------------------------------|---------------|
+| ----------------------------------- | ---------------------------------------- | ------------- |
 | Initialize                          | OnInitialize                             |               |
 | Before Change                       | OnBeforeUpdate                           |               |
 | Formula                             | Get{ATTRIBUTE NAME}                      |               |
@@ -198,11 +198,12 @@ var httpClient = this._Context.CreateApplicationHttpClient();
 
 A cache can improve the performance of an OMNIA application, especially when your application is loading data from other systems.
 
-Depending on the setup of your OMNIA subscription, your cache can be at: 
-- Redis: distributed cache that is shared by multiple app servers and survives server restarts and app deployments. 
+Depending on the setup of your OMNIA subscription, your cache can be at:
+
+- Redis: distributed cache that is shared by multiple app servers and survives server restarts and app deployments.
 - Memory: local memory of the server.
 
-If the "RedisConnectionString" is defined in the subscription config, you will be using the Redis Cache.
+If the "RedisConnectionString" is defined in the subscription configuration, you will be using the Redis Cache.
 
 ### Accessing to cache
 
@@ -234,6 +235,7 @@ await cache.RemoveAsync("MyKeyName");
 ### Notes:
 
 - All the keys in Cache have a 24 hours lifetime after the last access to the key.
+- Access to Redis Cache keys is case sensitive. We suggest the keys to be added and accessed using the same case
 
 ## 9. Logging
 

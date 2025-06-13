@@ -8,6 +8,22 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.430](#3.5.430)
+
+Release Date: 2025-06-13
+
+### Implemented enhancements:
+
+- Tenant maintenance mode
+- UI: A banner indicating the tenant is for test/development purposes is shown on non-production tenants
+- Pages: TemporaryID is now available on EntityForm behaviour parameters
+
+### Issues:
+
+- Page modeling: page breaks when trying to edit a variable of type Integer/Decimal
+- Pages: Ranges are not validated on EntityForm for Numeric/Date attributes
+- Grids: when a editable grid contains a WebComponent, after a line is removed the WebComponents behaviour is inconsistent
+
 ## [3.5.426](#3.5.426)
 
 Release Date: 2025-06-02

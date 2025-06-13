@@ -13,11 +13,11 @@ On OMNIA Platform, authorization is managed on two distinct areas, one for the P
 
 ### 1.1 Platform
 
-In the platform authorization area (option **Management / Security**) you can manage all the *Policies* and *Roles*. 
+In the platform authorization area (option **Management / Security**) you can manage all the _Policies_ and _Roles_.
 
 ### Roles
 
-By default, Omnia Platform has one role, named *Administration*. This role cannot be removed and it has, by default, associated the user identified on platform setup as the *Platform Administrator*. Other users can be added to this *Role*.
+By default, OMNIA Platform has one role, named _Administration_. This role cannot be removed and it has, by default, associated the user identified on platform setup as the _Platform Administrator_. Other users can be added to this _Role_.
 
 Additionally, when a tenant is created, three new roles are automatically created:
 
@@ -29,18 +29,27 @@ If needed, new Roles can be created to grant a set of policies to a group of use
 
 ### Policies
 
-By default, Omnia Platform has one policy, named *PlatformSecurity*, that controls the access to the following security permissions:
+By default, OMNIA Platform has one policy, named _PlatformSecurity_, that controls the access to the following security permissions:
 
 - Tenants
 - Users
 - Roles
 - Privileges
 
-*Administration* role has access granted to all this permissions by default.
+_Administration_ role has access to all this permissions by default.
 
-When a new tenant is created, a new policy is created whose name is the tenant code with the Tenant suffix (e.g. TenantAnalogSound). These policies only have one possible permission (ALL - grants access to the tenant), and multiple roles can be added to it.
+When a new tenant is created, a new policy is created whose name is the tenant code with the Tenant suffix (e.g. TenantAnalogSound). These policies have the following permissions:
+
+| Permission  | Description                                                    | Default Roles         |
+| ----------- | -------------------------------------------------------------- | --------------------- |
+| Application | Grants access to the Application area                          | Administration, Users |
+| Model       | Grants access to the Modeling area                             | Administration        |
+| Build       | Grants access to download builds                               | Connector             |
+| Maintenance | Grants access to the Application area when on Maintenance mode | Administration        |
 
 Since policies and permissions are limited and managed by the platform, they cannot be created manually or removed.
+
+If needed, the permissions above can be granted to other roles.
 
 ### Users
 
@@ -60,14 +69,13 @@ User passwords must obey the following requirements:
 
 When logging in, if a user fails to provide the correct password in 10 subsequent attempts, the account will be locked for 30 minutes.
 
-
 ### 1.2 Tenant
 
-In the tenant authorization area (option **Security** on right side of top navbar) you can manage all *Policies* and *Roles* inside a tenant. Access to this option is limited by the Platform Roles.
+In the tenant authorization area (option **Security** on right side of top navbar) you can manage all _Policies_ and _Roles_ inside a tenant. Access to this option is limited by the Platform Roles.
 
 ### Roles
 
-By default, every tenant has only one Role, named *Administration*. This role cannot be removed and it has, by default, associated the user responsible for the tenant creation. Other users can be added to this *Role*.
+By default, every tenant has only one Role, named _Administration_. This role cannot be removed and it has, by default, associated the user responsible for the tenant creation. Other users can be added to this _Role_.
 
 If needed, new Roles can be created to grant a set of policies to a group of users.
 
@@ -75,10 +83,10 @@ If needed, new Roles can be created to grant a set of policies to a group of use
 
 By default, each tenant has two policies:
 
-- **Security**: controls the access to the tenant security features (Users, Privileges and Roles);
 - **Application**: controls the access to the modeled entities CRUD operations.
+- **Security**: controls the access to the tenant security features (Users, Privileges and Roles);
 
-*Administration* role has access granted to all this permissions. If new roles are added, access to the permissions can be granted.
+_Administration_ role has access granted to all this permissions. If new roles are added, access to the permissions can be granted.
 
 Since policies and permissions are limited and managed by the platform, they cannot be created manually or removed.
 
