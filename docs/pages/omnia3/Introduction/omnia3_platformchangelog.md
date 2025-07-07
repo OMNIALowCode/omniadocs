@@ -8,6 +8,16 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.431](#3.5.431)
+
+Release Date: 2025-07-07
+
+### Issues:
+
+- On Application Behaviours, _Date_ attribute values may contain a time value different than zero.
+
+**NOTE: A model build is recommended after upgrading to this version.**
+
 ## [3.5.430](#3.5.430)
 
 Release Date: 2025-06-13
