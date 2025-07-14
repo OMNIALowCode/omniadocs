@@ -738,6 +738,23 @@ In this sample, the details area of the first line of the collection _collection
     this.collection[0]._metadata.attributes.isDetailsOpen = 'true';
 ```
 
+### How to change a grid details area expansion behaviour?
+
+The grid details area expansion can assume the following behaviours:
+
+| Value               | Description                                                 |
+| ------------------- | ----------------------------------------------------------- |
+| 'autoExpansion'     | Expand any line that is added or edited (default behaviour) |
+| 'noExpansion'       | Do not expand added or edited lines automatically           |
+| 'expandCurrentLine' | Expand the line being worked on, collapsing others          |
+
+In this sample, the details area is set to expand the line being worked on:
+
+```JavaScript
+    //set detailsExpandability as 'expandCurrentLine'
+    this._metadata.collection.attributes.detailsExpandability = 'expandCurrentLine';
+```
+
 ### How to enable multiple selection of references in a grid?
 
 This feature only applies to grids that contain at least one inner element of type reference.

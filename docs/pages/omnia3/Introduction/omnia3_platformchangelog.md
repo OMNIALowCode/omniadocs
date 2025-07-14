@@ -8,6 +8,18 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.433](#3.5.433)
+
+Release Date: 2025-07-14
+
+### Implemented enhancements:
+
+- UI: It is possible to configure the behaviour of the grid details expansion
+
+### Issues:
+
+- When users try to access an entity located on a datasource instance they don't have access, they are automatically redirected to the first datasource they can access.
+
 ## [3.5.431](#3.5.431)
 
 Release Date: 2025-07-07
