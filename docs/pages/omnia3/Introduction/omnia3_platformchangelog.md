@@ -8,6 +8,14 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.434](#3.5.434)
+
+Release Date: 2025-08-11
+
+### Issues:
+
+- Modeling: _GetEntity_ UI Accelerator not working
+
 ## [3.5.433](#3.5.433)
 
 Release Date: 2025-07-14
