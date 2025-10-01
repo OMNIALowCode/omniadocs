@@ -10,6 +10,18 @@ toc: false
 
 Visit our [Downloads](/omnia3_downloads.html#connector) page to get the latest version.
 
+## [3.5.19](#3.5.19)
+
+Release Date: 2025-10-01
+
+### Implemented enhancements:
+
+- Upgraded packages
+
+**This version contains breaking changes.**
+**Upgrade to OMNIA Platform is required.**
+**Compatible with Platform versions that use the Connector Protocol Version 3.4**
+
 ## [3.5.17](#3.5.17)
 
 Release Date: 2025-03-07

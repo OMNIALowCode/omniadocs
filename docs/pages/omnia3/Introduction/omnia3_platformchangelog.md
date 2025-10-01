@@ -8,6 +8,24 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.439](#3.5.439)
+
+Release Date: 2025-10-01
+
+### Issues:
+
+- Modeling: If an attribute is named _DateTime_, it breaks the model on build
+- Calendars: Scheduler view events are not visible on browser page print
+- Datetime: On collections, only the Date part of a _DateTime_ is being saved
+
+### Implemented enhancements:
+
+- Queries: Query name is available on _ReadList_ data behaviours
+
+**This version contains breaking changes.**
+**Upgrade to OMNIA Connector is required.**
+**Compatible with Connectors that use the Connector Protocol Version 3.4**
+
 ## [3.5.434](#3.5.434)
 
 Release Date: 2025-08-11
