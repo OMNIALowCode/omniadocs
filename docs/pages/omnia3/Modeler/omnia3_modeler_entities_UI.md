@@ -329,7 +329,7 @@ Example on how to show a toast with a custom message
         [Optional] Auto Dismiss. true by default
         [Optional] Time to dismiss (in ms)
     */
-    this._context.showToast(this._context.toastStyle.ERROR, "Error Title", 'Error Message', true, 5000);
+    this._context.showToast(this._context.toastStyle.INFO, "Info Title", 'Info Message', true, 5000);
 
 ```
 
@@ -337,7 +337,7 @@ On a `Page` , the function must be called as the following example:
 
 ```JavaScript
 
-    context.uiTools.showToast(this._context.toastStyle.ERROR, "Error Title", 'Error Message', true, 5000);
+    context.uiTools.showToast(this._context.toastStyle.INFO, "Info Title", 'Info Message', true, 5000);
 
 ```
 
