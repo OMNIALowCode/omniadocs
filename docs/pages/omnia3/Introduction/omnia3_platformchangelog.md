@@ -8,6 +8,14 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.441](#3.5.441)
+
+Release Date: 2025-10-14
+
+### Issues:
+
+- Modeling: If an attribute is named _System_, it breaks the model on build
+
 ## [3.5.439](#3.5.439)
 
 Release Date: 2025-10-01
