@@ -8,6 +8,18 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.444](#3.5.444)
+
+Release Date: 2025-11-28
+
+### Issues:
+
+- Calendar: On Scheduler view, category and data lines have different heights
+
+### Implemented enhancements:
+
+- Security improvements
+
 ## [3.5.441](#3.5.441)
 
 Release Date: 2025-10-14
