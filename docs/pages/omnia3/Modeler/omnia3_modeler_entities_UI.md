@@ -337,7 +337,7 @@ On a `Page` , the function must be called as the following example:
 
 ```JavaScript
 
-    context.uiTools.showToast(this._context.toastStyle.INFO, "Info Title", 'Info Message', true, 5000);
+    context.uiTools.showToast(context.uiTools.toastStyle.INFO, "Info Title", 'Info Message', true, 5000);
 
 ```
 
