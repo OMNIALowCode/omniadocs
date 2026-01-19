@@ -8,6 +8,22 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.449](#3.5.449)
+
+Release Date: 2026-01-19
+
+### Issues:
+
+- Calendar: Scheduler mode returns error on mobile when categories have special characters
+- Connection errors when reading platform settings
+- Docker: Local dev containers not starting
+- Application: Error when editing an entity whose code is in format yyyy-MM-dd
+- UI: Before collection entry initialize behaviours do not include data inserted by user on line creation
+
+### Implemented enhancements:
+
+- UI: Include file callback function on _showToast_ context function
+
 ## [3.5.444](#3.5.444)
 
 Release Date: 2025-11-28

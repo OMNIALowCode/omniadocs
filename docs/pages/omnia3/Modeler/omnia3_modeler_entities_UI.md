@@ -328,6 +328,10 @@ Example on how to show a toast with a custom message
         Message
         [Optional] Auto Dismiss. true by default
         [Optional] Time to dismiss (in ms)
+        [Optional] Has action link. false by default
+        [Optional] Link to show
+        [Optional] Has file to be downloaded. false by default
+        [Optional] Callback function to download the file
     */
     this._context.showToast(this._context.toastStyle.INFO, "Info Title", 'Info Message', true, 5000);
 
