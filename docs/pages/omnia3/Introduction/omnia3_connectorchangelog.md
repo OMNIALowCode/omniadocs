@@ -10,6 +10,18 @@ toc: false
 
 Visit our [Downloads](/omnia3_downloads.html#connector) page to get the latest version.
 
+## [3.5.20](#3.5.20)
+
+Release Date: 2026-01-19
+
+### Issues:
+
+- Fixed issue on _System_ datasource behaviours debug
+
+### Implemented enhancements:
+
+- Upgraded packages
+
 ## [3.5.19](#3.5.19)
 
 Release Date: 2025-10-01
