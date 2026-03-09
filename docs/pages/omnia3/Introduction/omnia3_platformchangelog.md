@@ -8,6 +8,21 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.452](#3.5.452)
+
+Release Date: 2026-03-06
+
+### Issues:
+
+- Stability improvements on Redis Cache timeout recovery
+- Lists: If datasource is changed when located on 2nd page or above, the changes are not reflected
+- Modeler: Code Editor height is reduced to zero on certain screen resolutions
+- UI: Uncontrolled error when an invalid UI element is added to a _Form_
+
+- ### Implemented enhancements:
+
+- Subscription Management: New setting to disable _Welcome_ emails on user account creation
+
 ## [3.5.449](#3.5.449)
 
 Release Date: 2026-01-19
