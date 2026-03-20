@@ -19,7 +19,7 @@ Release Date: 2026-03-06
 - Modeler: Code Editor height is reduced to zero on certain screen resolutions
 - UI: Uncontrolled error when an invalid UI element is added to a _Form_
 
-- ### Implemented enhancements:
+### Implemented enhancements:
 
 - Subscription Management: New setting to disable _Welcome_ emails on user account creation
 
