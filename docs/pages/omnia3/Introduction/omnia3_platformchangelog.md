@@ -140,6 +140,9 @@ Release Date: 2025-06-02
 - Pages: Ranges are not validated on EntityForm for Numeric/Date attributes
 - UI Modeling: when saving changes to UI, no element is selected and properties pane is empty
 
+<details>
+<summary><strong>Previous Versions</strong></summary>
+
 ## [3.5.419](#3.5.419)
 
 Release Date: 2025-05-19
@@ -629,3 +632,5 @@ Release Date: 2023-03-31
 - Lists: On Modeling area and when a list does not have data, hidden columns still reserve space on header
 - Modeling/API: Error when creating a new entity with a Enum attribute
 - Modeling: Cannot change an attribute name
+
+</details>
