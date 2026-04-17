@@ -140,6 +140,7 @@ Release Date: 2025-06-02
 - Pages: Ranges are not validated on EntityForm for Numeric/Date attributes
 - UI Modeling: when saving changes to UI, no element is selected and properties pane is empty
 
+
 <details id="detailsExpander" markdown="1" style="margin-top: 1em;">
 <summary id="summaryExpander" style="color: blue; text-decoration: underline; cursor: pointer;">» Show Previous Versions</summary>
 
