@@ -2,8 +2,8 @@ $("#mysidebar").height($(".nav").height());
 
 $(document).ready(function () {
   if (document.baseURI.includes("/omnia3_platformchangelog.html")){
-    const details = document.getElementById("myDetails");
-    const summary = document.getElementById("mySummary");
+    const details = document.getElementById("detailsExpander");
+    const summary = document.getElementById("summaryExpander");
     
     details.addEventListener("toggle", () => {
       summary.textContent = details.open
