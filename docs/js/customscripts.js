@@ -1,7 +1,16 @@
 $("#mysidebar").height($(".nav").height());
 
 $(document).ready(function () {
-  if (document.baseURI.includes("/omnia3_downloads.html")) {
+  if (document.baseURI.includes("/omnia3_downloads.html")){
+    const details = document.getElementById("myDetails");
+    const summary = document.getElementById("mySummary");
+    
+    details.addEventListener("toggle", () => {
+      summary.textContent = details.open
+        ? "« Hide Previous Versions"
+        : "» Show Previous Versions";
+    });
+  } else if (document.baseURI.includes("/omnia3_downloads.html")) {
     httpGetFeedAsync(
       "https://mymiswebdeploy.blob.core.windows.net/omnia3/connector/updateFeed.xml",
       "Download latest connector version",
