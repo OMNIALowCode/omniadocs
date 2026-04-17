@@ -1,7 +1,7 @@
 $("#mysidebar").height($(".nav").height());
 
 $(document).ready(function () {
-  if (document.baseURI.includes("/omnia3_downloads.html")){
+  if (document.baseURI.includes("/omnia3_platformchangelog.html")){
     const details = document.getElementById("myDetails");
     const summary = document.getElementById("mySummary");
     
