@@ -205,7 +205,7 @@ Depending on the setup of your OMNIA subscription, your cache can be at:
 
 If the "RedisConnectionString" is defined in the subscription configuration, you will be using the Redis Cache.
 
-### Accessing to cache
+### Accessing the cache
 
 To access the cache, you have a method in the _Context_ to create a cache client.
 

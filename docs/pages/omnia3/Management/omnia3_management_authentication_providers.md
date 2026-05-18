@@ -51,6 +51,8 @@ When using OpenID Connect you will need to configure the following parameters th
  - Request claims
  - "Email" claim
 
+ **IMPORTANT NOTE**: In order to have multiple OpenID Connect providers on the same subscription, each must be configured on Omnia with a different _Return url suffix_.
+
 ### 3.2 Facebook
 
 You will need to configure an Application on Facebook and get the following parameters to configure in OMNIA:

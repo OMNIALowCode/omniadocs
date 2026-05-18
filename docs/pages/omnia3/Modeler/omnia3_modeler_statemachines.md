@@ -72,7 +72,7 @@ Everytime the entity is saved in the _State_, the C# code expression provided in
 The C# expression must return a string, as seen on the example below:
 
 ```c#
-//Assign to role "Administration" is the TotalAmount value is equal or bigger than 1000. Otherwise, assign to role "Approver"
+//Assign to role "Administration" if the TotalAmount value is equal or bigger than 1000. Otherwise, assign to role "Approver"
 
 if(this.TotalAmount >= 1000)
     return "Administration";
