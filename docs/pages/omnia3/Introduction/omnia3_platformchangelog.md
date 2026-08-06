@@ -8,6 +8,18 @@ folder: omnia3
 toc: false
 ---
 
+## [3.5.454](#3.5.454)
+
+Release Date: 2026-08-05
+
+### Issues:
+
+- UI Pages do not render correctly on iOS devices
+
+### Implemented enhancements:
+
+- UI Forms: New setting to disable confirm message when changes exist
+
 ## [3.5.452](#3.5.452)
 
 Release Date: 2026-03-06
