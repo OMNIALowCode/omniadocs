@@ -10,6 +10,15 @@ toc: false
 
 Visit our [Downloads](/omnia3_downloads.html#connector) page to get the latest version.
 
+## [3.5.22](#3.5.22)
+
+Release Date: 2026-08-31
+
+### Issues:
+
+- Fixed issue on Behaviours Manager process shutdown when connector is stopped
+- Improved reconnections when platform is unavailable
+
 ## [3.5.20](#3.5.20)
 
 Release Date: 2026-01-19
